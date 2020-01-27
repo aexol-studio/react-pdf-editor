@@ -1,0 +1,71 @@
+{
+  "extends": ["tslint:recommended", "tslint-react"],
+  "rules": {
+    "arrow-parens": 0,
+    "arrow-return-shorthand": [false],
+    "comment-format": [true, "check-space"],
+    "import-blacklist": [true, "rxjs"],
+    "interface-over-type-literal": false,
+    "interface-name": false,
+    "max-line-length": [false],
+    // "max-line-length": [true, 120],
+    "member-access": false,
+    "member-ordering": [true, { "order": "fields-first" }],
+    "newline-before-return": 1,
+    "no-any": false,
+    "no-empty-interface": false,
+    "no-import-side-effect": [false],
+    "no-inferrable-types": [true, "ignore-params", "ignore-properties"],
+    "no-invalid-this": [true, "check-function-in-method"],
+    "no-null-keyword": false,
+    "no-require-imports": false,
+    "no-submodule-imports": [true, "@src", "rxjs"],
+    "no-this-assignment": [true, { "allow-destructuring": true }],
+    "no-trailing-whitespace": true,
+    "no-unused-variable": [true, "react"],
+    "no-shadowed-variable": false,
+    // "no-magic-numbers": true,
+    "no-console": 0,
+    "object-literal-sort-keys": false,
+    "object-literal-shorthand": false,
+    "object-property-newline": 0,
+    "one-variable-per-declaration": [false],
+    "only-arrow-functions": [true, "allow-declarations"],
+    "ordered-imports": [false],
+    "prefer-method-signature": false,
+    "prefer-template": [true, "allow-single-concat"],
+    "quotemark": [true, "single", "jsx-double"],
+    "semicolon": [false, "never", "ignore-interfaces"],
+    "trailing-comma": [
+      true,
+      {
+        "singleline": "never",
+        "multiline": {
+          "objects": "never",
+          "arrays": "always",
+          "functions": "never",
+          "typeLiterals": "ignore"
+        },
+        "esSpecCompliant": true
+      }
+    ],
+    "triple-equals": [true, "allow-null-check"],
+    "type-literal-delimiter": false,
+    "typedef": [true, "parameter", "property-declaration"],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case",
+      "allow-leading-underscore"
+    ],
+    "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
+    "jsx-a11y/anchor-is-valid": 0,
+    "no-useless-escape": 0,
+    "prefer-const": 0,
+    "prefer-object-spread": true,
+    "class-name": true,
+    "eofline": true
+  }
+}

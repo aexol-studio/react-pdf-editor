@@ -1,0 +1,6 @@
+image: node:10
+build:
+  stage: build
+  script:
+    - npm i
+    - npm run build
