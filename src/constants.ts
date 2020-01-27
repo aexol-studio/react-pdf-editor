@@ -23,7 +23,7 @@ export const DefaultValues: ReactPDF.Style = {
   borderRightWidth: 0,
   borderBottomWidth: 0,
   borderLeftWidth: 0,
-  fontSize: 5
+  fontSize: 10
 };
 
 export const TOPHEIGHT = 40;
