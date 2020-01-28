@@ -2,6 +2,7 @@ import { style } from "typestyle";
 import { Colors } from "../../../styles/Colors";
 import { transition } from "../../../../constants";
 export const Title = style({
+  $debugName: "RolloutableTitle",
   cursor: "pointer",
   fontWeight: "bold",
   color: Colors["Black Hole"],
@@ -13,6 +14,7 @@ export const Title = style({
 export const Children = style({});
 
 export const Main = style({
+  $debugName: "RolloutableMain",
   padding: `5px 10px 5px`,
   flex: 1,
   borderRadius: 10,

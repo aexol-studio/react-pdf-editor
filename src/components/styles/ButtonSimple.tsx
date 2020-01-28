@@ -2,6 +2,7 @@ import { style } from "typestyle";
 import { Colors } from "./Colors";
 import { transition } from "../../constants";
 export const Main = style({
+  $debugName: "ButtonSimpleMain",
   display: "inline-block",
   fontSize: 12,
   color: Colors["Outer Space"],

@@ -2,6 +2,7 @@ import { style, classes } from "typestyle";
 import { Colors } from "./Colors";
 import { TOPHEIGHT } from "../../constants";
 export const Main = style({
+  $debugName: "TopMenuMain",
   background: Colors.White,
   display: "flex",
   boxShadow: `${Colors["Dark Side"]}44 2px 5px 14px`,
@@ -9,6 +10,7 @@ export const Main = style({
   paddingLeft: 30
 });
 export const Placement = style({
+  $debugName: "TopMenuPlacement",
   padding: 5,
   display: "flex",
   alignItems: "center"
@@ -17,6 +19,7 @@ export const Placement = style({
 export const Button = classes(
   Placement,
   style({
+    $debugName: "TopMenuButton",
     cursor: "pointer",
     color: Colors["Androgyn"],
     $nest: {
@@ -27,8 +30,10 @@ export const Button = classes(
   })
 );
 export const Input = style({
+  $debugName: "TopMenuInput",
   width: 40
 });
 export const ColorPicker = style({
+  $debugName:"TopMenuColorPicker",
   marginBottom: -5
 });

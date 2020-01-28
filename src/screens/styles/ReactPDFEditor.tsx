@@ -5,6 +5,7 @@ export const Actions = style({
   display: "flex"
 });
 export const SplitScreen = style({
+  $debugName: "SplitScreen",
   display: "flex",
   flexFlow: "row nowrap",
   alignItems: "stretch",
@@ -12,6 +13,7 @@ export const SplitScreen = style({
 });
 
 export const Left = style({
+  $debugName: "Left",
   flex: 1,
   padding: `${TOPHEIGHT}px 30px`,
   background: `#f9f9f9`,
@@ -25,6 +27,7 @@ export const Left = style({
 });
 
 export const Right = style({
+  $debugName: "Right",
   width: "50%",
   height: "100%",
   overflowY: "hidden",
@@ -38,12 +41,14 @@ export const Right = style({
 });
 
 export const SectionTitle = style({
+  $debugName: "SectionTitle",
   fontSize: 12,
   paddingBottom: 5,
   borderBottom: `1px dashed ${Colors["Ancient Stone"]}`
 });
 
 export const EyePlacement = style({
+  $debugName: "EyePlacement",
   position: "absolute",
   right: 30,
   top: 0,

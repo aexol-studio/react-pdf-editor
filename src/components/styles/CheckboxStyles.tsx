@@ -2,6 +2,7 @@ import { style } from "typestyle";
 import { Colors } from "./Colors";
 
 export const Checkbox = style({
+  $debugName: "Checkbox",
   // height: 20,
   // width: 60,
   display: "flex",

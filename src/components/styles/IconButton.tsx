@@ -2,6 +2,7 @@ import { style } from "typestyle";
 import { Colors } from "./Colors";
 import { transition } from "../../constants";
 export const Main = style({
+  $debugName: "IconButtonMain",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
