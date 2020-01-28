@@ -5,6 +5,7 @@ import { ReactPDFEditor } from "../src";
 
 export const AppContainer = style({
   $debugName: "AppContainer",
+  fontFamily: "Fira Sans",
   height: "100vh",
   width: "100%",
   margin: 0

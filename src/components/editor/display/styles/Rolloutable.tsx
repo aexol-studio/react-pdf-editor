@@ -6,7 +6,7 @@ export const Title = style({
   cursor: "pointer",
   fontWeight: "bold",
   color: Colors["Black Hole"],
-  fontSize: 10,
+  fontSize: 12,
   marginBottom: 10,
   display: "flex",
   alignItems: "center"

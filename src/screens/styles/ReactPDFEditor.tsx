@@ -42,7 +42,8 @@ export const Right = style({
 
 export const SectionTitle = style({
   $debugName: "SectionTitle",
-  fontSize: 12,
+  fontFamily: "Fira Sans",
+  fontSize: 16,
   paddingBottom: 5,
   borderBottom: `1px dashed ${Colors["Ancient Stone"]}`
 });

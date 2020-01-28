@@ -151,7 +151,7 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
   return (
     <div className={styles.Main}>
       <TopIcon
-        tooltip="fit to parent"
+        tooltip="Fit to parent"
         icon="Move"
         active={editedFeatureStyle.width === "100%"}
         onClick={() =>
@@ -274,7 +274,7 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
         applyStyle={applyStyle}
         v={{
           icon: "Maximize2",
-          tooltip: "Margines"
+          tooltip: "Margin"
         }}
         values={[
           {
