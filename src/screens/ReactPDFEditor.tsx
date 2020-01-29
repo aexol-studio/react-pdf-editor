@@ -38,7 +38,7 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
         documents: []
       }
     },
-    showPDF: false
+    showPDF: true
   };
   updatePDF = (
     fn: (

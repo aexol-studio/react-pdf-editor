@@ -1,5 +1,6 @@
 import { style } from "typestyle";
 import { Colors } from "../../styles/Colors";
+import { transition } from "../../../constants";
 
 export const Main = style({
   $debugName: "ControlsMain",
@@ -27,6 +28,8 @@ export const Button = style({
   cursor: "pointer",
   margin: `0 5px 5px 0`,
   border: '1px solid black',
+  // cursor: "pointer",
+  transition,
   $nest: {
     "&:hover": {
       background: Colors["Outer Space"],
@@ -59,9 +62,10 @@ export const Overlay = style({
   height: "100%",
   display: "flex",
   alignItems: "center",
-  justifyContent: "center",
+  justifyContent: "left",
   background: `${Colors.Black}aa`,
-  zIndex: 3
+  zIndex: 3,
+  padding: '15%'
 });
 export const PlusMinus = style({
   $debugName: "ControlsPlusMinus",

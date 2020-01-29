@@ -15,7 +15,7 @@ export class Rolloutable extends React.Component<
   RolloutableState
 > {
   state: RolloutableState = {
-    rolledOut: true
+    rolledOut: false
   };
   render() {
     return (
