@@ -13,7 +13,7 @@ export const TextBlockComponent = ({
   const inref = useRef(null);
   useEffect(() => {}, [inref]);
   return (
-    <input
+    <textarea
       ref={inref}
       className={styles.Main}
       value={textBlock.text}
