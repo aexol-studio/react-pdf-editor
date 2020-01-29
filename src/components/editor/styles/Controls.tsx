@@ -21,11 +21,18 @@ export const Button = style({
   $debugName: "ControlsButton",
   fontSize: 10,
   padding: `5px 12px`,
-  background: Colors.Gravity,
-  color: Colors.White,
+  background: Colors.White,
+  // color: Colors.White,
   borderRadius: 2,
   cursor: "pointer",
-  margin: `0 5px 5px 0`
+  margin: `0 5px 5px 0`,
+  border: '1px solid black',
+  $nest: {
+    "&:hover": {
+      background: Colors["Outer Space"],
+      color: Colors["White"]
+    }
+  }
 });
 export const MenuHeader = style({
   $debugName:"ControlsMenuHandler",
@@ -67,3 +74,4 @@ export const PlusMinus = style({
     }
   }
 });
+ 
