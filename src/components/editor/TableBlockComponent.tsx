@@ -149,7 +149,7 @@ export const TableBlockComponent = ({
             onChange();
           }}
         >
-          dodaj wiersz
+          Add block
         </ControlsButton>
         {tableBlock.rows && tableBlock.rows.length > 0 && (
           <ControlsButton
@@ -164,7 +164,7 @@ export const TableBlockComponent = ({
               onChange();
             }}
           >
-            kolumna
+            Add column
           </ControlsButton>
         )}
       </div>

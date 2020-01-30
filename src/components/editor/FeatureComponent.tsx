@@ -96,7 +96,7 @@ export const FeatureComponent = ({
             className={cx(styles.MiniIcon, styles.Edit)}
             onClick={() => onMoveDown()}
           >
-            <Icons.ArrowDown size={10} />
+            <Icons.ArrowDown size={15} />
           </div>
         )}
         {onMoveUp && (

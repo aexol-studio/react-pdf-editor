@@ -4,6 +4,7 @@ import { ButtonSimple } from "./ButtonSimple";
 export interface IConfirmProps {
   children: React.ReactNode;
   onConfirm: () => void;
+  style?: React.CSSProperties;
 }
 
 export const Confirm = ({ children, onConfirm }: IConfirmProps) => {
@@ -11,11 +12,26 @@ export const Confirm = ({ children, onConfirm }: IConfirmProps) => {
   return (
     <>
       {!del && (
-        <ButtonSimple onClick={() => setDel(true)}>{children}</ButtonSimple>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center"
+          }}
+          onClick={() => setDel(true)}
+        >
+          {children}
+        </div>
+        // <ButtonSimple onClick={() => setDel(true)}>{children}</ButtonSimple>
       )}
       {del && (
         <>
-          <span>Are you sure?</span>
+          <span
+            style={{
+              marginTop: 5
+            }}
+          >
+            Are you sure?
+          </span>
           <div style={{ marginRight: 5 }} />
           <ButtonSimple
             onClick={() => {

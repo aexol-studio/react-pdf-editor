@@ -73,7 +73,7 @@ export const ImageComponent = ({ onChange, image }: ImageComponentProps) => {
         <>
           <input
             type="number"
-            placeholder="szerkość"
+            placeholder="width"
             value={image.width}
             max={MAX_IMAGE_WIDTH}
             min={2}
@@ -86,7 +86,7 @@ export const ImageComponent = ({ onChange, image }: ImageComponentProps) => {
           />
           <input
             type="number"
-            placeholder="wysokość"
+            placeholder="height"
             value={image.height}
             step={0.001}
             onChange={e => {

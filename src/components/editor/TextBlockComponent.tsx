@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import * as styles from "./styles/TextBlock";
-
+const rowHeight = 36;
 export interface TextBlockComponentProps {
   textBlock: PartialObjects["TextBlock"];
   onChange: () => void;
@@ -17,16 +17,35 @@ export interface TextBlockComponentProps {
 export const TextBlockComponent = ({
   onChange,
   textBlock
+}: TextBlockComponentProps) => {
+  const inref = useRef<HTMLTextAreaElement>(null);
 
-}:  TextBlockComponentProps) => {
-  const inref = useRef(null);
-  useEffect(() => {}, [inref]);
+  const [height, setHeight] = useState(1);
 
+  const resizeTextArea = () => {
+    return;
+    // return inref && inref.current ? inref.current.scrollHeight/inref.current.rows: 2;
+  };
 
-  // https://codepen.io/liborgabrhel/pen/eyzwOx
+  const onResize = (scrollHeight: number) => {
+    const rows = Math.ceil(scrollHeight / rowHeight);
 
+    setHeight(rows);
+    console.log(scrollHeight);
+  };
+
+  useEffect(() => {
+    resizeTextArea;
+  }, [inref]);
   return (
     <textarea
+      style={{
+        height: "auto",
+        overflowY: "hidden",
+        // lineHeight: `${rowHeight}px`
+      }}
+      // rows={resizeTextArea()}
+      rows={height}
       ref={inref}
       className={styles.Main}
       value={textBlock.text}
@@ -34,6 +53,8 @@ export const TextBlockComponent = ({
       onChange={e => {
         textBlock.text = e.target.value;
         onChange();
+        console.log(e.target.scrollHeight, "-----------");
+        onResize(e.target.scrollHeight);
       }}
     />
   );
