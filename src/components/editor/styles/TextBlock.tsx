@@ -6,7 +6,7 @@ export const Main = style({
   border: 0,
   width: "100%",
   background: Colors.White,
-  padding: 10,
+  padding: 0,
   fontFamily: "Fira Sans"
 });
 export const styleLabel = style({
