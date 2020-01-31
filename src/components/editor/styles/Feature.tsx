@@ -3,7 +3,8 @@ import { Colors } from "../../styles/Colors";
 
 export const Main = style({
   $debugName: "FeatureMain",
-  marginBottom: 10
+  marginBottom: 10,
+  display: "flex"
 });
 export const FeatureOptions = style({
   $debugName: "FeatureOptions",

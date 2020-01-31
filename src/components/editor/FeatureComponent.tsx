@@ -90,6 +90,12 @@ export const FeatureComponent = ({
 }: FeatureComponentProps) => {
   return (
     <div className={styles.Main}>
+      <FeatureComp
+        onChange={onChange}
+        onEdit={onEdit}
+        onDelete={onDelete}
+        feature={feature}
+      />
       <div className={styles.FeatureOptions}>
         {onMoveDown && (
           <div
@@ -122,12 +128,6 @@ export const FeatureComponent = ({
           <Icons.Edit size={10} />
         </div>
       </div>
-      <FeatureComp
-        onChange={onChange}
-        onEdit={onEdit}
-        onDelete={onDelete}
-        feature={feature}
-      />
     </div>
   );
 };

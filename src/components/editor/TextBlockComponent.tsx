@@ -13,6 +13,9 @@ const AutoResizeTextArea = (
   >
 ) => {
   const tRef = useRef<HTMLTextAreaElement>(null);
+// przez useRef jest dostęp do DOMa przeglądarki
+
+
   useEffect(() => {
     if (tRef.current) {
       tRef.current.setAttribute("style", "height: auto;");

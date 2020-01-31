@@ -1,3 +1,4 @@
 import { style } from "typestyle";
 
-export const Main = style({});
+export const Main = style({
+});
