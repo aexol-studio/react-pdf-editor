@@ -22,7 +22,7 @@ export const DocumentComponent = ({
   components?: PartialObjects["TemplateComponent"][];
 }) => {
   return (
-    <Rolloutable key={`Page${i}`} title={`Page ${i}`}>
+    <Rolloutable key={`Page${i+1}`} title={`Page ${i+1}`}>
       <div style={{ display: "flex" }}>
         <Confirm
           onConfirm={onDelete}
