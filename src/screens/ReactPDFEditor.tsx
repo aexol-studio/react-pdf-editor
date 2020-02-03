@@ -35,7 +35,13 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
           items: []
         },
         margin: [10, 80, 10, 40],
-        documents: []
+        documents: [
+          {
+            features: {
+              items: []
+            }
+          }
+        ]
       }
     },
     showPDF: true
@@ -107,7 +113,7 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
     if (!template) {
       return <div>Loading...</div>;
     }
-    const { documents = [], footer, header } = template;
+    const { documents = [{features: {items: []}}], footer, header } = template;
     // console.log(documents);
     return (
       <>
