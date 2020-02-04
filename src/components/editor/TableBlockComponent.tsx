@@ -3,6 +3,7 @@ import { PartialObjects } from "../../graphql-zeus";
 import { ColumnsComponent } from "./ColumnsComponent";
 import { Rolloutable } from "./display/Rolloutable";
 import { ControlsButton } from "./Controls";
+import {TableBlockComponentTxt} from '../models'
 import * as styles from "./styles/TableBlock";
 
 export interface TableBlockComponentProps {
@@ -56,7 +57,7 @@ export const TableBlockComponent = ({
     .map(w => w.S);
   return (
     <Rolloutable
-      title={`Table${tableBlock.style ? `-${tableBlock.style}` : ``}`}
+      title={`${TableBlockComponentTxt.TableTitle}${tableBlock.style ? `-${tableBlock.style}` : ``}`}
     >
       <div>
         <div>
@@ -122,7 +123,7 @@ export const TableBlockComponent = ({
                     onChange();
                   }}
                 >
-                  Delete
+                  {TableBlockComponentTxt.ControleButtonDelete}
                 </ControlsButton>
               </div>
             ))}
@@ -149,7 +150,7 @@ export const TableBlockComponent = ({
             onChange();
           }}
         >
-          Add block
+          {TableBlockComponentTxt.ControleButtonAddBlock}
         </ControlsButton>
         {tableBlock.rows && tableBlock.rows.length > 0 && (
           <ControlsButton
@@ -164,7 +165,7 @@ export const TableBlockComponent = ({
               onChange();
             }}
           >
-            Add column
+            {TableBlockComponentTxt.ControleButtonAddColumn}
           </ControlsButton>
         )}
       </div>

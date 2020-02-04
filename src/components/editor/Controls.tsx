@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as styles from "./styles/Controls";
 import { BuiltInStyles, PartialObjects } from "../../graphql-zeus";
 import { PlusCircle, MinusCircle } from "react-feather";
+import {ControlsComponentTxt} from "../models"
 export interface ControlsProps {
   features: PartialObjects["Feature"][];
   mutateWholeObject: () => void;
@@ -63,7 +64,7 @@ export const Controls = ({
                       mutateWholeObject();
                     }}
                   >
-                    Stack
+                    {ControlsComponentTxt.ButtonStack}
                   </ControlsButton>
                 )}
                 {!document && (
@@ -78,7 +79,7 @@ export const Controls = ({
                         mutateWholeObject();
                       }}
                     >
-                      Text
+                      {ControlsComponentTxt.ButtonText}
                     </ControlsButton>
                     <ControlsButton
                       onClick={() => {
@@ -89,7 +90,7 @@ export const Controls = ({
                         mutateWholeObject();
                       }}
                     >
-                      Image
+                      {ControlsComponentTxt.ButtonImage}
                     </ControlsButton>
                     <ControlsButton
                       onClick={() => {
@@ -101,7 +102,7 @@ export const Controls = ({
                         mutateWholeObject();
                       }}
                     >
-                      Stack
+                      {ControlsComponentTxt.ButtonStack}
                     </ControlsButton>
                     <ControlsButton
                       onClick={() => {
@@ -113,7 +114,7 @@ export const Controls = ({
                         mutateWholeObject();
                       }}
                     >
-                      List
+                      {ControlsComponentTxt.ButtonList}
                     </ControlsButton>
                     <ControlsButton
                       onClick={() => {
@@ -127,7 +128,7 @@ export const Controls = ({
                         mutateWholeObject();
                       }}
                     >
-                      Vertical split
+                      {ControlsComponentTxt.ButtonVerticalSplit}
                     </ControlsButton>
                     <ControlsButton
                       onClick={() => {
@@ -141,7 +142,7 @@ export const Controls = ({
                         mutateWholeObject();
                       }}
                     >
-                      Table
+                      {ControlsComponentTxt.ButtonTable}
                     </ControlsButton>
                     <ControlsButton
                       onClick={() => {
@@ -152,7 +153,7 @@ export const Controls = ({
                         mutateWholeObject();
                       }}
                     >
-                      TimeStamp
+                      {ControlsComponentTxt.ButtonTimeStamp}
                     </ControlsButton>
                   </>
                 )}

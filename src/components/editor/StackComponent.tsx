@@ -4,6 +4,7 @@ import { FeatureComponent } from "./FeatureComponent";
 import { Controls } from "./Controls";
 import { Rolloutable } from "./display/Rolloutable";
 import { swapInArray } from "../../utils";
+import {StackComponentTxt} from  '../models'
 export interface StackComponentProps {
   stack: PartialObjects["Stack"];
   onChange: () => void;
@@ -17,7 +18,7 @@ export const StackComponent = ({
   stack
 }: StackComponentProps) => {
   return (
-    <Rolloutable title="Stack">
+    <Rolloutable title={StackComponentTxt.TitleStack}>
       {stack.items &&
         stack.items.map((i, index) => {
           return (

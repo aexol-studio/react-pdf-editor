@@ -4,6 +4,7 @@ import { FeatureComponent } from "./FeatureComponent";
 import { Controls } from "./Controls";
 import { Rolloutable } from "./display/Rolloutable";
 import { swapInArray } from "../../utils";
+import {ListBlockComponentTxt} from "../models"
 export interface ListBlockComponentProps {
   listBlock: PartialObjects["ListBlock"];
   onChange: () => void;
@@ -16,7 +17,7 @@ export const ListBlockComponent = ({
   onEdit,
   listBlock
 }: ListBlockComponentProps) => (
-  <Rolloutable title="List">
+  <Rolloutable title={ListBlockComponentTxt.TitleList}>
     {listBlock.items &&
       listBlock.items.map((i, index) => (
         <FeatureComponent

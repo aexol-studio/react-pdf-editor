@@ -5,6 +5,7 @@ import { ButtonSimple, TopMenu, IconButton } from "../components";
 import * as styles from "./styles/ReactPDFEditor";
 import { LivePDF } from "../livepdf";
 import { FrontendTypes } from "../frontend-types";
+import { ReactPDFEditorTxt } from "../components/models";
 import * as Icons from "react-feather";
 export interface PDFProps {}
 export interface PDFState {
@@ -107,13 +108,17 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
   render() {
     const { PDF } = this.state;
     if (!PDF) {
-      return <div>Loading...</div>;
+      return <div>{ReactPDFEditorTxt.Loading}}</div>;
     }
     const { template } = PDF;
     if (!template) {
-      return <div>Loading...</div>;
+      return <div>{ReactPDFEditorTxt.Loading}</div>;
     }
-    const { documents = [{features: {items: []}}], footer, header } = template;
+    const {
+      documents = [{ features: { items: [] } }],
+      footer,
+      header
+    } = template;
     // console.log(documents);
     return (
       <>
@@ -127,12 +132,12 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
           >
             {this.state.showPDF ? (
               <>
-                <span>Hide preview</span>
+                <span>{ReactPDFEditorTxt.HidePreview}</span>
                 <Icons.EyeOff size={20} />
               </>
             ) : (
               <>
-                <span>Show preview</span>
+                <span>{ReactPDFEditorTxt.ShowPreview}</span>
                 <Icons.Eye size={20} />
               </>
             )}
@@ -140,7 +145,9 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
         </div>
         <div className={styles.SplitScreen}>
           <div className={styles.Left}>
-            <h4 className={styles.SectionTitle}>Header</h4>
+            <h4 className={styles.SectionTitle}>
+              {ReactPDFEditorTxt.SectionTitleHeader}
+            </h4>
             <FeatureComponent
               components={
                 this.state.components &&
@@ -152,7 +159,9 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
               onEdit={editedFeature => this.setState({ editedFeature })}
               isRoot={true}
             />
-            <h4 className={styles.SectionTitle}>Pages</h4>
+            <h4 className={styles.SectionTitle}>
+              {ReactPDFEditorTxt.SectionTitlePages}
+            </h4>
             {documents.map((d, i) => (
               <DocumentComponent
                 i={i}
@@ -174,8 +183,12 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
                 }}
               />
             ))}
-            <ButtonSimple onClick={() => this.addPage()}>Add Page</ButtonSimple>
-            <h4 className={styles.SectionTitle}>Footer</h4>
+            <ButtonSimple onClick={() => this.addPage()}>
+              {ReactPDFEditorTxt.ButtonAddPage}
+            </ButtonSimple>
+            <h4 className={styles.SectionTitle}>
+              {ReactPDFEditorTxt.SectionTitleFooter}
+            </h4>
             <FeatureComponent
               components={
                 this.state.components &&

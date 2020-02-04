@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ButtonSimple } from "./ButtonSimple";
+import {ConfirmTxt} from './models'
 
 export interface IConfirmProps {
   children: React.ReactNode;
@@ -30,7 +31,7 @@ export const Confirm = ({ children, onConfirm }: IConfirmProps) => {
               marginTop: 5
             }}
           >
-            Are you sure?
+          {ConfirmTxt.AreYouSure}
           </span>
           <div style={{ marginRight: 5 }} />
           <ButtonSimple
@@ -39,7 +40,7 @@ export const Confirm = ({ children, onConfirm }: IConfirmProps) => {
               onConfirm();
             }}
           >
-            Yes
+            {ConfirmTxt.Yes}
           </ButtonSimple>
           <div style={{ marginRight: 5 }} />
           <ButtonSimple onClick={() => setDel(false)}>No</ButtonSimple>
