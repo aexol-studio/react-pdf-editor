@@ -5,7 +5,7 @@ import { ButtonSimple, TopMenu, IconButton } from "../components";
 import * as styles from "./styles/ReactPDFEditor";
 import { LivePDF } from "../livepdf";
 import { FrontendTypes } from "../frontend-types";
-import { ReactPDFEditorTxt } from "../components/models";
+import { ReactPDFEditorTxt } from "../models";
 import * as Icons from "react-feather";
 export interface PDFProps {}
 export interface PDFState {

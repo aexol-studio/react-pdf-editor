@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import * as styles from "./styles/Image";
-import {ImageComponentTxt} from "../models"
+import { ImageComponentTxt } from "../../models";
 import { MAX_IMAGE_WIDTH } from "../../constants";
 
 function getBase64(file: Blob): Promise<string> {

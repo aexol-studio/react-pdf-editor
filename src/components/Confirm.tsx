@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ButtonSimple } from "./ButtonSimple";
-import {ConfirmTxt} from './models'
+import { translated } from "../models";
 
 export interface IConfirmProps {
   children: React.ReactNode;
@@ -10,6 +10,7 @@ export interface IConfirmProps {
 
 export const Confirm = ({ children, onConfirm }: IConfirmProps) => {
   const [del, setDel] = useState(false);
+  const t = translated("ConfirmTxt");
   return (
     <>
       {!del && (
@@ -31,7 +32,7 @@ export const Confirm = ({ children, onConfirm }: IConfirmProps) => {
               marginTop: 5
             }}
           >
-          {ConfirmTxt.AreYouSure}
+            {t("AreYouSure")}
           </span>
           <div style={{ marginRight: 5 }} />
           <ButtonSimple
@@ -40,10 +41,10 @@ export const Confirm = ({ children, onConfirm }: IConfirmProps) => {
               onConfirm();
             }}
           >
-            {ConfirmTxt.Yes}
+            {t("Yes")}
           </ButtonSimple>
           <div style={{ marginRight: 5 }} />
-          <ButtonSimple onClick={() => setDel(false)}>No</ButtonSimple>
+          <ButtonSimple onClick={() => setDel(false)}>{t("No")}</ButtonSimple>
         </>
       )}
     </>

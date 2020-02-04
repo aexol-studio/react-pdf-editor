@@ -6,7 +6,7 @@ import { ControlsButton } from "./Controls";
 import * as Icons from "react-feather";
 import cx from "classnames";
 import * as styles1 from "./styles/Feature";
-import { TableBlockComponentTxt } from "../models";
+import { TableBlockComponentTxt } from "../../models";
 import * as styles from "./styles/TableBlock";
 
 export interface TableBlockComponentProps {

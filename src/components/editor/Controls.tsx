@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as styles from "./styles/Controls";
 import { BuiltInStyles, PartialObjects } from "../../graphql-zeus";
 import { PlusCircle, MinusCircle } from "react-feather";
-import {ControlsComponentTxt} from "../models"
+import { ControlsComponentTxt } from "../../models";
 export interface ControlsProps {
   features: PartialObjects["Feature"][];
   mutateWholeObject: () => void;

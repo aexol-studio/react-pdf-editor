@@ -4,7 +4,7 @@ import { FeatureComponent } from "./FeatureComponent";
 import { Controls } from "./Controls";
 import { Rolloutable } from "./display/Rolloutable";
 import { swapInArray } from "../../utils";
-import {ListBlockComponentTxt} from "../models"
+import { ListBlockComponentTxt } from "../../models";
 export interface ListBlockComponentProps {
   listBlock: PartialObjects["ListBlock"];
   onChange: () => void;

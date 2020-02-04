@@ -3,7 +3,7 @@ import { PartialObjects } from "../../graphql-zeus";
 import { Editor } from "..";
 import { Rolloutable } from "./display/Rolloutable";
 import { Confirm } from "../Confirm";
-import {DocumentComponentTxt} from "../models"
+import { DocumentComponentTxt } from "../../models";
 import * as Icons from "react-feather";
 import * as styles from "./styles/Feature";
 import cx from "classnames";
@@ -23,11 +23,9 @@ export const DocumentComponent = ({
   components?: PartialObjects["TemplateComponent"][];
 }) => {
   return (
-    <Rolloutable key={`Page${i+1}`} title={`Page ${i+1}`}>
+    <Rolloutable key={`Page${i + 1}`} title={`Page ${i + 1}`}>
       <div style={{ display: "flex" }}>
-        <Confirm
-          onConfirm={onDelete}
-        >
+        <Confirm onConfirm={onDelete}>
           <Icons.Trash
             className={cx(styles.MiniIcon, styles.Delete)}
             size={20}

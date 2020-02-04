@@ -9,7 +9,7 @@ export enum ControlsComponentTxt {
 }
 
 export enum ColumnsCoponentTxt {
-    IconTrashDelete = "Delete"
+  IconTrashDelete = "Delete"
 }
 
 export enum DocumentComponentTxt {
@@ -41,15 +41,16 @@ export enum TimeStampComponentTxt {
 }
 export enum ConfirmTxt {
   AreYouSure = "Are you sure",
-  Yes = "Yes"
+  Yes = "Yes",
+  No = "No"
 }
 
 export enum ReactPDFEditorTxt {
-    Loading = "Loading...",
-    HidePreview = "Hide preview",
-    ShowPreview = "Show preview",
-    SectionTitleHeader="Header",
-    SectionTitlePages="Pages",
-    ButtonAddPage= "Add Page",
-    SectionTitleFooter="Footer",
+  Loading = "Loading...",
+  HidePreview = "Hide preview",
+  ShowPreview = "Show preview",
+  SectionTitleHeader = "Header",
+  SectionTitlePages = "Pages",
+  ButtonAddPage = "Add Page",
+  SectionTitleFooter = "Footer"
 }
