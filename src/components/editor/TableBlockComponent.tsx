@@ -3,7 +3,10 @@ import { PartialObjects } from "../../graphql-zeus";
 import { ColumnsComponent } from "./ColumnsComponent";
 import { Rolloutable } from "./display/Rolloutable";
 import { ControlsButton } from "./Controls";
-import {TableBlockComponentTxt} from '../models'
+import * as Icons from "react-feather";
+import cx from "classnames";
+import * as styles1 from "./styles/Feature";
+import { TableBlockComponentTxt } from "../models";
 import * as styles from "./styles/TableBlock";
 
 export interface TableBlockComponentProps {
@@ -57,7 +60,9 @@ export const TableBlockComponent = ({
     .map(w => w.S);
   return (
     <Rolloutable
-      title={`${TableBlockComponentTxt.TableTitle}${tableBlock.style ? `-${tableBlock.style}` : ``}`}
+      title={`${TableBlockComponentTxt.TableTitle}${
+        tableBlock.style ? `-${tableBlock.style}` : ``
+      }`}
     >
       <div>
         <div>
@@ -110,7 +115,24 @@ export const TableBlockComponent = ({
                   flexBasis: widths[index]
                 }}
               >
-                <ControlsButton
+                <Icons.Trash
+                  onClick={() => {
+                    tableBlock.rows = tableBlock.rows!.map(row => ({
+                      ...row,
+                      columns: row.columns!.filter((_, idx) => idx !== index)
+                    }));
+                    tableBlock.widths! = tableBlock.widths!.filter(
+                      (tw, idx) => idx !== index
+                    );
+                    tableBlock.widths! = normalizeWidths(tableBlock.widths!);
+                    onChange();
+                  }}
+                  className={cx(styles1.MiniIcon, styles1.Delete)}
+                  size={20}
+                />
+                {TableBlockComponentTxt.ControleButtonDelete}
+
+                {/* <ControlsButton
                   onClick={() => {
                     tableBlock.rows = tableBlock.rows!.map(row => ({
                       ...row,
@@ -124,7 +146,7 @@ export const TableBlockComponent = ({
                   }}
                 >
                   {TableBlockComponentTxt.ControleButtonDelete}
-                </ControlsButton>
+                </ControlsButton> */}
               </div>
             ))}
         </div>

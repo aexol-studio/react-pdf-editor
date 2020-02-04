@@ -40,7 +40,7 @@ export const ColumnsComponent = ({
           className={cx(styles1.MiniIcon, styles1.Delete)}
           size={20}
         />
-        {ColumnsCoponentTxt.IconTrashDelete}}
+        {ColumnsCoponentTxt.IconTrashDelete}
       </div>
 
       <div className={styles.Main}>
