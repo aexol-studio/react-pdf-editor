@@ -186,6 +186,11 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
               })
             }
           />
+
+{/* jeśli flex flow jest wybrane jako row to wtedy pojawia się ten ziomeczek
+w tym ziomeczku trzeba ustawić dodatkowe parametry na justifySelf alginSelf
+*/}
+
           {editedFeatureStyle.flexDirection === "row" && (
             <>
               <TopIcon
