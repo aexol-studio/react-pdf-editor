@@ -3,7 +3,6 @@ import { PartialObjects } from "../../graphql-zeus";
 import { Editor } from "..";
 import { Rolloutable } from "./display/Rolloutable";
 import { Confirm } from "../Confirm";
-// import { DocumentComponentTxt } from "../../models";
 import { translated } from "../../models";
 import * as Icons from "react-feather";
 import * as styles from "./styles/Feature";
@@ -34,8 +33,6 @@ export const DocumentComponent = ({
             className={cx(styles.MiniIcon, styles.Delete)}
             size={20}
           />
-          {/* {DocumentComponentTxt.DeletePage} */}
-
           {t("DeletePage")}
         </Confirm>
       </div>

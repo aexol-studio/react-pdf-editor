@@ -5,7 +5,6 @@ import { ColumnComponent } from "./ColumnComponent";
 import { Colors } from "../styles/Colors";
 import { Resizable } from "re-resizable";
 import { translated } from "../../models";
-// import { ControlsButton } from "./Controls";
 import * as Icons from "react-feather";
 import * as styles1 from "./styles/Feature";
 import cx from "classnames";
@@ -44,7 +43,6 @@ export const ColumnsComponent = ({
         />
         {t("IconTrashDelete")}
       </div>
-
       <div className={styles.Main}>
         {columns.columns!.map((c, i) => {
           const flexBasis = widths[i]!;

@@ -20,13 +20,6 @@ export const ListBlockComponent = ({
   listBlock
 }: ListBlockComponentProps) => (
   <Rolloutable title={t('TitleList')}>
-  
-  {/* title={ListBlockComponentTxt.TitleList}> */}
-
-
-
-
-
     {listBlock.items &&
       listBlock.items.map((i, index) => (
         <FeatureComponent

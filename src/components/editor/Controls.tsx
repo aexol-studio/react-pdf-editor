@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import * as styles from "./styles/Controls";
 import { BuiltInStyles, PartialObjects } from "../../graphql-zeus";
 import { PlusCircle, MinusCircle } from "react-feather";
-// import { ControlsComponentTxt } from "../../models";
 import { translated } from "../../models";
 export interface ControlsProps {
   features: PartialObjects["Feature"][];
@@ -69,8 +68,6 @@ export const Controls = ({
                     }}
                   >
                     {t("ButtonStack")}
-
-                    {/* {ControlsComponentTxt.ButtonStack} */}
                   </ControlsButton>
                 )}
                 {!document && (
@@ -97,7 +94,6 @@ export const Controls = ({
                         mutateWholeObject();
                       }}
                     >
-                      {/* {ControlsComponentTxt.ButtonImage} */}
                       {t("ButtonImage")}
                     </ControlsButton>
                     <ControlsButton
@@ -110,7 +106,6 @@ export const Controls = ({
                         mutateWholeObject();
                       }}
                     >
-                      {/* {ControlsComponentTxt.ButtonStack} */}
                       {t("ButtonStack")}
                     </ControlsButton>
                     <ControlsButton
@@ -122,10 +117,8 @@ export const Controls = ({
                         setOpen(false);
                         mutateWholeObject();
                       }}
-                    >
-                      {/* {ControlsComponentTxt.ButtonList} */}
-
-                      {t("ButtonList")}
+                    > 
+                    {t("ButtonList")}
                     </ControlsButton>
                     <ControlsButton
                       onClick={() => {
@@ -155,8 +148,6 @@ export const Controls = ({
                         mutateWholeObject();
                       }}
                     >
-                      {/* {ControlsComponentTxt.ButtonTable} */}
-
                       {t("ButtonTable")}
                     </ControlsButton>
                     <ControlsButton
@@ -168,8 +159,6 @@ export const Controls = ({
                         mutateWholeObject();
                       }}
                     >
-                      {/* {ControlsComponentTxt.ButtonTimeStamp} */}
-
                       {t("ButtonTimeStamp")}
                     </ControlsButton>
                   </>

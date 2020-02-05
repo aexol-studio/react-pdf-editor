@@ -5,7 +5,6 @@ import { Controls } from "./Controls";
 import { Rolloutable } from "./display/Rolloutable";
 import { swapInArray } from "../../utils";
 import { translated } from "../../models";
-// import { StackComponentTxt } from "../../models";
 export interface StackComponentProps {
   stack: PartialObjects["Stack"];
   onChange: () => void;

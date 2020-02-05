@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as styles from "./styles/Rolloutable";
-
 import * as icons from "react-feather";
 export interface RolloutableComponentProps {
   children: React.ReactNode;

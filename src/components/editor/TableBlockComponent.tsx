@@ -6,7 +6,6 @@ import { ControlsButton } from "./Controls";
 import * as Icons from "react-feather";
 import cx from "classnames";
 import * as styles1 from "./styles/Feature";
-// import { TableBlockComponentTxt } from "../../models";
 import { translated } from "../../models";
 import * as styles from "./styles/TableBlock";
 
@@ -63,7 +62,6 @@ export const TableBlockComponent = ({
     .map(w => w.S);
   return (
     <Rolloutable
-      // title={`${TableBlockComponentTxt.TableTitle}${
       title={`${t("TableTitle")}${
         tableBlock.style ? `-${tableBlock.style}` : ``
       }`}
@@ -134,8 +132,6 @@ export const TableBlockComponent = ({
                   className={cx(styles1.MiniIcon, styles1.Delete)}
                   size={20}
                 />
-
-                {/* {TableBlockComponentTxt.ControleButtonDelete} */}
                 {t("ControleButtonDelete")}
 
                 {/* <ControlsButton
