@@ -6,7 +6,8 @@ import { ControlsButton } from "./Controls";
 import * as Icons from "react-feather";
 import cx from "classnames";
 import * as styles1 from "./styles/Feature";
-import { TableBlockComponentTxt } from "../../models";
+// import { TableBlockComponentTxt } from "../../models";
+import { translated } from "../../models";
 import * as styles from "./styles/TableBlock";
 
 export interface TableBlockComponentProps {
@@ -22,6 +23,8 @@ const emptyColumn = (): PartialObjects["Column"] => ({
     items: []
   }
 });
+
+const t = translated("TableBlockComponentTxt");
 
 const width2Power = (width: string) => parseFloat(width.slice(0, -1));
 
@@ -60,7 +63,8 @@ export const TableBlockComponent = ({
     .map(w => w.S);
   return (
     <Rolloutable
-      title={`${TableBlockComponentTxt.TableTitle}${
+      // title={`${TableBlockComponentTxt.TableTitle}${
+      title={`${t("TableTitle")}${
         tableBlock.style ? `-${tableBlock.style}` : ``
       }`}
     >
@@ -130,7 +134,9 @@ export const TableBlockComponent = ({
                   className={cx(styles1.MiniIcon, styles1.Delete)}
                   size={20}
                 />
-                {TableBlockComponentTxt.ControleButtonDelete}
+
+                {/* {TableBlockComponentTxt.ControleButtonDelete} */}
+                {t("ControleButtonDelete")}
 
                 {/* <ControlsButton
                   onClick={() => {
@@ -172,7 +178,7 @@ export const TableBlockComponent = ({
             onChange();
           }}
         >
-          {TableBlockComponentTxt.ControleButtonAddBlock}
+          {t('ControleButtonAddBlock')}
         </ControlsButton>
         {tableBlock.rows && tableBlock.rows.length > 0 && (
           <ControlsButton
@@ -187,7 +193,7 @@ export const TableBlockComponent = ({
               onChange();
             }}
           >
-            {TableBlockComponentTxt.ControleButtonAddColumn}
+            {t('ControleButtonAddColumn')}
           </ControlsButton>
         )}
       </div>

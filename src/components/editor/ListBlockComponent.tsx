@@ -4,7 +4,7 @@ import { FeatureComponent } from "./FeatureComponent";
 import { Controls } from "./Controls";
 import { Rolloutable } from "./display/Rolloutable";
 import { swapInArray } from "../../utils";
-import { ListBlockComponentTxt } from "../../models";
+import { translated } from "../../models";
 export interface ListBlockComponentProps {
   listBlock: PartialObjects["ListBlock"];
   onChange: () => void;
@@ -12,12 +12,21 @@ export interface ListBlockComponentProps {
   components?: PartialObjects["TemplateComponent"][];
 }
 
+const t = translated("ListBlockComponentTxt")
+
 export const ListBlockComponent = ({
   onChange,
   onEdit,
   listBlock
 }: ListBlockComponentProps) => (
-  <Rolloutable title={ListBlockComponentTxt.TitleList}>
+  <Rolloutable title={t('TitleList')}>
+  
+  {/* title={ListBlockComponentTxt.TitleList}> */}
+
+
+
+
+
     {listBlock.items &&
       listBlock.items.map((i, index) => (
         <FeatureComponent

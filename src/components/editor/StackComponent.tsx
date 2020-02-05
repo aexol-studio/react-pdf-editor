@@ -4,7 +4,8 @@ import { FeatureComponent } from "./FeatureComponent";
 import { Controls } from "./Controls";
 import { Rolloutable } from "./display/Rolloutable";
 import { swapInArray } from "../../utils";
-import { StackComponentTxt } from "../../models";
+import { translated } from "../../models";
+// import { StackComponentTxt } from "../../models";
 export interface StackComponentProps {
   stack: PartialObjects["Stack"];
   onChange: () => void;
@@ -12,13 +13,15 @@ export interface StackComponentProps {
   components?: PartialObjects["TemplateComponent"][];
 }
 
+const t = translated('StackComponentTxt')
+
 export const StackComponent = ({
   onChange,
   onEdit,
   stack
 }: StackComponentProps) => {
   return (
-    <Rolloutable title={StackComponentTxt.TitleStack}>
+    <Rolloutable title={t("TitleStack")}>
       {stack.items &&
         stack.items.map((i, index) => {
           return (

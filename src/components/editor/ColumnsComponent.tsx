@@ -4,7 +4,7 @@ import * as styles from "./styles/Columns";
 import { ColumnComponent } from "./ColumnComponent";
 import { Colors } from "../styles/Colors";
 import { Resizable } from "re-resizable";
-import { ColumnsCoponentTxt } from "../../models";
+import { translated } from "../../models";
 // import { ControlsButton } from "./Controls";
 import * as Icons from "react-feather";
 import * as styles1 from "./styles/Feature";
@@ -17,6 +17,8 @@ export interface ColumnsComponentProps {
   onResize: (index: number, newWidth: number) => void;
   widths: string[];
 }
+
+const t = translated("ColumnsCoponentTxt")
 
 export const ColumnsComponent = ({
   onChange,
@@ -40,7 +42,7 @@ export const ColumnsComponent = ({
           className={cx(styles1.MiniIcon, styles1.Delete)}
           size={20}
         />
-        {ColumnsCoponentTxt.IconTrashDelete}
+        {t("IconTrashDelete")}
       </div>
 
       <div className={styles.Main}>

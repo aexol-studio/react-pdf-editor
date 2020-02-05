@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import * as styles from "./styles/Image";
-import { ImageComponentTxt } from "../../models";
+// import { ImageComponentTxt } from "../../models";
+import { translated } from "../../models";
 import { MAX_IMAGE_WIDTH } from "../../constants";
+
+const t= translated("ImageComponentTxt")
+
 
 function getBase64(file: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -74,7 +78,9 @@ export const ImageComponent = ({ onChange, image }: ImageComponentProps) => {
         <>
           <input
             type="number"
-            placeholder={ImageComponentTxt.PlaceholderWidth}
+            // placeholder={ImageComponentTxt.PlaceholderWidth}
+            placeholder={t('PlaceholderWidth')}
+
             value={image.width}
             max={MAX_IMAGE_WIDTH}
             min={2}
@@ -87,7 +93,8 @@ export const ImageComponent = ({ onChange, image }: ImageComponentProps) => {
           />
           <input
             type="number"
-            placeholder={ImageComponentTxt.PlaceholderHeight}
+            // placeholder={ImageComponentTxt.PlaceholderHeight}
+            placeholder={t('PlaceholderHeight')}
             value={image.height}
             step={0.001}
             onChange={e => {
