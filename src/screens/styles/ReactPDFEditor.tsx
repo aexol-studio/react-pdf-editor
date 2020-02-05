@@ -1,6 +1,14 @@
-import { style } from "typestyle";
+import { style, fontFace } from "typestyle";
 import { Colors } from "../../components/styles/Colors";
 import { TOPHEIGHT } from "../../constants";
+
+fontFace({
+  fontFamily: 'Fira Sans',
+  fontStyle: 'normal',
+  fontWeight: 400,
+  src: 'https://fonts.googleapis.com/css?family=Fira+Sans&display=swap',
+});
+
 export const Actions = style({
   display: "flex"
 });

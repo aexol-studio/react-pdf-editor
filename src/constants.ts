@@ -11,6 +11,7 @@ export const transition = "0.3s ease-out";
 export const MAX_IMAGE_WIDTH = 350;
 
 export const DefaultValues: ReactPDF.Style = {
+  fontFamily: "Fira-Sans",
   marginBottom: 0,
   marginLeft: 0,
   marginRight: 0,

@@ -186,6 +186,81 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
               })
             }
           />
+
+          {/* start align self */}
+
+          <TopIcon
+            tooltip="align self to flex-start"
+            icon="ArrowUp"
+            active={editedFeatureStyle.alignSelf === "flex-start"}
+            onClick={() =>
+              applyStyle({
+                alignSelf:
+                  editedFeatureStyle.alignSelf === "flex-start"
+                    ? undefined
+                    : "flex-start"
+              })
+            }
+          />
+          <TopIcon
+            tooltip="align self to flex-end"
+            icon="ArrowDown"
+            active={editedFeatureStyle.alignSelf === "flex-end"}
+            onClick={() =>
+              applyStyle({
+                alignSelf:
+                  editedFeatureStyle.alignSelf === "flex-end"
+                    ? undefined
+                    : "flex-end"
+              })
+            }
+          />
+          <TopIcon
+            tooltip="align self to center"
+            icon="Circle"
+            active={editedFeatureStyle.alignSelf === "center"}
+            onClick={() =>
+              applyStyle({
+                alignSelf:
+                  editedFeatureStyle.alignSelf === "center"
+                    ? undefined
+                    : "center"
+              })
+            }
+          />
+          <TopIcon
+            tooltip="align self to stretch"
+            icon="Circle"
+            active={editedFeatureStyle.alignSelf === "stretch"}
+            onClick={() =>
+              applyStyle({
+                alignSelf:
+                  editedFeatureStyle.alignSelf === "stretch"
+                    ? undefined
+                    : "stretch"
+              })
+            }
+          />
+
+          <TopIcon
+            tooltip="align self to baseline"
+            icon="Circle"
+            active={editedFeatureStyle.alignSelf === "baseline"}
+            onClick={() =>
+              applyStyle({
+                alignSelf:
+                  editedFeatureStyle.alignSelf === "baseline"
+                    ? undefined
+                    : "baseline"
+              })
+            }
+          />
+
+          {/* end align - self */}
+
+
+            {/* // START justify-self  */}
+            
           {editedFeatureStyle.flexDirection === "row" && (
             <>
               <TopIcon
@@ -227,59 +302,8 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
                   })
                 }
               />
-              // algin self
-              <TopIcon
-                tooltip="align self to flex-start"
-                icon="ArrowUp"
-                active={editedFeatureStyle.alignSelf === "flex-start"}
-                onClick={() =>
-                  applyStyle({
-                    alignSelf:
-                      editedFeatureStyle.alignSelf === "flex-start"
-                        ? undefined
-                        : "flex-start"
-                  })
-                }
-              />
-              <TopIcon
-                tooltip="align self to flex-end"
-                icon="ArrowDown"
-                active={editedFeatureStyle.alignSelf === "flex-end"}
-                onClick={() =>
-                  applyStyle({
-                    alignSelf:
-                      editedFeatureStyle.alignSelf === "flex-end"
-                        ? undefined
-                        : "flex-end"
-                  })
-                }
-              />
-              <TopIcon
-                tooltip="align self to center"
-                icon="Circle"
-                active={editedFeatureStyle.alignSelf === "center"}
-                onClick={() =>
-                  applyStyle({
-                    alignSelf:
-                      editedFeatureStyle.alignSelf === "center"
-                        ? undefined
-                        : "center"
-                  })
-                }
-              />
-              <TopIcon
-                tooltip="align self to center"
-                icon="Circle"
-                active={editedFeatureStyle.alignSelf === "center"}
-                onClick={() =>
-                  applyStyle({
-                    alignSelf:
-                      editedFeatureStyle.alignSelf === "center"
-                        ? undefined
-                        : "center"
-                  })
-                }
-              />
+              {/* // algin self */}
+
               {/* //justify self */}
               <TopIcon
                 tooltip="align items to start"
