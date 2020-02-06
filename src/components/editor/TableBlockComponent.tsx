@@ -2,7 +2,7 @@ import * as React from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import { ColumnsComponent } from "./ColumnsComponent";
 import { Rolloutable } from "./display/Rolloutable";
-import { ControlsButton } from "./Controls";
+// import { ControlsButton } from "./Controls";
 import * as Icons from "react-feather";
 import cx from "classnames";
 import * as styles1 from "./styles/Feature";
@@ -117,6 +117,7 @@ export const TableBlockComponent = ({
                   flexBasis: widths[index]
                 }}
               >
+                <div></div>
                 <Icons.Trash
                   onClick={() => {
                     tableBlock.rows = tableBlock.rows!.map(row => ({
@@ -154,43 +155,63 @@ export const TableBlockComponent = ({
         </div>
       </div>
       <div className={styles.Actions}>
-        <ControlsButton
-          onClick={() => {
-            if (tableBlock.widths!.length === 0) {
-              tableBlock.widths!.push({
-                S: "*"
-              });
-              tableBlock.widths! = normalizeWidths(tableBlock.widths!);
-            }
-            tableBlock.rows!.push({
-              __typename: "Row",
-              columns:
-                tableBlock.rows!.length > 0
-                  ? tableBlock.rows![
-                      tableBlock.rows!.length - 1
-                    ].columns!.map(() => emptyColumn())
-                  : [emptyColumn()]
-            });
-            onChange();
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginRight: 10
           }}
         >
-          {t('ControleButtonAddBlock')}
-        </ControlsButton>
-        {tableBlock.rows && tableBlock.rows.length > 0 && (
-          <ControlsButton
+          <Icons.PlusSquare
+            style={{
+              marginRight: 5
+            }}
             onClick={() => {
-              tableBlock.rows!.forEach(row => {
-                row.columns!.push(emptyColumn());
+              if (tableBlock.widths!.length === 0) {
+                tableBlock.widths!.push({
+                  S: "*"
+                });
+                tableBlock.widths! = normalizeWidths(tableBlock.widths!);
+              }
+              tableBlock.rows!.push({
+                __typename: "Row",
+                columns:
+                  tableBlock.rows!.length > 0
+                    ? tableBlock.rows![
+                        tableBlock.rows!.length - 1
+                      ].columns!.map(() => emptyColumn())
+                    : [emptyColumn()]
               });
-              tableBlock.widths!.push({
-                S: "100%"
-              });
-              tableBlock.widths! = normalizeWidths(tableBlock.widths!);
               onChange();
             }}
+          />
+          {t("ControleButtonAddBlock")}
+        </div>
+        {tableBlock.rows && tableBlock.rows.length > 0 && (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginRight: 10
+            }}
           >
-            {t('ControleButtonAddColumn')}
-          </ControlsButton>
+            <Icons.PlusSquare
+              style={{
+                marginRight: 5
+              }}
+              onClick={() => {
+                tableBlock.rows!.forEach(row => {
+                  row.columns!.push(emptyColumn());
+                });
+                tableBlock.widths!.push({
+                  S: "100%"
+                });
+                tableBlock.widths! = normalizeWidths(tableBlock.widths!);
+                onChange();
+              }}
+            />
+            {t("ControleButtonAddColumn")}
+          </div>
         )}
       </div>
     </Rolloutable>

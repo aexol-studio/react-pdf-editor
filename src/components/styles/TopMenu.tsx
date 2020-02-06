@@ -3,6 +3,7 @@ import { Colors } from "./Colors";
 import { TOPHEIGHT } from "../../constants";
 export const Main = style({
   $debugName: "TopMenuMain",
+  fontFamily: 'Fira Sans',
   background: Colors.White,
   display: "flex",
   boxShadow: `${Colors["Dark Side"]}44 2px 5px 14px`,

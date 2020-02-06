@@ -2,7 +2,8 @@ import { style } from "typestyle";
 export const Actions = style({
   $debugName: "TableBlockActions",
   display: "flex",
-  flexFlow: "row wrap"
+  flexFlow: "row wrap",
+  marginTop: 5
 });
 
 export const ControlColumns = style({

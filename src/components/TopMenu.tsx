@@ -256,11 +256,10 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
             }
           />
 
-          {/* end align - self */}
+          {/* END align - self */}
 
+          {/* justifyContent */}
 
-            {/* // START justify-self  */}
-            
           {editedFeatureStyle.flexDirection === "row" && (
             <>
               <TopIcon
@@ -301,10 +300,13 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
                         : "flex-end"
                   })
                 }
-              />
+              /> 
+
+
+              {/* end justifyContent   */}
+
               {/* // algin self */}
 
-              {/* //justify self */}
               <TopIcon
                 tooltip="align items to start"
                 icon="ArrowUpCircle"
