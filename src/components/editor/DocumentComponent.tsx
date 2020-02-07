@@ -3,12 +3,12 @@ import { PartialObjects } from "../../graphql-zeus";
 import { Editor } from "..";
 import { Rolloutable } from "./display/Rolloutable";
 import { Confirm } from "../Confirm";
-import { translated } from "../../models";
+// import { translated } from "../../models";
 import * as Icons from "react-feather";
 import * as styles from "./styles/Feature";
 import cx from "classnames";
 
-const t = translated("DocumentComponentTxt");
+// const t = translated("DocumentComponentTxt");
 
 export const DocumentComponent = ({
   i,
@@ -27,13 +27,16 @@ export const DocumentComponent = ({
 }) => {
   return (
     <Rolloutable key={`Page${i + 1}`} title={`Page ${i + 1}`}>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex",
+    marginTop: 5,
+    marginBottom: 5
+    }}>
         <Confirm onConfirm={onDelete}>
           <Icons.Trash
             className={cx(styles.MiniIcon, styles.Delete)}
             size={20}
           />
-          {t("DeletePage")}
+          {/* {t("DeletePage")} */}
         </Confirm>
       </div>
       {doc.features!.items!.map((item, index) => (

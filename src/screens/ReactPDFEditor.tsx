@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PartialObjects, Components } from "../graphql-zeus";
 import { DocumentComponent, FeatureComponent } from "../components/editor";
-import { ButtonSimple, TopMenu, IconButton } from "../components";
+import { TopMenu, IconButton } from "../components";
 import * as styles from "./styles/ReactPDFEditor";
 import { LivePDF } from "../livepdf";
 import { FrontendTypes } from "../frontend-types";
@@ -16,7 +16,7 @@ export interface PDFState {
   showPDF: boolean;
 }
 
-const t= translated('ReactPDFEditorTxt')
+const t = translated("ReactPDFEditorTxt");
 
 export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
   state: PDFState = {
@@ -110,7 +110,7 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
   render() {
     const { PDF } = this.state;
     if (!PDF) {
-      return <div>{t('Loading')}}</div>;
+      return <div>{t("Loading")}}</div>;
     }
     const { template } = PDF;
     if (!template) {
@@ -147,9 +147,7 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
         </div>
         <div className={styles.SplitScreen}>
           <div className={styles.Left}>
-            <h4 className={styles.SectionTitle}>
-              {t("SectionTitleHeader")}
-            </h4>
+            <h4 className={styles.SectionTitle}>{t("SectionTitleHeader")}</h4>
             <FeatureComponent
               components={
                 this.state.components &&
@@ -161,9 +159,7 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
               onEdit={editedFeature => this.setState({ editedFeature })}
               isRoot={true}
             />
-            <h4 className={styles.SectionTitle}>
-              {t("SectionTitlePages")}
-            </h4>
+            <h4 className={styles.SectionTitle}>{t("SectionTitlePages")}</h4>
             {documents.map((d, i) => (
               <DocumentComponent
                 i={i}
@@ -185,12 +181,14 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
                 }}
               />
             ))}
-            <ButtonSimple onClick={() => this.addPage()}>
+
+            {/* <ButtonSimple onClick={() => this.addPage()}>
               {t("ButtonAddPage")}
-            </ButtonSimple>
-            <h4 className={styles.SectionTitle}>
-              {t("SectionTitleFooter")}
-            </h4>
+            </ButtonSimple> */}
+
+            <Icons.PlusSquare onClick={() => this.addPage()} />
+
+            <h4 className={styles.SectionTitle}>{t("SectionTitleFooter")}</h4>
             <FeatureComponent
               components={
                 this.state.components &&

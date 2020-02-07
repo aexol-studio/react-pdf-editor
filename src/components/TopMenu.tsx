@@ -160,6 +160,10 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
           })
         }
       />
+
+
+{/* Stack początek */}
+
       {editedFeature.__typename === "Stack" && (
         <>
           <TopIcon
@@ -186,9 +190,6 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
               })
             }
           />
-
-          {/* start align self */}
-
           <TopIcon
             tooltip="align self to flex-start"
             icon="ArrowUp"
@@ -256,9 +257,9 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
             }
           />
 
-          {/* END align - self */}
 
-          {/* justifyContent */}
+{/* flex direction ROW */}
+
 
           {editedFeatureStyle.flexDirection === "row" && (
             <>
@@ -303,9 +304,8 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
               /> 
 
 
-              {/* end justifyContent   */}
+{/* // algin self */}
 
-              {/* // algin self */}
 
               <TopIcon
                 tooltip="align items to start"
@@ -350,6 +350,15 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
           )}
         </>
       )}
+
+
+{/* tutaj tutaj tutaj tutuaj 
+
+gdzie tu jest ten Expand
+
+*/}
+
+
       <ExpandableInput
         applyStyle={applyStyle}
         v={{
@@ -440,6 +449,11 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
         }
       />
       <TopIcon tooltip="Font size" icon="Type" onClick={() => {}} />
+
+{/* tutaj bedzie dropdown list z fontsizemi
+
+*/}
+
       <SmallInput
         value={valueOrDefault("fontSize")}
         onChange={e => {

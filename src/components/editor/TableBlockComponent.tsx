@@ -117,7 +117,8 @@ export const TableBlockComponent = ({
                   flexBasis: widths[index]
                 }}
               >
-                <div></div>
+                {/* poprawić paddingi */}
+
                 <Icons.Trash
                   onClick={() => {
                     tableBlock.rows = tableBlock.rows!.map(row => ({
@@ -133,8 +134,7 @@ export const TableBlockComponent = ({
                   className={cx(styles1.MiniIcon, styles1.Delete)}
                   size={20}
                 />
-                {t("ControleButtonDelete")}
-
+                {/* {t("ControleButtonDelete")} */}
                 {/* <ControlsButton
                   onClick={() => {
                     tableBlock.rows = tableBlock.rows!.map(row => ({
@@ -163,6 +163,7 @@ export const TableBlockComponent = ({
           }}
         >
           <Icons.PlusSquare
+            // <Icons.ChevronsRight
             style={{
               marginRight: 5
             }}
@@ -196,6 +197,7 @@ export const TableBlockComponent = ({
             }}
           >
             <Icons.PlusSquare
+              //<Icons.ChevronsDown
               style={{
                 marginRight: 5
               }}

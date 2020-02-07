@@ -8,6 +8,8 @@ import Tooltip from "rc-tooltip";
 import cx from "classnames";
 const ColorPicker = require("rc-color-picker");
 
+//typ wszystkich ikon w menu ktore składają się z Top, Small colorpicker itp...
+
 enum MenuItemType {
   TopIcon = "TopIcon",
   SmallInput = "SmallInput",
@@ -16,6 +18,12 @@ enum MenuItemType {
   ConditionalGroup = "Group"
 }
 
+//typ interface IconMenu ktory wskazuje z czego powinno sie sklładać IconMenuItem
+// itemType - pobiera typ ikon określonych w menuitemType -
+// icon - iformuje iz musi sciagnać z (tego musze sie nauczyć keyof typeof) z ikon /react-father
+// tooltip informajca o prosty string kory jest w propsach
+// active - fukcja ktora przypisuje styl elementu przez active
+
 interface IconMenuItem {
   itemType: MenuItemType.TopIcon;
   icon: keyof typeof Icons;
@@ -23,6 +31,8 @@ interface IconMenuItem {
   active: (style: ReactPDF.Style) => boolean;
   change: (style: ReactPDF.Style) => ReactPDF.Style;
 }
+
+//typ topIcon
 
 interface SmallInputMenuItem {
   itemType: MenuItemType.SmallInput;
@@ -211,9 +221,159 @@ const alignItemsToEndIcon: IconMenuItem = {
   })
 };
 
+const ExpandableInputMaximize2: ExtendableInputMenuItem = {
+  itemType: MenuItemType.ExtendableInput,
+  v: { icon: "Maximize2", tooltip: "Margin" },
+  values: [
+    {
+      icon: "ArrowUp",
+      tooltip: "Margin top",
+      name: "marginTop"
+    },
+    {
+      icon: "ArrowRight",
+      tooltip: "Margin right",
+      name: "marginRight"
+    },
+    {
+      icon: "ArrowDown",
+      tooltip: "Margin bottom",
+      name: "marginBottom"
+    },
+    {
+      icon: "ArrowLeft",
+      tooltip: "Margin Left",
+      name: "marginLeft"
+    }
+  ]
+};
+
+const ExpandableInputMinimize2: ExtendableInputMenuItem = {
+  itemType: MenuItemType.ExtendableInput,
+  v: { icon: "Minimize2", tooltip: "Padding" },
+  values: [
+    {
+      icon: "ArrowUp",
+      tooltip: "Padding up",
+      name: "paddingTop"
+    },
+    {
+      icon: "ArrowRight",
+      tooltip: "Padding right",
+      name: "paddingRight"
+    },
+    {
+      icon: "ArrowDown",
+      tooltip: "Padding bottom",
+      name: "paddingBottom"
+    },
+    {
+      icon: "ArrowLeft",
+      tooltip: "Padding Left",
+      name: "paddingBottom"
+    }
+  ]
+};
+
+
+const TopIconBold: IconMenuItem = {
+  itemType: MenuItemType.TopIcon,
+  tooltip: "Bold",
+  icon:"Bold",
+  change: (style: ReactPDF.Style) =>  ({
+    fontWeight:
+    style.fontWeight === "bold" ? undefined : "bold"
+  }),
+  active: (style: ReactPDF.Style): boolean => style.fontWeight === "bold",
+}
+
+const TopIconAlginLeft:  IconMenuItem = {
+  itemType: MenuItemType.TopIcon,
+  tooltip: "Text align left",
+  icon: "AlignLeft",
+  change: (style: ReactPDF.Style) =>  ({
+    textAlign:
+    style.textAlign === "left" ? undefined : "left"
+  }),
+  active: (style: ReactPDF.Style): boolean => style.textAlign === "left",
+}
+
+const TopIconAlginCenter: IconMenuItem = {
+itemType: MenuItemType.TopIcon,
+tooltip: "Text align center",
+icon: "AlignCenter",
+change: (style: ReactPDF.Style) =>  ({
+  textAlign:
+  style.textAlign === "center" ? undefined : "center"
+}),
+active: (style: ReactPDF.Style): boolean => style.textAlign === "center",
+}
+
+const TopIconAlginRight: IconMenuItem = {
+  itemType: MenuItemType.TopIcon,
+  tooltip: "Text align right",
+  icon: "AlignRight",
+  change: (style: ReactPDF.Style) =>  ({
+    textAlign:
+    style.textAlign === "right" ? undefined : "right"
+  }),
+  active: (style: ReactPDF.Style): boolean => style.textAlign === "right",
+  }
+  
+  const TopIconAlginJustify: IconMenuItem = {
+    itemType: MenuItemType.TopIcon,
+    tooltip: "Text align justify",
+    icon: "AlignJustify",
+    change: (style: ReactPDF.Style) =>  ({
+      textAlign:
+      style.textAlign === "justify" ? undefined : "justify"
+    }),
+    active: (style: ReactPDF.Style): boolean => style.textAlign === "justify",
+  }
+
+  const ExpandableInputSquare: ExtendableInputMenuItem = {
+    itemType: MenuItemType.ExtendableInput,
+    v: { icon: "Square", tooltip: "Border width" },
+    values: [
+      {
+        icon: "ArrowUp",
+        tooltip: "Border Top Width",
+        name: "borderTopWidth"
+      },
+      {
+        icon: "ArrowRight",
+        tooltip: "Border Right Width",
+        name: "borderRightWidth"
+      },
+      {
+        icon: "ArrowDown",
+        tooltip: "Border Down Width",
+        name: "borderBottomWidth"
+      },
+      {
+        icon: "ArrowLeft",
+        tooltip: "Bottom Left Width",
+        name: "borderLeftWidth"
+      }
+    ]
+  };
+
 const defaultColorPicker: ColorPickerMenuItem = {
   itemType: MenuItemType.ColorPicker
 };
+
+const common: MenuItem[] = [
+  fitToParentIcon,
+  ExpandableInputMaximize2,
+  ExpandableInputMinimize2,
+  ColorPicker,
+  TopIconBold,
+  TopIconAlginLeft,
+  TopIconAlginCenter,
+  TopIconAlginRight,
+  TopIconAlginJustify
+//border width
+]
 
 const configurations: {
   [k in
@@ -228,12 +388,12 @@ const configurations: {
   TextBlock: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
-    children: [fitToParentIcon]
+    children: common.concat([]),
   },
   Image: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
-    children: [fitToParentIcon]
+    children: [fitToParentIcon,]
   },
   TableBlock: {
     itemType: MenuItemType.ConditionalGroup,
@@ -261,7 +421,13 @@ const configurations: {
       alignItemsToStartIcon,
       alignItemsToCenterIcon,
       alignItemsToEndIcon,
-      defaultColorPicker
+      defaultColorPicker,
+      TopIconBold,
+      /// tutaj trza dodać fontSize
+      TopIconAlginLeft,
+      TopIconAlginCenter,
+      TopIconAlginRight,
+      TopIconAlginJustify
     ]
   },
   ListBlock: {
@@ -399,6 +565,7 @@ const ExpandableInput = ({
 };
 
 const ConditionalGroup: React.FunctionComponent<{
+  //
   active: boolean;
   style: ReactPDF.Style;
   applyStyle: (style: ReactPDF.Style) => void;
@@ -465,6 +632,7 @@ const ConditionalGroup: React.FunctionComponent<{
             />
           );
         }
+
         return null;
       })}
     </>
