@@ -100,6 +100,9 @@ const flexFlowColumnIcon: IconMenuItem = {
   })
 };
 
+//alginSelf
+
+
 const alignSelfToFlexStartIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   icon: "ArrowUp",
@@ -149,6 +152,9 @@ const alignSelfToFlexStretchIcon: IconMenuItem = {
     alignSelf: style.alignSelf === "stretch" ? undefined : "stretch"
   })
 };
+
+//justifyContent
+
 
 const justifyContentFlexStartIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -206,6 +212,9 @@ const justifyContentSpaceAround: IconMenuItem = {
       style.justifyContent === "space-around" ? undefined : "space-around"
   })
 };
+
+// alignItems 
+
 
 const alignItemsToStartIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -310,6 +319,35 @@ const ExpandableInputMinimize2: ExtendableInputMenuItem = {
     }
   ]
 };
+
+
+const ExpandableInputMinimize3: ExtendableInputMenuItem = {
+  itemType: MenuItemType.ExtendableInput,
+  v: { icon: "Minimize2", tooltip: "Border width" },
+  values: [
+  {
+    icon: "ArrowUp",
+    tooltip: "Border Top Width",
+    name: "borderTopWidth"
+  },
+  {
+    icon: "ArrowRight",
+    tooltip: "Border Right Width",
+    name: "borderRightWidth"
+  },
+  {
+    icon: "ArrowDown",
+    tooltip: "Border Down Width",
+    name: "borderBottomWidth"
+  },
+  {
+    icon: "ArrowLeft",
+    tooltip: "Border Left Width",
+    name: "borderLeftWidth"
+  }
+  ]
+};
+
 
 const TopIconFontSize: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -497,7 +535,10 @@ const common: MenuItem[] = [
   TopIconAlginLeft,
   TopIconAlginCenter,
   TopIconAlginRight,
-  TopIconAlginJustify
+  TopIconAlginJustify,
+  ColorPicker,
+  ExpandableInputMinimize3, 
+  ColorPicker
   //border width
 ];
 
@@ -537,8 +578,9 @@ const configurations: {
     children: [
       fitToParentIcon,
       flexFlowRowIcon,
-
       flexFlowColumnIcon,
+      flexDirectionRowJustifyConditionalGroup,
+      flexDirectionColumnJustifyConditionalGroup,
 
       alignSelfToFlexStartIcon,
       alignSelfToFlexEndIcon,
