@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import * as styles from "../components/styles/TopMenu";
 import * as Icons from "react-feather";
 import ReactPDF from "@react-pdf/renderer";
-import { TopMenuProps } from "../components/TopMenu";
+// import { TopMenuProps } from "../components/TopMenu";
+import { PartialObjects } from "../graphql-zeus";
 import { DefaultValues } from "../constants";
 import Tooltip from "rc-tooltip";
 import cx from "classnames";
@@ -320,33 +321,60 @@ const ExpandableInputMinimize2: ExtendableInputMenuItem = {
   ]
 };
 
-
-const ExpandableInputMinimize3: ExtendableInputMenuItem = {
+const ExpandableInputSquare: ExtendableInputMenuItem = {
   itemType: MenuItemType.ExtendableInput,
-  v: { icon: "Minimize2", tooltip: "Border width" },
+  v: { icon: "Square", tooltip: "Border width" },
   values: [
-  {
-    icon: "ArrowUp",
-    tooltip: "Border Top Width",
-    name: "borderTopWidth"
-  },
-  {
-    icon: "ArrowRight",
-    tooltip: "Border Right Width",
-    name: "borderRightWidth"
-  },
-  {
-    icon: "ArrowDown",
-    tooltip: "Border Down Width",
-    name: "borderBottomWidth"
-  },
-  {
-    icon: "ArrowLeft",
-    tooltip: "Border Left Width",
-    name: "borderLeftWidth"
-  }
+    {
+      icon: "ArrowUp",
+      tooltip: "Border Top Width",
+      name: "borderTopWidth"
+    },
+    {
+      icon: "ArrowRight",
+      tooltip: "Border Right Width",
+      name: "borderRightWidth"
+    },
+    {
+      icon: "ArrowDown",
+      tooltip: "Border Down Width",
+      name: "borderBottomWidth"
+    },
+    {
+      icon: "ArrowLeft",
+      tooltip: "Bottom Left Width",
+      name: "borderLeftWidth"
+    }
   ]
 };
+
+
+// const ExpandableInputMinimize3: ExtendableInputMenuItem = {
+//   itemType: MenuItemType.ExtendableInput,
+//   v: { icon: "Minimize2", tooltip: "Border width" },
+//   values: [
+//   {
+//     icon: "ArrowUp",
+//     tooltip: "Border Top Width",
+//     name: "borderTopWidth"
+//   },
+//   {
+//     icon: "ArrowRight",
+//     tooltip: "Border Right Width",
+//     name: "borderRightWidth"
+//   },
+//   {
+//     icon: "ArrowDown",
+//     tooltip: "Border Down Width",
+//     name: "borderBottomWidth"
+//   },
+//   {
+//     icon: "ArrowLeft",
+//     tooltip: "Border Left Width",
+//     name: "borderLeftWidth"
+//   }
+//   ]
+// };
 
 
 const TopIconFontSize: IconMenuItem = {
@@ -445,33 +473,6 @@ const TopIconAlginJustify: IconMenuItem = {
 
 
 
-const ExpandableInputSquare: ExtendableInputMenuItem = {
-  itemType: MenuItemType.ExtendableInput,
-  v: { icon: "Square", tooltip: "Border width" },
-  values: [
-    {
-      icon: "ArrowUp",
-      tooltip: "Border Top Width",
-      name: "borderTopWidth"
-    },
-    {
-      icon: "ArrowRight",
-      tooltip: "Border Right Width",
-      name: "borderRightWidth"
-    },
-    {
-      icon: "ArrowDown",
-      tooltip: "Border Down Width",
-      name: "borderBottomWidth"
-    },
-    {
-      icon: "ArrowLeft",
-      tooltip: "Bottom Left Width",
-      name: "borderLeftWidth"
-    }
-  ]
-};
-
 const defaultColorPicker: ColorPickerMenuItem = {
   itemType: MenuItemType.ColorPicker
 };
@@ -537,7 +538,7 @@ const common: MenuItem[] = [
   TopIconAlginRight,
   TopIconAlginJustify,
   ColorPicker,
-  ExpandableInputMinimize3, 
+  ExpandableInputSquare, 
   ColorPicker
   //border width
 ];
@@ -836,6 +837,13 @@ const ConditionalGroup: React.FunctionComponent<{
     </>
   );
 };
+
+
+export interface TopMenuProps {
+  editedFeature?: PartialObjects["Feature"];
+  onChange: () => void;
+}
+
 
 export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
   const editedFeatureStyle: ReactPDF.Style = editedFeature.styleJson
