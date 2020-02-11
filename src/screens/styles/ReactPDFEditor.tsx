@@ -2,36 +2,32 @@ import { style, fontFace } from "typestyle";
 import { Colors } from "../../components/styles/Colors";
 import { TOPHEIGHT } from "../../constants";
 
-fontFace(
-  {
-    fontFamily: "Fira Sans",
-    fontStyle: "normal",
-    fontWeight: 400,
-    // src: '/Users/krzysiek/Desktop/projekty/react-pdf-editor/src/livepdf/fonts/FiraSans-Regular.ttf',
-    src: "../../livepdf/fonts/FiraSans-Regular.ttf"
-  },
-
-  {
+fontFace({
+  fontFamily: "Fira Sans",
+  fontStyle: "normal",
+  fontWeight: 400,
+  src: `local('Fira Sans Regular'), local('FiraSans-Regular'), url(https://fonts.gstatic.com/s/firasans/v10/va9E4kDNxMZdWfMOD5Vvl4jLazX3dA.woff2) format('woff2');`
+}),
+  fontFace({
     fontFamily: "Fira Sans",
     fontStyle: "bold",
     fontWeight: 700,
-    src: "../../livepdf/fonts/FiraSans-Bold.ttf"
-  },
+    src: `local('Fira Sans Bold'), local('FiraSans-Bold'), url(https://fonts.gstatic.com/s/firasans/v10/va9B4kDNxMZdWfMOD5VnLK3eRhf6Xl7Glw.woff2) format('woff2');`
+  });
 
-  {
-    fontFamily: "Fira Sans",
-    fontStyle: "light",
-    fontWeight: 300,
-    src: "../../livepdf/fonts/FiraSans-Light.ttf"
-  },
+fontFace({
+  fontFamily: "Fira Sans",
+  fontStyle: "light",
+  fontWeight: 300,
+  src:  `local('Fira Sans Light'), local('FiraSans-Light'), url(https://fonts.gstatic.com/s/firasans/v10/va9B4kDNxMZdWfMOD5VnPKreRhf6Xl7Glw.woff2) format('woff2');`
+});
 
-  {
-    fontFamily: "Fira Sans",
-    fontStyle: "medium",
-    fontWeight: 500,
-    src: "../../livepdf/fonts/FiraSans-Medium.ttf"
-  }
-);
+fontFace({
+  fontFamily: "Fira Sans",
+  fontStyle: "medium",
+  fontWeight: 500,
+  src: `local('Fira Sans Medium'), local('FiraSans-Medium'), url(https://fonts.gstatic.com/s/firasans/v10/va9B4kDNxMZdWfMOD5VnZKveRhf6Xl7Glw.woff2) format('woff2');`
+});
 
 export const Actions = style({
   display: "flex"

@@ -104,7 +104,6 @@ const flexFlowColumnIcon: IconMenuItem = {
 
 //alginSelf
 
-
 const alignSelfToFlexStartIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   icon: "ArrowUp",
@@ -156,7 +155,6 @@ const alignSelfToFlexStretchIcon: IconMenuItem = {
 };
 
 //justifyContent
-
 
 const justifyContentFlexStartIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -215,8 +213,7 @@ const justifyContentSpaceAround: IconMenuItem = {
   })
 };
 
-// alignItems 
-
+// alignItems
 
 const alignItemsToStartIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -266,7 +263,6 @@ const alignItemsToStretchIcon: IconMenuItem = {
     alignItems: style.alignItems === "stretch" ? undefined : "stretch"
   })
 };
-
 
 const ExpandableInputMaximize2: ExtendableInputMenuItem = {
   itemType: MenuItemType.ExtendableInput,
@@ -349,7 +345,6 @@ const ExpandableInputSquare: ExtendableInputMenuItem = {
   ]
 };
 
-
 // const ExpandableInputMinimize3: ExtendableInputMenuItem = {
 //   itemType: MenuItemType.ExtendableInput,
 //   v: { icon: "Minimize2", tooltip: "Border width" },
@@ -376,7 +371,6 @@ const ExpandableInputSquare: ExtendableInputMenuItem = {
 //   }
 //   ]
 // };
-
 
 const TopIconFontSize: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -438,7 +432,6 @@ const TopIconAlginJustify: IconMenuItem = {
   active: (style: ReactPDF.Style): boolean => style.textAlign === "justify"
 };
 
-
 // ------- FLEX-WRAP --------
 
 // const TopIconFlexWrapNowrap: IconMenuItem = {
@@ -471,9 +464,6 @@ const TopIconAlginJustify: IconMenuItem = {
 //   active: (style: ReactPDF.Style): boolean => style.flexWrap === "wrap-reverse"
 // };
 
-
-
-
 const defaultColorPicker: ColorPickerMenuItem = {
   itemType: MenuItemType.ColorPicker
 };
@@ -494,7 +484,7 @@ const flexDirectionRowJustifyConditionalGroup: ConditionalGroupMenuItem = {
     alignSelfToFlexCenterIcon,
     alignSelfToFlexBaselineIcon,
     alignSelfToFlexStretchIcon,
-//alginIntems
+    //alginIntems
     alignItemsToStartIcon,
     alignItemsToEndIcon,
     alignItemsToCenterIcon,
@@ -519,7 +509,7 @@ const flexDirectionColumnJustifyConditionalGroup: ConditionalGroupMenuItem = {
     alignSelfToFlexCenterIcon,
     alignSelfToFlexBaselineIcon,
     alignSelfToFlexStretchIcon,
-//alginIntems
+    //alginIntems
     alignItemsToStartIcon,
     alignItemsToEndIcon,
     alignItemsToCenterIcon,
@@ -539,7 +529,7 @@ const common: MenuItem[] = [
   TopIconAlginRight,
   TopIconAlginJustify,
   ColorPicker,
-  ExpandableInputSquare, 
+  ExpandableInputSquare,
   ColorPicker
   //border width
 ];
@@ -839,7 +829,6 @@ const ConditionalGroup: React.FunctionComponent<{
   );
 };
 
-
 export interface TopMenuProps {
   editedFeature?: PartialObjects["Feature"];
   onChange: () => void;
@@ -868,6 +857,10 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
         applyStyle={applyStyle}
         style={editedFeatureStyle}
       />
+
+      {/* <svg focusable={"false"} viewBox={"0 0 24 24"}>
+        <path d="M20,5H4C2.9,5,2,5.9,2,7v2v1.5v3V15v2c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2v-2v-1.5v-3V9V7C22,5.9,21.1,5,20,5z M16,6.5h4  c0.3,0,0.5,0.2,0.5,0.5v2H16V6.5z M9.5,6.5h5V9h-5V6.5z M3.5,7c0-0.3,0.2-0.5,0.5-0.5h4V9H3.5V7z M8,17.5H4c-0.3,0-0.5-0.2-0.5-0.5  v-2H8V17.5z M14.5,17.5h-5V15h5V17.5z M20.5,17c0,0.3-0.2,0.5-0.5,0.5h-4V15h4.5V17z"></path>
+      </svg> */}
     </div>
   );
 };

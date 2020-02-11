@@ -4,10 +4,9 @@ import { Colors } from "../../styles/Colors";
 export const Main = style({
   $debugName: "TextBlockMain",
   border: 0,
-  paddingLeft: 5,
+  padding: 15,
   width: "100%",
   background: Colors.White,
-  padding: 0,
   fontFamily: "Fira Sans"
 });
 export const styleLabel = style({

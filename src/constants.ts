@@ -28,3 +28,4 @@ export const DefaultValues: ReactPDF.Style = {
 };
 
 export const TOPHEIGHT = 40;
+
