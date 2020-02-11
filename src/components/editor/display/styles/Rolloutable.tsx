@@ -13,12 +13,13 @@ export const Title = style({
 });
 export const Children = style({});
 
-export const Main = style({
+export const RolloutableMain = style({
   $debugName: "RolloutableMain",
   padding: `5px 10px 5px`,
   flex: 1,
   borderRadius: 10,
   transition: transition,
   marginBottom: 10,
-  border: `1px dashed ${Colors.Foggy}`
+  // border: `1px dashed ${Colors.Foggy}`
+  border: `2px dashed red`
 });

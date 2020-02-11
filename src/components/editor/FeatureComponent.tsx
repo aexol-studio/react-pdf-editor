@@ -14,10 +14,9 @@ import { StackComponent } from "./StackComponent";
 import { TableBlockComponent } from "./TableBlockComponent";
 import { ListBlockComponent } from "./ListBlockComponent";
 import * as styles from "./styles/Feature";
-import * as Icons from "react-feather";
-import cx from "classnames";
 import { EmptyFeatureComponent } from "./EmptyFeatureComponent";
 import { TimeStampComponent } from "./TimeStampComponent";
+import { DeleteAndEditIconsComponent } from "./display/Rolloutable";
 export interface BaseFeatureComponentProps {
   onChange: () => void;
 }
@@ -32,14 +31,15 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   onMoveUp?: () => void;
 }
 
-const FeatureComp = ({
-  onChange,
-  onEdit,
-  feature,
-  components
-}: FeatureComponentProps) => {
+const FeatureComp = (props: FeatureComponentProps) => {
+  const { feature, onChange, onEdit } = props;
   if (isTimeStamp(feature)) {
-    return <TimeStampComponent />;
+    return (
+      <div>
+        <TimeStampComponent />
+        <DeleteAndEditIconsComponent {...props} />
+      </div>
+    );
   }
   if (isTextBlock(feature)) {
     return <TextBlockComponent textBlock={feature} onChange={onChange} />;
@@ -49,7 +49,7 @@ const FeatureComp = ({
   }
   if (isStack(feature)) {
     return (
-      <StackComponent stack={feature} onChange={onChange} onEdit={onEdit} />
+      <StackComponent stack={feature} onChange={onChange} onEdit={onEdit} {...props} />
     );
   }
   if (isTableBlock(feature)) {
@@ -78,56 +78,22 @@ const FeatureComp = ({
     />
   );
 };
-export const FeatureComponent = ({
-  onChange,
-  feature,
-  onDelete,
-  isRoot,
-  components,
-  onEdit,
-  onMoveDown,
-  onMoveUp
-}: FeatureComponentProps) => {
+export const FeatureComponent = (props: FeatureComponentProps) => {
+  const {
+    onChange,
+    feature,
+    onDelete,
+    onEdit,
+  } = props
   return (
-    <div className={styles.Main}>
+    <div className={styles.FeatureMain}>
       <FeatureComp
         onChange={onChange}
         onEdit={onEdit}
         onDelete={onDelete}
         feature={feature}
+        {...props}
       />
-      <div className={styles.FeatureOptions}>
-        {onMoveDown && (
-          <div
-            className={cx(styles.MiniIcon, styles.Edit)}
-            onClick={() => onMoveDown()}
-          >
-            <Icons.ArrowDown size={15} />
-          </div>
-        )}
-        {onMoveUp && (
-          <div
-            className={cx(styles.MiniIcon, styles.Edit)}
-            onClick={() => onMoveUp()}
-          >
-            <Icons.ArrowUp size={10} />
-          </div>
-        )}
-        {!isRoot && (
-          <div
-            className={cx(styles.MiniIcon, styles.Delete)}
-            onClick={onDelete}
-          >
-            <Icons.Trash size={10} />
-          </div>
-        )}
-        <div
-          className={cx(styles.MiniIcon, styles.Edit)}
-          onClick={() => onEdit(feature)}
-        >
-          <Icons.Edit size={10} />
-        </div>
-      </div>
     </div>
   );
 };
