@@ -2,12 +2,36 @@ import { style, fontFace } from "typestyle";
 import { Colors } from "../../components/styles/Colors";
 import { TOPHEIGHT } from "../../constants";
 
-fontFace({
-  fontFamily: 'Fira Sans',
-  fontStyle: 'normal',
-  fontWeight: 400,
-  src: 'https://fonts.googleapis.com/css?family=Fira+Sans&display=swap',
-});
+fontFace(
+  {
+    fontFamily: "Fira Sans",
+    fontStyle: "normal",
+    fontWeight: 400,
+    // src: '/Users/krzysiek/Desktop/projekty/react-pdf-editor/src/livepdf/fonts/FiraSans-Regular.ttf',
+    src: "../../livepdf/fonts/FiraSans-Regular.ttf"
+  },
+
+  {
+    fontFamily: "Fira Sans",
+    fontStyle: "bold",
+    fontWeight: 700,
+    src: "../../livepdf/fonts/FiraSans-Bold.ttf"
+  },
+
+  {
+    fontFamily: "Fira Sans",
+    fontStyle: "light",
+    fontWeight: 300,
+    src: "../../livepdf/fonts/FiraSans-Light.ttf"
+  },
+
+  {
+    fontFamily: "Fira Sans",
+    fontStyle: "medium",
+    fontWeight: 500,
+    src: "../../livepdf/fonts/FiraSans-Medium.ttf"
+  }
+);
 
 export const Actions = style({
   display: "flex"
