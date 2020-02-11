@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
-import * as styles from "../components/styles/TopMenu";
 import * as Icons from "react-feather";
-import ReactPDF from "@react-pdf/renderer";
-// import { TopMenuProps } from "../components/TopMenu";
-import { PartialObjects } from "../graphql-zeus";
-import { DefaultValues } from "../constants";
+import * as styles from "../components/styles/TopMenu";
 import Tooltip from "rc-tooltip";
+import "rc-tooltip/assets/bootstrap_white.css";
+import "rc-color-picker/assets/index.css";
+import ReactPDF from "@react-pdf/renderer";
+import { PartialObjects } from "../graphql-zeus";
 import cx from "classnames";
+import { DefaultValues } from "../constants";
 const ColorPicker = require("rc-color-picker");
-
+// import { TopMenuProps } from "../components/TopMenu";
 //typ wszystkich ikon w menu ktore składają się z Top, Small colorpicker itp...
 
 enum MenuItemType {
@@ -843,8 +844,6 @@ export interface TopMenuProps {
   editedFeature?: PartialObjects["Feature"];
   onChange: () => void;
 }
-
-
 export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
   const editedFeatureStyle: ReactPDF.Style = editedFeature.styleJson
     ? JSON.parse(editedFeature.styleJson)
