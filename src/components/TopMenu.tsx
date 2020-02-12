@@ -36,7 +36,7 @@ interface IconMenuItem {
 
 interface SmallInputMenuItem {
   itemType: MenuItemType.SmallInput;
-  value: string;
+  name: keyof ReactPDF.Style;
   change: (e: string) => ReactPDF.Style;
 }
 
@@ -211,8 +211,6 @@ const justifyContentSpaceAround: IconMenuItem = {
   })
 };
 
-// alignItems
-
 const alignItemsToStartIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "align items to start",
@@ -343,14 +341,13 @@ const ExpandableInputSquare: ExtendableInputMenuItem = {
   ]
 };
 
-const TopIconFontSize: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "FontSize",
-  icon: "Type",
-  change: (style: ReactPDF.Style) => ({}),
-  active: (style: ReactPDF.Style): boolean => style.fontWeight === "bold"
-
-  //poprawić tutaj trzeba
+const TopIconFontSize: SmallInputMenuItem = {
+  // itemType: MenuItemType.TopIcon,
+  // tooltip: "Font size",
+  // icon: "Type",
+  name: "fontSize",
+  itemType: MenuItemType.SmallInput,
+  change: (e: string) => ({ fontSize: e })
 };
 
 const TopIconBold: IconMenuItem = {
@@ -523,10 +520,15 @@ const configurations: {
       fitToParentIcon,
       ExpandableInputMaximize2,
       ExpandableInputMinimize2,
+      defaultColorPicker,
+      TopIconBold,
+      TopIconFontSize,
       TopIconAlginLeft,
       TopIconAlginCenter,
       TopIconAlginRight,
       TopIconAlginJustify,
+      defaultColorPicker,
+      ExpandableInputSquare
     ]
   },
   // // chce aby od tego startował widok menu
@@ -565,38 +567,16 @@ const configurations: {
       alignSelfToFlexStretchIcon,
       alignSelfToFlexBaselineIcon,
       ExpandableInputMaximize2,
-      //expandGrup
-      // marginTop
-      // - number
-      // marginRight
-      // - number
-      // marginBottom
-      // -number
-      // marginLeft
-      // -number
-      // margin
-
       ExpandableInputMinimize2,
       ColorPicker,
       TopIconBold,
       TopIconFontSize, //do poprawy
-
       TopIconAlginLeft,
       TopIconAlginCenter,
       TopIconAlginRight,
       TopIconAlginJustify,
       defaultColorPicker,
-      // ColorPicker,
       ExpandableInputSquare
-
-      // alignItemsToStartIcon,
-      // alignItemsToCenterIcon,
-      // alignItemsToEndIcon,
-      // defaultColorPicker,
-      // ColorPicker,
-      //expadnBorder,
-      //borderWidth,
-      //colorPicker
     ]
   },
   ListBlock: {
@@ -763,8 +743,9 @@ const ConditionalGroup: React.FunctionComponent<{
         }
         if (item.itemType === MenuItemType.SmallInput) {
           return (
+           // <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
             <SmallInput
-              value={item.value}
+              value={valueOrDefault(item.name)}
               onChange={e => applyStyle(item.change(e))}
             />
           );
@@ -824,7 +805,8 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
     onChange();
   };
   const typename = editedFeature.__typename;
-  const featureConfig = typename && configurations[typename] || configurations.Start;
+  const featureConfig =
+    (typename && configurations[typename]) || configurations.Start;
   return (
     <div className={styles.Main}>
       <ConditionalGroup
