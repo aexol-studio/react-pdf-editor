@@ -71,6 +71,12 @@ type MenuItem =
   | ColorPickerMenuItem
   | ConditionalGroupMenuItem;
 
+
+
+/// od tąd
+
+
+
 const fitToParentIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   icon: "Move",
@@ -454,6 +460,11 @@ const flexDirectionColumnJustifyConditionalGroup: ConditionalGroupMenuItem = {
     alignItemsToStretchIcon
   ]
 };
+
+
+// do tutaj
+
+
 
 const common: MenuItem[] = [
   fitToParentIcon,
