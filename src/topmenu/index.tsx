@@ -401,38 +401,6 @@ const TopIconAlginJustify: IconMenuItem = {
   active: (style: ReactPDF.Style): boolean => style.textAlign === "justify"
 };
 
-// ------- FLEX-WRAP --------
-
-// const TopIconFlexWrapNowrap: IconMenuItem = {
-//   itemType: MenuItemType.TopIcon,
-//   tooltip: "Flex-Wrap nowrap",
-//   icon: "Circle",
-//   change: (style: ReactPDF.Style) => ({
-//     flexWrap: style.flexWrap === "nowrap" ? undefined : "nowrap"
-//   }),
-//   active: (style: ReactPDF.Style): boolean => style.flexWrap === "nowrap"
-// };
-
-// const TopIconFlexWrapWrap: IconMenuItem = {
-//   itemType: MenuItemType.TopIcon,
-//   tooltip: "Flex-Wrap wrap",
-//   icon: "Circle",
-//   change: (style: ReactPDF.Style) => ({
-//     flexWrap: style.flexWrap === "wrap" ? undefined : "wrap"
-//   }),
-//   active: (style: ReactPDF.Style): boolean => style.flexWrap === "wrap"
-// };
-
-// const TopIconFlexWrapWrapReverse: IconMenuItem = {
-//   itemType: MenuItemType.TopIcon,
-//   tooltip: "Flex-Wrap wrap-reverse",
-//   icon: "Circle",
-//   change: (style: ReactPDF.Style) => ({
-//     flexWrap: style.flexWrap === "wrap-reverse" ? undefined : "wrap-reverse"
-//   }),
-//   active: (style: ReactPDF.Style): boolean => style.flexWrap === "wrap-reverse"
-// };
-
 const defaultColorPicker: ColorPickerMenuItem = {
   itemType: MenuItemType.ColorPicker
 };
@@ -523,6 +491,7 @@ const configurations: {
       ExpandableInputMinimize2,
       defaultColorPicker,
       TopIconBold,
+      //tutaj dać top menu TypeFontSize
       TopIconFontSize,
       TopIconAlginLeft,
       TopIconAlginCenter,
@@ -591,104 +560,6 @@ const configurations: {
     children: [fitToParentIcon]
   }
 };
-
-// jest
-
-// const TopIcon = ({
-//   icon,
-//   tooltip,
-//   onClick,
-//   active
-// }: {
-//   tooltip: string;
-//   icon: keyof typeof Icons;
-//   active?: boolean;
-//   onClick: () => void;
-// }) => {
-//   const Ico = Icons[icon];
-//   return (
-//     <Tooltip placement="top" trigger={"hover"} overlay={tooltip}>
-//       <div className={cx(styles.Button, { active })} onClick={onClick}>
-//         <Ico size={16} />
-//       </div>
-//     </Tooltip>
-//   );
-// };
-
-//jest
-
-// const ExpandableInput = ({
-//   v,
-//   values,
-//   applyStyle
-// }: {
-//   v: {
-//     tooltip: string;
-//     icon: keyof typeof Icons;
-//   };
-//   values: Array<{
-//     name: keyof ReactPDF.Style;
-//     tooltip: string;
-//     icon: keyof typeof Icons;
-//     v: string;
-//   }>;
-//   applyStyle: (css: ReactPDF.Style) => void;
-// }) => {
-//   const allSame = [...new Set(values.map(v => v.v))];
-//   const canBeShrinked = allSame.length === 1;
-//   const [expanded, setExpanded] = useState(false);
-//   if (!expanded && canBeShrinked) {
-//     return (
-//       <>
-//         <TopIcon
-//           tooltip="Expand"
-//           icon="ChevronRight"
-//           onClick={() => {
-//             setExpanded(true);
-//           }}
-//         />
-//         <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
-//         <SmallInput
-//           value={allSame[0]}
-//           onChange={e => {
-//             applyStyle(
-//               values.reduce<ReactPDF.Style>((a, b) => {
-//                 a[b.name] = e;
-//                 return a;
-//               }, {})
-//             );
-//           }}
-//         />
-//       </>
-//     );
-//   }
-//   return (
-//     <>
-//       {canBeShrinked && (
-//         <TopIcon
-//           tooltip="Collapse"
-//           icon="ChevronLeft"
-//           onClick={() => {
-//             setExpanded(false);
-//           }}
-//         />
-//       )}
-//       {values.map(v => (
-//         <>
-//           <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
-//           <SmallInput
-//             value={v.v}
-//             onChange={e => {
-//               applyStyle({
-//                 [v.name]: e
-//               });
-//             }}
-//           />
-//         </>
-//       ))}
-//     </>
-//   );
-// };
 
 const ConditionalGroup: React.FunctionComponent<{
   // tutaj coś trzeba chyba
