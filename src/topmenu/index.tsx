@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import * as Icons from "react-feather";
 import * as styles from "../components/styles/TopMenu";
 import Tooltip from "rc-tooltip";
@@ -8,6 +8,7 @@ import ReactPDF from "@react-pdf/renderer";
 import { PartialObjects } from "../graphql-zeus";
 import cx from "classnames";
 import { DefaultValues } from "../constants";
+import { SmallInput } from "./components";
 const ColorPicker = require("rc-color-picker");
 
 enum MenuItemType {
@@ -612,34 +613,6 @@ const TopIcon = ({
   );
 };
 
-const SmallInput = ({
-  value,
-  onChange
-}: {
-  value: string;
-  onChange: (e: string) => void;
-}) => {
-  const [v, setV] = useState("0");
-  useEffect(() => {
-    setV(value);
-  }, [value]);
-  return (
-    <div className={styles.Placement}>
-      <input
-        className={styles.Input}
-        type="number"
-        value={v}
-        onChange={e => {
-          setV(e.target.value);
-        }}
-        onBlur={() => {
-          onChange(v);
-        }}
-      />
-    </div>
-  );
-};
-
 const ExpandableInput = ({
   v,
   values,
@@ -743,7 +716,7 @@ const ConditionalGroup: React.FunctionComponent<{
         }
         if (item.itemType === MenuItemType.SmallInput) {
           return (
-           // <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
+            // <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
             <SmallInput
               value={valueOrDefault(item.name)}
               onChange={e => applyStyle(item.change(e))}

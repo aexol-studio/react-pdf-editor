@@ -1,5 +1,5 @@
 import { style, fontFace } from "typestyle";
-import { Colors } from "../../components/styles/Colors";
+import { Colors } from "../../Colors";
 import { TOPHEIGHT } from "../../constants";
 
 fontFace({
@@ -19,7 +19,7 @@ fontFace({
   fontFamily: "Fira Sans",
   fontStyle: "light",
   fontWeight: 300,
-  src:  `local('Fira Sans Light'), local('FiraSans-Light'), url(https://fonts.gstatic.com/s/firasans/v10/va9B4kDNxMZdWfMOD5VnPKreRhf6Xl7Glw.woff2) format('woff2');`
+  src: `local('Fira Sans Light'), local('FiraSans-Light'), url(https://fonts.gstatic.com/s/firasans/v10/va9B4kDNxMZdWfMOD5VnPKreRhf6Xl7Glw.woff2) format('woff2');`
 });
 
 fontFace({

@@ -1,10 +1,10 @@
 import { style } from "typestyle";
-import { Colors } from "../../styles/Colors";
+import { Colors } from "../../../Colors";
 
 export const FeatureMain = style({
   $debugName: "FeatureMain",
   marginBottom: 10,
-  display: "flex",
+  display: "flex"
   // border: '2px dashed green'
 });
 export const FeatureOptions = style({

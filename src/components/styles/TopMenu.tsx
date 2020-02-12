@@ -1,5 +1,5 @@
 import { style, classes } from "typestyle";
-import { Colors } from "./Colors";
+import { Colors } from "../../Colors";
 import { TOPHEIGHT } from "../../constants";
 export const Main = style({
   $debugName: "TopMenuMain",

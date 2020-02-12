@@ -1,5 +1,5 @@
 import { style } from "typestyle";
-import { Colors } from "../../../styles/Colors";
+import { Colors } from "../../../../Colors";
 import { transition } from "../../../../constants";
 export const Title = style({
   $debugName: "RolloutableTitle",

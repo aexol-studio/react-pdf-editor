@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Colors } from "../styles/Colors";
+import { Colors } from "../../Colors";
 
 interface IIconFill {
   fill: keyof typeof Colors;
@@ -80,7 +80,6 @@ export const Logo = () => (
     />
   </svg>
 );
-
 
 export const addColumn = () => (
   <svg

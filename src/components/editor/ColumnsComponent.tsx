@@ -2,7 +2,7 @@ import React from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import * as styles from "./styles/Columns";
 import { ColumnComponent } from "./ColumnComponent";
-import { Colors } from "../styles/Colors";
+import { Colors } from "../../Colors";
 import { Resizable } from "re-resizable";
 import { translated } from "../../models";
 import * as Icons from "react-feather";
@@ -17,7 +17,7 @@ export interface ColumnsComponentProps {
   widths: string[];
 }
 
-const t = translated("ColumnsCoponentTxt")
+const t = translated("ColumnsCoponentTxt");
 
 export const ColumnsComponent = ({
   onChange,
@@ -34,8 +34,8 @@ export const ColumnsComponent = ({
         style={{
           display: "flex",
           alignItems: "center",
-            marginTop: 5,
-            marginBottom: 5
+          marginTop: 5,
+          marginBottom: 5
         }}
       >
         <Icons.Trash

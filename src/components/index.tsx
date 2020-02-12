@@ -4,4 +4,3 @@ export { Icons, Editor };
 export { Checkbox } from "./Checkbox";
 export { ButtonSimple } from "./ButtonSimple";
 export { IconButton } from "./IconButton";
-export { TopMenu } from "./TopMenu";

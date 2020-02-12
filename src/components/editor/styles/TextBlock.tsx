@@ -1,5 +1,5 @@
 import { style } from "typestyle";
-import { Colors } from "../../styles/Colors";
+import { Colors } from "../../../Colors";
 
 export const Main = style({
   $debugName: "TextBlockMain",

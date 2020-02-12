@@ -1,5 +1,5 @@
 import { style } from "typestyle";
-import { Colors } from "../../styles/Colors";
+import { Colors } from "../../../Colors";
 import { transition } from "../../../constants";
 
 export const Main = style({
@@ -27,7 +27,7 @@ export const Button = style({
   borderRadius: 2,
   cursor: "pointer",
   margin: `0 5px 5px 0`,
-  border: '1px solid black',
+  border: "1px solid black",
   // cursor: "pointer",
   transition,
   $nest: {
@@ -38,7 +38,7 @@ export const Button = style({
   }
 });
 export const MenuHeader = style({
-  $debugName:"ControlsMenuHandler",
+  $debugName: "ControlsMenuHandler",
   fontSize: 10,
   fontWeight: "bold",
   color: Colors.Ashes,
@@ -65,7 +65,7 @@ export const Overlay = style({
   justifyContent: "left",
   background: `${Colors.Black}aa`,
   zIndex: 3,
-  padding: '15%'
+  padding: "15%"
 });
 export const PlusMinus = style({
   $debugName: "ControlsPlusMinus",
@@ -78,4 +78,3 @@ export const PlusMinus = style({
     }
   }
 });
- 

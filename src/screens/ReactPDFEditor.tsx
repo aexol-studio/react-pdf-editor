@@ -1,12 +1,13 @@
 import * as React from "react";
 import { PartialObjects, Components } from "../graphql-zeus";
 import { DocumentComponent, FeatureComponent } from "../components/editor";
-import { TopMenu, IconButton } from "../components";
+import { IconButton } from "../components";
 import * as styles from "./styles/ReactPDFEditor";
 import { LivePDF } from "../livepdf";
 import { FrontendTypes } from "../frontend-types";
 import { translated } from "../models";
 import * as Icons from "react-feather";
+import { TopMenu } from "../topmenu";
 export interface PDFProps {}
 export interface PDFState {
   PDF: FrontendTypes["MachineTemplate"];
@@ -125,7 +126,7 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
     return (
       <>
         <TopMenu
-          editedFeature= {this.state.editedFeature}
+          editedFeature={this.state.editedFeature}
           onChange={() => this.mutateWholeObject()}
         />
         <div className={styles.EyePlacement}>
