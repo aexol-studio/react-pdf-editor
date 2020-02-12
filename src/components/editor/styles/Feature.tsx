@@ -5,7 +5,7 @@ export const FeatureMain = style({
   $debugName: "FeatureMain",
   marginBottom: 10,
   display: "flex",
-  border: '2px dashed green'
+  // border: '2px dashed green'
 });
 export const FeatureOptions = style({
   $debugName: "FeatureOptions",

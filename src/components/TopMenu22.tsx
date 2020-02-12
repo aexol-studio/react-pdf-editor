@@ -258,7 +258,7 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
           />
 
 
-{/* flex direction ROW */}
+          {/* flex direction ROW */}
 
 
           {editedFeatureStyle.flexDirection === "row" && (
@@ -450,10 +450,7 @@ gdzie tu jest ten Expand
       />
       <TopIcon tooltip="Font size" icon="Type" onClick={() => {}} />
 
-{/* tutaj bedzie dropdown list z fontsizemi
-
-*/}
-
+{/* tutaj bedzie dropdown list z fontsizemi*/}
       <SmallInput
         value={valueOrDefault("fontSize")}
         onChange={e => {

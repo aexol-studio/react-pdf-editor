@@ -3,7 +3,7 @@ import { Colors } from "./Colors";
 import { TOPHEIGHT } from "../../constants";
 export const Main = style({
   $debugName: "TopMenuMain",
-  fontFamily: 'Fira Sans',
+  fontFamily: "Fira Sans",
   background: Colors.White,
   display: "flex",
   boxShadow: `${Colors["Dark Side"]}44 2px 5px 14px`,
@@ -35,6 +35,6 @@ export const Input = style({
   width: 40
 });
 export const ColorPicker = style({
-  $debugName:"TopMenuColorPicker",
-  marginBottom: -5
+  $debugName: "TopMenuColorPicker",
+  marginTop: 10
 });

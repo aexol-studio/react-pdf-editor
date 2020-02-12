@@ -30,7 +30,12 @@ export const DeleteAndEditIconsComponent = ({
         className={cx(styles1.MiniIcon, styles1.Edit)}
         onClick={() => onMoveDown()}
       >
-        <Icons.ArrowDown size={15} />
+        <Icons.ArrowDown
+          style={{
+            marginLeft: 15
+          }}
+          size={15}
+        />
       </div>
     )}
     {onMoveUp && (
@@ -38,19 +43,33 @@ export const DeleteAndEditIconsComponent = ({
         className={cx(styles1.MiniIcon, styles1.Edit)}
         onClick={() => onMoveUp()}
       >
-        <Icons.ArrowUp size={10} />
+        <Icons.ArrowUp
+          style={{
+            marginLeft: 15
+          }}
+          size={10}
+        />
       </div>
     )}
     {!isRoot && (
       <div className={cx(styles1.MiniIcon, styles1.Delete)} onClick={onDelete}>
-        <Icons.Trash size={20} />
+        <Icons.Trash
+          style={{
+            marginLeft: 15
+          }}
+          size={15}
+        />
       </div>
     )}
-    <div
-      className={cx(styles1.MiniIcon, styles1.Edit)}
-      onClick={() => onEdit && feature && onEdit(feature)}
-    >
-      <Icons.Edit size={20} />
+    <div>
+      <Icons.Edit
+        style={{
+          marginLeft: 15
+        }}
+        className={cx(styles1.MiniIcon, styles1.Edit)}
+        onClick={() => onEdit && feature && onEdit(feature)}
+        size={15}
+      />
     </div>
   </div>
 );

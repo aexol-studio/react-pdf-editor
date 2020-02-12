@@ -9,8 +9,6 @@ import { PartialObjects } from "../graphql-zeus";
 import cx from "classnames";
 import { DefaultValues } from "../constants";
 const ColorPicker = require("rc-color-picker");
-// import { TopMenuProps } from "../components/TopMenu";
-//typ wszystkich ikon w menu ktore składają się z Top, Small colorpicker itp...
 
 enum MenuItemType {
   TopIcon = "TopIcon",
@@ -345,33 +343,6 @@ const ExpandableInputSquare: ExtendableInputMenuItem = {
   ]
 };
 
-// const ExpandableInputMinimize3: ExtendableInputMenuItem = {
-//   itemType: MenuItemType.ExtendableInput,
-//   v: { icon: "Minimize2", tooltip: "Border width" },
-//   values: [
-//   {
-//     icon: "ArrowUp",
-//     tooltip: "Border Top Width",
-//     name: "borderTopWidth"
-//   },
-//   {
-//     icon: "ArrowRight",
-//     tooltip: "Border Right Width",
-//     name: "borderRightWidth"
-//   },
-//   {
-//     icon: "ArrowDown",
-//     tooltip: "Border Down Width",
-//     name: "borderBottomWidth"
-//   },
-//   {
-//     icon: "ArrowLeft",
-//     tooltip: "Border Left Width",
-//     name: "borderLeftWidth"
-//   }
-//   ]
-// };
-
 const TopIconFontSize: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "FontSize",
@@ -536,6 +507,7 @@ const common: MenuItem[] = [
 
 const configurations: {
   [k in
+    | "Start"
     | "TextBlock"
     | "Image"
     | "TableBlock"
@@ -544,6 +516,20 @@ const configurations: {
     | "ListBlock"
     | "TimeStamp"]: ConditionalGroupMenuItem;
 } = {
+  Start: {
+    itemType: MenuItemType.ConditionalGroup,
+    active: (style: ReactPDF.Style) => true,
+    children: [
+      fitToParentIcon,
+      ExpandableInputMaximize2,
+      ExpandableInputMinimize2,
+      TopIconAlginLeft,
+      TopIconAlginCenter,
+      TopIconAlginRight,
+      TopIconAlginJustify,
+    ]
+  },
+  // // chce aby od tego startował widok menu
   TextBlock: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
@@ -573,13 +559,11 @@ const configurations: {
       flexFlowColumnIcon,
       flexDirectionRowJustifyConditionalGroup,
       flexDirectionColumnJustifyConditionalGroup,
-
       alignSelfToFlexStartIcon,
       alignSelfToFlexEndIcon,
       alignSelfToFlexCenterIcon,
       alignSelfToFlexStretchIcon,
       alignSelfToFlexBaselineIcon,
-
       ExpandableInputMaximize2,
       //expandGrup
       // marginTop
@@ -590,7 +574,6 @@ const configurations: {
       // -number
       // marginLeft
       // -number
-
       // margin
 
       ExpandableInputMinimize2,
@@ -603,20 +586,16 @@ const configurations: {
       TopIconAlginRight,
       TopIconAlginJustify,
       defaultColorPicker,
-      ColorPicker,
-
+      // ColorPicker,
       ExpandableInputSquare
 
       // alignItemsToStartIcon,
       // alignItemsToCenterIcon,
       // alignItemsToEndIcon,
-
       // defaultColorPicker,
-
       // ColorPicker,
-
-      //expadnBorder
-      //borderWidth
+      //expadnBorder,
+      //borderWidth,
       //colorPicker
     ]
   },
@@ -755,7 +734,8 @@ const ExpandableInput = ({
 };
 
 const ConditionalGroup: React.FunctionComponent<{
-  //
+  // tutaj coś trzeba chyba
+
   active: boolean;
   style: ReactPDF.Style;
   applyStyle: (style: ReactPDF.Style) => void;
@@ -822,7 +802,6 @@ const ConditionalGroup: React.FunctionComponent<{
             />
           );
         }
-
         return null;
       })}
     </>
@@ -845,10 +824,7 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
     onChange();
   };
   const typename = editedFeature.__typename;
-  const featureConfig = typename && configurations[typename];
-  if (!featureConfig) {
-    return null;
-  }
+  const featureConfig = typename && configurations[typename] || configurations.Start;
   return (
     <div className={styles.Main}>
       <ConditionalGroup
@@ -857,10 +833,6 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
         applyStyle={applyStyle}
         style={editedFeatureStyle}
       />
-
-      {/* <svg focusable={"false"} viewBox={"0 0 24 24"}>
-        <path d="M20,5H4C2.9,5,2,5.9,2,7v2v1.5v3V15v2c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2v-2v-1.5v-3V9V7C22,5.9,21.1,5,20,5z M16,6.5h4  c0.3,0,0.5,0.2,0.5,0.5v2H16V6.5z M9.5,6.5h5V9h-5V6.5z M3.5,7c0-0.3,0.2-0.5,0.5-0.5h4V9H3.5V7z M8,17.5H4c-0.3,0-0.5-0.2-0.5-0.5  v-2H8V17.5z M14.5,17.5h-5V15h5V17.5z M20.5,17c0,0.3-0.2,0.5-0.5,0.5h-4V15h4.5V17z"></path>
-      </svg> */}
     </div>
   );
 };

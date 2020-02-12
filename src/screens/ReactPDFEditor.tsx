@@ -125,7 +125,7 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
     return (
       <>
         <TopMenu
-          editedFeature={this.state.editedFeature}
+          editedFeature= {this.state.editedFeature}
           onChange={() => this.mutateWholeObject()}
         />
         <div className={styles.EyePlacement}>
