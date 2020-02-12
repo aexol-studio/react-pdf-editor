@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import * as Icons from "react-feather";
 import * as styles from "../components/styles/TopMenu";
-import Tooltip from "rc-tooltip";
+// import Tooltip from "rc-tooltip";
 import "rc-tooltip/assets/bootstrap_white.css";
 import "rc-color-picker/assets/index.css";
 import ReactPDF from "@react-pdf/renderer";
 import { PartialObjects } from "../graphql-zeus";
-import cx from "classnames";
+// import cx from "classnames";
 import { DefaultValues } from "../constants";
-import { SmallInput } from "./components";
+import { SmallInput, TopIcon, ExpandableInput } from "./components";
 const ColorPicker = require("rc-color-picker");
 
 enum MenuItemType {
@@ -592,99 +592,103 @@ const configurations: {
   }
 };
 
-const TopIcon = ({
-  icon,
-  tooltip,
-  onClick,
-  active
-}: {
-  tooltip: string;
-  icon: keyof typeof Icons;
-  active?: boolean;
-  onClick: () => void;
-}) => {
-  const Ico = Icons[icon];
-  return (
-    <Tooltip placement="top" trigger={"hover"} overlay={tooltip}>
-      <div className={cx(styles.Button, { active })} onClick={onClick}>
-        <Ico size={16} />
-      </div>
-    </Tooltip>
-  );
-};
+// jest
 
-const ExpandableInput = ({
-  v,
-  values,
-  applyStyle
-}: {
-  v: {
-    tooltip: string;
-    icon: keyof typeof Icons;
-  };
-  values: Array<{
-    name: keyof ReactPDF.Style;
-    tooltip: string;
-    icon: keyof typeof Icons;
-    v: string;
-  }>;
-  applyStyle: (css: ReactPDF.Style) => void;
-}) => {
-  const allSame = [...new Set(values.map(v => v.v))];
-  const canBeShrinked = allSame.length === 1;
-  const [expanded, setExpanded] = useState(false);
-  if (!expanded && canBeShrinked) {
-    return (
-      <>
-        <TopIcon
-          tooltip="Expand"
-          icon="ChevronRight"
-          onClick={() => {
-            setExpanded(true);
-          }}
-        />
-        <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
-        <SmallInput
-          value={allSame[0]}
-          onChange={e => {
-            applyStyle(
-              values.reduce<ReactPDF.Style>((a, b) => {
-                a[b.name] = e;
-                return a;
-              }, {})
-            );
-          }}
-        />
-      </>
-    );
-  }
-  return (
-    <>
-      {canBeShrinked && (
-        <TopIcon
-          tooltip="Collapse"
-          icon="ChevronLeft"
-          onClick={() => {
-            setExpanded(false);
-          }}
-        />
-      )}
-      {values.map(v => (
-        <>
-          <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
-          <SmallInput
-            value={v.v}
-            onChange={e => {
-              applyStyle({
-                [v.name]: e
-              });
-            }}
-          />
-        </>
-      ))}
-    </>
-  );
-};
+// const TopIcon = ({
+//   icon,
+//   tooltip,
+//   onClick,
+//   active
+// }: {
+//   tooltip: string;
+//   icon: keyof typeof Icons;
+//   active?: boolean;
+//   onClick: () => void;
+// }) => {
+//   const Ico = Icons[icon];
+//   return (
+//     <Tooltip placement="top" trigger={"hover"} overlay={tooltip}>
+//       <div className={cx(styles.Button, { active })} onClick={onClick}>
+//         <Ico size={16} />
+//       </div>
+//     </Tooltip>
+//   );
+// };
+
+//jest
+
+// const ExpandableInput = ({
+//   v,
+//   values,
+//   applyStyle
+// }: {
+//   v: {
+//     tooltip: string;
+//     icon: keyof typeof Icons;
+//   };
+//   values: Array<{
+//     name: keyof ReactPDF.Style;
+//     tooltip: string;
+//     icon: keyof typeof Icons;
+//     v: string;
+//   }>;
+//   applyStyle: (css: ReactPDF.Style) => void;
+// }) => {
+//   const allSame = [...new Set(values.map(v => v.v))];
+//   const canBeShrinked = allSame.length === 1;
+//   const [expanded, setExpanded] = useState(false);
+//   if (!expanded && canBeShrinked) {
+//     return (
+//       <>
+//         <TopIcon
+//           tooltip="Expand"
+//           icon="ChevronRight"
+//           onClick={() => {
+//             setExpanded(true);
+//           }}
+//         />
+//         <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
+//         <SmallInput
+//           value={allSame[0]}
+//           onChange={e => {
+//             applyStyle(
+//               values.reduce<ReactPDF.Style>((a, b) => {
+//                 a[b.name] = e;
+//                 return a;
+//               }, {})
+//             );
+//           }}
+//         />
+//       </>
+//     );
+//   }
+//   return (
+//     <>
+//       {canBeShrinked && (
+//         <TopIcon
+//           tooltip="Collapse"
+//           icon="ChevronLeft"
+//           onClick={() => {
+//             setExpanded(false);
+//           }}
+//         />
+//       )}
+//       {values.map(v => (
+//         <>
+//           <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
+//           <SmallInput
+//             value={v.v}
+//             onChange={e => {
+//               applyStyle({
+//                 [v.name]: e
+//               });
+//             }}
+//           />
+//         </>
+//       ))}
+//     </>
+//   );
+// };
 
 const ConditionalGroup: React.FunctionComponent<{
   // tutaj coś trzeba chyba
