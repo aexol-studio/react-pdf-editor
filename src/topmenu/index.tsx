@@ -35,13 +35,13 @@ export interface IconMenuItem {
 
 //typ topIcon
 
-interface SmallInputMenuItem {
+export interface SmallInputMenuItem {
   itemType: MenuItemType.SmallInput;
   name: keyof ReactPDF.Style;
   change: (e: string) => ReactPDF.Style;
 }
 
-interface ExtendableInputMenuItem {
+export interface ExtendableInputMenuItem {
   itemType: MenuItemType.ExtendableInput;
   v: {
     tooltip: string;
@@ -327,6 +327,9 @@ const ExpandableInputMaximize2: ExtendableInputMenuItem = {
   ]
 };
 
+
+// zrobione
+
 const ExpandableInputMinimize2: ExtendableInputMenuItem = {
   itemType: MenuItemType.ExtendableInput,
   v: { icon: "Minimize2", tooltip: "Padding" },
@@ -353,6 +356,9 @@ const ExpandableInputMinimize2: ExtendableInputMenuItem = {
     }
   ]
 };
+
+
+// zrobione
 
 const ExpandableInputSquare: ExtendableInputMenuItem = {
   itemType: MenuItemType.ExtendableInput,
@@ -382,13 +388,13 @@ const ExpandableInputSquare: ExtendableInputMenuItem = {
 };
 
 const TopIconFontSize: SmallInputMenuItem = {
-  // itemType: MenuItemType.TopIcon,
-  // tooltip: "Font size",
-  // icon: "Type",
   name: "fontSize",
   itemType: MenuItemType.SmallInput,
   change: (e: string) => ({ fontSize: e })
 };
+
+
+// zrobione
 
 const TopIconBold: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -400,6 +406,9 @@ const TopIconBold: IconMenuItem = {
   active: (style: ReactPDF.Style): boolean => style.fontWeight === "bold"
 };
 
+
+// zrobione
+
 const TopIconAlginLeft: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "Text align left",
@@ -409,6 +418,9 @@ const TopIconAlginLeft: IconMenuItem = {
   }),
   active: (style: ReactPDF.Style): boolean => style.textAlign === "left"
 };
+
+
+// zrobione
 
 const TopIconAlginCenter: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -420,6 +432,10 @@ const TopIconAlginCenter: IconMenuItem = {
   active: (style: ReactPDF.Style): boolean => style.textAlign === "center"
 };
 
+
+// zrobione
+
+
 const TopIconAlginRight: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "Text align right",
@@ -430,6 +446,9 @@ const TopIconAlginRight: IconMenuItem = {
   active: (style: ReactPDF.Style): boolean => style.textAlign === "right"
 };
 
+// zrobione
+
+
 const TopIconAlginJustify: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "Text align justify",
@@ -439,6 +458,8 @@ const TopIconAlginJustify: IconMenuItem = {
   }),
   active: (style: ReactPDF.Style): boolean => style.textAlign === "justify"
 };
+
+// zrobione
 
 const defaultColorPicker: ColorPickerMenuItem = {
   itemType: MenuItemType.ColorPicker
