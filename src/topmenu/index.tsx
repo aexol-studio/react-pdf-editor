@@ -11,7 +11,7 @@ import { DefaultValues } from "../constants";
 import { SmallInput, TopIcon, ExpandableInput } from "./components";
 const ColorPicker = require("rc-color-picker");
 
-enum MenuItemType {
+export enum MenuItemType {
   TopIcon = "TopIcon",
   SmallInput = "SmallInput",
   ExtendableInput = "ExtendableInput",
@@ -25,7 +25,7 @@ enum MenuItemType {
 // tooltip informajca o prosty string kory jest w propsach
 // active - fukcja ktora przypisuje styl elementu przez active
 
-interface IconMenuItem {
+export interface IconMenuItem {
   itemType: MenuItemType.TopIcon;
   icon: keyof typeof Icons;
   tooltip: string;
@@ -64,18 +64,14 @@ interface ConditionalGroupMenuItem {
   children: MenuItem[];
 }
 
-type MenuItem =
+export type MenuItem =
   | IconMenuItem
   | SmallInputMenuItem
   | ExtendableInputMenuItem
   | ColorPickerMenuItem
   | ConditionalGroupMenuItem;
 
-
-
 /// od tąd
-
-
 
 const fitToParentIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -87,6 +83,8 @@ const fitToParentIcon: IconMenuItem = {
   })
 };
 
+// zrobione
+
 const flexFlowRowIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "flex flow row",
@@ -96,6 +94,8 @@ const flexFlowRowIcon: IconMenuItem = {
     flexDirection: style.flexDirection === "row" ? undefined : "row"
   })
 };
+
+// zrobione
 
 const flexFlowColumnIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -107,7 +107,7 @@ const flexFlowColumnIcon: IconMenuItem = {
   })
 };
 
-//alginSelf
+//zrobione
 
 const alignSelfToFlexStartIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -119,6 +119,8 @@ const alignSelfToFlexStartIcon: IconMenuItem = {
   })
 };
 
+//zrobione
+
 const alignSelfToFlexEndIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   icon: "ArrowDown",
@@ -128,6 +130,8 @@ const alignSelfToFlexEndIcon: IconMenuItem = {
     alignSelf: style.alignSelf === "flex-end" ? undefined : "flex-end"
   })
 };
+
+//zrobione
 
 const alignSelfToFlexCenterIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -139,6 +143,8 @@ const alignSelfToFlexCenterIcon: IconMenuItem = {
   })
 };
 
+// zrobione
+
 const alignSelfToFlexBaselineIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   icon: "Circle",
@@ -149,6 +155,8 @@ const alignSelfToFlexBaselineIcon: IconMenuItem = {
   })
 };
 
+// zrobione
+
 const alignSelfToFlexStretchIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   icon: "Circle",
@@ -158,6 +166,8 @@ const alignSelfToFlexStretchIcon: IconMenuItem = {
     alignSelf: style.alignSelf === "stretch" ? undefined : "stretch"
   })
 };
+
+// zrobione
 
 //justifyContent
 
@@ -173,6 +183,8 @@ const justifyContentFlexStartIcon: IconMenuItem = {
   })
 };
 
+// zrobione
+
 const justifyContentFlexEndIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "justify content flex-end",
@@ -184,6 +196,8 @@ const justifyContentFlexEndIcon: IconMenuItem = {
   })
 };
 
+// zrobione
+
 const justifyContentCenterIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "justify content center",
@@ -193,6 +207,8 @@ const justifyContentCenterIcon: IconMenuItem = {
     justifyContent: style.justifyContent === "center" ? undefined : "center"
   })
 };
+
+// zrobione
 
 const justifyContentSpaceBetween: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -206,6 +222,8 @@ const justifyContentSpaceBetween: IconMenuItem = {
   })
 };
 
+// zrobione
+
 const justifyContentSpaceAround: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "justify content space-around",
@@ -218,6 +236,8 @@ const justifyContentSpaceAround: IconMenuItem = {
   })
 };
 
+// zrobione
+
 const alignItemsToStartIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "align items to start",
@@ -228,6 +248,8 @@ const alignItemsToStartIcon: IconMenuItem = {
   })
 };
 
+// zrobione
+
 const alignItemsToCenterIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "align items to center",
@@ -237,6 +259,9 @@ const alignItemsToCenterIcon: IconMenuItem = {
     alignItems: style.alignItems === "center" ? undefined : "center"
   })
 };
+
+// zrobione
+
 const alignItemsToEndIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "align items to end",
@@ -246,6 +271,8 @@ const alignItemsToEndIcon: IconMenuItem = {
     alignItems: style.alignItems === "flex-end" ? undefined : "flex-end"
   })
 };
+
+// zrobione
 
 const alignItemsToBaselineIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -257,6 +284,9 @@ const alignItemsToBaselineIcon: IconMenuItem = {
   })
 };
 
+
+// zrobione
+
 const alignItemsToStretchIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "align items stretch",
@@ -266,6 +296,9 @@ const alignItemsToStretchIcon: IconMenuItem = {
     alignItems: style.alignItems === "stretch" ? undefined : "stretch"
   })
 };
+
+
+// zrobione
 
 const ExpandableInputMaximize2: ExtendableInputMenuItem = {
   itemType: MenuItemType.ExtendableInput,
@@ -461,10 +494,7 @@ const flexDirectionColumnJustifyConditionalGroup: ConditionalGroupMenuItem = {
   ]
 };
 
-
 // do tutaj
-
-
 
 const common: MenuItem[] = [
   fitToParentIcon,
