@@ -9,6 +9,23 @@ import { PartialObjects } from "../graphql-zeus";
 // import cx from "classnames";
 import { DefaultValues } from "../constants";
 import { SmallInput, TopIcon, ExpandableInput } from "./components";
+import {
+  // fitToParentIcon,
+  // flexFlowRowIcon,
+  // flexFlowColumnIcon,
+  // alignSelfToFlexStartIcon,
+  // alignSelfToFlexEndIcon,
+  // alignSelfToFlexCenterIcon,
+  // alignSelfToFlexBaselineIcon,
+  // alignSelfToFlexStretchIcon,
+  // justifyContentFlexStartIcon,
+  // justifyContentFlexEndIcon,
+  // justifyContentCenterIcon,
+  // justifyContentSpaceBetween,
+  // justifyContentSpaceAround
+} from "../menuItems/index";
+
+
 const ColorPicker = require("rc-color-picker");
 
 export enum MenuItemType {
@@ -71,7 +88,7 @@ export type MenuItem =
   | ColorPickerMenuItem
   | ConditionalGroupMenuItem;
 
-/// od tąd
+// / od tąd
 
 const fitToParentIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -107,7 +124,7 @@ const flexFlowColumnIcon: IconMenuItem = {
   })
 };
 
-//zrobione
+// zrobione
 
 const alignSelfToFlexStartIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -119,7 +136,7 @@ const alignSelfToFlexStartIcon: IconMenuItem = {
   })
 };
 
-//zrobione
+// zrobione
 
 const alignSelfToFlexEndIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -131,7 +148,7 @@ const alignSelfToFlexEndIcon: IconMenuItem = {
   })
 };
 
-//zrobione
+// zrobione
 
 const alignSelfToFlexCenterIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -169,7 +186,7 @@ const alignSelfToFlexStretchIcon: IconMenuItem = {
 
 // zrobione
 
-//justifyContent
+// justifyContent
 
 const justifyContentFlexStartIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -284,7 +301,6 @@ const alignItemsToBaselineIcon: IconMenuItem = {
   })
 };
 
-
 // zrobione
 
 const alignItemsToStretchIcon: IconMenuItem = {
@@ -296,7 +312,6 @@ const alignItemsToStretchIcon: IconMenuItem = {
     alignItems: style.alignItems === "stretch" ? undefined : "stretch"
   })
 };
-
 
 // zrobione
 
@@ -327,7 +342,6 @@ const ExpandableInputMaximize2: ExtendableInputMenuItem = {
   ]
 };
 
-
 // zrobione
 
 const ExpandableInputMinimize2: ExtendableInputMenuItem = {
@@ -356,7 +370,6 @@ const ExpandableInputMinimize2: ExtendableInputMenuItem = {
     }
   ]
 };
-
 
 // zrobione
 
@@ -393,7 +406,6 @@ const TopIconFontSize: SmallInputMenuItem = {
   change: (e: string) => ({ fontSize: e })
 };
 
-
 // zrobione
 
 const TopIconBold: IconMenuItem = {
@@ -405,7 +417,6 @@ const TopIconBold: IconMenuItem = {
   }),
   active: (style: ReactPDF.Style): boolean => style.fontWeight === "bold"
 };
-
 
 // zrobione
 
@@ -419,7 +430,6 @@ const TopIconAlginLeft: IconMenuItem = {
   active: (style: ReactPDF.Style): boolean => style.textAlign === "left"
 };
 
-
 // zrobione
 
 const TopIconAlginCenter: IconMenuItem = {
@@ -432,9 +442,7 @@ const TopIconAlginCenter: IconMenuItem = {
   active: (style: ReactPDF.Style): boolean => style.textAlign === "center"
 };
 
-
 // zrobione
-
 
 const TopIconAlginRight: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -447,7 +455,6 @@ const TopIconAlginRight: IconMenuItem = {
 };
 
 // zrobione
-
 
 const TopIconAlginJustify: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
