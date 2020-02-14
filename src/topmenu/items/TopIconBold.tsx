@@ -1,4 +1,4 @@
-import {MenuItemType, IconMenuItem} from '../../topmenu/index'
+import { MenuItemType, IconMenuItem } from "../index";
 import ReactPDF from "@react-pdf/renderer";
 
 export const TopIconBold: IconMenuItem = {

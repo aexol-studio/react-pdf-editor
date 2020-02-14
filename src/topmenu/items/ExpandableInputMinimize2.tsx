@@ -1,4 +1,4 @@
-import {MenuItemType, ExtendableInputMenuItem} from '../../topmenu/index'
+import { MenuItemType, ExtendableInputMenuItem } from "../index";
 
 export const ExpandableInputMinimize2: ExtendableInputMenuItem = {
   itemType: MenuItemType.ExtendableInput,

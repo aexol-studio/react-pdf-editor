@@ -10,21 +10,34 @@ import { PartialObjects } from "../graphql-zeus";
 import { DefaultValues } from "../constants";
 import { SmallInput, TopIcon, ExpandableInput } from "./components";
 import {
-  // fitToParentIcon,
-  // flexFlowRowIcon,
-  // flexFlowColumnIcon,
-  // alignSelfToFlexStartIcon,
-  // alignSelfToFlexEndIcon,
-  // alignSelfToFlexCenterIcon,
-  // alignSelfToFlexBaselineIcon,
-  // alignSelfToFlexStretchIcon,
-  // justifyContentFlexStartIcon,
-  // justifyContentFlexEndIcon,
-  // justifyContentCenterIcon,
-  // justifyContentSpaceBetween,
-  // justifyContentSpaceAround
-} from "../menuItems/index";
-
+  ExpandableInputMaximize2,
+  ExpandableInputMinimize2,
+  ExpandableInputSquare,
+  TopIconAlignCenter,
+  TopIconAlignLeft,
+  TopIconAlignRight,
+  TopIconBold,
+  TopIconFontSize,
+  alignItemsToBaselineIcon,
+  alignItemsToCenterIcon,
+  alignItemsToEndIcon,
+  alignItemsToStartIcon,
+  alignItemsToStretchIcon,
+  alignSelfToFlexBaselineIcon,
+  alignSelfToFlexCenterIcon,
+  alignSelfToFlexEndIcon,
+  alignSelfToFlexStartIcon,
+  alignSelfToFlexStretchIcon,
+  fitToParentIcon,
+  flexFlowColumnIcon,
+  flexFlowRowIcon,
+  justifyContentCenterIcon,
+  justifyContentFlexEndIcon,
+  justifyContentFlexStartIcon,
+  justifyContentSpaceAround,
+  justifyContentSpaceBetween,
+  TopIconAlignJustify
+} from "./items";
 
 const ColorPicker = require("rc-color-picker");
 
@@ -88,386 +101,6 @@ export type MenuItem =
   | ColorPickerMenuItem
   | ConditionalGroupMenuItem;
 
-// / od tąd
-
-const fitToParentIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  icon: "Move",
-  tooltip: "Fit to parent",
-  active: (style: ReactPDF.Style): boolean => style.width === "100%",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    width: style.width === "100%" ? undefined : "100%"
-  })
-};
-
-// zrobione
-
-const flexFlowRowIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "flex flow row",
-  icon: "MoreHorizontal",
-  active: (style: ReactPDF.Style): boolean => style.flexDirection === "row",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    flexDirection: style.flexDirection === "row" ? undefined : "row"
-  })
-};
-
-// zrobione
-
-const flexFlowColumnIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "flex flow column",
-  icon: "MoreVertical",
-  active: (style: ReactPDF.Style): boolean => style.flexDirection === "column",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    flexDirection: style.flexDirection === "column" ? undefined : "column"
-  })
-};
-
-// zrobione
-
-const alignSelfToFlexStartIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  icon: "ArrowUp",
-  tooltip: "align self to flex-start",
-  active: (style: ReactPDF.Style): boolean => style.alignSelf === "flex-start",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    alignSelf: style.alignSelf === "flex-start" ? undefined : "flex-start"
-  })
-};
-
-// zrobione
-
-const alignSelfToFlexEndIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  icon: "ArrowDown",
-  tooltip: "align self to flex-end",
-  active: (style: ReactPDF.Style): boolean => style.alignSelf === "flex-end",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    alignSelf: style.alignSelf === "flex-end" ? undefined : "flex-end"
-  })
-};
-
-// zrobione
-
-const alignSelfToFlexCenterIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  icon: "Circle",
-  tooltip: "align self to center",
-  active: (style: ReactPDF.Style): boolean => style.alignSelf === "center",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    alignSelf: style.alignSelf === "center" ? undefined : "center"
-  })
-};
-
-// zrobione
-
-const alignSelfToFlexBaselineIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  icon: "Circle",
-  tooltip: "align self to baseline",
-  active: (style: ReactPDF.Style): boolean => style.alignSelf === "baseline",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    alignSelf: style.alignSelf === "baseline" ? undefined : "baseline"
-  })
-};
-
-// zrobione
-
-const alignSelfToFlexStretchIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  icon: "Circle",
-  tooltip: "align self to stretch",
-  active: (style: ReactPDF.Style): boolean => style.alignSelf === "stretch",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    alignSelf: style.alignSelf === "stretch" ? undefined : "stretch"
-  })
-};
-
-// zrobione
-
-// justifyContent
-
-const justifyContentFlexStartIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "justify content flex-start",
-  icon: "ArrowLeftCircle",
-  active: (style: ReactPDF.Style): boolean =>
-    style.justifyContent === "flex-start",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    justifyContent:
-      style.justifyContent === "flex-start" ? undefined : "flex-start"
-  })
-};
-
-// zrobione
-
-const justifyContentFlexEndIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "justify content flex-end",
-  icon: "ArrowRightCircle",
-  active: (style: ReactPDF.Style): boolean =>
-    style.justifyContent === "flex-end",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    justifyContent: style.justifyContent === "flex-end" ? undefined : "flex-end"
-  })
-};
-
-// zrobione
-
-const justifyContentCenterIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "justify content center",
-  icon: "Circle",
-  active: (style: ReactPDF.Style): boolean => style.justifyContent === "center",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    justifyContent: style.justifyContent === "center" ? undefined : "center"
-  })
-};
-
-// zrobione
-
-const justifyContentSpaceBetween: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "justify content space-between",
-  icon: "ArrowRightCircle",
-  active: (style: ReactPDF.Style): boolean =>
-    style.justifyContent === "space-between",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    justifyContent:
-      style.justifyContent === "space-between" ? undefined : "space-between"
-  })
-};
-
-// zrobione
-
-const justifyContentSpaceAround: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "justify content space-around",
-  icon: "ArrowRightCircle",
-  active: (style: ReactPDF.Style): boolean =>
-    style.justifyContent === "space-around",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    justifyContent:
-      style.justifyContent === "space-around" ? undefined : "space-around"
-  })
-};
-
-// zrobione
-
-const alignItemsToStartIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "align items to start",
-  icon: "ArrowUpCircle",
-  active: (style: ReactPDF.Style): boolean => style.alignItems === "flex-start",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    alignItems: style.alignItems === "flex-start" ? undefined : "flex-start"
-  })
-};
-
-// zrobione
-
-const alignItemsToCenterIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "align items to center",
-  icon: "Circle",
-  active: (style: ReactPDF.Style): boolean => style.alignItems === "center",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    alignItems: style.alignItems === "center" ? undefined : "center"
-  })
-};
-
-// zrobione
-
-const alignItemsToEndIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "align items to end",
-  icon: "ArrowDownCircle",
-  active: (style: ReactPDF.Style): boolean => style.alignItems === "flex-end",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    alignItems: style.alignItems === "flex-end" ? undefined : "flex-end"
-  })
-};
-
-// zrobione
-
-const alignItemsToBaselineIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "align items baseline",
-  icon: "ArrowDownCircle",
-  active: (style: ReactPDF.Style): boolean => style.alignItems === "baseline",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    alignItems: style.alignItems === "baseline" ? undefined : "baseline"
-  })
-};
-
-// zrobione
-
-const alignItemsToStretchIcon: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "align items stretch",
-  icon: "ArrowDownCircle",
-  active: (style: ReactPDF.Style): boolean => style.alignItems === "stretch",
-  change: (style: ReactPDF.Style): ReactPDF.Style => ({
-    alignItems: style.alignItems === "stretch" ? undefined : "stretch"
-  })
-};
-
-// zrobione
-
-const ExpandableInputMaximize2: ExtendableInputMenuItem = {
-  itemType: MenuItemType.ExtendableInput,
-  v: { icon: "Maximize2", tooltip: "Margin" },
-  values: [
-    {
-      icon: "ArrowUp",
-      tooltip: "Margin top",
-      name: "marginTop"
-    },
-    {
-      icon: "ArrowRight",
-      tooltip: "Margin right",
-      name: "marginRight"
-    },
-    {
-      icon: "ArrowDown",
-      tooltip: "Margin bottom",
-      name: "marginBottom"
-    },
-    {
-      icon: "ArrowLeft",
-      tooltip: "Margin Left",
-      name: "marginLeft"
-    }
-  ]
-};
-
-// zrobione
-
-const ExpandableInputMinimize2: ExtendableInputMenuItem = {
-  itemType: MenuItemType.ExtendableInput,
-  v: { icon: "Minimize2", tooltip: "Padding" },
-  values: [
-    {
-      icon: "ArrowUp",
-      tooltip: "Padding up",
-      name: "paddingTop"
-    },
-    {
-      icon: "ArrowRight",
-      tooltip: "Padding right",
-      name: "paddingRight"
-    },
-    {
-      icon: "ArrowDown",
-      tooltip: "Padding bottom",
-      name: "paddingBottom"
-    },
-    {
-      icon: "ArrowLeft",
-      tooltip: "Padding Left",
-      name: "paddingBottom"
-    }
-  ]
-};
-
-// zrobione
-
-const ExpandableInputSquare: ExtendableInputMenuItem = {
-  itemType: MenuItemType.ExtendableInput,
-  v: { icon: "Square", tooltip: "Border width" },
-  values: [
-    {
-      icon: "ArrowUp",
-      tooltip: "Border Top Width",
-      name: "borderTopWidth"
-    },
-    {
-      icon: "ArrowRight",
-      tooltip: "Border Right Width",
-      name: "borderRightWidth"
-    },
-    {
-      icon: "ArrowDown",
-      tooltip: "Border Down Width",
-      name: "borderBottomWidth"
-    },
-    {
-      icon: "ArrowLeft",
-      tooltip: "Bottom Left Width",
-      name: "borderLeftWidth"
-    }
-  ]
-};
-
-const TopIconFontSize: SmallInputMenuItem = {
-  name: "fontSize",
-  itemType: MenuItemType.SmallInput,
-  change: (e: string) => ({ fontSize: e })
-};
-
-// zrobione
-
-const TopIconBold: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "Bold",
-  icon: "Bold",
-  change: (style: ReactPDF.Style) => ({
-    fontWeight: style.fontWeight === "bold" ? undefined : "bold"
-  }),
-  active: (style: ReactPDF.Style): boolean => style.fontWeight === "bold"
-};
-
-// zrobione
-
-const TopIconAlginLeft: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "Text align left",
-  icon: "AlignLeft",
-  change: (style: ReactPDF.Style) => ({
-    textAlign: style.textAlign === "left" ? undefined : "left"
-  }),
-  active: (style: ReactPDF.Style): boolean => style.textAlign === "left"
-};
-
-// zrobione
-
-const TopIconAlginCenter: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "Text align center",
-  icon: "AlignCenter",
-  change: (style: ReactPDF.Style) => ({
-    textAlign: style.textAlign === "center" ? undefined : "center"
-  }),
-  active: (style: ReactPDF.Style): boolean => style.textAlign === "center"
-};
-
-// zrobione
-
-const TopIconAlginRight: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "Text align right",
-  icon: "AlignRight",
-  change: (style: ReactPDF.Style) => ({
-    textAlign: style.textAlign === "right" ? undefined : "right"
-  }),
-  active: (style: ReactPDF.Style): boolean => style.textAlign === "right"
-};
-
-// zrobione
-
-const TopIconAlginJustify: IconMenuItem = {
-  itemType: MenuItemType.TopIcon,
-  tooltip: "Text align justify",
-  icon: "AlignJustify",
-  change: (style: ReactPDF.Style) => ({
-    textAlign: style.textAlign === "justify" ? undefined : "justify"
-  }),
-  active: (style: ReactPDF.Style): boolean => style.textAlign === "justify"
-};
-
-// zrobione
-
 const defaultColorPicker: ColorPickerMenuItem = {
   itemType: MenuItemType.ColorPicker
 };
@@ -530,10 +163,10 @@ const common: MenuItem[] = [
   ExpandableInputMinimize2,
   ColorPicker,
   TopIconBold,
-  TopIconAlginLeft,
-  TopIconAlginCenter,
-  TopIconAlginRight,
-  TopIconAlginJustify,
+  TopIconAlignLeft,
+  TopIconAlignCenter,
+  TopIconAlignRight,
+  TopIconAlignJustify,
   ColorPicker,
   ExpandableInputSquare,
   ColorPicker
@@ -562,10 +195,10 @@ const configurations: {
       TopIconBold,
       //tutaj dać top menu TypeFontSize
       TopIconFontSize,
-      TopIconAlginLeft,
-      TopIconAlginCenter,
-      TopIconAlginRight,
-      TopIconAlginJustify,
+      TopIconAlignLeft,
+      TopIconAlignCenter,
+      TopIconAlignRight,
+      TopIconAlignJustify,
       defaultColorPicker,
       ExpandableInputSquare
     ]
@@ -610,10 +243,10 @@ const configurations: {
       ColorPicker,
       TopIconBold,
       TopIconFontSize, //do poprawy
-      TopIconAlginLeft,
-      TopIconAlginCenter,
-      TopIconAlginRight,
-      TopIconAlginJustify,
+      TopIconAlignLeft,
+      TopIconAlignCenter,
+      TopIconAlignRight,
+      TopIconAlignJustify,
       defaultColorPicker,
       ExpandableInputSquare
     ]

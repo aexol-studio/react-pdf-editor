@@ -1,5 +1,5 @@
 import ReactPDF from "@react-pdf/renderer";
-import {MenuItemType, IconMenuItem} from '../../topmenu/index'
+import { MenuItemType, IconMenuItem } from "../index";
 
 export const flexFlowRowIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
@@ -9,4 +9,4 @@ export const flexFlowRowIcon: IconMenuItem = {
   change: (style: ReactPDF.Style): ReactPDF.Style => ({
     flexDirection: style.flexDirection === "row" ? undefined : "row"
   })
-}
+};

@@ -1,5 +1,5 @@
 import ReactPDF from "@react-pdf/renderer";
-import {MenuItemType, IconMenuItem} from '../../topmenu/index'
+import { MenuItemType, IconMenuItem } from "../index";
 
 export const justifyContentFlexEndIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,

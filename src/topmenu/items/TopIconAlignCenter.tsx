@@ -1,7 +1,7 @@
-import {MenuItemType, IconMenuItem} from '../../topmenu/index'
+import { MenuItemType, IconMenuItem } from "../index";
 import ReactPDF from "@react-pdf/renderer";
 
-export const TopIconAlginCenter: IconMenuItem = {
+export const TopIconAlignCenter: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "Text align center",
   icon: "AlignCenter",
