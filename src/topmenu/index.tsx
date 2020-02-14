@@ -1,11 +1,9 @@
 import React from "react";
 import * as styles from "../components/styles/TopMenu";
-// import Tooltip from "rc-tooltip";
 import "rc-tooltip/assets/bootstrap_white.css";
 import "rc-color-picker/assets/index.css";
 import ReactPDF from "@react-pdf/renderer";
 import { PartialObjects } from "../graphql-zeus";
-// import cx from "classnames";
 import { DefaultValues } from "../constants";
 import { SmallInput, TopIcon, ExpandableInput } from "./components";
 import {
@@ -16,7 +14,7 @@ import {
   TopIconAlignLeft,
   TopIconAlignRight,
   TopIconBold,
-  TopIconFontSize,
+  InputFontSize,
   alignItemsToBaselineIcon,
   alignItemsToCenterIcon,
   alignItemsToEndIcon,
@@ -35,7 +33,8 @@ import {
   justifyContentFlexStartIcon,
   justifyContentSpaceAround,
   justifyContentSpaceBetween,
-  TopIconAlignJustify
+  TopIconAlignJustify,
+  TopIconFontSize
 } from "./items";
 import {
   MenuItem,
@@ -55,18 +54,21 @@ const flexDirectionRowJustifyConditionalGroup: ConditionalGroupMenuItem = {
   active: (style: ReactPDF.Style): boolean => style.flexDirection === "row",
   children: [
     //justtifyContent
+
     justifyContentFlexStartIcon,
     justifyContentFlexEndIcon,
     justifyContentCenterIcon,
     justifyContentSpaceBetween,
     justifyContentSpaceAround,
     //alginSelf
+
     alignSelfToFlexStartIcon,
     alignSelfToFlexEndIcon,
     alignSelfToFlexCenterIcon,
     alignSelfToFlexBaselineIcon,
     alignSelfToFlexStretchIcon,
     //alginIntems
+
     alignItemsToStartIcon,
     alignItemsToEndIcon,
     alignItemsToCenterIcon,
@@ -80,18 +82,21 @@ const flexDirectionColumnJustifyConditionalGroup: ConditionalGroupMenuItem = {
   active: (style: ReactPDF.Style): boolean => style.flexDirection === "column",
   children: [
     //justtifyContent
+
     justifyContentFlexStartIcon,
     justifyContentFlexEndIcon,
     justifyContentCenterIcon,
     justifyContentSpaceBetween,
     justifyContentSpaceAround,
     //alginSelf
+
     alignSelfToFlexStartIcon,
     alignSelfToFlexEndIcon,
     alignSelfToFlexCenterIcon,
     alignSelfToFlexBaselineIcon,
     alignSelfToFlexStretchIcon,
     //alginIntems
+
     alignItemsToStartIcon,
     alignItemsToEndIcon,
     alignItemsToCenterIcon,
@@ -99,8 +104,6 @@ const flexDirectionColumnJustifyConditionalGroup: ConditionalGroupMenuItem = {
     alignItemsToStretchIcon
   ]
 };
-
-// do tutaj
 
 const common: MenuItem[] = [
   fitToParentIcon,
@@ -138,8 +141,8 @@ const configurations: {
       ExpandableInputMinimize2,
       defaultColorPicker,
       TopIconBold,
-      //tutaj dać top menu TypeFontSize
       TopIconFontSize,
+      InputFontSize,
       TopIconAlignLeft,
       TopIconAlignCenter,
       TopIconAlignRight,
@@ -148,7 +151,7 @@ const configurations: {
       ExpandableInputSquare
     ]
   },
-  // // chce aby od tego startował widok menu
+
   TextBlock: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
@@ -187,7 +190,7 @@ const configurations: {
       ExpandableInputMinimize2,
       ColorPicker,
       TopIconBold,
-      TopIconFontSize, //do poprawy
+      InputFontSize,
       TopIconAlignLeft,
       TopIconAlignCenter,
       TopIconAlignRight,
@@ -209,7 +212,6 @@ const configurations: {
 };
 
 const ConditionalGroup: React.FunctionComponent<{
-  // tutaj coś trzeba chyba
 
   active: boolean;
   style: ReactPDF.Style;
@@ -238,7 +240,7 @@ const ConditionalGroup: React.FunctionComponent<{
         }
         if (item.itemType === MenuItemType.SmallInput) {
           return (
-            // <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
+                  // <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
             <SmallInput
               value={valueOrDefault(item.name)}
               onChange={e => applyStyle(item.change(e))}

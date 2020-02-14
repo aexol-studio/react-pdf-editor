@@ -1,7 +1,12 @@
-import { MenuItemType, SmallInputMenuItem } from "../models";
+import { MenuItemType, IconMenuItem } from "../models";
+import ReactPDF from "@react-pdf/renderer";
 
-export const TopIconFontSize: SmallInputMenuItem = {
-  name: "fontSize",
-  itemType: MenuItemType.SmallInput,
-  change: (e: string) => ({ fontSize: e })
+export const TopIconFontSize: IconMenuItem = {
+  itemType: MenuItemType.TopIcon,
+  tooltip: "Font Size",
+  icon: "Type",
+  change: (style: ReactPDF.Style) => ({
+    fontWeight: style.fontWeight === "bold" ? undefined : "bold"
+  }),
+  active: (style: ReactPDF.Style): boolean => style.fontWeight === "bold"
 };

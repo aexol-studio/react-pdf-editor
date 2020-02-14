@@ -1,3 +1,4 @@
+
 export * from "./fitToParentIcon";
 // alginItems
 export * from "./alignItemsToBaselineIcon";
@@ -32,4 +33,6 @@ export * from "./TopIconAlignJustify";
 export * from "./TopIconAlignLeft";
 export * from "./TopIconAlignRight";
 export * from "./TopIconBold";
-export * from "./TopIconFontSize";
+export * from "./InputFontSize";
+export * from  "./TopIconFontSize"
+

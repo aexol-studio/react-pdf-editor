@@ -64,7 +64,7 @@ export const DeleteAndEditIconsComponent = ({
     <div>
       <Icons.Edit
         style={{
-          marginLeft: 15
+          marginLeft: 10
         }}
         className={cx(styles1.MiniIcon, styles1.Edit)}
         onClick={() => onEdit && feature && onEdit(feature)}
@@ -78,6 +78,8 @@ export interface RolloutableComponentProps
   extends DeleteAndEditIconsComponentProps {
   children: React.ReactNode;
   title: string;
+  feature?: PartialObjects["Feature"];
+  onEdit?: (feature: PartialObjects["Feature"]) => void;
 }
 interface RolloutableState {
   rolledOut: boolean;
@@ -93,19 +95,31 @@ export class Rolloutable extends React.Component<
   render() {
     return (
       <div className={styles.RolloutableMain}>
-        <div
-          onClick={() => {
-            this.setState({ rolledOut: !this.state.rolledOut });
-          }}
-          className={styles.Title}
-        >
+        <div className={styles.Title}>
           {this.state.rolledOut ? (
-            <icons.MinusSquare size={10} />
+            <icons.MinusSquare
+              size={10}
+              onClick={() => {
+                this.setState({ rolledOut: !this.state.rolledOut });
+              }}
+            />
           ) : (
-            <icons.PlusSquare size={10} />
+            <icons.PlusSquare
+              size={10}
+              onClick={() => {
+                console.log("BENG");
+                this.setState({ rolledOut: !this.state.rolledOut });
+              }}
+            />
           )}
           <span style={{ marginRight: 5 }} />
-          {this.props.title}
+          <p
+            onClick={() => {
+              this.setState({ rolledOut: !this.state.rolledOut });
+            }}
+          >
+            {this.props.title}
+          </p>
           {!this.props.withoutDeleteIcons && (
             <DeleteAndEditIconsComponent {...this.props} />
           )}
