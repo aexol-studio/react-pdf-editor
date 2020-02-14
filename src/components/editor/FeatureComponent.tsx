@@ -8,6 +8,7 @@ import {
   isTableBlock,
   isTimeStamp
 } from "../../utils";
+// import * as Icons from "react-feather";
 import { TextBlockComponent } from "./TextBlockComponent";
 import { ImageComponent } from "./ImageComponent";
 import { StackComponent } from "./StackComponent";
@@ -16,6 +17,7 @@ import { ListBlockComponent } from "./ListBlockComponent";
 import * as styles from "./styles/Feature";
 import { EmptyFeatureComponent } from "./EmptyFeatureComponent";
 import { TimeStampComponent } from "./TimeStampComponent";
+// import cx from "classnames";
 import { DeleteAndEditIconsComponent } from "./display/Rolloutable";
 export interface BaseFeatureComponentProps {
   onChange: () => void;
@@ -83,7 +85,11 @@ export const FeatureComponent = (props: FeatureComponentProps) => {
     onChange,
     feature,
     onDelete,
+    // isRoot,
+    // components,
     onEdit,
+    // onMoveDown,
+    // onMoveUp
   } = props
   return (
     <div className={styles.FeatureMain}>
@@ -92,8 +98,19 @@ export const FeatureComponent = (props: FeatureComponentProps) => {
         onEdit={onEdit}
         onDelete={onDelete}
         feature={feature}
+        // {...!isRoot && (
+        //   <div
+        //     className={cx(styles.MiniIcon, styles.Delete)}
+        //     onClick={onDelete}
+        //   >
+        //     <Icons.Trash size={10} />
+        //   </div>
+        // )}
         {...props}
       />
     </div>
   );
 };
+
+
+
