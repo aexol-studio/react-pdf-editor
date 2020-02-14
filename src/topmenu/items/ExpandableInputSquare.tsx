@@ -1,4 +1,4 @@
-import { MenuItemType, ExtendableInputMenuItem } from "../index";
+import { MenuItemType, ExtendableInputMenuItem } from "../models";
 
 export const ExpandableInputSquare: ExtendableInputMenuItem = {
   itemType: MenuItemType.ExtendableInput,

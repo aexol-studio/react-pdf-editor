@@ -1,4 +1,4 @@
-import { MenuItemType, SmallInputMenuItem } from "../index";
+import { MenuItemType, SmallInputMenuItem } from "../models";
 
 export const TopIconFontSize: SmallInputMenuItem = {
   name: "fontSize",

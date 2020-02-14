@@ -1,4 +1,4 @@
-import { MenuItemType, IconMenuItem } from "../index";
+import { MenuItemType, IconMenuItem } from "../models";
 import ReactPDF from "@react-pdf/renderer";
 
 export const TopIconAlignJustify: IconMenuItem = {

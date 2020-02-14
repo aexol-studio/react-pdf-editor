@@ -1,5 +1,5 @@
 import ReactPDF from "@react-pdf/renderer";
-import { MenuItemType, IconMenuItem } from "../index";
+import { MenuItemType, IconMenuItem } from "../models";
 
 export const alignSelfToFlexEndIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
