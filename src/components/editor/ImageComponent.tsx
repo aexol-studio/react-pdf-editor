@@ -4,8 +4,7 @@ import * as styles from "./styles/Image";
 import { translated } from "../../models";
 import { MAX_IMAGE_WIDTH } from "../../constants";
 
-const t= translated("ImageComponentTxt")
-
+const t = translated("ImageComponentTxt");
 
 function getBase64(file: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -27,11 +26,11 @@ export const ImageComponent = ({ onChange, image }: ImageComponentProps) => {
   const [imageRef, setImageRef] = useState<HTMLImageElement>();
   const [ratio, setRatio] = useState<number>(1.0);
   return (
-    <div className={styles.Wrap}>
+    <div className={styles.ImageWrap}>
       {image.url && (
         <img
           alt=""
-          className={styles.Main}
+          className={styles.ImageMain}
           src={image.url}
           ref={ref => {
             if (ref) {
@@ -43,7 +42,7 @@ export const ImageComponent = ({ onChange, image }: ImageComponentProps) => {
       {image.base64 && (
         <img
           alt=""
-          className={styles.Main}
+          className={styles.ImageMain}
           src={image.base64}
           onLoad={() => {
             if (!image.width || !image.height) {
@@ -77,7 +76,7 @@ export const ImageComponent = ({ onChange, image }: ImageComponentProps) => {
         <>
           <input
             type="number"
-            placeholder={t('PlaceholderWidth')}
+            placeholder={t("PlaceholderWidth")}
             value={image.width}
             max={MAX_IMAGE_WIDTH}
             min={2}
@@ -90,7 +89,7 @@ export const ImageComponent = ({ onChange, image }: ImageComponentProps) => {
           />
           <input
             type="number"
-            placeholder={t('PlaceholderHeight')}
+            placeholder={t("PlaceholderHeight")}
             value={image.height}
             step={0.001}
             onChange={e => {

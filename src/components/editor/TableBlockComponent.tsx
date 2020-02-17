@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import { ColumnsComponent } from "./ColumnsComponent";
-import { Rolloutable } from "./display/Rolloutable";
+import { Rolloutable, DeleteAndEditIconsComponentProps } from "./display/Rolloutable";
 // import { ControlsButton } from "./Controls";
 import * as Icons from "react-feather";
 import cx from "classnames";
@@ -10,10 +10,11 @@ import { translated } from "../../models";
 import * as styles from "./styles/TableBlock";
 // import { addColumn } from "components/icons";
 
-export interface TableBlockComponentProps {
+export interface TableBlockComponentProps extends DeleteAndEditIconsComponentProps {
   tableBlock: PartialObjects["TableBlock"];
   onChange: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
+  components?: PartialObjects['TemplateComponent'][]
 }
 
 const emptyColumn = (): PartialObjects["Column"] => ({
@@ -63,6 +64,7 @@ export const TableBlockComponent = ({
     .map(w => w.S);
   return (
     <Rolloutable
+    withoutDeleteIcons={false}
       title={`${t("TableTitle")}${
         tableBlock.style ? `-${tableBlock.style}` : ``
       }`}
@@ -233,10 +235,6 @@ export const TableBlockComponent = ({
                 onChange();
               }}
             />
-
-
-
-            
             {t("ControleButtonAddColumn")}
           </div>
         )}

@@ -1,11 +1,11 @@
 import { style } from "typestyle";
 
-export const Wrap = style({
+export const ImageWrap = style({
   $debugName: "ImageWrap",
   display: "flex",
   flexFlow: "column nowrap"
 });
-export const Main = style({
+export const ImageMain = style({
   $debugName:"ImageMain",
   width: 30,
   height: "auto",

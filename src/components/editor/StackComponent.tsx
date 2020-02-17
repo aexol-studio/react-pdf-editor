@@ -2,7 +2,10 @@ import * as React from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import { FeatureComponent } from "./FeatureComponent";
 import { Controls } from "./Controls";
-import { Rolloutable, DeleteAndEditIconsComponentProps } from "./display/Rolloutable";
+import {
+  Rolloutable,
+  DeleteAndEditIconsComponentProps
+} from "./display/Rolloutable";
 import { swapInArray } from "../../utils";
 import { translated } from "../../models";
 export interface StackComponentProps extends DeleteAndEditIconsComponentProps {
@@ -12,14 +15,10 @@ export interface StackComponentProps extends DeleteAndEditIconsComponentProps {
   components?: PartialObjects["TemplateComponent"][];
 }
 
-const t = translated('StackComponentTxt')
+const t = translated("StackComponentTxt");
 
 export const StackComponent = (props: StackComponentProps) => {
-  const {
-  onChange,
-  onEdit,
-  stack,
-} = props
+  const { onChange, onEdit, stack } = props;
   return (
     <Rolloutable title={t("TitleStack")} {...props}>
       {stack.items &&

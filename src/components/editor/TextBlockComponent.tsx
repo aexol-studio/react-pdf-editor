@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import * as styles from "./styles/TextBlock";
+// import { Controls } from "./Controls";
 export interface TextBlockComponentProps {
   textBlock: PartialObjects["TextBlock"];
   onChange: () => void;
@@ -13,8 +14,7 @@ const AutoResizeTextArea = (
   >
 ) => {
   const tRef = useRef<HTMLTextAreaElement>(null);
-// przez useRef jest dostęp do DOMa przeglądarki
-
+  // przez useRef jest dostęp do DOMa przeglądarki
 
   useEffect(() => {
     if (tRef.current) {
