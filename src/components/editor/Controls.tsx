@@ -49,8 +49,15 @@ export const Controls = ({
           setOpen(!open);
         }}
       >
+
+
+
         {open ? <MinusCircle size={18} /> : <PlusCircle size={18} />}
       </div>
+
+
+
+      
       {open && (
         <>
           <div className={styles.Overlay} onClick={() => setOpen(false)}>

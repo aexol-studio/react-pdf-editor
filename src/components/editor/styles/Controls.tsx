@@ -55,15 +55,16 @@ export const Menu = style({
 });
 export const Overlay = style({
   $debugName: "ControlsOverlay",
-  position: "fixed",
+  // position: "fixed",
   top: 0,
   left: 0,
   width: "100%",
   height: "100%",
   display: "flex",
-  alignItems: "center",
+  alignItems: "start",
   justifyContent: "left",
-  background: `${Colors.Black}aa`,
+  // background: `${Colors.Black}aa`,
+  background: '#f9f9f9',
   zIndex: 3,
   padding: "15%"
 });
