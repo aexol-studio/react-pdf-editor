@@ -47,7 +47,7 @@ export const DeleteAndEditIconsComponent = ({
           style={{
             marginLeft: 15
           }}
-          size={10}
+          size={15}
         />
       </div>
     )}

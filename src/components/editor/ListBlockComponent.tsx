@@ -8,31 +8,26 @@ import {
 } from "./display/Rolloutable";
 import { swapInArray } from "../../utils";
 import { translated } from "../../models";
-export interface ListBlockComponentProps
-  extends DeleteAndEditIconsComponentProps {
+export interface ListBlockComponentProps extends DeleteAndEditIconsComponentProps {
   listBlock: PartialObjects["ListBlock"];
   onChange: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
-  components?: PartialObjects["TemplateComponent"][];
-  // withoutDeleteIcons: boolean
+  components?: PartialObjects["ListBlock"][];
 }
 
 const t = translated("ListBlockComponentTxt");
 
 export const ListBlockComponent = (props: ListBlockComponentProps) => {
-  const { onChange, onEdit, listBlock
-  } = props;
+  const { onChange, onEdit, listBlock } = props;
   return (
-    <Rolloutable title={t("TitleList")}
-    withoutDeleteIcons={false}
-    {...props}>
+    <Rolloutable title={t("TitleList")} {...props}>
       {listBlock.items &&
         listBlock.items.map((i, index) => {
           return (
             <FeatureComponent
               feature={i}
-              onChange={onChange}
               onEdit={onEdit}
+              onChange={onChange}
               key={`${index}-${i.__typename}`}
               onDelete={() => {
                 listBlock.items!.splice(index, 1);
@@ -59,7 +54,7 @@ export const ListBlockComponent = (props: ListBlockComponentProps) => {
         })}
       {listBlock.items && (
         <Controls
-          parent={listBlock}
+          // parent={listBlock}
           features={listBlock.items}
           mutateWholeObject={onChange}
           clean={() => {

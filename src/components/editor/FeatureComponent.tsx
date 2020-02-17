@@ -34,7 +34,7 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
 }
 
 const FeatureComp = (props: FeatureComponentProps) => {
-  const { feature, onChange, onEdit } = props;
+  const { feature, onChange, onEdit, onDelete, onMoveDown, onMoveUp } = props;
   if (isTimeStamp(feature)) {
     return (
       <div>
@@ -51,7 +51,15 @@ const FeatureComp = (props: FeatureComponentProps) => {
   }
   if (isStack(feature)) {
     return (
-      <StackComponent stack={feature} onChange={onChange} onEdit={onEdit} {...props} />
+      <StackComponent
+        stack={feature}
+        onChange={onChange}
+        onEdit={onEdit}
+        onDelete={onDelete}
+        onMoveDown={onMoveDown}
+        onMoveUp={onMoveUp}
+        {...props}
+      />
     );
   }
   if (isTableBlock(feature)) {
@@ -88,9 +96,9 @@ export const FeatureComponent = (props: FeatureComponentProps) => {
     // isRoot,
     // components,
     onEdit,
-    // onMoveDown,
-    // onMoveUp
-  } = props
+    onMoveDown,
+    onMoveUp
+  } = props;
   return (
     <div className={styles.FeatureMain}>
       <FeatureComp
@@ -98,6 +106,8 @@ export const FeatureComponent = (props: FeatureComponentProps) => {
         onEdit={onEdit}
         onDelete={onDelete}
         feature={feature}
+        onMoveDown={onMoveDown}
+        onMoveUp={onMoveUp}
         // {...!isRoot && (
         //   <div
         //     className={cx(styles.MiniIcon, styles.Delete)}
@@ -111,6 +121,3 @@ export const FeatureComponent = (props: FeatureComponentProps) => {
     </div>
   );
 };
-
-
-
