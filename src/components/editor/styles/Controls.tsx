@@ -7,7 +7,7 @@ export const Main = style({
   display: "flex",
   justifyContent: "flex-start",
   borderRadius: 2,
-  alignItems: "baseline",
+  alignItems: "start",
   position: "relative"
 });
 export const Category = style({
@@ -66,7 +66,8 @@ export const Overlay = style({
   // background: `${Colors.Black}aa`,
   background: '#f9f9f9',
   zIndex: 3,
-  padding: "15%"
+  paddingLeft: '10%'
+  // padding: "15%"
 });
 export const PlusMinus = style({
   $debugName: "ControlsPlusMinus",
