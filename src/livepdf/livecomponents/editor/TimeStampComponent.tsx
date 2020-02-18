@@ -16,7 +16,7 @@ export const TimeStampComponent = ({
     <Text
       style={{
         ...baseStyle,
-        ...style
+        ...style,
       }}
     >
       {version}

@@ -37,7 +37,12 @@ const FeatureComp = (props: FeatureComponentProps) => {
   const { feature, onChange, onEdit, onDelete, onMoveDown, onMoveUp } = props;
   if (isTimeStamp(feature)) {
     return (
-      <div>
+      <div
+      style={{
+        display: 'flex'
+      }}
+
+      >
         <TimeStampComponent />
         <DeleteAndEditIconsComponent {...props} />
       </div>

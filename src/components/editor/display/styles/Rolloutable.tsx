@@ -11,7 +11,10 @@ export const Title = style({
   display: "flex",
   alignItems: "center"
 });
-export const Children = style({});
+export const RolloutableChildren = style({
+  $debugName: "RolloutableChildren",
+
+});
 
 export const RolloutableMain = style({
   $debugName: "RolloutableMain",

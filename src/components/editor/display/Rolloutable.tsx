@@ -27,6 +27,9 @@ export const DeleteAndEditIconsComponent = ({
   <div className={styles1.FeatureOptions}>
     {onMoveDown && (
       <div
+      style={{
+       backgroundColor: 'blue'
+      }}
         className={cx(styles1.MiniIcon, styles1.Edit)}
         onClick={() => onMoveDown()}
       >
@@ -125,7 +128,7 @@ export class Rolloutable extends React.Component<
           )}
         </div>
         <div
-          className={styles.Children}
+          className={styles.RolloutableChildren}
           style={{ display: this.state.rolledOut ? "block" : "none" }}
         >
           {this.props.children}

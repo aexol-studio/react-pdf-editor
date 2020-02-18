@@ -3,6 +3,7 @@ import { Colors } from "../../../Colors";
 
 export const Main = style({
   $debugName: "TextBlockMain",
+  display: 'flex',
   border: 0,
   padding: 15,
   width: "100%",
