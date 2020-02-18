@@ -7,7 +7,9 @@ export interface StackComponentProps {
   version: string;
 }
 
-export const StackComponent = ({ stack, version }: StackComponentProps) => {
+export const StackComponent = ({
+  stack, version
+ }: StackComponentProps) => {
   if (!stack.items || stack.items.length === 0) {
     return <></>;
   }

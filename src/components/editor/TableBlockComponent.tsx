@@ -55,11 +55,12 @@ const calculateWidthsFromPowers = (
   }));
 };
 
-export const TableBlockComponent = ({
-  onChange,
-  onEdit,
-  tableBlock
-}: TableBlockComponentProps) => {
+export const TableBlockComponent = (props: TableBlockComponentProps) => {
+  const {
+    onChange,
+    onEdit,
+    tableBlock
+  } = props
   const widths = tableBlock
     .widths!.map(tw => ({
       ...tw,
@@ -72,6 +73,7 @@ export const TableBlockComponent = ({
       title={`${t("TableTitle")}${
         tableBlock.style ? `-${tableBlock.style}` : ``
       }`}
+      {...props}
     >
       <div>
         <div>

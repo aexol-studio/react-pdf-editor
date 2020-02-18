@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import * as styles from "./styles/TextBlock";
+import {DeleteAndEditIconsComponent} from '../../components/editor/display/Rolloutable'
 // import { Controls } from "./Controls";
 export interface TextBlockComponentProps {
   textBlock: PartialObjects["TextBlock"];
@@ -34,6 +35,8 @@ export const TextBlockComponent = ({
   textBlock
 }: TextBlockComponentProps) => {
   return (
+    <>
+    <DeleteAndEditIconsComponent />
     <AutoResizeTextArea
       rows={1}
       className={styles.Main}
@@ -44,5 +47,6 @@ export const TextBlockComponent = ({
         onChange();
       }}
     />
+    </>
   );
 };

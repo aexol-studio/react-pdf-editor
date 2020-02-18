@@ -52,7 +52,7 @@ export const Controls = ({
 
 
 
-        {open ? <MinusCircle size={18} /> : <PlusCircle size={18} />}
+        {open ? <MinusCircle size={15} /> : <PlusCircle size={15} />}
       </div>
 
 

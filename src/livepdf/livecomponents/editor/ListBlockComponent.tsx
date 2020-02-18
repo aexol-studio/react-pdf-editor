@@ -11,6 +11,10 @@ export const ListBlockComponent = ({
   listBlock,
   version
 }: ListBlockComponentProps) => {
+  if (!listBlock.items || listBlock.items.length === 0) {
+    return <></>;
+  }
+
   const style = listBlock.styleJson ? JSON.parse(listBlock.styleJson) : {};
   return (
     <View style={style}>

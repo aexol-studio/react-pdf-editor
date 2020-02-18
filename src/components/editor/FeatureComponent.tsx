@@ -33,16 +33,20 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   onMoveUp?: () => void;
 }
 
+
+
+/// tutaj jest komponen wyświetlany itp itp itp
+
+
 const FeatureComp = (props: FeatureComponentProps) => {
   const { feature, onChange, onEdit, onDelete, onMoveDown, onMoveUp } = props;
   if (isTimeStamp(feature)) {
     return (
       <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        // width: '20%'
-      }}
+        style={{
+          display: "flex",
+          justifyContent: "space-between"
+        }}
       >
         <TimeStampComponent />
         <DeleteAndEditIconsComponent {...props} />
@@ -50,7 +54,16 @@ const FeatureComp = (props: FeatureComponentProps) => {
     );
   }
   if (isTextBlock(feature)) {
-    return <TextBlockComponent textBlock={feature} onChange={onChange} />;
+    return <TextBlockComponent 
+    textBlock={feature} 
+    onChange={onChange}
+    onEdit={onEdit}
+    onDelete={onDelete}
+    {...props}
+
+    // ni dzia ła  
+
+    />;
   }
   if (isImage(feature)) {
     return <ImageComponent image={feature} onChange={onChange} />;
@@ -73,7 +86,9 @@ const FeatureComp = (props: FeatureComponentProps) => {
       <TableBlockComponent
         tableBlock={feature}
         onChange={onChange}
+        onDelete={onDelete}
         onEdit={onEdit}
+        {...props}
       />
     );
   }
@@ -81,8 +96,10 @@ const FeatureComp = (props: FeatureComponentProps) => {
     return (
       <ListBlockComponent
         listBlock={feature}
+        onDelete={onDelete}
         onChange={onChange}
         onEdit={onEdit}
+        // {...props}
       />
     );
   }
