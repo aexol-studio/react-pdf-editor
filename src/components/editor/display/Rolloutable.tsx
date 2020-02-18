@@ -27,9 +27,6 @@ export const DeleteAndEditIconsComponent = ({
   <div className={styles1.FeatureOptions}>
     {onMoveDown && (
       <div
-      style={{
-       backgroundColor: 'blue'
-      }}
         className={cx(styles1.MiniIcon, styles1.Edit)}
         onClick={() => onMoveDown()}
       >
