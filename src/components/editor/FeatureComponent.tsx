@@ -39,9 +39,10 @@ const FeatureComp = (props: FeatureComponentProps) => {
     return (
       <div
       style={{
-        display: 'flex'
+        display: 'flex',
+        justifyContent: 'space-between',
+        // width: '20%'
       }}
-
       >
         <TimeStampComponent />
         <DeleteAndEditIconsComponent {...props} />

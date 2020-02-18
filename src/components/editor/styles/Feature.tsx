@@ -4,14 +4,15 @@ import { Colors } from "../../../Colors";
 export const FeatureMain = style({
   $debugName: "FeatureMain",
   marginBottom: 10,
-  display: "flex",
+  display: "flex"
   // border: '2px dashed green'
 });
 export const FeatureOptions = style({
   $debugName: "FeatureOptions",
   display: "flex",
   flexFlow: "row nowrap",
-  flexDirection: "row-reverse"
+  flexDirection: "row-reverse",
+  width: "100%"
 });
 export const MiniIcon = style({
   $debugName: "FeatureMiniIcon",
