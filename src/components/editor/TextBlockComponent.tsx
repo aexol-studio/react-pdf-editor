@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import * as styles from "./styles/TextBlock";
-import {DeleteAndEditIconsComponent} from '../../components/editor/display/Rolloutable'
+import { DeleteAndEditIconsComponent } from "../../components/editor/display/Rolloutable";
 // import { Controls } from "./Controls";
 export interface TextBlockComponentProps {
   textBlock: PartialObjects["TextBlock"];
@@ -30,23 +30,23 @@ const AutoResizeTextArea = (
   }, [props.value]);
   return <textarea ref={tRef} {...props} value={props.value} />;
 };
-export const TextBlockComponent = ({
-  onChange,
-  textBlock
-}: TextBlockComponentProps) => {
+export const TextBlockComponent = (props: TextBlockComponentProps) => {
+
+  // tu poprawić
+  const { onChange, textBlock } = props;
   return (
     <>
-    <DeleteAndEditIconsComponent />
-    <AutoResizeTextArea
-      rows={1}
-      className={styles.Main}
-      value={textBlock.text}
-      placeholder=""
-      onChange={e => {
-        textBlock.text = e.target.value;
-        onChange();
-      }}
-    />
+      <DeleteAndEditIconsComponent />
+      <AutoResizeTextArea
+        rows={1}
+        className={styles.Main}
+        value={textBlock.text}
+        placeholder=""
+        onChange={e => {
+          textBlock.text = e.target.value;
+          onChange();
+        }}
+      />
     </>
   );
 };

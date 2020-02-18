@@ -33,10 +33,7 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   onMoveUp?: () => void;
 }
 
-
-
 /// tutaj jest komponen wyświetlany itp itp itp
-
 
 const FeatureComp = (props: FeatureComponentProps) => {
   const { feature, onChange, onEdit, onDelete, onMoveDown, onMoveUp } = props;
@@ -54,19 +51,29 @@ const FeatureComp = (props: FeatureComponentProps) => {
     );
   }
   if (isTextBlock(feature)) {
-    return <TextBlockComponent 
-    textBlock={feature} 
-    onChange={onChange}
-    onEdit={onEdit}
-    onDelete={onDelete}
-    {...props}
+    return (
+      <TextBlockComponent
+        textBlock={feature}
+        onChange={onChange}
+        onEdit={onEdit}
+        onDelete={onDelete}
+        {...props}
 
-    // ni dzia ła  
-
-    />;
+        // ni dzia ła
+      />
+    );
   }
   if (isImage(feature)) {
-    return <ImageComponent image={feature} onChange={onChange} />;
+    return (
+      <ImageComponent
+        image={feature}
+        onChange={onChange}
+        onDelete={onDelete}
+        {...props}
+
+        //nie działą
+      />
+    );
   }
   if (isStack(feature)) {
     return (
