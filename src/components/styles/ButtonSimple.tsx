@@ -14,7 +14,9 @@ export const Main = style({
   $nest: {
     "&:hover": {
       background: Colors["Outer Space"],
-      color: Colors["White"]
+      color: Colors["White"],
+      border: `1px solid`,
+      borderRadius: 3
     }
   }
 });

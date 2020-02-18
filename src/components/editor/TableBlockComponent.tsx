@@ -127,6 +127,7 @@ export const TableBlockComponent = ({
                 {/* poprawić paddingi */}
 
                 <Icons.Trash
+                  size={15}
                   onClick={() => {
                     tableBlock.rows = tableBlock.rows!.map(row => ({
                       ...row,
@@ -139,7 +140,6 @@ export const TableBlockComponent = ({
                     onChange();
                   }}
                   className={cx(styles1.MiniIcon, styles1.Delete)}
-                  size={20}
                 />
                 {/* {t("ControleButtonDelete")} */}
                 {/* <ControlsButton
@@ -172,6 +172,7 @@ export const TableBlockComponent = ({
           {/* <addColumn/> */}
 
           <Icons.PlusSquare
+            size={15}
             // <Icons.ChevronsRight
             style={{
               marginRight: 5
@@ -217,7 +218,7 @@ export const TableBlockComponent = ({
             }}
           >
             <Icons.PlusSquare
-              //<Icons.ChevronsDown
+              size={15}
               style={{
                 marginRight: 5
               }}

@@ -41,7 +41,7 @@ export const ColumnsComponent = ({
         <Icons.Trash
           onClick={onDelete}
           className={cx(styles1.MiniIcon, styles1.Delete)}
-          size={20}
+          size={15}
         />
         {t("IconTrashDelete")}
       </div>

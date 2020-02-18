@@ -187,7 +187,7 @@ export class ReactPDFEditor extends React.Component<PDFProps, PDFState> {
               {t("ButtonAddPage")}
             </ButtonSimple> */}
 
-            <Icons.PlusSquare onClick={() => this.addPage()} />
+            <Icons.PlusSquare size={15} onClick={() => this.addPage()} />
 
             <h4 className={styles.SectionTitle}>{t("SectionTitleFooter")}</h4>
             <FeatureComponent

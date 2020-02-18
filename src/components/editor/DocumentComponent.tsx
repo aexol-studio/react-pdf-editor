@@ -28,11 +28,11 @@ export const DocumentComponent = ({
       key={`Page${i + 1}`}
       title={`Page ${i + 1}`}
     >
-      <div style={{ display: "flex", marginTop: 5, marginBottom: 5 }}>
+      <div style={{ display: "flex", marginTop: 5, marginBottom: 10}}>
         <Confirm onConfirm={onDelete}>
           <Icons.Trash
+            size={15}
             className={cx(styles.MiniIcon, styles.Delete)}
-            size={20}
           />
         </Confirm>
       </div>

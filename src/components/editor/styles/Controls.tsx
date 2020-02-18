@@ -23,12 +23,10 @@ export const Button = style({
   fontSize: 10,
   padding: `5px 12px`,
   background: Colors.White,
-  // color: Colors.White,
   borderRadius: 2,
   cursor: "pointer",
   margin: `0 5px 5px 0`,
   border: "1px solid black",
-  // cursor: "pointer",
   transition,
   $nest: {
     "&:hover": {

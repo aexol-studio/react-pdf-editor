@@ -22,7 +22,7 @@ export enum ImageComponentTxt {
 }
 
 export enum ListBlockComponentTxt {
-  TitleList = "list"
+  TitleList = "List"
 }
 
 export enum StackComponentTxt {
