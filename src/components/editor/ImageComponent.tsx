@@ -3,8 +3,10 @@ import { PartialObjects } from "../../graphql-zeus";
 import * as styles from "./styles/Image";
 import { translated } from "../../models";
 import { MAX_IMAGE_WIDTH } from "../../constants";
-import { DeleteAndEditIconsComponent } from "./display/Rolloutable";
-// import {DeleteAndEditIconsComponent} from '../../components/editor/display/Rolloutable'
+import {
+  DeleteAndEditIconsComponent,
+  DeleteAndEditIconsComponentProps
+} from "../../components/editor/display/Rolloutable";
 
 const t = translated("ImageComponentTxt");
 
@@ -19,18 +21,30 @@ function getBase64(file: Blob): Promise<string> {
     reader.onerror = error => reject(error);
   });
 }
-export interface ImageComponentProps {
+export interface ImageComponentProps extends DeleteAndEditIconsComponentProps {
   image: PartialObjects["Image"];
   onChange: () => void;
 }
 
-export const ImageComponent = ({ onChange, image }: ImageComponentProps) => {
+export const ImageComponent = ({
+  onChange,
+  image,
+  onDelete,
+  onEdit,
+  onMoveDown,
+  onMoveUp
+}: ImageComponentProps) => {
   const [imageRef, setImageRef] = useState<HTMLImageElement>();
   const [ratio, setRatio] = useState<number>(1.0);
   return (
     <div>
       <DeleteAndEditIconsComponent
+        onDelete={onDelete}
+        onEdit={onEdit}
+        onMoveDown={onMoveDown}
+        onMoveUp={onMoveUp}
       />
+
       <div className={styles.ImageWrap}>
         {image.url && (
           <img
