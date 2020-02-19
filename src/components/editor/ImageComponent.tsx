@@ -4,9 +4,9 @@ import * as styles from "./styles/Image";
 import { translated } from "../../models";
 import { MAX_IMAGE_WIDTH } from "../../constants";
 import {
-  DeleteAndEditIconsComponent,
-  DeleteAndEditIconsComponentProps
-} from "../../components/editor/display/Rolloutable";
+  DeleteAndEditIconsComponentProps,
+  DeleteAndEditIconsComponent
+} from "./display/DeleteAndEdit";
 
 const t = translated("ImageComponentTxt");
 

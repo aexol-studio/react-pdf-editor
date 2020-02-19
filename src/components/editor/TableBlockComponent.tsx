@@ -2,8 +2,8 @@ import * as React from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import { ColumnsComponent } from "./ColumnsComponent";
 import {
-  Rolloutable,
-  DeleteAndEditIconsComponentProps
+  Rolloutable
+  // DeleteAndEditIconsComponentProps
 } from "./display/Rolloutable";
 // import { ControlsButton } from "./Controls";
 import * as Icons from "react-feather";
@@ -11,6 +11,7 @@ import cx from "classnames";
 import * as styles1 from "./styles/Feature";
 import { translated } from "../../models";
 import * as styles from "./styles/TableBlock";
+import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
 // import { addColumn } from "components/icons";
 
 export interface TableBlockComponentProps

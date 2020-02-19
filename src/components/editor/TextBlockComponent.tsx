@@ -2,11 +2,10 @@ import React, { useRef, useEffect } from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import * as styles from "./styles/TextBlock";
 import {
-  DeleteAndEditIconsComponent,
-  DeleteAndEditIconsComponentProps
-} from "../../components/editor/display/Rolloutable";
+  DeleteAndEditIconsComponentProps,
+  DeleteAndEditIconsComponent
+} from "./display/DeleteAndEdit";
 // import { Controls } from "./Controls";
-
 
 export interface TextBlockComponentProps
   extends DeleteAndEditIconsComponentProps {
