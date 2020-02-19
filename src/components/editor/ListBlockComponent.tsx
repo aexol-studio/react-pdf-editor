@@ -4,8 +4,8 @@ import { FeatureComponent } from "./FeatureComponent";
 import { Controls } from "./Controls";
 import {
   Rolloutable,
-  DeleteAndEditIconsComponentProps
 } from "./display/Rolloutable";
+import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
 import { swapInArray } from "../../utils";
 import { translated } from "../../models";
 export interface ListBlockComponentProps extends DeleteAndEditIconsComponentProps {

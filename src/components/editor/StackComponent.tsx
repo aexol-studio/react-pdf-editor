@@ -3,9 +3,9 @@ import { PartialObjects } from "../../graphql-zeus";
 import { FeatureComponent } from "./FeatureComponent";
 import { Controls } from "./Controls";
 import {
-  Rolloutable,
-  DeleteAndEditIconsComponentProps
+  Rolloutable
 } from "./display/Rolloutable";
+import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
 import { swapInArray } from "../../utils";
 import { translated } from "../../models";
 export interface StackComponentProps extends DeleteAndEditIconsComponentProps {

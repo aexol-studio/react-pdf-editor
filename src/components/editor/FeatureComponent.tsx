@@ -18,7 +18,7 @@ import * as styles from "./styles/Feature";
 import { EmptyFeatureComponent } from "./EmptyFeatureComponent";
 import { TimeStampComponent } from "./TimeStampComponent";
 // import cx from "classnames";
-import { DeleteAndEditIconsComponent } from "./display/Rolloutable";
+import { DeleteAndEditIconsComponent } from "./display/DeleteAndEdit";
 export interface BaseFeatureComponentProps {
   onChange: () => void;
 }
@@ -101,7 +101,7 @@ const FeatureComp = (props: FeatureComponentProps) => {
     return (
       <ListBlockComponent
         listBlock={feature}
-        onDelete={onDelete}
+        // onDelete={onDelete}
         onChange={onChange}
         onEdit={onEdit}
         // {...props}
