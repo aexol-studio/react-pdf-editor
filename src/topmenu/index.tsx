@@ -111,6 +111,8 @@ const common: MenuItem[] = [
   ExpandableInputMinimize2,
   ColorPicker,
   TopIconBold,
+  TopIconFontSize,
+  InputFontSize,
   TopIconAlignLeft,
   TopIconAlignCenter,
   TopIconAlignRight,
@@ -155,7 +157,8 @@ const configurations: {
   TextBlock: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
-    children: common.concat([])
+    children: common
+    // [TopIconFontSize, InputFontSize]
   },
   Image: {
     itemType: MenuItemType.ConditionalGroup,
@@ -189,8 +192,6 @@ const configurations: {
       ExpandableInputMaximize2,
       ExpandableInputMinimize2,
       ColorPicker,
-      TopIconBold,
-      InputFontSize,
       TopIconAlignLeft,
       TopIconAlignCenter,
       TopIconAlignRight,
@@ -212,7 +213,6 @@ const configurations: {
 };
 
 const ConditionalGroup: React.FunctionComponent<{
-
   active: boolean;
   style: ReactPDF.Style;
   applyStyle: (style: ReactPDF.Style) => void;
@@ -240,7 +240,7 @@ const ConditionalGroup: React.FunctionComponent<{
         }
         if (item.itemType === MenuItemType.SmallInput) {
           return (
-                  // <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
+            // <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
             <SmallInput
               value={valueOrDefault(item.name)}
               onChange={e => applyStyle(item.change(e))}
