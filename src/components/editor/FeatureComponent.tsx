@@ -26,9 +26,7 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   feature: PartialObjects["Feature"];
   onDelete: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
-  isRoot?: boolean;
   editedFeature?: PartialObjects["Feature"];
-  components?: PartialObjects["TemplateComponent"][];
   onMoveDown?: () => void;
   onMoveUp?: () => void;
 }
@@ -119,16 +117,7 @@ const FeatureComp = (props: FeatureComponentProps) => {
   );
 };
 export const FeatureComponent = (props: FeatureComponentProps) => {
-  const {
-    onChange,
-    feature,
-    onDelete,
-    // isRoot,
-    // components,
-    onEdit,
-    onMoveDown,
-    onMoveUp
-  } = props;
+  const { onChange, feature, onDelete, onEdit, onMoveDown, onMoveUp } = props;
   return (
     <div className={styles.FeatureMain}>
       <FeatureComp
@@ -138,14 +127,6 @@ export const FeatureComponent = (props: FeatureComponentProps) => {
         feature={feature}
         onMoveDown={onMoveDown}
         onMoveUp={onMoveUp}
-        // {...!isRoot && (
-        //   <div
-        //     className={cx(styles.MiniIcon, styles.Delete)}
-        //     onClick={onDelete}
-        //   >
-        //     <Icons.Trash size={10} />
-        //   </div>
-        // )}
         {...props}
       />
     </div>

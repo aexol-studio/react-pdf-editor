@@ -23,7 +23,6 @@ export const ColumnComponent = ({
           onChange={onChange}
           onEdit={onEdit}
           onDelete={onDelete}
-          isRoot
         />
       ) : (
         <Controls
