@@ -29,7 +29,8 @@ export const ImageComponent = ({ onChange, image }: ImageComponentProps) => {
   const [ratio, setRatio] = useState<number>(1.0);
   return (
     <div>
-      <DeleteAndEditIconsComponent />
+      <DeleteAndEditIconsComponent
+      />
       <div className={styles.ImageWrap}>
         {image.url && (
           <img

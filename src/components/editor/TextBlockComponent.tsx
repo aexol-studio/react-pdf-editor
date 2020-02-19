@@ -35,7 +35,11 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
   // tu poprawić
   const { onChange, textBlock } = props;
   return (
-    <>
+    <div
+    style={{
+      width: '100%'
+    }}
+    >
       <DeleteAndEditIconsComponent />
       <AutoResizeTextArea
         rows={1}
@@ -47,6 +51,6 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
           onChange();
         }}
       />
-    </>
+    </div>
   );
 };
