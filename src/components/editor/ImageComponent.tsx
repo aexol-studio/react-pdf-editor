@@ -82,7 +82,7 @@ export const ImageComponent = ({
         <input
           type="file"
           onChange={e => {
-            //TODO: Upload somewhere and respond with link here then setup image.url for now base64
+            // TODO: Upload somewhere and respond with link here then setup image.url for now base64
             getBase64(e.target.files![0]!).then((value: string) => {
               image.base64 = value;
               image.width = undefined;
