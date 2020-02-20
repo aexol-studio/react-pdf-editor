@@ -5,7 +5,7 @@ build:
       - public
   stage: build
   script:
-    - npm i --only=production
+    - npm i
     - npm run build
 pages:
   artifacts:
