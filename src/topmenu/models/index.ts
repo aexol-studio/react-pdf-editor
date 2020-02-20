@@ -6,8 +6,10 @@ export enum MenuItemType {
   SmallInput = "SmallInput",
   ExtendableInput = "ExtendableInput",
   ColorPicker = "ColorPicker",
-  ConditionalGroup = "Group"
+  ConditionalGroup = "Group",
+  FontFamilyGrup="FontFamilyGrup"
 }
+
 
 //typ interface IconMenu ktory wskazuje z czego powinno sie sklładać IconMenuItem
 // itemType - pobiera typ ikon określonych w menuitemType -
@@ -54,9 +56,18 @@ export interface ConditionalGroupMenuItem {
   children: MenuItem[];
 }
 
+export interface FontFamilyGrupItem {
+itemType: MenuItemType.FontFamilyGrup
+
+}
+
+
+
 export type MenuItem =
   | IconMenuItem
   | SmallInputMenuItem
   | ExtendableInputMenuItem
   | ColorPickerMenuItem
-  | ConditionalGroupMenuItem;
+  | ConditionalGroupMenuItem
+  | FontFamilyGrupItem
+   ;

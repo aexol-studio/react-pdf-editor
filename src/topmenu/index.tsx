@@ -54,21 +54,20 @@ const flexDirectionRowJustifyConditionalGroup: ConditionalGroupMenuItem = {
   active: (style: ReactPDF.Style): boolean => style.flexDirection === "row",
   children: [
     //justtifyContent
-
     justifyContentFlexStartIcon,
     justifyContentFlexEndIcon,
     justifyContentCenterIcon,
     justifyContentSpaceBetween,
     justifyContentSpaceAround,
-    //alginSelf
 
+    //alginSelf
     alignSelfToFlexStartIcon,
     alignSelfToFlexEndIcon,
     alignSelfToFlexCenterIcon,
     alignSelfToFlexBaselineIcon,
     alignSelfToFlexStretchIcon,
-    //alginIntems
 
+    //alginIntems
     alignItemsToStartIcon,
     alignItemsToEndIcon,
     alignItemsToCenterIcon,
@@ -247,6 +246,19 @@ const ConditionalGroup: React.FunctionComponent<{
             />
           );
         }
+        // if (item.itemType === MenuItemType.FontFamilyGrup) {
+        //   return (
+        //     // <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
+        //     <SmallInput
+        //       value={valueOrDefault(item.name)}
+        //       onChange={e => applyStyle(item.change(e))}
+        //     />
+        //   );
+        // }
+
+
+
+
         if (item.itemType === MenuItemType.ExtendableInput) {
           return (
             <ExpandableInput
