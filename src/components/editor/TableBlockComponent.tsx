@@ -171,7 +171,8 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
           <svg
             style={{
               height: 24,
-              width: 24
+              width: 24,
+              cursor: "pointer"
             }}
             focusable={"false"}
             viewBox={"0 0 24 24"}
@@ -208,7 +209,8 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
             <svg
               style={{
                 height: 24,
-                width: 24
+                width: 24,
+                cursor: "pointer"
               }}
               focusable={"false"}
               viewBox={"0 0 24 24"}
