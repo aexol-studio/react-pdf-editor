@@ -76,9 +76,6 @@ export const fonts = [
   }
 ]
 fonts.forEach(f => Font.register(f));
-// const availableFonts = fonts.map(f => f.family)
-
-// ta mapa do dropdown listy
 
 
 const styles = StyleSheet.create({

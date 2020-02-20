@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import * as styles from "./styles/SmallInput";
+import * as styles from "./styles/SelectInput";
 import * as sharedStyles from "./styles/Shared";
+import { fonts } from "livepdf/PDFDocument";
 export const SelectInput = ({
   value,
   onChange
@@ -8,15 +9,15 @@ export const SelectInput = ({
   value: string;
   onChange: (e: string) => void;
 }) => {
-  const [v, setV] = useState("0");
+  const [v, setV] = useState("Fira Sans");
   useEffect(() => {
     setV(value);
   }, [value]);
+  const availableFonts = fonts.map(f => f.family);
   return (
     <div className={sharedStyles.Placement}>
-      <input
-        className={styles.Input}
-        type="number"
+      <select
+        className={styles.Select}
         value={v}
         onChange={e => {
           setV(e.target.value);
@@ -24,7 +25,9 @@ export const SelectInput = ({
         onBlur={() => {
           onChange(v);
         }}
-      />
+      >
+        <option value="">{availableFonts}</option>
+      </select>
     </div>
   );
 };
