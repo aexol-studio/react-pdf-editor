@@ -1,7 +1,7 @@
 var webpack = require("webpack");
 var path = require("path");
 var sourcePath = path.join(__dirname, "./");
-var outPath = path.join(__dirname, "./public");
+var outPath = path.join(__dirname, "../public");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var WebpackCleanupPlugin = require("webpack-cleanup-plugin");
 // const config = require('./config.js')

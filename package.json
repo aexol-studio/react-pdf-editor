@@ -52,7 +52,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config ./sandbox/webpack.config.js --content-base ./sandbox/ --port 1568 --hot --inline --open",
-    "build": "tsc --build",
+    "build": "webpack -p --config ./sandbox/webpack.production.config.js --content-base ./sandbox/",
     "watch": "tsc --watch"
   }
 }

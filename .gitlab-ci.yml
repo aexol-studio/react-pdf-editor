@@ -1,6 +1,15 @@
 image: node:10
 build:
+  artifacts:
+    paths:
+      - public
   stage: build
   script:
-    - npm i
+    - npm i --only=production
     - npm run build
+pages:
+  artifacts:
+    paths:
+      - public
+  script:
+    - echo "Hello"
