@@ -56,21 +56,30 @@ export const PDFDocument = (props: PDFDocumentProps) => {
   );
 };
 // Frontend Fonts
-Font.register({
-  family: "Fira Sans",
-  fonts: [
-    {
-      src: require("./fonts/FiraSans-Regular.ttf"),
-      fontStyle: "normal",
-      fontWeight: "normal"
-    },
-    {
-      src: require("./fonts/FiraSans-Bold.ttf"),
-      fontStyle: "normal",
-      fontWeight: "bold"
-    }
-  ]
-});
+
+
+export const fonts = [
+  {
+    family: "Fira Sans",
+    fonts: [
+      {
+        src: require("./fonts/FiraSans-Regular.ttf"),
+        fontStyle: "normal",
+        fontWeight: "normal"
+      },
+      {
+        src: require("./fonts/FiraSans-Bold.ttf"),
+        fontStyle: "normal",
+        fontWeight: "bold"
+      }
+    ]
+  }
+]
+fonts.forEach(f => Font.register(f));
+// const availableFonts = fonts.map(f => f.family)
+
+// ta mapa do dropdown listy
+
 
 const styles = StyleSheet.create({
   body: {
