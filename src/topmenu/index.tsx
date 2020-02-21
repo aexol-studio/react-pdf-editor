@@ -5,7 +5,12 @@ import "rc-color-picker/assets/index.css";
 import ReactPDF from "@react-pdf/renderer";
 import { PartialObjects } from "../graphql-zeus";
 import { DefaultValues } from "../constants";
-import { SmallInput, TopIcon, ExpandableInput } from "./components";
+import {
+  SmallInput,
+  TopIcon,
+  ExpandableInput,
+  SelectInput
+} from "./components";
 import {
   ExpandableInputMaximize2,
   ExpandableInputMinimize2,
@@ -34,7 +39,8 @@ import {
   justifyContentSpaceAround,
   justifyContentSpaceBetween,
   TopIconAlignJustify,
-  TopIconFontSize
+  TopIconFontSize,
+  InputFontType
 } from "./items";
 import {
   MenuItem,
@@ -149,7 +155,8 @@ const configurations: {
       TopIconAlignRight,
       TopIconAlignJustify,
       defaultColorPicker,
-      ExpandableInputSquare
+      ExpandableInputSquare,
+      InputFontType
     ]
   },
 
@@ -162,7 +169,7 @@ const configurations: {
   Image: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
-    children: [fitToParentIcon]
+    children: common && [fitToParentIcon]
   },
   TableBlock: {
     itemType: MenuItemType.ConditionalGroup,
@@ -246,18 +253,14 @@ const ConditionalGroup: React.FunctionComponent<{
             />
           );
         }
-        // if (item.itemType === MenuItemType.FontFamilyGrup) {
-        //   return (
-        //     // <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
-        //     <SmallInput
-        //       value={valueOrDefault(item.name)}
-        //       onChange={e => applyStyle(item.change(e))}
-        //     />
-        //   );
-        // }
-
-
-
+        if (item.itemType === MenuItemType.SelectInput) {
+          return (
+            <SelectInput
+              value={valueOrDefault(item.name)}
+              onChange={e => applyStyle(item.change(e))}
+            />
+          );
+        }
 
         if (item.itemType === MenuItemType.ExtendableInput) {
           return (

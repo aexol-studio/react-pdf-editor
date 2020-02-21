@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import * as styles from "./styles/SelectInput";
 import * as sharedStyles from "./styles/Shared";
-import { fonts } from "livepdf/PDFDocument";
+import { fonts } from "../../livepdf/PDFDocument";
+
 export const SelectInput = ({
   value,
   onChange
@@ -13,7 +14,9 @@ export const SelectInput = ({
   useEffect(() => {
     setV(value);
   }, [value]);
-  const availableFonts = fonts.map(f => f.family);
+
+  const availableFonts = fonts.map((f: typeof fonts[0]) => f.family);
+
   return (
     <div className={sharedStyles.Placement}>
       <select
@@ -26,7 +29,9 @@ export const SelectInput = ({
           onChange(v);
         }}
       >
-        <option value="">{availableFonts}</option>
+        {availableFonts.map((f: string) => (
+          <option value={f}>{f}</option>
+        ))}
       </select>
     </div>
   );
