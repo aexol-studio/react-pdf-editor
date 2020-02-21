@@ -17,6 +17,7 @@ export const SmallInput = ({
       <input
         className={styles.Input}
         type="number"
+        min='0'
         value={v}
         onChange={e => {
           setV(e.target.value);

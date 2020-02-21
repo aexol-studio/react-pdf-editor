@@ -19,20 +19,22 @@ export const SelectInput = ({
 
   return (
     <div className={sharedStyles.Placement}>
-      <select
-        className={styles.Select}
-        value={v}
-        onChange={e => {
-          setV(e.target.value);
-        }}
-        onBlur={() => {
-          onChange(v);
-        }}
-      >
-        {availableFonts.map((f: string) => (
-          <option value={f}>{f}</option>
-        ))}
-      </select>
+      <form>
+        <select
+          className={styles.Select}
+          value={v}
+          onChange={e => {
+            setV(e.target.value);
+          }}
+          onBlur={() => {
+            onChange(v);
+          }}
+        >
+          {availableFonts.map((f: string) => (
+            <option value={f}>{f}</option>
+          ))}
+        </select>
+      </form>
     </div>
   );
 };

@@ -40,7 +40,7 @@ import {
   justifyContentSpaceBetween,
   TopIconAlignJustify,
   TopIconFontSize,
-  InputFontType
+  SelectFontType
 } from "./items";
 import {
   MenuItem,
@@ -156,7 +156,7 @@ const configurations: {
       TopIconAlignJustify,
       defaultColorPicker,
       ExpandableInputSquare,
-      InputFontType
+      SelectFontType
     ]
   },
 

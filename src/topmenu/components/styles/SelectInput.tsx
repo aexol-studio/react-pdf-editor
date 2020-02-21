@@ -1,5 +1,10 @@
 import { style } from "typestyle";
 export const Select = style({
   $debugName: "TopMenuSelectInput",
-  width: 70
+
+
+  // background-color: #f1f1f1;
+  width: '100%',
+  border: 'none solid',
+  borderRadius: '1px'
 });

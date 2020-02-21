@@ -62,11 +62,6 @@ export interface ConditionalGroupMenuItem {
   children: MenuItem[];
 }
 
-
-
-
-
-
 export type MenuItem =
   | IconMenuItem
   | SmallInputMenuItem
