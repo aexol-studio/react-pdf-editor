@@ -7,7 +7,7 @@ export enum MenuItemType {
   ExtendableInput = "ExtendableInput",
   ColorPicker = "ColorPicker",
   ConditionalGroup = "Group",
-  FontFamilyGrup="FontFamilyGrup"
+  SelectInput="SelectInput"
 }
 
 
@@ -33,6 +33,12 @@ export interface SmallInputMenuItem {
   change: (e: string) => ReactPDF.Style;
 }
 
+export interface SelectInputItem {
+  itemType: MenuItemType.SelectInput
+  name: keyof ReactPDF.Style
+  change: (e:string) =>ReactPDF.Style
+}
+
 export interface ExtendableInputMenuItem {
   itemType: MenuItemType.ExtendableInput;
   v: {
@@ -56,10 +62,8 @@ export interface ConditionalGroupMenuItem {
   children: MenuItem[];
 }
 
-export interface FontFamilyGrupItem {
-itemType: MenuItemType.FontFamilyGrup
 
-}
+
 
 
 
@@ -69,5 +73,5 @@ export type MenuItem =
   | ExtendableInputMenuItem
   | ColorPickerMenuItem
   | ConditionalGroupMenuItem
-  | FontFamilyGrupItem
+  | SelectInputItem
    ;

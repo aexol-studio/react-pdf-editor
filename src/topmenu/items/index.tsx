@@ -35,4 +35,5 @@ export * from "./TopIconAlignRight";
 export * from "./TopIconBold";
 export * from "./InputFontSize";
 export * from  "./TopIconFontSize"
+export * from "./InputFontType"
 

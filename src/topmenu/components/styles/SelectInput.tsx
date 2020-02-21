@@ -1,5 +1,5 @@
 import { style } from "typestyle";
 export const Select = style({
-  $debugName: "TopMenuSelectFont",
+  $debugName: "TopMenuSelectInput",
   width: 70
 });

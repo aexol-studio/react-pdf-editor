@@ -1,10 +1,8 @@
-import { MenuItemType, SmallInputMenuItem } from "../models";
+import { MenuItemType, SelectInputItem } from "../models";
 
 
-export const InputFontType: SmallInputMenuItem = {
+export const InputFontType: SelectInputItem = {
   name: "fontFamily",
-  itemType: MenuItemType.SmallInput,
+  itemType: MenuItemType.SelectInput,
   change: (e: string) => ({ fontFamily: e })
 };
-
-// dropdown lista
