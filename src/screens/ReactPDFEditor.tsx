@@ -8,7 +8,38 @@ import { FrontendTypes } from "../frontend-types";
 import { translated } from "../models";
 import * as Icons from "react-feather";
 import { TopMenu } from "../topmenu";
-export interface PDFProps {}
+export interface PDFProps {
+  initialPDF?: PDFState;
+
+  // initialPDF?: {
+  //   PDF: {
+  //     name: string,
+  //     template: {
+  //       footer: {
+  //         __typename: string,
+  //         styleJson: (
+  //           marginTop: number,
+  //           marginRight: number,
+  //           marginLeft: number,
+  //           marginBottom: number,
+  //         ) => void
+  //         },
+  //         items:[]
+  //       },
+  //       header:{
+  //         __typename: string,
+  //         items: []
+  //       },
+  //       margin: [],
+  //       documents: [{
+  //         features: {
+  //           items: []
+  //         }
+  //       }]
+  //     }
+  //   },
+  //   showPDF: boolean
+}
 export interface PDFState {
   PDF: FrontendTypes["MachineTemplate"];
   editedFeature?: PartialObjects["Feature"];
@@ -18,37 +49,41 @@ export interface PDFState {
 
 const t = translated("ReactPDFEditorTxt");
 
-export const ReactPDFEditor: React.FunctionComponent<PDFProps> = () => {
-  const [state, setState] = useState<PDFState>({
-    PDF: {
-      name: "untitled",
-      template: {
-        footer: {
-          __typename: "Stack",
-          styleJson: JSON.stringify({
-            marginTop: 0,
-            marginRight: 37,
-            marginLeft: 37,
-            marginBottom: 30
-          }),
-          items: []
-        },
-        header: {
-          __typename: "Stack",
-          items: []
-        },
-        margin: [10, 80, 10, 40],
-        documents: [
-          {
-            features: {
-              items: []
+export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
+  initialPDF
+}) => {
+  const [state, setState] = useState<PDFState>(
+    initialPDF || {
+      PDF: {
+        name: "untitled",
+        template: {
+          footer: {
+            __typename: "Stack",
+            styleJson: JSON.stringify({
+              marginTop: 0,
+              marginRight: 37,
+              marginLeft: 37,
+              marginBottom: 30
+            }),
+            items: []
+          },
+          header: {
+            __typename: "Stack",
+            items: []
+          },
+          margin: [10, 80, 10, 40],
+          documents: [
+            {
+              features: {
+                items: []
+              }
             }
-          }
-        ]
-      }
-    },
-    showPDF: true
-  });
+          ]
+        }
+      },
+      showPDF: true
+    }
+  );
   const updatePDF = (
     fn: (
       PDF: FrontendTypes["MachineTemplate"]

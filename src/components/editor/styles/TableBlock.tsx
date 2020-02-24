@@ -14,12 +14,9 @@ export const ControlAddRow = style ({
   $nest: {
     "&:hover": {
       fill: '#56DA67',
-      // color: Colors['White']
     }
   }
 })
-
-
 export const ControlAddColumn = style ({
   $debugName: "ControlAddColumn",
   height: 24,
@@ -28,7 +25,6 @@ export const ControlAddColumn = style ({
   $nest: {
     "&:hover": {
       fill: '#56DA67',
-      // color: Colors['White']
     }
   }
 })

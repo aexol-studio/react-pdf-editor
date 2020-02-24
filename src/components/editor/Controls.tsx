@@ -32,8 +32,18 @@ export const Controls = ({
   document,
   parent
 }: ControlsProps) => {
+  // const [open, setOpen] = useState(false);
+
   const [open, setOpen] = useState(false);
+
+  
+//pierwotny stan jest na false
+
+console.log("click")
+console.log(open)
   return (
+
+    
     <div className={styles.Main}>
       <div
         className={styles.PlusMinus}
@@ -47,17 +57,17 @@ export const Controls = ({
             return;
           }
           setOpen(!open);
+
+          //zmiana stanu na true i pokazują się kontrolki
+
+
         }}
       >
-
-
-
         {open ? <MinusCircle size={15} /> : <PlusCircle size={15} />}
-      </div>
 
-
-
+        {/* jeśli open jest true to minus a jesli nie to plus */}
       
+      </div>
       {open && (
         <>
           <div className={styles.Overlay} onClick={() => setOpen(false)}>
@@ -127,6 +137,8 @@ export const Controls = ({
                     > 
                     {t("ButtonList")}
                     </ControlsButton>
+                    
+                    
                     <ControlsButton
                       onClick={() => {
                         features.push({
@@ -139,10 +151,18 @@ export const Controls = ({
                         mutateWholeObject();
                       }}
                     >
+
+
+                    {/* //trzeba stworzyć nowy komponent VerticalTable
+                    poniewaz teraz na podstawie jednego komponentu budowane są dwa komponenty? */}
+
                       {/* {ControlsComponentTxt.ButtonVerticalSplit} */}
 
                       {t("ButtonVerticalSplit")}
                     </ControlsButton>
+
+
+
                     <ControlsButton
                       onClick={() => {
                         features.push({
@@ -157,6 +177,9 @@ export const Controls = ({
                     >
                       {t("ButtonTable")}
                     </ControlsButton>
+
+
+            
                     <ControlsButton
                       onClick={() => {
                         features.push({
@@ -168,6 +191,10 @@ export const Controls = ({
                     >
                       {t("ButtonTimeStamp")}
                     </ControlsButton>
+
+
+
+
                   </>
                 )}
               </div>
