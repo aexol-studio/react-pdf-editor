@@ -17,7 +17,7 @@ export interface PDFProps {
   //     template: {
   //         footer: {
   //           __typename: string,
-  //           styleJson: string 
+  //           styleJson?: string 
   //         }
 
   //     }
@@ -30,6 +30,11 @@ export interface PDFProps {
     
     
     }
+
+// interface SomeType {
+//   styleJson?: string
+//   strigArray: string[]
+// }
 
 export interface PDFState {
   PDF: FrontendTypes["MachineTemplate"];
