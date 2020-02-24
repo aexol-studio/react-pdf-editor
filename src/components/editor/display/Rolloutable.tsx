@@ -88,7 +88,7 @@ export class Rolloutable extends React.Component<
   RolloutableState
 > {
   state: RolloutableState = {
-    rolledOut: false
+    rolledOut: true
   };
   render() {
     return (
@@ -105,8 +105,8 @@ export class Rolloutable extends React.Component<
             <icons.PlusSquare
               size={10}
               onClick={() => {
-                console.log("BENG");
                 this.setState({ rolledOut: !this.state.rolledOut });
+                console.log("beng!")
               }}
             />
           )}

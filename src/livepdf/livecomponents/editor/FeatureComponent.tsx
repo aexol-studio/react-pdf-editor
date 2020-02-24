@@ -31,7 +31,6 @@ const FeatureComp = ({ feature, version }: FeatureComponentProps) => {
   if (isListBlock(feature)) {
     return <ListBlockComponent version={version} listBlock={feature} />;
   }
-  console.log(feature);
   return <div />;
 };
 export const FeatureComponent = ({

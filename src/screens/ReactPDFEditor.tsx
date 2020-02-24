@@ -110,8 +110,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = () => {
     footer,
     header
   } = template;
-  // console.log(documents);
-  console.log(state);
   return (
     <>
       <TopMenu

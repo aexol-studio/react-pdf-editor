@@ -6,6 +6,32 @@ export const Actions = style({
   marginTop: 5
 });
 
+export const ControlAddRow = style ({
+  $debugName: "ControlAddRow",
+  height: 24,
+  width: 24,
+  cursor: "pointer",
+  $nest: {
+    "&:hover": {
+      fill: '#56DA67',
+      // color: Colors['White']
+    }
+  }
+})
+
+
+export const ControlAddColumn = style ({
+  $debugName: "ControlAddColumn",
+  height: 24,
+  width: 24,
+  cursor: "pointer",
+  $nest: {
+    "&:hover": {
+      fill: '#56DA67',
+      // color: Colors['White']
+    }
+  }
+})
 export const ControlColumns = style({
   $debugName: "TableBlockControlColums",
   display: "flex",

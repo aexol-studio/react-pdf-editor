@@ -1,9 +1,7 @@
 import * as React from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import { ColumnsComponent } from "./ColumnsComponent";
-import {
-  Rolloutable
-} from "./display/Rolloutable";
+import { Rolloutable } from "./display/Rolloutable";
 import * as Icons from "react-feather";
 import cx from "classnames";
 import * as styles1 from "./styles/Feature";
@@ -166,11 +164,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
           }}
         >
           <svg
-            style={{
-              height: 24,
-              width: 24,
-              cursor: "pointer"
-            }}
+            className={styles.ControlAddRow}
             focusable={"false"}
             viewBox={"0 0 24 24"}
             onClick={() => {
@@ -204,11 +198,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
             }}
           >
             <svg
-              style={{
-                height: 24,
-                width: 24,
-                cursor: "pointer"
-              }}
+              className={styles.ControlAddColumn}
               focusable={"false"}
               viewBox={"0 0 24 24"}
               onClick={() => {
