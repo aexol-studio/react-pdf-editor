@@ -22,6 +22,7 @@ export const PDFDocument = (props: PDFDocumentProps) => {
               <FeatureComponent
                 version={version}
                 feature={props.machine.template!.header}
+                hideControls={true}
               />
             )}
           </View>

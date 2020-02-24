@@ -10,9 +10,11 @@ import { TimeStampComponent } from "./TimeStampComponent";
 export interface FeatureComponentProps {
   feature: PartialObjects["Feature"];
   version: string;
+  [k: string]: unknown
 }
 
-const FeatureComp = ({ feature, version }: FeatureComponentProps) => {
+const FeatureComp = (props: FeatureComponentProps) => {
+  const { feature, version } = props
   if (isTimeStamp(feature)) {
     return <TimeStampComponent version={version} timeStamp={feature} />;
   }
@@ -23,7 +25,7 @@ const FeatureComp = ({ feature, version }: FeatureComponentProps) => {
     return <ImageComponent image={feature} />;
   }
   if (isStack(feature)) {
-    return <StackComponent version={version} stack={feature} />;
+    return <StackComponent {...props} stack={feature} />;
   }
   if (isTableBlock(feature)) {
     return <TableBlockComponent version={version} tableBlock={feature} />;
@@ -33,11 +35,8 @@ const FeatureComp = ({ feature, version }: FeatureComponentProps) => {
   }
   return <div />;
 };
-export const FeatureComponent = ({
-  feature,
-  version
-}: FeatureComponentProps) => {
-  return <FeatureComp version={version} feature={feature} />;
+export const FeatureComponent = (props: FeatureComponentProps) => {
+  return <FeatureComp {...props} />;
 };
 
 export const isTimeStamp = (arg: any): arg is PartialObjects["TimeStamp"] => {

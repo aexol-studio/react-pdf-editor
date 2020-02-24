@@ -29,6 +29,7 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   editedFeature?: PartialObjects["Feature"];
   onMoveDown?: () => void;
   onMoveUp?: () => void;
+  [k: string]: unknown
 }
 
 /// tutaj jest komponen wyświetlany itp itp itp

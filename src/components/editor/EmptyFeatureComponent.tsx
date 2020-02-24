@@ -20,6 +20,7 @@ export const EmptyFeatureComponent = ({
         }
       } as any
     }
+    show={true}
     mutateWholeObject={onChange}
     clean={() => {
       feature = {};

@@ -9,6 +9,7 @@ export interface ControlsProps {
   clean: () => void;
   document?: boolean;
   parent?: PartialObjects["Feature"];
+  show?: boolean
 }
 
 const t = translated("ControlsComponentTxt");
@@ -30,17 +31,19 @@ export const Controls = ({
   features,
   mutateWholeObject,
   document,
-  parent
+  parent,
+  show
 }: ControlsProps) => {
   // const [open, setOpen] = useState(false);
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(!!show);
 
   
 //pierwotny stan jest na false
 
-console.log("click")
+console.log("BENG")
 console.log(open)
+
   return (
 
     
@@ -57,6 +60,7 @@ console.log(open)
             return;
           }
           setOpen(!open);
+          console.log("beng 1")
 
           //zmiana stanu na true i pokazują się kontrolki
 
@@ -81,6 +85,7 @@ console.log(open)
                         items: []
                       } as PartialObjects["Stack"]);
                       setOpen(false);
+                      console.log("beng 2")
                       mutateWholeObject();
                     }}
                   >
@@ -119,8 +124,9 @@ console.log(open)
                           __typename: "Stack",
                           items: []
                         } as PartialObjects["Stack"]);
-                        setOpen(false);
                         mutateWholeObject();
+                        setOpen(false);
+                        console.log("beng 3")
                       }}
                     >
                       {t("ButtonStack")}

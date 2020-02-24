@@ -15,31 +15,22 @@ export interface PDFProps {
   //   PDF: {
   //     name: string,
   //     template: {
-  //       footer: {
-  //         __typename: string,
-  //         styleJson: (
-  //           marginTop: number,
-  //           marginRight: number,
-  //           marginLeft: number,
-  //           marginBottom: number,
-  //         ) => void
-  //         },
-  //         items:[]
-  //       },
-  //       header:{
-  //         __typename: string,
-  //         items: []
-  //       },
-  //       margin: [],
-  //       documents: [{
-  //         features: {
-  //           items: []
+  //         footer: {
+  //           __typename: string,
+  //           styleJson: string 
   //         }
-  //       }]
+
   //     }
-  //   },
-  //   showPDF: boolean
-}
+  //   }
+  //   }
+    
+    
+    
+    
+    
+    
+    }
+
 export interface PDFState {
   PDF: FrontendTypes["MachineTemplate"];
   editedFeature?: PartialObjects["Feature"];
@@ -176,6 +167,14 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
             onChange={() => mutateWholeObject()}
             onDelete={() => {}}
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
+            hideControls={true}
+
+
+            // tutaj zrobione !! 
+
+    
+
+
           />
           <h4 className={styles.SectionTitle}>{t("SectionTitlePages")}</h4>
           {documents.map((d, i) => (

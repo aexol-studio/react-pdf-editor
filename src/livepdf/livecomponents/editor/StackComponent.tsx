@@ -5,11 +5,11 @@ import { View } from "@react-pdf/renderer";
 export interface StackComponentProps {
   stack: PartialObjects["Stack"];
   version: string;
+  [k: string]: unknown
 }
 
-export const StackComponent = ({
-  stack, version
- }: StackComponentProps) => {
+export const StackComponent = (props: StackComponentProps) => {
+  const {stack, version} = props
   if (!stack.items || stack.items.length === 0) {
     return <></>;
   }
