@@ -9,6 +9,7 @@ import { translated } from "../models";
 import * as Icons from "react-feather";
 import { TopMenu } from "../topmenu";
 export interface PDFProps {
+  // onChange = () => { void}
   initialPDF?: PDFState;
 
   // initialPDF?: {
