@@ -19,7 +19,10 @@ import {
   TopIconAlignLeft,
   TopIconAlignRight,
   TopIconBold,
+  TopIconTextDecoration,
+  TopIconItalic,
   InputFontSize,
+  InputLineHeight,
   alignItemsToBaselineIcon,
   alignItemsToCenterIcon,
   alignItemsToEndIcon,
@@ -163,13 +166,30 @@ const configurations: {
   TextBlock: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
-    children: common
-    // [TopIconFontSize, InputFontSize]
+    children: [
+      fitToParentIcon,
+      ExpandableInputMaximize2,
+      ExpandableInputMinimize2,
+      ColorPicker,
+      TopIconBold,
+      TopIconItalic,
+      TopIconTextDecoration,
+      TopIconFontSize,
+      InputFontSize,
+      InputLineHeight,
+      TopIconAlignLeft,
+      TopIconAlignCenter,
+      TopIconAlignRight,
+      TopIconAlignJustify,
+      ColorPicker,
+      ExpandableInputSquare,
+      ColorPicker
+    ]
   },
   Image: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
-    children: common && [fitToParentIcon]
+    children: common
   },
   TableBlock: {
     itemType: MenuItemType.ConditionalGroup,
@@ -214,7 +234,7 @@ const configurations: {
   TimeStamp: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
-    children: [fitToParentIcon]
+    children: common
   }
 };
 

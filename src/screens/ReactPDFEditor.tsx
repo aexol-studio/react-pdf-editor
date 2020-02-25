@@ -19,13 +19,24 @@ export interface PDFProps {
   //         footer: {
   //           __typename: string,
   //           styleJson?: string
-  //         }
-
+  //         },
+  //      items: []
+  //     },
+  //       header: {
+  //          __typename: string,
+  //           items: []
+  //    },
+  //        margin: [],
+  //     documents: [
+  //     features:{
+  //       item: []
   //     }
+  //    }
+  //  ]
   //   }
   //   }
+  //   showPDF: boolean
 }
-
 // interface SomeType {
 //   styleJson?: string
 //   strigArray: string[]
