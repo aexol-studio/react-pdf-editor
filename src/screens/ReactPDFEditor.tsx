@@ -211,6 +211,7 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
             onChange={() => mutateWholeObject()}
             onDelete={() => {}}
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
+            hideControls={true}
           />
         </div>
         {state.showPDF && (
