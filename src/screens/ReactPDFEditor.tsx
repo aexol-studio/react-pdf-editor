@@ -18,19 +18,13 @@ export interface PDFProps {
   //     template: {
   //         footer: {
   //           __typename: string,
-  //           styleJson?: string 
+  //           styleJson?: string
   //         }
 
   //     }
   //   }
   //   }
-    
-    
-    
-    
-    
-    
-    }
+}
 
 // interface SomeType {
 //   styleJson?: string
@@ -175,12 +169,7 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
             hideControls={true}
 
-
-            // tutaj zrobione !! 
-
-    
-
-
+            // tutaj zrobione !!
           />
           <h4 className={styles.SectionTitle}>{t("SectionTitlePages")}</h4>
           {documents.map((d, i) => (

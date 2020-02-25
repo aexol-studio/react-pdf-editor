@@ -10,11 +10,11 @@ import { TimeStampComponent } from "./TimeStampComponent";
 export interface FeatureComponentProps {
   feature: PartialObjects["Feature"];
   version: string;
-  [k: string]: unknown
+  [k: string]: unknown;
 }
 
 const FeatureComp = (props: FeatureComponentProps) => {
-  const { feature, version } = props
+  const { feature, version } = props;
   if (isTimeStamp(feature)) {
     return <TimeStampComponent version={version} timeStamp={feature} />;
   }

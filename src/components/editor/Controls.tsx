@@ -9,7 +9,7 @@ export interface ControlsProps {
   clean: () => void;
   document?: boolean;
   parent?: PartialObjects["Feature"];
-  show?: boolean
+  show?: boolean;
 }
 
 const t = translated("ControlsComponentTxt");
@@ -38,15 +38,12 @@ export const Controls = ({
 
   const [open, setOpen] = useState(!!show);
 
-  
-//pierwotny stan jest na false
+  //pierwotny stan jest na false
 
-console.log("BENG")
-console.log(open)
+  console.log("BENG");
+  console.log(open);
 
   return (
-
-    
     <div className={styles.Main}>
       <div
         className={styles.PlusMinus}
@@ -60,17 +57,14 @@ console.log(open)
             return;
           }
           setOpen(!open);
-          console.log("beng 1")
+          console.log("beng 1");
 
           //zmiana stanu na true i pokazują się kontrolki
-
-
         }}
       >
         {open ? <MinusCircle size={15} /> : <PlusCircle size={15} />}
 
         {/* jeśli open jest true to minus a jesli nie to plus */}
-      
       </div>
       {open && (
         <>
@@ -85,7 +79,7 @@ console.log(open)
                         items: []
                       } as PartialObjects["Stack"]);
                       setOpen(false);
-                      console.log("beng 2")
+                      console.log("beng 2");
                       mutateWholeObject();
                     }}
                   >
@@ -126,7 +120,7 @@ console.log(open)
                         } as PartialObjects["Stack"]);
                         mutateWholeObject();
                         setOpen(false);
-                        console.log("beng 3")
+                        console.log("beng 3");
                       }}
                     >
                       {t("ButtonStack")}
@@ -140,11 +134,10 @@ console.log(open)
                         setOpen(false);
                         mutateWholeObject();
                       }}
-                    > 
-                    {t("ButtonList")}
+                    >
+                      {t("ButtonList")}
                     </ControlsButton>
-                    
-                    
+
                     <ControlsButton
                       onClick={() => {
                         features.push({
@@ -157,17 +150,13 @@ console.log(open)
                         mutateWholeObject();
                       }}
                     >
-
-
-                    {/* //trzeba stworzyć nowy komponent VerticalTable
+                      {/* //trzeba stworzyć nowy komponent VerticalTable
                     poniewaz teraz na podstawie jednego komponentu budowane są dwa komponenty? */}
 
                       {/* {ControlsComponentTxt.ButtonVerticalSplit} */}
 
                       {t("ButtonVerticalSplit")}
                     </ControlsButton>
-
-
 
                     <ControlsButton
                       onClick={() => {
@@ -184,8 +173,6 @@ console.log(open)
                       {t("ButtonTable")}
                     </ControlsButton>
 
-
-            
                     <ControlsButton
                       onClick={() => {
                         features.push({
@@ -197,10 +184,6 @@ console.log(open)
                     >
                       {t("ButtonTimeStamp")}
                     </ControlsButton>
-
-
-
-
                   </>
                 )}
               </div>
