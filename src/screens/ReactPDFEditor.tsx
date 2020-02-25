@@ -9,7 +9,7 @@ import { translated } from "../models";
 import * as Icons from "react-feather";
 import { TopMenu } from "../topmenu";
 export interface PDFProps {
-  // onChange = () => { void}
+  onChange?: () => void;
   initialPDF?: PDFState;
 
   // initialPDF?: {
@@ -52,7 +52,8 @@ export interface PDFState {
 const t = translated("ReactPDFEditorTxt");
 
 export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
-  initialPDF
+  initialPDF,
+  onChange
 }) => {
   const [state, setState] = useState<PDFState>(
     initialPDF || {
