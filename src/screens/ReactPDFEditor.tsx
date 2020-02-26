@@ -202,11 +202,7 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
               i={i}
               key={`${i}`}
               doc={d}
-
-
               onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
-              
-              
               onChange={() => mutateWholeObject()}
               onDelete={() => {
                 template.documents! = template!.documents!.filter(
