@@ -40,9 +40,6 @@ export const Controls = ({
 
   //pierwotny stan jest na false
 
-  console.log("BENG");
-  console.log(open);
-
   return (
     <div className={styles.Main}>
       <div
@@ -79,11 +76,14 @@ export const Controls = ({
                         items: []
                       } as PartialObjects["Stack"]);
                       setOpen(false);
-                      console.log("beng 2");
                       mutateWholeObject();
+                      console.log("beng 2")
                     }}
                   >
                     {t("ButtonStack")}
+
+                              
+
                   </ControlsButton>
                 )}
                 {!document && (

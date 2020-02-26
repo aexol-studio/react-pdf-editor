@@ -19,6 +19,7 @@ import { EmptyFeatureComponent } from "./EmptyFeatureComponent";
 import { TimeStampComponent } from "./TimeStampComponent";
 // import cx from "classnames";
 import { DeleteAndEditIconsComponent } from "./display/DeleteAndEdit";
+// import { TopMenu } from "../../topmenu";
 export interface BaseFeatureComponentProps {
   onChange: () => void;
 }
@@ -31,6 +32,8 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   onMoveUp?: () => void;
   [k: string]: unknown
 }
+
+
 
 /// tutaj jest komponen wyświetlany itp itp itp
 
@@ -83,6 +86,9 @@ const FeatureComp = (props: FeatureComponentProps) => {
         onDelete={onDelete}
         onMoveDown={onMoveDown}
         onMoveUp={onMoveUp}
+
+// tutaj dodać komponent taki header po kliknięciu onEdit
+
         {...props}
       />
     );

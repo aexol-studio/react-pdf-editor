@@ -23,6 +23,9 @@ export const PDFDocument = (props: PDFDocumentProps) => {
                 version={version}
                 feature={props.machine.template!.header}
                 hideControls={true}
+
+                //
+               // showTopMenu={true}
               />
             )}
           </View>

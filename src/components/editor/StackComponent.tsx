@@ -2,9 +2,7 @@ import * as React from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import { FeatureComponent } from "./FeatureComponent";
 import { Controls } from "./Controls";
-import {
-  Rolloutable
-} from "./display/Rolloutable";
+import { Rolloutable } from "./display/Rolloutable";
 import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
 import { swapInArray } from "../../utils";
 import { translated } from "../../models";
@@ -13,7 +11,8 @@ export interface StackComponentProps extends DeleteAndEditIconsComponentProps {
   onChange: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
   components?: PartialObjects["TemplateComponent"][];
-  hideControls?: boolean
+  hideControls?: boolean;
+  topMenuControls?: boolean;
 }
 
 const t = translated("StackComponentTxt");
@@ -53,8 +52,15 @@ export const StackComponent = (props: StackComponentProps) => {
             />
           );
         })}
+
+
+
       {stack.items && (
         <Controls
+          //
+
+          //showTopMenu={topMenuControls}
+
           show={!hideControls}
           features={stack.items}
           mutateWholeObject={onChange}

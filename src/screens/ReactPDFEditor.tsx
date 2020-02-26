@@ -8,10 +8,10 @@ import { FrontendTypes } from "../frontend-types";
 import { translated } from "../models";
 import * as Icons from "react-feather";
 import { TopMenu } from "../topmenu";
+// import {initialModel} from './InitialPDFModels'
 export interface PDFProps {
   onChange?: () => void;
   initialPDF?: PDFState;
-
   // initialPDF?: {
   //   PDF: {
   //     name: string,
@@ -53,10 +53,11 @@ const t = translated("ReactPDFEditorTxt");
 
 export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
   initialPDF,
-  onChange
+  onChange, 
 }) => {
   const [state, setState] = useState<PDFState>(
-    initialPDF || {
+    initialPDF ||
+    {
       PDF: {
         name: "untitled",
         template: {
@@ -86,6 +87,9 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
       },
       showPDF: true
     }
+
+//inintialPdf w conscie
+
   );
   const updatePDF = (
     fn: (
@@ -173,12 +177,21 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
       </div>
       <div className={styles.SplitScreen}>
         <div className={styles.Left}>
-          <h4 className={styles.SectionTitle}>{t("SectionTitleHeader")}</h4>
+
           <FeatureComponent
             feature={header!}
             onChange={() => mutateWholeObject()}
             onDelete={() => {}}
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
+
+
+
+
+            // tutaj ustawia stan - komponentu topMenu
+
+            // zrobić tak jak DeleteAndEdit component
+
+
             hideControls={true}
 
             // tutaj zrobione !!
@@ -189,7 +202,11 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
               i={i}
               key={`${i}`}
               doc={d}
+
+
               onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
+              
+              
               onChange={() => mutateWholeObject()}
               onDelete={() => {
                 template.documents! = template!.documents!.filter(
@@ -211,7 +228,11 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
             feature={footer!}
             onChange={() => mutateWholeObject()}
             onDelete={() => {}}
+            
+            
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
+            
+            
             hideControls={true}
           />
         </div>

@@ -89,22 +89,25 @@ const flexDirectionColumnJustifyConditionalGroup: ConditionalGroupMenuItem = {
   itemType: MenuItemType.ConditionalGroup,
   active: (style: ReactPDF.Style): boolean => style.flexDirection === "column",
   children: [
-    //justtifyContent
 
+
+    //justtifyContent
     justifyContentFlexStartIcon,
     justifyContentFlexEndIcon,
     justifyContentCenterIcon,
     justifyContentSpaceBetween,
     justifyContentSpaceAround,
-    //alginSelf
 
+
+    //alginSelf
     alignSelfToFlexStartIcon,
     alignSelfToFlexEndIcon,
     alignSelfToFlexCenterIcon,
     alignSelfToFlexBaselineIcon,
     alignSelfToFlexStretchIcon,
+    
+    
     //alginIntems
-
     alignItemsToStartIcon,
     alignItemsToEndIcon,
     alignItemsToCenterIcon,
@@ -114,21 +117,40 @@ const flexDirectionColumnJustifyConditionalGroup: ConditionalGroupMenuItem = {
 };
 
 const common: MenuItem[] = [
+  // fitToParentIcon,
+  // ExpandableInputMaximize2,
+  // ExpandableInputMinimize2,
+  // ColorPicker,
+  // TopIconBold,
+  // TopIconFontSize,
+  // InputFontSize,
+  // TopIconAlignLeft,
+  // TopIconAlignCenter,
+  // TopIconAlignRight,
+  // TopIconAlignJustify,
+  // ColorPicker,
+  // ExpandableInputSquare,
+  // ColorPicker
+  //border width
   fitToParentIcon,
   ExpandableInputMaximize2,
   ExpandableInputMinimize2,
+  // defaultColorPicker,
   ColorPicker,
   TopIconBold,
+  TopIconItalic,
+  InputLineHeight,
+  TopIconTextDecoration,
   TopIconFontSize,
   InputFontSize,
   TopIconAlignLeft,
   TopIconAlignCenter,
   TopIconAlignRight,
   TopIconAlignJustify,
+  // defaultColorPicker,
   ColorPicker,
   ExpandableInputSquare,
-  ColorPicker
-  //border width
+  SelectFontType
 ];
 
 const configurations: {
@@ -149,7 +171,8 @@ const configurations: {
       fitToParentIcon,
       ExpandableInputMaximize2,
       ExpandableInputMinimize2,
-      defaultColorPicker,
+      // defaultColorPicker,
+      ColorPicker,
       TopIconBold,
       TopIconFontSize,
       InputFontSize,
@@ -157,7 +180,8 @@ const configurations: {
       TopIconAlignCenter,
       TopIconAlignRight,
       TopIconAlignJustify,
-      defaultColorPicker,
+      // defaultColorPicker,
+      ColorPicker,
       ExpandableInputSquare,
       SelectFontType
     ]
@@ -166,25 +190,26 @@ const configurations: {
   TextBlock: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
-    children: [
-      fitToParentIcon,
-      ExpandableInputMaximize2,
-      ExpandableInputMinimize2,
-      ColorPicker,
-      TopIconBold,
-      TopIconItalic,
-      TopIconTextDecoration,
-      TopIconFontSize,
-      InputFontSize,
-      InputLineHeight,
-      TopIconAlignLeft,
-      TopIconAlignCenter,
-      TopIconAlignRight,
-      TopIconAlignJustify,
-      ColorPicker,
-      ExpandableInputSquare,
-      ColorPicker
-    ]
+    children: common
+    //  [
+    //   fitToParentIcon,
+    //   ExpandableInputMaximize2,
+    //   ExpandableInputMinimize2,
+    //   ColorPicker,
+    //   TopIconBold,
+    //   TopIconItalic,
+    //   TopIconTextDecoration,
+    //   TopIconFontSize,
+    //   InputFontSize,
+    //   InputLineHeight,
+    //   TopIconAlignLeft,
+    //   TopIconAlignCenter,
+    //   TopIconAlignRight,
+    //   TopIconAlignJustify,
+    //   ColorPicker,
+    //   ExpandableInputSquare,
+    //   ColorPicker
+    // ]
   },
   Image: {
     itemType: MenuItemType.ConditionalGroup,
@@ -324,6 +349,7 @@ const ConditionalGroup: React.FunctionComponent<{
 export interface TopMenuProps {
   editedFeature?: PartialObjects["Feature"];
   onChange: () => void;
+  editTopMenu?: boolean;
 }
 export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
   const editedFeatureStyle: ReactPDF.Style = editedFeature.styleJson
@@ -336,6 +362,10 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
     });
     onChange();
   };
+
+// czy to tu???
+
+
   const typename = editedFeature.__typename;
   const featureConfig =
     (typename && configurations[typename]) || configurations.Start;

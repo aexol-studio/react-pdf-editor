@@ -21,6 +21,7 @@ export const EmptyFeatureComponent = ({
       } as any
     }
     show={true}
+    //showTopMenu={true}
     mutateWholeObject={onChange}
     clean={() => {
       feature = {};
