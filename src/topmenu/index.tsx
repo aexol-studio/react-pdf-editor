@@ -89,8 +89,6 @@ const flexDirectionColumnJustifyConditionalGroup: ConditionalGroupMenuItem = {
   itemType: MenuItemType.ConditionalGroup,
   active: (style: ReactPDF.Style): boolean => style.flexDirection === "column",
   children: [
-
-
     //justtifyContent
     justifyContentFlexStartIcon,
     justifyContentFlexEndIcon,
@@ -98,15 +96,13 @@ const flexDirectionColumnJustifyConditionalGroup: ConditionalGroupMenuItem = {
     justifyContentSpaceBetween,
     justifyContentSpaceAround,
 
-
     //alginSelf
     alignSelfToFlexStartIcon,
     alignSelfToFlexEndIcon,
     alignSelfToFlexCenterIcon,
     alignSelfToFlexBaselineIcon,
     alignSelfToFlexStretchIcon,
-    
-    
+
     //alginIntems
     alignItemsToStartIcon,
     alignItemsToEndIcon,
@@ -350,6 +346,7 @@ export interface TopMenuProps {
   editedFeature?: PartialObjects["Feature"];
   onChange: () => void;
   editTopMenu?: boolean;
+  style?: React.CSSProperties;
 }
 export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
   const editedFeatureStyle: ReactPDF.Style = editedFeature.styleJson
@@ -363,8 +360,7 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
     onChange();
   };
 
-// czy to tu???
-
+  // czy to tu???
 
   const typename = editedFeature.__typename;
   const featureConfig =

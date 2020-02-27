@@ -49,7 +49,7 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
         width: "100%"
       }}
     >
-      <TopMenu {...props}/>
+      <TopMenu editedFeature={textBlock} onChange={onChange} />
       <DeleteAndEditIconsComponent {...props} />
       <AutoResizeTextArea
         rows={1}

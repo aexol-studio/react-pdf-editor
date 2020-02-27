@@ -7,10 +7,10 @@ import { LivePDF } from "../livepdf";
 import { FrontendTypes } from "../frontend-types";
 import { translated } from "../models";
 import * as Icons from "react-feather";
-import { TopMenu } from "../topmenu";
+// import { TopMenu } from "../topmenu";
 // import {initialModel} from './InitialPDFModels'
 export interface PDFProps {
-  onChange?: () => void;
+  onChange?: (onChange: FrontendTypes["MachineTemplate"]) => void;
   initialPDF?: PDFState;
   // initialPDF?: {
   //   PDF: {
@@ -48,6 +48,13 @@ export interface PDFState {
   errors?: string[];
   showPDF: boolean;
 }
+
+// useState(()=> 
+// if(){
+
+
+// [initialPDF])
+
 
 const t = translated("ReactPDFEditorTxt");
 
@@ -154,10 +161,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
   } = template;
   return (
     <>
-      <TopMenu
-        editedFeature={state.editedFeature}
-        onChange={() => mutateWholeObject()}
-      />
       <div className={styles.EyePlacement}>
         <IconButton
           onClick={() => setState(s => ({ ...s, showPDF: !state.showPDF }))}

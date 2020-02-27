@@ -6,9 +6,9 @@ export const Main = style({
   fontFamily: "Fira Sans",
   background: Colors.White,
   display: "flex",
-  boxShadow: `${Colors["Dark Side"]}44 2px 5px 14px`,
+  // boxShadow: `${Colors["Dark Side"]}44 2px 5px 14px`,
   height: TOPHEIGHT,
-  paddingLeft: 30
+  // paddingLeft: 30
 });
 export const Placement = style({
   $debugName: "TopMenuPlacement",
