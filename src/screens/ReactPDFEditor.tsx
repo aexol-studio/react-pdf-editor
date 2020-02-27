@@ -49,22 +49,22 @@ export interface PDFState {
   showPDF: boolean;
 }
 
-// useState(()=> 
+// useState(()=>
 // if(){
-
-
-// [initialPDF])
-
 
 const t = translated("ReactPDFEditorTxt");
 
 export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
   initialPDF,
-  onChange, 
+  onChange
 }) => {
+  //   useEffect(() => {
+  // if(initialPDF){
+
+  //       }},[initialPDF])
+
   const [state, setState] = useState<PDFState>(
-    initialPDF ||
-    {
+    initialPDF || {
       PDF: {
         name: "untitled",
         template: {
@@ -94,9 +94,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
       },
       showPDF: true
     }
-
-//inintialPdf w conscie
-
   );
   const updatePDF = (
     fn: (
@@ -180,20 +177,14 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
       </div>
       <div className={styles.SplitScreen}>
         <div className={styles.Left}>
-
           <FeatureComponent
             feature={header!}
             onChange={() => mutateWholeObject()}
             onDelete={() => {}}
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
-
-
-
-
             // tutaj ustawia stan - komponentu topMenu
 
             // zrobić tak jak DeleteAndEdit component
-
 
             hideControls={true}
 
@@ -227,11 +218,7 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
             feature={footer!}
             onChange={() => mutateWholeObject()}
             onDelete={() => {}}
-            
-            
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
-            
-            
             hideControls={true}
           />
         </div>

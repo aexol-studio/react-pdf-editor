@@ -35,7 +35,7 @@ export const ListBlockComponent = ({
             >
               •
             </Text>
-            <FeatureComponent version={version} feature={i} key={index} />
+            <FeatureComponent version={version} feature={i} />
           </View>
         ))}
     </View>
