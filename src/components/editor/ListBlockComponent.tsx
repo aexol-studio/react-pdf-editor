@@ -18,7 +18,7 @@ export interface ListBlockComponentProps extends DeleteAndEditIconsComponentProp
 const t = translated("ListBlockComponentTxt");
 
 export const ListBlockComponent = (props: ListBlockComponentProps) => {
-  const { onChange, onEdit, listBlock } = props;
+  const { onChange,onEdit,listBlock } = props;
   return (
     <Rolloutable title={t("TitleList")} {...props}>
       {listBlock.items &&
