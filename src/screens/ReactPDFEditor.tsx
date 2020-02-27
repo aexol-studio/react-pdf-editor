@@ -49,9 +49,6 @@ export interface PDFState {
   showPDF: boolean;
 }
 
-// useState(()=>
-// if(){
-
 const t = translated("ReactPDFEditorTxt");
 
 export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
@@ -158,6 +155,10 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
   } = template;
   return (
     <>
+      {/* <TopMenu
+        editedFeature={state.editedFeature}
+        onChange={() => mutateWholeObject()}
+      /> */}
       <div className={styles.EyePlacement}>
         <IconButton
           onClick={() => setState(s => ({ ...s, showPDF: !state.showPDF }))}

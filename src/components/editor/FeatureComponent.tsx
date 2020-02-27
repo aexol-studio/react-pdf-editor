@@ -108,10 +108,10 @@ const FeatureComp = (props: FeatureComponentProps) => {
     return (
       <ListBlockComponent
         listBlock={feature}
-        // onDelete={onDelete}
+        onDelete={onDelete}
         onChange={onChange}
         onEdit={onEdit}
-        // {...props}
+        {...props}
       />
     );
   }
