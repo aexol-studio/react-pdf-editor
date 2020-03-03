@@ -30,7 +30,7 @@ export const ImageComponent = ({
   onChange,
   image,
   onDelete,
-  onEdit,
+  // onEdit,
   onMoveDown,
   onMoveUp
 }: ImageComponentProps) => {
@@ -40,7 +40,7 @@ export const ImageComponent = ({
     <div>
       <DeleteAndEditIconsComponent
         onDelete={onDelete}
-        onEdit={onEdit}
+        // onEdit={onEdit}
         onMoveDown={onMoveDown}
         onMoveUp={onMoveUp}
       />

@@ -7,7 +7,7 @@ import * as styles1 from "..//styles/Feature";
 export interface DeleteAndEditIconsComponentProps {
   feature?: PartialObjects["Feature"];
   onDelete?: () => void;
-  onEdit?: (feature: PartialObjects["Feature"]) => void;
+  // onEdit?: (feature: PartialObjects["Feature"]) => void;
   isRoot?: boolean;
   onMoveDown?: () => void;
   onMoveUp?: () => void;
@@ -18,7 +18,7 @@ export const DeleteAndEditIconsComponent = ({
   feature,
   onDelete,
   isRoot,
-  onEdit,
+  // onEdit,
   onMoveDown,
   onMoveUp
 }: DeleteAndEditIconsComponentProps) => (
