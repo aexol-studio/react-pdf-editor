@@ -28,7 +28,7 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   onDelete: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
   // editedFeature?: PartialObjects["Feature"];
-
+  // textBlock: PartialObjects["TextBlock"];
   //  tu usunięte
 
 
@@ -37,6 +37,8 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   [k: string]: unknown
 }
 
+
+{/* <TopMenu editedFeature={textBlock} onChange={onChange}  /> */}
 
 
 /// tutaj jest komponen wyświetlany itp itp itp
@@ -83,6 +85,7 @@ const FeatureComp = (props: FeatureComponentProps) => {
   }
   if (isStack(feature)) {
     return (
+      
       <StackComponent
         stack={feature}
         onChange={onChange}
@@ -94,7 +97,9 @@ const FeatureComp = (props: FeatureComponentProps) => {
 // tutaj dodać komponent taki header po kliknięciu onEdit
 
         {...props}
+
       />
+      
     );
   }
   if (isTableBlock(feature)) {
@@ -110,6 +115,7 @@ const FeatureComp = (props: FeatureComponentProps) => {
   }
   if (isListBlock(feature)) {
     return (
+      
       <ListBlockComponent
         listBlock={feature}
         onDelete={onDelete}

@@ -2,7 +2,10 @@ import * as React from "react";
 import * as styles from "./styles/Rolloutable";
 import * as icons from "react-feather";
 import { PartialObjects } from "../../../graphql-zeus";
-import { DeleteAndEditIconsComponentProps, DeleteAndEditIconsComponent } from "./DeleteAndEdit";
+import {
+  DeleteAndEditIconsComponentProps,
+  DeleteAndEditIconsComponent
+} from "./DeleteAndEdit";
 
 // export interface DeleteAndEditIconsComponentProps {
 //   feature?: PartialObjects["Feature"];
@@ -106,7 +109,7 @@ export class Rolloutable extends React.Component<
               size={10}
               onClick={() => {
                 this.setState({ rolledOut: !this.state.rolledOut });
-                console.log("beng!")
+                console.log("beng!");
               }}
             />
           )}
