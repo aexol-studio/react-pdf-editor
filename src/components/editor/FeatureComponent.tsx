@@ -27,7 +27,11 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   feature: PartialObjects["Feature"];
   onDelete: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
-  editedFeature?: PartialObjects["Feature"];
+  // editedFeature?: PartialObjects["Feature"];
+
+  //  tu usunięte
+
+
   onMoveDown?: () => void;
   onMoveUp?: () => void;
   [k: string]: unknown
@@ -82,7 +86,7 @@ const FeatureComp = (props: FeatureComponentProps) => {
       <StackComponent
         stack={feature}
         onChange={onChange}
-        onEdit={onEdit}
+        // onEdit={onEdit}
         onDelete={onDelete}
         onMoveDown={onMoveDown}
         onMoveUp={onMoveUp}

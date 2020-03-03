@@ -53,7 +53,7 @@ export const ListBlockComponent = (props: ListBlockComponentProps) => {
           );
         })}
       {listBlock.items && (
-        <Controls
+        <Controls 
            parent={listBlock}
           features={listBlock.items}
           mutateWholeObject={onChange}

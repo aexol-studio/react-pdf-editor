@@ -59,7 +59,7 @@ export const DeleteAndEditIconsComponent = ({
         />
       </div>
     )}
-    <div>
+    {/* <div>
       <Icons.Edit
         style={{
           marginLeft: 10
@@ -68,7 +68,7 @@ export const DeleteAndEditIconsComponent = ({
         onClick={() => onEdit && feature && onEdit(feature)}
         size={15}
       />
-    </div>
+    </div> */}
   </div>
 );
 
