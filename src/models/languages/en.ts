@@ -55,3 +55,6 @@ export enum ReactPDFEditorTxt {
   ButtonAddPage = "Add Page",
   SectionTitleFooter = "Footer"
 }
+export enum TextBlockComponentTxt {
+  TextBlockTitle = "Text"
+}

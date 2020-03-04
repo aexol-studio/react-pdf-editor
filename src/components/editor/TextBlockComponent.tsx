@@ -5,6 +5,7 @@ import {
   DeleteAndEditIconsComponentProps,
   DeleteAndEditIconsComponent
 } from "./display/DeleteAndEdit";
+import { translated } from "../../models";
 
 import { TopMenuProps, TopMenu } from "../../topmenu/index";
 // import { Controls } from "./Controls";
@@ -12,6 +13,8 @@ import { TopMenuProps, TopMenu } from "../../topmenu/index";
 // czy tutaj trzeba zrobić export interface ... extends Delete || TopMenuProps
 
 // chyba tak
+
+const t = translated("TextBlockComponentTxt");
 
 export interface TextBlockComponentProps
   extends DeleteAndEditIconsComponentProps,
@@ -51,7 +54,15 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
       }}
     >
       <TopMenu editedFeature={textBlock} onChange={onChange} />
-      <DeleteAndEditIconsComponent {...props} />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center"
+        }}
+      >
+        {t("TextBlockTitle")}
+        <DeleteAndEditIconsComponent {...props} />
+      </div>
       <AutoResizeTextArea
         rows={1}
         className={styles.Main}

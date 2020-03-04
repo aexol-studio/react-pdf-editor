@@ -9,20 +9,21 @@ export enum ControlsComponentTxt {
 }
 
 export enum ColumnsCoponentTxt {
-  IconTrashDelete = "Delete"
+  IconTrashDelete = "Usuń"
 }
 
 export enum DocumentComponentTxt {
-  DeletePage = "Delete page"
+  DeletePage = "Usuń stronę"
 }
 
 export enum ImageComponentTxt {
+  ImageTitle = "Obraz",
   PlaceholderWidth = "width",
   PlaceholderHeight = "height"
 }
 
 export enum ListBlockComponentTxt {
-  TitleList = "List"
+  TitleList = "Lista"
 }
 
 export enum StackComponentTxt {
@@ -30,27 +31,30 @@ export enum StackComponentTxt {
 }
 
 export enum TableBlockComponentTxt {
-  TableTitle = "table",
-  ControleButtonDelete = "Delete",
-  ControleButtonAddBlock = "Add block",
-  ControleButtonAddColumn = "Add column"
+  TableTitle = "Tabela",
+  ControleButtonDelete = "Usuń",
+  ControleButtonAddBlock = "Dodaj rząd",
+  ControleButtonAddColumn = "Dodaj kolumnę"
 }
 
 export enum TimeStampComponentTxt {
-  Date = "Date"
+  Date = "Data"
 }
 export enum ConfirmTxt {
-  AreYouSure = "Are you sure",
-  Yes = "Yes",
-  No = "No"
+  AreYouSure = "Jesteś pewien",
+  Yes = "Tak",
+  No = "Nie"
 }
 
 export enum ReactPDFEditorTxt {
   Loading = "Loading...",
-  HidePreview = "Hide preview",
-  ShowPreview = "Show preview",
-  SectionTitleHeader = "Header",
-  SectionTitlePages = "Pages",
-  ButtonAddPage = "Add Page",
-  SectionTitleFooter = "Footer"
+  HidePreview = "Ukryj pogląd",
+  ShowPreview = "Pokaż pogląd",
+  SectionTitleHeader = "Nagłowek",
+  SectionTitlePages = "Strona",
+  ButtonAddPage = "Dodaj stronę",
+  SectionTitleFooter = "Stopka"
+}
+export enum TextBlockComponentTxt {
+  TextBlockTitle = "Tekst"
 }
