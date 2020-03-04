@@ -6,7 +6,7 @@ import {
   DeleteAndEditIconsComponent
 } from "./display/DeleteAndEdit";
 
-import {TopMenuProps, TopMenu} from '../../topmenu/index'
+import { TopMenuProps, TopMenu } from "../../topmenu/index";
 // import { Controls } from "./Controls";
 
 // czy tutaj trzeba zrobić export interface ... extends Delete || TopMenuProps
@@ -14,7 +14,8 @@ import {TopMenuProps, TopMenu} from '../../topmenu/index'
 // chyba tak
 
 export interface TextBlockComponentProps
-  extends DeleteAndEditIconsComponentProps, TopMenuProps {
+  extends DeleteAndEditIconsComponentProps,
+    TopMenuProps {
   textBlock: PartialObjects["TextBlock"];
   onChange: () => void;
 }
@@ -49,7 +50,7 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
         width: "100%"
       }}
     >
-      <TopMenu editedFeature={textBlock} onChange={onChange}  />
+      <TopMenu editedFeature={textBlock} onChange={onChange} />
       <DeleteAndEditIconsComponent {...props} />
       <AutoResizeTextArea
         rows={1}

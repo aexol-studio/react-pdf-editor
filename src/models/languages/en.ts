@@ -17,6 +17,7 @@ export enum DocumentComponentTxt {
 }
 
 export enum ImageComponentTxt {
+  ImageTitle = "Image",
   PlaceholderWidth = "width",
   PlaceholderHeight = "height"
 }

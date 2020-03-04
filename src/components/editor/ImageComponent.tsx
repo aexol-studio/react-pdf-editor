@@ -38,12 +38,20 @@ export const ImageComponent = ({
   const [ratio, setRatio] = useState<number>(1.0);
   return (
     <div>
-      <DeleteAndEditIconsComponent
-        onDelete={onDelete}
-        // onEdit={onEdit}
-        onMoveDown={onMoveDown}
-        onMoveUp={onMoveUp}
-      />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center"
+        }}
+      >
+        {t("ImageTitle")}
+        <DeleteAndEditIconsComponent
+          onDelete={onDelete}
+          // onEdit={onEdit}
+          onMoveDown={onMoveDown}
+          onMoveUp={onMoveUp}
+        />
+      </div>
 
       <div className={styles.ImageWrap}>
         {image.url && (
