@@ -8,6 +8,8 @@ import {
 import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
 import { swapInArray } from "../../utils";
 import { translated } from "../../models";
+import { TopMenu } from "../../topmenu/index";
+// import { TextBlockComponentProps } from "livepdf/livecomponents/editor";
 export interface ListBlockComponentProps extends DeleteAndEditIconsComponentProps {
   listBlock: PartialObjects["ListBlock"];
   onChange: () => void;
@@ -21,6 +23,7 @@ export const ListBlockComponent = (props: ListBlockComponentProps) => {
   const { onChange,onEdit,listBlock } = props;
   return (
     <Rolloutable title={t("TitleList")} {...props}>
+      <TopMenu editedFeature={listBlock} onChange={onChange} />
       {listBlock.items &&
         listBlock.items.map((i, index) => {
           return (

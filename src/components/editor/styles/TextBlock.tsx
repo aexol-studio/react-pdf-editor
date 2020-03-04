@@ -5,7 +5,7 @@ export const Main = style({
   $debugName: "TextBlockMain",
   display: 'flex',
   border: 0,
-  padding: 15,
+  // padding: 15,
   width: "100%",
   background: Colors.White,
   fontFamily: "Fira Sans"

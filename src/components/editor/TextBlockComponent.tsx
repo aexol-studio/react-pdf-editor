@@ -53,7 +53,6 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
         width: "100%"
       }}
     >
-      <TopMenu editedFeature={textBlock} onChange={onChange} />
       <div
         style={{
           display: "flex",
@@ -63,6 +62,7 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
         {t("TextBlockTitle")}
         <DeleteAndEditIconsComponent {...props} />
       </div>
+      <TopMenu editedFeature={textBlock} onChange={onChange} />
       <AutoResizeTextArea
         rows={1}
         className={styles.Main}
