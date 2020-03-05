@@ -215,7 +215,7 @@ const configurations: {
   TableBlock: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
-    children: [fitToParentIcon]
+    children: common
   },
   Columns: {
     itemType: MenuItemType.ConditionalGroup,
@@ -250,7 +250,7 @@ const configurations: {
   ListBlock: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
-    children: [fitToParentIcon]
+    children: common
   },
   TimeStamp: {
     itemType: MenuItemType.ConditionalGroup,

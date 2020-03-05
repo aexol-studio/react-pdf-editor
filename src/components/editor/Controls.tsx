@@ -77,13 +77,17 @@ export const Controls = ({
                       } as PartialObjects["Stack"]);
                       setOpen(false);
                       mutateWholeObject();
-                      console.log("beng 2")
+                      console.log("beng 2");
                     }}
                   >
-                    {t("ButtonStack")}
-
-                              
-
+                    <p
+                      style={{
+                        fontSize: "12px",
+                        margin: 0
+                      }}
+                    >
+                      {t("ButtonStack")}
+                    </p>
                   </ControlsButton>
                 )}
                 {!document && (

@@ -8,6 +8,8 @@ import {
   DeleteAndEditIconsComponent
 } from "./display/DeleteAndEdit";
 
+import { TopMenuProps, TopMenu } from "../../topmenu/index";
+
 const t = translated("ImageComponentTxt");
 
 function getBase64(file: Blob): Promise<string> {
@@ -21,7 +23,9 @@ function getBase64(file: Blob): Promise<string> {
     reader.onerror = error => reject(error);
   });
 }
-export interface ImageComponentProps extends DeleteAndEditIconsComponentProps {
+export interface ImageComponentProps
+  extends DeleteAndEditIconsComponentProps,
+    TopMenuProps {
   image: PartialObjects["Image"];
   onChange: () => void;
 }
@@ -44,7 +48,15 @@ export const ImageComponent = ({
           justifyContent: "center"
         }}
       >
-        {t("ImageTitle")}
+        <p
+          style={{
+            fontSize: "12px",
+            margin: 0
+          }}
+        >
+          {t("ImageTitle")}
+        </p>
+
         <DeleteAndEditIconsComponent
           onDelete={onDelete}
           // onEdit={onEdit}
@@ -52,7 +64,7 @@ export const ImageComponent = ({
           onMoveUp={onMoveUp}
         />
       </div>
-
+      <TopMenu editedFeature={image} onChange={onChange} />
       <div className={styles.ImageWrap}>
         {image.url && (
           <img

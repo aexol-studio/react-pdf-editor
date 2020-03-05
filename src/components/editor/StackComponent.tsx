@@ -6,6 +6,7 @@ import { Rolloutable } from "./display/Rolloutable";
 import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
 import { swapInArray } from "../../utils";
 import { translated } from "../../models";
+import { TopMenu } from "../../topmenu/index";
 export interface StackComponentProps extends DeleteAndEditIconsComponentProps {
   stack: PartialObjects["Stack"];
   onChange: () => void;
@@ -21,6 +22,7 @@ export const StackComponent = (props: StackComponentProps) => {
   const { onChange, onEdit, stack, hideControls } = props;
   return (
     <Rolloutable title={t("TitleStack")} {...props}>
+      <TopMenu editedFeature={stack} onChange={onChange} />
       {stack.items &&
         stack.items.map((i, index) => {
           return (
@@ -52,8 +54,6 @@ export const StackComponent = (props: StackComponentProps) => {
             />
           );
         })}
-
-
 
       {stack.items && (
         <Controls

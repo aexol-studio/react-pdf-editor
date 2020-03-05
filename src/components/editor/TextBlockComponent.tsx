@@ -59,7 +59,14 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
           justifyContent: "center"
         }}
       >
-        {t("TextBlockTitle")}
+        <p
+          style={{
+            fontSize: 12,
+            margin: 0
+          }}
+        >
+          {t("TextBlockTitle")}
+        </p>
         <DeleteAndEditIconsComponent {...props} />
       </div>
       <TopMenu editedFeature={textBlock} onChange={onChange} />

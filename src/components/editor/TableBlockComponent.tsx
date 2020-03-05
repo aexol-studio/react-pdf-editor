@@ -8,6 +8,7 @@ import * as styles1 from "./styles/Feature";
 import { translated } from "../../models";
 import * as styles from "./styles/TableBlock";
 import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
+import { TopMenu } from "../../topmenu/index";
 
 export interface TableBlockComponentProps
   extends DeleteAndEditIconsComponentProps {
@@ -67,6 +68,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
       }`}
       {...props}
     >
+      <TopMenu editedFeature={tableBlock} onChange={onChange} />
       <div>
         <div>
           {tableBlock.rows &&

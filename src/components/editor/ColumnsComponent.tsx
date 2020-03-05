@@ -43,7 +43,15 @@ export const ColumnsComponent = ({
           className={cx(styles1.MiniIcon, styles1.Delete)}
           size={15}
         />
-        {t("IconTrashDelete")}
+
+        <p
+          style={{
+            fontSize: 12,
+            margin: 0
+          }}
+        >
+          {t("IconTrashDelete")}
+        </p>
       </div>
       <div className={styles.Main}>
         {columns.columns!.map((c, i) => {
