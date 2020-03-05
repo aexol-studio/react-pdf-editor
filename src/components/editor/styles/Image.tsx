@@ -13,3 +13,9 @@ export const ImageMain = style({
   marginRight: 10,
   maxWidth: 100
 });
+
+export const ImageTitle = style ({
+  $debugName: "ImageTitle",
+  fontSize: 12,
+  margin: 0
+})

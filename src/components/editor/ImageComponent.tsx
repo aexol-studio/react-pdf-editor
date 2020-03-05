@@ -48,14 +48,7 @@ export const ImageComponent = ({
           justifyContent: "center"
         }}
       >
-        <p
-          style={{
-            fontSize: "12px",
-            margin: 0
-          }}
-        >
-          {t("ImageTitle")}
-        </p>
+        <p className={styles.ImageTitle}>{t("ImageTitle")}</p>
 
         <DeleteAndEditIconsComponent
           onDelete={onDelete}

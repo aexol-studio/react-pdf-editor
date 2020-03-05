@@ -18,3 +18,9 @@ export const styleLabel = style({
   textAlign: "center",
   cursor: "pointer"
 });
+
+export const TextBlockTitle = style ({
+  $debugName: "TextBlockTitle",
+  fontSize: 12,
+  margin: 0
+})

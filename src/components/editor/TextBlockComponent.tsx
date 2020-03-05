@@ -60,10 +60,7 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
         }}
       >
         <p
-          style={{
-            fontSize: 12,
-            margin: 0
-          }}
+className={styles.TextBlockTitle}
         >
           {t("TextBlockTitle")}
         </p>
@@ -77,9 +74,10 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
         placeholder=""
         onChange={e => {
           textBlock.text = e.target.value;
-          onChange();
+          onChange(); 
         }}
       />
     </div>
   );
 };
+ 

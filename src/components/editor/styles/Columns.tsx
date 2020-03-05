@@ -8,3 +8,9 @@ export const Main = style({
   borderBottom: `1px solid ${Colors.Ashes}77`,
   width: "100%"
 });
+
+export const ColumnTitle = style ({
+  $debugName: "ColumnTitle",
+  fontSize: 12,
+  margin: 0
+})

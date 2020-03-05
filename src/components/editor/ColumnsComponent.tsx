@@ -44,14 +44,7 @@ export const ColumnsComponent = ({
           size={15}
         />
 
-        <p
-          style={{
-            fontSize: 12,
-            margin: 0
-          }}
-        >
-          {t("IconTrashDelete")}
-        </p>
+        <p className={styles.ColumnTitle}>{t("IconTrashDelete")}</p>
       </div>
       <div className={styles.Main}>
         {columns.columns!.map((c, i) => {
