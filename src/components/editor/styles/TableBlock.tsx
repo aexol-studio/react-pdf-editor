@@ -42,3 +42,10 @@ export const ControlCell = style({
     }
   }
 });
+
+export const TableBlockSvg = style({
+  $debugName: "TableBlockSvg",
+    display: "flex",
+    alignItems: "center",
+    marginRight: 10
+})

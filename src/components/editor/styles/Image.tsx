@@ -7,15 +7,22 @@ export const ImageWrap = style({
   flexFlow: "column nowrap"
 });
 export const ImageMain = style({
-  $debugName:"ImageMain",
+  $debugName: "ImageMain",
   width: 30,
   height: "auto",
   marginRight: 10,
   maxWidth: 100
 });
 
-export const ImageTitle = style ({
+export const ImageTitle = style({
   $debugName: "ImageTitle",
   fontSize: 12,
-  margin: 0
-})
+  margin: 0,
+  fontWeight: "bold"
+});
+
+export const ImageTitleDiv = style({
+  $debugName: "ImageTitleDiv",
+  display: "flex",
+  justifyContent: "center"
+});

@@ -38,3 +38,6 @@ export * from "./InputFontSize";
 export * from "./InputLineHeight";
 export * from "./TopIconFontSize";
 export * from "./SelectFontType";
+// Undo/Redo
+export * from "./TopIconUndo";
+export * from "./TopIconRedo";

@@ -39,3 +39,9 @@ export const Edit = style({
     }
   }
 });
+
+export const FeatureTitleDiv = style({
+  $debugName: "FeatureTitleDiv",
+  display: "flex",
+  justifyContent: "space-between"
+});

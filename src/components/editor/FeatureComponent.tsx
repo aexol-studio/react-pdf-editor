@@ -31,15 +31,14 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   // textBlock: PartialObjects["TextBlock"];
   //  tu usunięte
 
-
   onMoveDown?: () => void;
   onMoveUp?: () => void;
-  [k: string]: unknown
+  [k: string]: unknown;
 }
 
-
-{/* <TopMenu editedFeature={textBlock} onChange={onChange}  /> */}
-
+{
+  /* <TopMenu editedFeature={textBlock} onChange={onChange}  /> */
+}
 
 /// tutaj jest komponen wyświetlany itp itp itp
 
@@ -47,12 +46,7 @@ const FeatureComp = (props: FeatureComponentProps) => {
   const { feature, onChange, onEdit, onDelete, onMoveDown, onMoveUp } = props;
   if (isTimeStamp(feature)) {
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between"
-        }}
-      >
+      <div className={styles.FeatureTitleDiv}>
         <TimeStampComponent />
         <DeleteAndEditIconsComponent {...props} />
       </div>
@@ -66,8 +60,6 @@ const FeatureComp = (props: FeatureComponentProps) => {
         onEdit={onEdit}
         onDelete={onDelete}
         {...props}
-
-        // ni dzia ła
       />
     );
   }
@@ -78,14 +70,11 @@ const FeatureComp = (props: FeatureComponentProps) => {
         onChange={onChange}
         onDelete={onDelete}
         {...props}
-
-        //nie działą
       />
     );
   }
   if (isStack(feature)) {
     return (
-      
       <StackComponent
         stack={feature}
         onChange={onChange}
@@ -93,13 +82,10 @@ const FeatureComp = (props: FeatureComponentProps) => {
         onDelete={onDelete}
         onMoveDown={onMoveDown}
         onMoveUp={onMoveUp}
-
-// tutaj dodać komponent taki header po kliknięciu onEdit
+        // tutaj dodać komponent taki header po kliknięciu onEdit
 
         {...props}
-
       />
-      
     );
   }
   if (isTableBlock(feature)) {
@@ -115,7 +101,6 @@ const FeatureComp = (props: FeatureComponentProps) => {
   }
   if (isListBlock(feature)) {
     return (
-      
       <ListBlockComponent
         listBlock={feature}
         onDelete={onDelete}

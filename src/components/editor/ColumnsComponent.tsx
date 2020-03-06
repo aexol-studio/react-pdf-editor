@@ -30,14 +30,7 @@ export const ColumnsComponent = ({
   return (
     <>
       {/* <ControlsButton onClick={onDelete}>Delete row</ControlsButton> */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          marginTop: 5,
-          marginBottom: 5
-        }}
-      >
+      <div className={styles.ColumnTitleDiv}>
         <Icons.Trash
           onClick={onDelete}
           className={cx(styles1.MiniIcon, styles1.Delete)}

@@ -43,10 +43,9 @@ import {
   justifyContentSpaceBetween,
   TopIconAlignJustify,
   TopIconFontSize,
-  SelectFontType
-// Undo,
-// Redo
-
+  SelectFontType,
+  TopIconRedo,
+  TopIconUndo
 } from "./items";
 import {
   MenuItem,
@@ -132,6 +131,8 @@ const common: MenuItem[] = [
   // ColorPicker
   //border width
   fitToParentIcon,
+  TopIconRedo,
+  TopIconUndo,
   ExpandableInputMaximize2,
   ExpandableInputMinimize2,
   // defaultColorPicker,
@@ -230,6 +231,8 @@ const configurations: {
     active: (style: ReactPDF.Style) => true,
     children: [
       fitToParentIcon,
+      TopIconUndo,
+      TopIconRedo,
       flexFlowRowIcon,
       flexFlowColumnIcon,
       flexDirectionRowJustifyConditionalGroup,

@@ -48,22 +48,9 @@ const AutoResizeTextArea = (
 export const TextBlockComponent = (props: TextBlockComponentProps) => {
   const { onChange, textBlock } = props;
   return (
-    <div
-      style={{
-        width: "100%"
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center"
-        }}
-      >
-        <p
-className={styles.TextBlockTitle}
-        >
-          {t("TextBlockTitle")}
-        </p>
+    <div className={styles.TextBlockContainer}>
+      <div className={styles.TextBlockTitleDiv}>
+        <p className={styles.TextBlockTitle}>{t("TextBlockTitle")}</p>
         <DeleteAndEditIconsComponent {...props} />
       </div>
       <TopMenu editedFeature={textBlock} onChange={onChange} />
@@ -74,10 +61,9 @@ className={styles.TextBlockTitle}
         placeholder=""
         onChange={e => {
           textBlock.text = e.target.value;
-          onChange(); 
+          onChange();
         }}
       />
     </div>
   );
 };
- 

@@ -3,7 +3,7 @@ import { Colors } from "../../../Colors";
 
 export const Main = style({
   $debugName: "TextBlockMain",
-  display: 'flex',
+  display: "flex",
   border: 0,
   // padding: 15,
   width: "100%",
@@ -19,8 +19,27 @@ export const styleLabel = style({
   cursor: "pointer"
 });
 
-export const TextBlockTitle = style ({
+export const TextBlockTitle = style({
   $debugName: "TextBlockTitle",
   fontSize: 12,
-  margin: 0
+  margin: 0,
+  fontWeight: "bold"
+});
+
+export const TextBlockSvg = style({
+  $debugName: "TextBlockSvg",
+  display: "flex",
+  alignItems: "center",
+  marginRight: 10
+});
+
+export const TextBlockTitleDiv = style({
+  $debugName: "TextBlockTitleDiv",
+  display: "flex",
+  justifyContent: "center"
+});
+
+export const TextBlockContainer = style({
+  $debugName: "TextBlockContainer",
+  width: "100%"
 })

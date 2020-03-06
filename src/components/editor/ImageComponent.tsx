@@ -43,10 +43,11 @@ export const ImageComponent = ({
   return (
     <div>
       <div
-        style={{
-          display: "flex",
-          justifyContent: "center"
-        }}
+        className={styles.ImageTitleDiv}
+        // style={{
+        //   display: "flex",
+        //   justifyContent: "center"
+        // }}
       >
         <p className={styles.ImageTitle}>{t("ImageTitle")}</p>
 

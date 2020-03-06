@@ -158,13 +158,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
         </div>
       </div>
       <div className={styles.Actions}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginRight: 10
-          }}
-        >
+        <div className={styles.TableBlockSvg}>
           <svg
             className={styles.ControlAddRow}
             focusable={"false"}
@@ -192,13 +186,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
           </svg>
         </div>
         {tableBlock.rows && tableBlock.rows.length > 0 && (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              marginRight: 10
-            }}
-          >
+          <div className={styles.TableBlockSvg}>
             <svg
               className={styles.ControlAddColumn}
               focusable={"false"}

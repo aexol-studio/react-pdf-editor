@@ -9,8 +9,17 @@ export const Main = style({
   width: "100%"
 });
 
+export const ColumnTitleDiv = style ({
+  $debugName: "ColumnTitleDiv",
+  display: "flex",
+  alignItems: "center",
+  marginTop: 5,
+  marginBottom: 5
+})
+
 export const ColumnTitle = style ({
   $debugName: "ColumnTitle",
   fontSize: 12,
-  margin: 0
+  margin: 0,
+  fontWeight: 'bold'
 })
