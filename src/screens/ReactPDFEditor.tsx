@@ -11,7 +11,12 @@ import * as Icons from "react-feather";
 // import {initialModel} from './InitialPDFModels'
 export interface PDFProps {
   onChange?: (onChange: FrontendTypes["MachineTemplate"]) => void;
-  initialPDF?: PDFState;
+  initialPDF?: {
+    PDF: FrontendTypes["MachineTemplate"];
+    editedFeature?: PartialObjects["Feature"];
+    errors?: string[];
+    showPDF: boolean;
+  }
   // initialPDF?: {
   //   PDF: {
   //     name: string,
@@ -92,6 +97,17 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
       showPDF: true
     }
   );
+
+  onChange = () => {
+    const currentPDFObject: FrontendTypes["MachineTemplate"] = {
+      ...state.PDF
+    };
+    setState(s => ({
+      ...s,
+      PDF: currentPDFObject
+    }));
+  };
+
   const updatePDF = (
     fn: (
       PDF: FrontendTypes["MachineTemplate"]
