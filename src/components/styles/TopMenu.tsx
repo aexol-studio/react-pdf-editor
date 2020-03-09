@@ -1,14 +1,17 @@
 import { style, classes } from "typestyle";
 import { Colors } from "../../Colors";
-import { TOPHEIGHT } from "../../constants";
+ import { TOPHEIGHT } from "../../constants";
 export const Main = style({
   $debugName: "TopMenuMain",
   fontFamily: "Fira Sans",
   background: Colors.White,
   display: "flex",
   // boxShadow: `${Colors["Dark Side"]}44 2px 5px 14px`,
-  height: TOPHEIGHT,
+  // height: TOPHEIGHT,
   // paddingLeft: 30
+  flexWrap: "wrap",
+  maxHeight: '100%',
+  minHeight: TOPHEIGHT,
 });
 export const Placement = style({
   $debugName: "TopMenuPlacement",
