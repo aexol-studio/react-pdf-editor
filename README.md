@@ -1,5 +1,27 @@
 # React PDF-editor
 
+The Portable Document Format, or PDF, is everywhere. PDF is a simple file format that can be used to read documents on regular people’s computers. 
+
+PDF has become a global standard for more secure and dependable information exchange since 1993. 
+
+Government and private industry rely on secure PDF-based storage of electronic records that can be reliably shared
+
+If you want to cut down on the mountains of paper being produced by offices, React PDF Editor is a solution for you. 
+
+Creating PDF in React PDF Editor takes a short amount of time and gives you a lot of advantages. 
+
+That is why React PDF Editor will help you create PDF files - one of the most important way business users shared documents. 
+
+React PDF Editor can be used for:
+- creating CVs,
+- electronic publishing,
+- user manuals,
+- invoices,
+- books,
+- non editable advertising materials,
+- archiving
+
+ 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg)](https://react-pdf-editor.brh.cloud/)
