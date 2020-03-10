@@ -7,45 +7,11 @@ import { LivePDF } from "../livepdf";
 import { FrontendTypes } from "../frontend-types";
 import { translated } from "../models";
 import * as Icons from "react-feather";
-// import { TopMenu } from "../topmenu";
-// import {initialModel} from './InitialPDFModels'
 export interface PDFProps {
   onChange?: (onChange: FrontendTypes["MachineTemplate"]) => void;
-  initialPDF?: {
-    PDF: FrontendTypes["MachineTemplate"];
-    editedFeature?: PartialObjects["Feature"];
-    errors?: string[];
-    showPDF: boolean;
-  }
-  // initialPDF?: {
-  //   PDF: {
-  //     name: string,
-  //     template: {
-  //         footer: {
-  //           __typename: string,
-  //           styleJson?: string
-  //         },
-  //      items: []
-  //     },
-  //       header: {
-  //          __typename: string,
-  //           items: []
-  //    },
-  //        margin: [],
-  //     documents: [
-  //     features:{
-  //       item: []
-  //     }
-  //    }
-  //  ]
-  //   }
-  //   }
-  //   showPDF: boolean
+  initialPDF?: FrontendTypes["MachineTemplate"];
 }
-// interface SomeType {
-//   styleJson?: string
-//   strigArray: string[]
-// }
+
 
 export interface PDFState {
   PDF: FrontendTypes["MachineTemplate"];
@@ -60,14 +26,11 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
   initialPDF,
   onChange
 }) => {
-  //   useEffect(() => {
-  // if(initialPDF){
 
-  //       }},[initialPDF])
 
   const [state, setState] = useState<PDFState>(
-    initialPDF || {
-      PDF: {
+    {
+      PDF: initialPDF || {
         name: "untitled",
         template: {
           footer: {
@@ -171,10 +134,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
   } = template;
   return (
     <>
-      {/* <TopMenu
-        editedFeature={state.editedFeature}
-        onChange={() => mutateWholeObject()}
-      /> */}
       <div className={styles.EyePlacement}>
         <IconButton
           onClick={() => setState(s => ({ ...s, showPDF: !state.showPDF }))}
@@ -199,13 +158,7 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
             onChange={() => mutateWholeObject()}
             onDelete={() => {}}
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
-            // tutaj ustawia stan - komponentu topMenu
-
-            // zrobić tak jak DeleteAndEdit component
-
             hideControls={true}
-
-            // tutaj zrobione !!
           />
           <h4 className={styles.SectionTitle}>{t("SectionTitlePages")}</h4>
           {documents.map((d, i) => (
@@ -223,11 +176,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
               }}
             />
           ))}
-
-          {/* <ButtonSimple onClick={() => addPage()}>
-              {t("ButtonAddPage")}
-            </ButtonSimple> */}
-
           <Icons.PlusSquare size={15} onClick={() => addPage()} />
 
           <h4 className={styles.SectionTitle}>{t("SectionTitleFooter")}</h4>
