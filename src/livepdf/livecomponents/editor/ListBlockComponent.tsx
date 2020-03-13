@@ -22,6 +22,7 @@ export const ListBlockComponent = ({
         listBlock.items.map((i, index) => (
           <View
             style={{
+              marginTop: 5,
               display: "flex",
               flexDirection: "row",
               flexWrap: "nowrap"

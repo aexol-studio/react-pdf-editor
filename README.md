@@ -1,5 +1,12 @@
 # React PDF-editor
 
+
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg)](https://react-pdf-editor.brh.cloud/)
+
+---
+
 The Portable Document Format, or PDF, is everywhere. 
 
 PDF is a simple file format that can be used to read documents on regular people’s computers. 
@@ -30,12 +37,6 @@ React PDF Editor can be used for:
 ### Easy to use. 
 
 ### Fast and light. 
-
----
-
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg)](https://react-pdf-editor.brh.cloud/)
 
 ---
 
@@ -78,7 +79,6 @@ Verify the deployment by navigating to your server address in your preferred bro
 
 ```sh
 http://localhost:1568/
-
 ```
 ---
 
