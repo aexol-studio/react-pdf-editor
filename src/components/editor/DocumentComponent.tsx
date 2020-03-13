@@ -26,7 +26,8 @@ export const DocumentComponent = ({
       key={`Page${i + 1}`}
       title={`Page ${i + 1}`}
     >
-      <div style={{ display: "flex", marginTop: 5, marginBottom: 10 }}>
+      {/* <div style={{ display: "flex", marginTop: 5, marginBottom: 10 }}> */}
+      <div className={styles.Basket}>
         <Confirm onConfirm={onDelete}>
           <Icons.Trash
             size={15}

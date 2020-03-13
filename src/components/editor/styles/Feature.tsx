@@ -20,6 +20,7 @@ export const MiniIcon = style({
   alignSelf: "flex-start",
   marginRight: 5,
   color: Colors.Androgyn
+  
 });
 
 export const Delete = style({
@@ -44,4 +45,12 @@ export const FeatureTitleDiv = style({
   $debugName: "FeatureTitleDiv",
   display: "flex",
   justifyContent: "space-between"
+});
+
+export const Basket = style({
+  $debugName: "Basket",
+  display: "flex",
+  marginTop: 5,
+  marginLeft: 5,
+  marginBottom: 10
 });
