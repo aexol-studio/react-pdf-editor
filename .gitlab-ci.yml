@@ -13,5 +13,3 @@ pages:
       - public
   script:
     - echo "Hello" 
-     only:
-    - develop
