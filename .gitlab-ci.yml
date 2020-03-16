@@ -1,5 +1,7 @@
 image: node:10
 build:
+  # only:
+  #   - develop
   artifacts:
     paths:
       - public
