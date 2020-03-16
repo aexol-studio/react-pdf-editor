@@ -1,7 +1,5 @@
 image: node:10
 build:
-only: 
-  - develop
   artifacts:
     paths:
       - public
@@ -9,6 +7,8 @@ only:
   script:
     - npm i
     - npm run build
+    only: 
+  - develop
 pages:
   artifacts:
     paths:
