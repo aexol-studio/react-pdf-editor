@@ -12,4 +12,6 @@ pages:
     paths:
       - public
   script:
-    - echo "Hello"
+    - echo "Hello" 
+     only:
+    - develop
