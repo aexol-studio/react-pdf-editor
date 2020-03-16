@@ -31,6 +31,7 @@ React PDF Editor can be used for:
 - non editable advertising materials,
 - archiving
 
+![](/react-pdf-editor/src/assets/ezgif.com-video-to-gif.gif)
  
 ### Real-time online PDF editor, based on ReactJs and TypeScript.
 
