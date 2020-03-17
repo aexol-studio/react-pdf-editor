@@ -25,11 +25,14 @@ React PDF Editor can be used for:
 
 ### Fast and light. 
 
+---
 
 ### Demo
 
 
-Here is working [live demo](https://react-pdf-editor.brh.cloud/).
+<!-- Here is working [live demo](https://react-pdf-editor.brh.cloud/). -->
+
+Here is working live demo: [https://react-pdf-editor.brh.cloud/](https://react-pdf-editor.brh.cloud/).
 
 ---
 
