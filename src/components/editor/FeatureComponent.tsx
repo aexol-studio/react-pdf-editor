@@ -47,8 +47,22 @@ const FeatureComp = (props: FeatureComponentProps) => {
   if (isTimeStamp(feature)) {
     return (
       <div className={styles.FeatureTitleDiv}>
-        <TimeStampComponent />
-        <DeleteAndEditIconsComponent {...props} />
+        <div
+          style={{
+            flex: 1
+          }}
+        >
+          <TimeStampComponent />
+        </div>
+
+        <div
+          style={{
+            flex: 10,
+            marginTop: 5
+          }}
+        >
+          <DeleteAndEditIconsComponent {...props} />
+        </div>
       </div>
     );
   }

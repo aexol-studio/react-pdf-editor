@@ -26,7 +26,9 @@ export const TextBlockTitle = style({
   $debugName: "TextBlockTitle",
   fontSize: 12,
   margin: 0,
-  fontWeight: "bold"
+  fontWeight: "bold",
+  display: 'flex',
+  alignSelf: 'center'
 });
 
 export const TextBlockSvg = style({
@@ -39,7 +41,9 @@ export const TextBlockSvg = style({
 export const TextBlockTitleDiv = style({
   $debugName: "TextBlockTitleDiv",
   display: "flex",
-  justifyContent: "center"
+  justifyContent: "center",
+  marginTop: '5px',
+  marginBottom: '5px'
 });
 
 export const TextBlockContainer = style({

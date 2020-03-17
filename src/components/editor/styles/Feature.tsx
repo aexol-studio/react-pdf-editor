@@ -17,6 +17,7 @@ export const FeatureOptions = style({
 export const MiniIcon = style({
   $debugName: "FeatureMiniIcon",
   cursor: "pointer",
+  display: "flex",
   alignSelf: "flex-start",
   marginRight: 5,
   color: Colors.Androgyn

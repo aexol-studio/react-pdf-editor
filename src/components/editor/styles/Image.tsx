@@ -18,11 +18,15 @@ export const ImageTitle = style({
   $debugName: "ImageTitle",
   fontSize: 12,
   margin: 0,
-  fontWeight: "bold"
+  fontWeight: "bold",
+  display: "flex",
+  alignSelf: "center"
 });
 
 export const ImageTitleDiv = style({
   $debugName: "ImageTitleDiv",
   display: "flex",
-  justifyContent: "center"
+  justifyContent: "center",
+  marginTop: "5px",
+  marginBottom: '5px'
 });
