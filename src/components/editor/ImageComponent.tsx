@@ -34,7 +34,6 @@ export const ImageComponent = ({
   onChange,
   image,
   onDelete,
-  // onEdit,
   onMoveDown,
   onMoveUp
 }: ImageComponentProps) => {
@@ -42,18 +41,10 @@ export const ImageComponent = ({
   const [ratio, setRatio] = useState<number>(1.0);
   return (
     <div>
-      <div
-        className={styles.ImageTitleDiv}
-        // style={{
-        //   display: "flex",
-        //   justifyContent: "center"
-        // }}
-      >
+      <div className={styles.ImageTitleDiv}>
         <p className={styles.ImageTitle}>{t("ImageTitle")}</p>
-
         <DeleteAndEditIconsComponent
           onDelete={onDelete}
-          // onEdit={onEdit}
           onMoveDown={onMoveDown}
           onMoveUp={onMoveUp}
         />
