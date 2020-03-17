@@ -8,7 +8,6 @@ import {
   isTableBlock,
   isTimeStamp
 } from "../../utils";
-// import * as Icons from "react-feather";
 import { TextBlockComponent } from "./TextBlockComponent";
 import { ImageComponent } from "./ImageComponent";
 import { StackComponent } from "./StackComponent";
@@ -17,9 +16,7 @@ import { ListBlockComponent } from "./ListBlockComponent";
 import * as styles from "./styles/Feature";
 import { EmptyFeatureComponent } from "./EmptyFeatureComponent";
 import { TimeStampComponent } from "./TimeStampComponent";
-// import cx from "classnames";
 import { DeleteAndEditIconsComponent } from "./display/DeleteAndEdit";
-// import { TopMenu } from "../../topmenu";
 export interface BaseFeatureComponentProps {
   onChange: () => void;
 }
@@ -27,17 +24,9 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   feature: PartialObjects["Feature"];
   onDelete: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
-  // editedFeature?: PartialObjects["Feature"];
-  // textBlock: PartialObjects["TextBlock"];
-  //  tu usunięte
-
   onMoveDown?: () => void;
   onMoveUp?: () => void;
   [k: string]: unknown;
-}
-
-{
-  /* <TopMenu editedFeature={textBlock} onChange={onChange}  /> */
 }
 
 /// tutaj jest komponen wyświetlany itp itp itp
@@ -58,7 +47,6 @@ const FeatureComp = (props: FeatureComponentProps) => {
         <div
           style={{
             flex: 10,
-            marginTop: 5
           }}
         >
           <DeleteAndEditIconsComponent {...props} />
@@ -92,7 +80,7 @@ const FeatureComp = (props: FeatureComponentProps) => {
       <StackComponent
         stack={feature}
         onChange={onChange}
-        // onEdit={onEdit}
+        onEdit={onEdit}
         onDelete={onDelete}
         onMoveDown={onMoveDown}
         onMoveUp={onMoveUp}
