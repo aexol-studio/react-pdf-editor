@@ -78,22 +78,22 @@ Here is working [live demo](https://react-pdf-editor.brh.cloud/).
 
 # How to use
 
-React PDF Editor is very easy to use. For example let;s pick textfield block:
+React PDF Editor is very easy to use. For example let's pick textarea block:
 
 1. Click on add circle ⊕ and you will get a list of blocks. Blocks will appear in a little modal window. 
 
 ![](/src/assets/select1.png)
 
 
-1. Choose Text button by clicking on it. Now you will get a textfield. Common blocks are: Text, Image, Stack, List, Vertical Split, Table and Time stamp.
+1. Choose Text button by clicking on it. Now you will get a textarea. Common blocks are: Text, Image, Stack, List, Vertical Split, Table and Time stamp.
 
 ![](/src/assets/select2.png)
 
-3. Above Textfield you can see rich text component. By using rich text component you can format block content. IT can be used to make it bold, italics, linked, or use other formatting.
+3. Above Textarea you can see rich text component. By using rich text component you can format block content. IT can be used to make it bold, italics, linked, or use other formatting.
 
 ![](/src/assets/select3.png)
 
-4. You can silmply delete block component by clicking trash icon.
+4. You can simply delete block component by clicking trash icon.
 
 ![](/src/assets/delete.png)
 
