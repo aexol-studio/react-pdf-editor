@@ -12,6 +12,7 @@ export const Main = style({
   flexWrap: "wrap",
   maxHeight: '100%',
   minHeight: TOPHEIGHT,
+  flex: 'maxContent'
 });
 export const Placement = style({
   $debugName: "TopMenuPlacement",
