@@ -11,8 +11,14 @@ export const FeatureOptions = style({
   $debugName: "FeatureOptions",
   display: "flex",
   flexFlow: "row nowrap",
+  flex: 1,
   flexDirection: "row-reverse",
-  width: "100%"
+  width: "100%",
+  
+  height: '100%',
+    // display: flex;
+    alignSelf: 'center'
+    // background: white;
 });
 export const MiniIcon = style({
   $debugName: "FeatureMiniIcon",

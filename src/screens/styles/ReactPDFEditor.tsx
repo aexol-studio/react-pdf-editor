@@ -49,7 +49,7 @@ export const Left = style({
   height: "100%",
   $nest: {
     "*": {
-      maxWidth: "100%"
+      // maxWidth: "100%"
     }
   }
 });

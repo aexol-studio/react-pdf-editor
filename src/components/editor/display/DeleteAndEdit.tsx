@@ -12,6 +12,7 @@ export interface DeleteAndEditIconsComponentProps {
   onMoveDown?: () => void;
   onMoveUp?: () => void;
   withoutDeleteIcons?: boolean;
+  style?: React.CSSProperties;
 }
 
 export const DeleteAndEditIconsComponent = ({

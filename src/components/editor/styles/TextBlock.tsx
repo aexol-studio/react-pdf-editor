@@ -41,7 +41,7 @@ export const TextBlockSvg = style({
 export const TextBlockTitleDiv = style({
   $debugName: "TextBlockTitleDiv",
   display: "flex",
-  justifyContent: "center",
+  justifyContent: "flex-start",
   marginTop: '5px',
   marginBottom: '5px'
 });

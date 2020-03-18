@@ -51,9 +51,23 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
     <div className={styles.TextBlockContainer}>
       <div className={styles.TextBlockTitleDiv}>
         <p className={styles.TextBlockTitle}>{t("TextBlockTitle")}</p>
-        <DeleteAndEditIconsComponent {...props} />
       </div>
-      <TopMenu editedFeature={textBlock} onChange={onChange} />
+      <div
+        style={{
+          display: "flex",
+          background: "white"
+        }}
+      >
+        <DeleteAndEditIconsComponent
+                  // style={{
+                  //   flex: 1,
+                  //   flexWrap: "wrap"
+                  // }}
+          {...props}
+        />
+        <TopMenu editedFeature={textBlock} onChange={onChange} />
+      </div>
+
       <AutoResizeTextArea
         rows={1}
         className={styles.Main}
