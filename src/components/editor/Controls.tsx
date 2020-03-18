@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as styles from "./styles/Controls";
 import { BuiltInStyles, PartialObjects } from "../../graphql-zeus";
-import { PlusCircle, MinusCircle } from "react-feather";
+// import { PlusCircle, MinusCircle } from "react-feather";
 import { translated } from "../../models";
 export interface ControlsProps {
   features: PartialObjects["Feature"][];
@@ -59,7 +59,16 @@ export const Controls = ({
           //zmiana stanu na true i pokazują się kontrolki
         }}
       >
-        {open ? <MinusCircle size={15} /> : <PlusCircle size={15} />}
+        {open ? (
+          // <MinusCircle size={15} />
+         
+          <p>Hide</p>
+
+        ) : (
+          // <PlusCircle size={15} />
+          <p>Add</p>
+      
+        )}
 
         {/* jeśli open jest true to minus a jesli nie to plus */}
       </div>
