@@ -56,6 +56,17 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
     showPDF: true
   });
 
+
+  // const onChange = () => {
+  //   const currentPDFObject: FrontendTypes["MachineTemplate"] = {
+  //     ...state.PDF
+  //   };
+  //   setState(s => ({
+  //     ...s,
+  //     PDF: currentPDFObject
+  //   }));
+  // }
+
   const updatePDF = (
     fn: (
       PDF: FrontendTypes["MachineTemplate"]
@@ -145,7 +156,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
             // onChange={() => mutateWholeObject()}
             onChange={() => {
               mutateWholeObject();
-              // onChange();
             }}
             onDelete={() => {}}
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}

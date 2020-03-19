@@ -17,6 +17,9 @@ export enum MenuItemType {
 // tooltip informajca o prosty string kory jest w propsach
 // active - fukcja ktora przypisuje styl elementu przez active
 
+
+
+
 export interface IconMenuItem {
   itemType: MenuItemType.TopIcon;
   icon: keyof typeof Icons;

@@ -14,7 +14,11 @@ export const AppContainer = style({
 const App: React.FC = () => {
   return (
     <div className={AppContainer}>
-      <ReactPDFEditor />
+      <ReactPDFEditor
+        onChange={() => {
+          console.log("ble");
+        }}
+      />
     </div>
   );
 };

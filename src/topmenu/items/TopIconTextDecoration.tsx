@@ -4,7 +4,7 @@ import ReactPDF from "@react-pdf/renderer";
 export const TopIconTextDecoration: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "Text decoration",
-  icon: "Bold",
+  icon: "Underline",
   change: (style: ReactPDF.Style) => ({
     textDecoration: style.textDecoration === "underline" ? undefined : "underline"
   }),
