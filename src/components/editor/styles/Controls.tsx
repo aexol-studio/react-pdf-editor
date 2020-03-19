@@ -62,32 +62,42 @@ export const Overlay = style({
   alignItems: "start",
   justifyContent: "left",
   // background: `${Colors.Black}aa`,
-  background: '#f9f9f9',
+  background: "#f9f9f9",
   zIndex: 3,
-  paddingLeft: '5%'
+  paddingLeft: "5%"
   // padding: "15%"
 });
 export const PlusMinus = style({
   $debugName: "ControlsPlusMinus",
   color: Colors["Ancient Stone"],
   padding: 5,
-  width: '100%',
+  width: "100%",
   cursor: "pointer",
   $nest: {
     "&:hover": {
       color: Colors.Cooler
     }
   }
-})
-  export const ShowHide = style ({
-    $debugName: 'ShowHide',
-    padding: `5px 10px 5px`,
-    // flex: 1,
-    width: '100%',
-    height: '100%',
-    borderRadius: 10,
-    transition: transition,
-    marginBottom: 10,
-    border: `3px dashed ${Colors.Foggy}`
-  })
-;
+});
+export const ShowHide = style({
+  $debugName: "ShowHide",
+  padding: `5px 10px 5px`,
+  // flex: 1,
+  width: "100%",
+  height: "100%",
+  borderRadius: 10,
+  transition: transition,
+  marginBottom: 10,
+  border: `3px dashed ${Colors.Foggy}`,
+  $nest: {
+    "&:hover": {
+      color: Colors.Cooler,
+      border: `3px dashed ${Colors.Cooler}`
+    }
+  }
+});
+
+export const ShowHideParagraph = style({
+  $debugName: "ShowHideParagraph",
+  textAlign: "center"
+});

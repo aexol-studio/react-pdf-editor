@@ -60,14 +60,18 @@ export const Controls = ({
         }}
       >
         {open ? (
-          // <MinusCircle size={15} />
           <div className={styles.ShowHide}>
-            <p>Show</p>
+            <p
+            className={styles.ShowHideParagraph}>
+              
+              Hide</p>
           </div>
         ) : (
           // <PlusCircle size={15} />
           <div className={styles.ShowHide}>
-            <p>Add</p>
+            <p
+            className={styles.ShowHideParagraph}>
+              Add</p>
           </div>
         )}
 
