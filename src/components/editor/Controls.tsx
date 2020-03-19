@@ -61,13 +61,14 @@ export const Controls = ({
       >
         {open ? (
           // <MinusCircle size={15} />
-         
-          <p>Hide</p>
-
+          <div className={styles.ShowHide}>
+            <p>Show</p>
+          </div>
         ) : (
           // <PlusCircle size={15} />
-          <p>Add</p>
-      
+          <div className={styles.ShowHide}>
+            <p>Add</p>
+          </div>
         )}
 
         {/* jeśli open jest true to minus a jesli nie to plus */}

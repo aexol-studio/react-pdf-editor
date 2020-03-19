@@ -71,10 +71,23 @@ export const PlusMinus = style({
   $debugName: "ControlsPlusMinus",
   color: Colors["Ancient Stone"],
   padding: 5,
+  width: '100%',
   cursor: "pointer",
   $nest: {
     "&:hover": {
       color: Colors.Cooler
     }
   }
-});
+})
+  export const ShowHide = style ({
+    $debugName: 'ShowHide',
+    padding: `5px 10px 5px`,
+    // flex: 1,
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
+    transition: transition,
+    marginBottom: 10,
+    border: `3px dashed ${Colors.Foggy}`
+  })
+;
