@@ -8,10 +8,9 @@ import { FrontendTypes } from "../frontend-types";
 import { translated } from "../models";
 import * as Icons from "react-feather";
 export interface PDFProps {
-  onChange?: (onChange: FrontendTypes["MachineTemplate"]) => void;
+  onChange?: () => void;
   initialPDF?: FrontendTypes["MachineTemplate"];
 }
-
 
 export interface PDFState {
   PDF: FrontendTypes["MachineTemplate"];
@@ -26,50 +25,36 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
   initialPDF,
   onChange
 }) => {
-
-
-  const [state, setState] = useState<PDFState>(
-    {
-      PDF: initialPDF || {
-        name: "untitled",
-        template: {
-          footer: {
-            __typename: "Stack",
-            styleJson: JSON.stringify({
-              marginTop: 0,
-              marginRight: 37,
-              marginLeft: 37,
-              marginBottom: 30
-            }),
-            items: []
-          },
-          header: {
-            __typename: "Stack",
-            items: []
-          },
-          margin: [10, 80, 10, 40],
-          documents: [
-            {
-              features: {
-                items: []
-              }
+  const [state, setState] = useState<PDFState>({
+    PDF: initialPDF || {
+      name: "untitled",
+      template: {
+        footer: {
+          __typename: "Stack",
+          styleJson: JSON.stringify({
+            marginTop: 0,
+            marginRight: 37,
+            marginLeft: 37,
+            marginBottom: 30
+          }),
+          items: []
+        },
+        header: {
+          __typename: "Stack",
+          items: []
+        },
+        margin: [10, 80, 10, 40],
+        documents: [
+          {
+            features: {
+              items: []
             }
-          ]
-        }
-      },
-      showPDF: true
-    }
-  );
-
-  onChange = () => {
-    const currentPDFObject: FrontendTypes["MachineTemplate"] = {
-      ...state.PDF
-    };
-    setState(s => ({
-      ...s,
-      PDF: currentPDFObject
-    }));
-  };
+          }
+        ]
+      }
+    },
+    showPDF: true
+  });
 
   const updatePDF = (
     fn: (
@@ -109,6 +94,7 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
       }
     ]);
   };
+
   const mutateWholeObject = () => {
     const currentPDFObject: FrontendTypes["MachineTemplate"] = {
       ...state.PDF
@@ -117,6 +103,7 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
       ...s,
       PDF: currentPDFObject
     }));
+
     // forceUpdate();
   };
   const { PDF } = state;
@@ -155,7 +142,11 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
         <div className={styles.Left}>
           <FeatureComponent
             feature={header!}
-            onChange={() => mutateWholeObject()}
+            // onChange={() => mutateWholeObject()}
+            onChange={() => {
+              mutateWholeObject();
+              // onChange();
+            }}
             onDelete={() => {}}
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
             hideControls={true}
@@ -167,7 +158,10 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
               key={`${i}`}
               doc={d}
               onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
-              onChange={() => mutateWholeObject()}
+              onChange={() => {
+                mutateWholeObject();
+                // onChange();
+              }}
               onDelete={() => {
                 template.documents! = template!.documents!.filter(
                   (doc, ind) => doc !== d
@@ -181,7 +175,11 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
           <h4 className={styles.SectionTitle}>{t("SectionTitleFooter")}</h4>
           <FeatureComponent
             feature={footer!}
-            onChange={() => mutateWholeObject()}
+            // onChange={() => mutateWholeObject()}
+            onChange={() => {
+              mutateWholeObject();
+              // onChange();
+            }}
             onDelete={() => {}}
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
             hideControls={true}

@@ -109,7 +109,7 @@ export class Rolloutable extends React.Component<
               size={10}
               onClick={() => {
                 this.setState({ rolledOut: !this.state.rolledOut });
-                console.log("beng!");
+                // console.log("beng!");
               }}
             />
           )}
