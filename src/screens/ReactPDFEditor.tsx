@@ -8,8 +8,8 @@ import { FrontendTypes } from "../frontend-types";
 import { translated } from "../models";
 import * as Icons from "react-feather";
 export interface PDFProps {
-  onChange?: (PDF: PDFState) => void;
-  // onChange?: (PDF: FrontendTypes["MachineTemplate"]) => void;
+  // onChange?: (PDF: PDFState) => void;
+  onChange?: (PDF: FrontendTypes["MachineTemplate"]) => void;
   initialPDF?: FrontendTypes["MachineTemplate"];
 }
 
@@ -55,7 +55,15 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
       }
     },
     showPDF: true
+  
+  
+  
   });
+
+// const cykPyk = () => {
+//   console.log("pyk")
+// }
+
 
   const updatePDF = (
     fn: (
@@ -104,6 +112,9 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
       ...s,
       PDF: currentPDFObject
     }));
+    if(onChange && currentPDFObject){
+      onChange(currentPDFObject)
+    } 
 
     // forceUpdate();
   };

@@ -15,8 +15,8 @@ const App: React.FC = () => {
   return (
     <div className={AppContainer}>
       <ReactPDFEditor
-        onChange={(PDF) => {
-
+        onChange={PDF => {
+       console.log(PDF)
         }}
       />
     </div>
