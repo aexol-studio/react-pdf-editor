@@ -8,7 +8,6 @@ import { DefaultValues } from "../constants";
 import {
   SmallInput,
   TopIcon,
-  // TopIconItalic,
   ExpandableInput,
   SelectInput
 } from "./components";
@@ -21,7 +20,7 @@ import {
   TopIconAlignRight,
   TopIconBold,
   TopIconTextDecoration,
-  TopIconItalic,
+  // TopIconItalic,
   InputFontSize,
   InputLineHeight,
   alignItemsToBaselineIcon,
@@ -123,7 +122,7 @@ const common: MenuItem[] = [
   ExpandableInputMinimize2,
   ColorPicker,
   TopIconBold,
-  TopIconItalic,
+  // TopIconItalic,
   InputLineHeight,
   TopIconTextDecoration,
   TopIconFontSize,
@@ -256,18 +255,6 @@ const ConditionalGroup: React.FunctionComponent<{
             />
           );
         }
-        // if (item.itemType === MenuItemType.TopIconItalic) {
-        //   return (
-        //     <TopIconItalic
-        //       icon={item.icon}
-        //       tooltip={item.tooltip}
-        //       onClick={() => {
-        //         applyStyle(item.change(style));
-        //       }}
-        //       active={item.active(style)}
-        //     />
-        //   );
-        // }
         if (item.itemType === MenuItemType.SmallInput) {
           return (
             <SmallInput
@@ -331,7 +318,7 @@ export interface TopMenuProps {
   style?: React.CSSProperties;
 }
 export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
-  const editedFeatureStyle: ReactPDF.Style= editedFeature.styleJson
+  const editedFeatureStyle: ReactPDF.Style = editedFeature.styleJson
     ? JSON.parse(editedFeature.styleJson)
     : {};
   const applyStyle = (css: ReactPDF.Style) => {
@@ -341,7 +328,6 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
     });
     onChange();
   };
-
 
   const typename = editedFeature.__typename;
   const featureConfig =

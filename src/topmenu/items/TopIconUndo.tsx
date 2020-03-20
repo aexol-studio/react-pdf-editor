@@ -5,8 +5,6 @@ export const TopIconUndo: IconMenuItem = {
   itemType: MenuItemType.TopIcon,
   tooltip: "Undo",
   icon: "ArrowLeft",
-  change: (style: ReactPDF.Style) => ({
-    fontWeight: style.fontWeight === "bold" ? undefined : "bold"
-  }),
-  active: (style: ReactPDF.Style): boolean => style.fontWeight === "bold"
+  change: (style: ReactPDF.Style) => ({ }),
+  active: (style: ReactPDF.Style): boolean => false
 };
