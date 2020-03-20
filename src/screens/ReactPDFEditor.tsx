@@ -153,7 +153,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
         <div className={styles.Left}>
           <FeatureComponent
             feature={header!}
-            // onChange={() => mutateWholeObject()}
             onChange={() => {
               mutateWholeObject();
             }}
@@ -170,7 +169,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
               onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
               onChange={() => {
                 mutateWholeObject();
-                // onChange();
               }}
               onDelete={() => {
                 template.documents! = template!.documents!.filter(
@@ -188,7 +186,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
             // onChange={() => mutateWholeObject()}
             onChange={() => {
               mutateWholeObject();
-              // onChange();
             }}
             onDelete={() => {}}
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
