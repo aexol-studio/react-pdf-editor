@@ -1,6 +1,6 @@
 import { style, classes } from "typestyle";
 import { Colors } from "../../Colors";
- import { TOPHEIGHT } from "../../constants";
+import { TOPHEIGHT } from "../../constants";
 export const Main = style({
   $debugName: "TopMenuMain",
   fontFamily: "Fira Sans",
@@ -10,9 +10,9 @@ export const Main = style({
   // height: TOPHEIGHT,
   // paddingLeft: 30
   flexWrap: "wrap",
-  maxHeight: '100%',
+  maxHeight: "100%",
   minHeight: TOPHEIGHT,
-  flex: 'maxContent'
+  flex: "max-content"
 });
 export const Placement = style({
   $debugName: "TopMenuPlacement",

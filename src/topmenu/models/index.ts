@@ -7,7 +7,8 @@ export enum MenuItemType {
   ExtendableInput = "ExtendableInput",
   ColorPicker = "ColorPicker",
   ConditionalGroup = "Group",
-  SelectInput="SelectInput"
+  SelectInput="SelectInput",
+  TopIconItalic = 'TopIconItalic'
 }
 
 
@@ -19,6 +20,14 @@ export enum MenuItemType {
 
 
 
+
+export interface IconMenuItemItalic {
+  itemType: MenuItemType.TopIconItalic;
+  icon: keyof typeof Icons;
+  tooltip: string;
+  active: (fontStyle: ReactPDF.FontStyle) => boolean;
+  change: (fontStyle: ReactPDF.FontStyle) => ReactPDF.Style;
+}
 
 export interface IconMenuItem {
   itemType: MenuItemType.TopIcon;
