@@ -43,7 +43,16 @@ const AutoResizeTextArea = (
       );
     }
   }, [props.value]);
-  return <textarea ref={tRef} {...props} value={props.value} />;
+  return (
+    <textarea
+      style={{
+        outline: "none"
+      }}
+      ref={tRef}
+      {...props}
+      value={props.value}
+    />
+  );
 };
 export const TextBlockComponent = (props: TextBlockComponentProps) => {
   const { onChange, textBlock } = props;
@@ -59,10 +68,10 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
         }}
       >
         <DeleteAndEditIconsComponent
-                  // style={{
-                  //   flex: 1,
-                  //   flexWrap: "wrap"
-                  // }}
+          // style={{
+          //   flex: 1,
+          //   flexWrap: "wrap"
+          // }}
           {...props}
         />
         <TopMenu editedFeature={textBlock} onChange={onChange} />
@@ -76,6 +85,10 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
         onChange={e => {
           textBlock.text = e.target.value;
           onChange();
+        }}
+        style={{
+          outlineStyle: 'none',
+          outlineColor: 'transparent'
         }}
       />
     </div>

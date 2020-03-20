@@ -11,7 +11,12 @@ export const Main = style({
   background: Colors.White,
   fontFamily: "Fira Sans",
   border: "1px solid #DFE6F7",
-  borderRadius: 5
+  borderRadius: 5,
+  $nest: {
+    "&:focus": {
+      outline: "none"
+    }
+  }
 });
 export const styleLabel = style({
   $debugName: "TextBlockStyleLabel",
@@ -27,8 +32,8 @@ export const TextBlockTitle = style({
   fontSize: 12,
   margin: 0,
   fontWeight: "bold",
-  display: 'flex',
-  alignSelf: 'center'
+  display: "flex",
+  alignSelf: "center"
 });
 
 export const TextBlockSvg = style({
@@ -42,11 +47,11 @@ export const TextBlockTitleDiv = style({
   $debugName: "TextBlockTitleDiv",
   display: "flex",
   justifyContent: "flex-start",
-  marginTop: '5px',
-  marginBottom: '5px'
+  marginTop: "5px",
+  marginBottom: "5px"
 });
 
 export const TextBlockContainer = style({
   $debugName: "TextBlockContainer",
   width: "100%"
-})
+});
