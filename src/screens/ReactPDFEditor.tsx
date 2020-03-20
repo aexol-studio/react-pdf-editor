@@ -56,17 +56,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
     showPDF: true
   });
 
-
-  // const onChange = () => {
-  //   const currentPDFObject: FrontendTypes["MachineTemplate"] = {
-  //     ...state.PDF
-  //   };
-  //   setState(s => ({
-  //     ...s,
-  //     PDF: currentPDFObject
-  //   }));
-  // }
-
   const updatePDF = (
     fn: (
       PDF: FrontendTypes["MachineTemplate"]
@@ -183,7 +172,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
           <h4 className={styles.SectionTitle}>{t("SectionTitleFooter")}</h4>
           <FeatureComponent
             feature={footer!}
-            // onChange={() => mutateWholeObject()}
             onChange={() => {
               mutateWholeObject();
             }}
@@ -194,7 +182,8 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
         </div>
         {state.showPDF && (
           <div className={styles.Right}>
-            <LivePDF machine={PDF} />
+            <LivePDF
+            machine={PDF} />
           </div>
         )}
       </div>
