@@ -8,7 +8,7 @@ import { FrontendTypes } from "../frontend-types";
 import { translated } from "../models";
 import * as Icons from "react-feather";
 export interface PDFProps {
-  onChange?: () => void;
+  onChange?: (PDF: FrontendTypes["MachineTemplate"]) => void;
   initialPDF?: FrontendTypes["MachineTemplate"];
 }
 
