@@ -71,11 +71,10 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
       }`}
       {...props}
     >
-      <div style={{ display: "flex", background: "white" }}>
+      <div className={styles.TableBlockMenuHolder}>
         <DeleteAndEditIconsComponent
           style={{
             flex: 1
-            // flexWrap: "wrap"
           }}
           {...props}
         />

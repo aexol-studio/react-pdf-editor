@@ -55,3 +55,9 @@ export const TextBlockContainer = style({
   $debugName: "TextBlockContainer",
   width: "100%"
 });
+
+export const TextBlockMenuHolder = style({
+  $debugName: "TextBlockMenuHolder",
+  display: "flex",
+  background: "white"
+});

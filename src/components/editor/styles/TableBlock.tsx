@@ -6,28 +6,28 @@ export const Actions = style({
   marginTop: 5
 });
 
-export const ControlAddRow = style ({
+export const ControlAddRow = style({
   $debugName: "ControlAddRow",
   height: 24,
   width: 24,
   cursor: "pointer",
   $nest: {
     "&:hover": {
-      fill: '#56DA67',
+      fill: "#56DA67"
     }
   }
-})
-export const ControlAddColumn = style ({
+});
+export const ControlAddColumn = style({
   $debugName: "ControlAddColumn",
   height: 24,
   width: 24,
   cursor: "pointer",
   $nest: {
     "&:hover": {
-      fill: '#56DA67',
+      fill: "#56DA67"
     }
   }
-})
+});
 export const ControlColumns = style({
   $debugName: "TableBlockControlColums",
   display: "flex",
@@ -45,7 +45,13 @@ export const ControlCell = style({
 
 export const TableBlockSvg = style({
   $debugName: "TableBlockSvg",
-    display: "flex",
-    alignItems: "center",
-    marginRight: 10
-})
+  display: "flex",
+  alignItems: "center",
+  marginRight: 10
+});
+
+export const TableBlockMenuHolder = style({
+  $debugName: "TableBlockMenuHolder",
+  display: "flex",
+  background: "white"
+});
