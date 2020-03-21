@@ -2,12 +2,15 @@ import * as React from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import { ColumnsComponent } from "./ColumnsComponent";
 import { Rolloutable } from "./display/Rolloutable";
-import * as Icons from "react-feather";
-import cx from "classnames";
-import * as styles1 from "./styles/Feature";
+// import * as Icons from "react-feather";
+// import cx from "classnames";
+// import * as styles1 from "./styles/Feature";
 import { translated } from "../../models";
 import * as styles from "./styles/TableBlock";
-import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
+import {
+  DeleteAndEditIconsComponentProps,
+  DeleteAndEditIconsComponent
+} from "./display/DeleteAndEdit";
 import { TopMenu } from "../../topmenu/index";
 
 export interface TableBlockComponentProps
@@ -62,13 +65,27 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
     .map(w => w.S);
   return (
     <Rolloutable
-      withoutDeleteIcons={false}
+      withoutDeleteIcons={true}
       title={`${t("TableTitle")}${
         tableBlock.style ? `-${tableBlock.style}` : ``
       }`}
       {...props}
     >
-      <TopMenu editedFeature={tableBlock} onChange={onChange} />
+      <div style={{ display: "flex", background: "white" }}>
+        <DeleteAndEditIconsComponent
+          style={{
+            flex: 1
+            // flexWrap: "wrap"
+          }}
+          {...props}
+        />
+        <TopMenu
+          style={{ flex: "max-content" }}
+          editedFeature={tableBlock}
+          onChange={onChange}
+        />
+      </div>
+
       <div>
         <div>
           {tableBlock.rows &&
@@ -122,7 +139,9 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
               >
                 {/* poprawić paddingi */}
 
-                <Icons.Trash
+                {/* tutaj delete */}
+
+                {/* <Icons.Trash
                   size={15}
                   onClick={() => {
                     tableBlock.rows = tableBlock.rows!.map(row => ({
@@ -136,7 +155,10 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
                     onChange();
                   }}
                   className={cx(styles1.MiniIcon, styles1.Delete)}
-                />
+                /> */}
+
+                {/* tutaj delete */}
+
                 {/* {t("ControleButtonDelete")} */}
                 {/* <ControlsButton
                   onClick={() => {

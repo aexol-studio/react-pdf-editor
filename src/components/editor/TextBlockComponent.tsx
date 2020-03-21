@@ -86,10 +86,6 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
           textBlock.text = e.target.value;
           onChange();
         }}
-        style={{
-          outlineStyle: 'none',
-          outlineColor: 'transparent'
-        }}
       />
     </div>
   );
