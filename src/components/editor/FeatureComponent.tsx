@@ -97,7 +97,9 @@ const FeatureComp = (props: FeatureComponentProps) => {
         onChange={onChange}
         onDelete={onDelete}
         onEdit={onEdit}
-        {...props}
+        onMoveDown={onMoveDown}
+        onMoveUp={onMoveUp}
+        // {...props}
       />
     );
   }

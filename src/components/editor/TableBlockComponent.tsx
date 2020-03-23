@@ -6,7 +6,7 @@ import { PartialObjects } from "../../graphql-zeus";
 import { translated } from "../../models";
 import { TopMenu } from "../../topmenu/index";
 import { ColumnsComponent } from "./ColumnsComponent";
-import { DeleteAndEditIconsComponent, DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
+import { DeleteAndEditIconsComponentProps, DeleteAndEditIconsComponent } from "./display/DeleteAndEdit";
 import { Rolloutable } from "./display/Rolloutable";
 import * as styles from "./styles/TableBlock";
 

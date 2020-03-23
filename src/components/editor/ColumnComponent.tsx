@@ -15,36 +15,38 @@ export const ColumnComponent = ({
   onChange,
   onEdit,
   column,
-  onDelete,
-  // onMoveDown,
-  // onMoveUp
-}: ColumnComponentProps) => {
+  onDelete
+}: // onMoveDown,
+// onMoveUp
+ColumnComponentProps) => {
   return (
     <div className={styles.Main}>
       {column.content && Object.keys(column.content).length > 0 ? (
-        <FeatureComponent
-          feature={column.content}
-          onChange={onChange}
-          onEdit={onEdit}
-          onDelete={onDelete}
-          // onMoveDown={onMoveDown}
-          // onMoveUp={onMoveUp}
-        />
-      ) : (
-          <Controls
-            features={
-              {
-                push: (a: PartialObjects["Feature"]) => {
-                  column.content = a;
-                }
-              } as any
-            }
-            mutateWholeObject={onChange}
-            clean={() => {
-              column.content = {};
-              onChange();
-            }}
+        <>
+          <FeatureComponent
+            feature={column.content}
+            onChange={onChange}
+            onEdit={onEdit}
+            onDelete={onDelete}
+            // onMoveDown={onMoveDown}
+            // onMoveUp={onMoveUp}
           />
+        </>
+      ) : (
+        <Controls
+          features={
+            {
+              push: (a: PartialObjects["Feature"]) => {
+                column.content = a;
+              }
+            } as any
+          }
+          mutateWholeObject={onChange}
+          clean={() => {
+            column.content = {};
+            onChange();
+          }}
+        />
       )}
     </div>
   );

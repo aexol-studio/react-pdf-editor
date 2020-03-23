@@ -3,10 +3,7 @@ import { PartialObjects } from "../../graphql-zeus";
 import { FeatureComponent } from "./FeatureComponent";
 import { Controls } from "./Controls";
 import { Rolloutable } from "./display/Rolloutable";
-import {
-  DeleteAndEditIconsComponentProps,
-  // DeleteAndEditIconsComponent
-} from "./display/DeleteAndEdit";
+import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
 import { swapInArray } from "../../utils";
 import { translated } from "../../models";
 import { TopMenu } from "../../topmenu/index";
@@ -25,13 +22,6 @@ export const StackComponent = (props: StackComponentProps) => {
   const { onChange, onEdit, stack, hideControls } = props;
   return (
     <Rolloutable title={t("TitleStack")} {...props}>
-      {/* <DeleteAndEditIconsComponent
-        // style={{
-        //   flex: 1,
-        //   flexWrap: "wrap"
-        // }}
-        {...props}
-      /> */}
       <TopMenu editedFeature={stack} onChange={onChange} />
       {stack.items &&
         stack.items.map((i, index) => {
