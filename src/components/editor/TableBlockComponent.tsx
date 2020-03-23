@@ -1,22 +1,21 @@
 import * as React from "react";
 import { PartialObjects } from "../../graphql-zeus";
-import { ColumnsComponent } from "./ColumnsComponent";
-import { Rolloutable } from "./display/Rolloutable";
 // import * as Icons from "react-feather";
 // import cx from "classnames";
 // import * as styles1 from "./styles/Feature";
 import { translated } from "../../models";
-import * as styles from "./styles/TableBlock";
-import {
-  DeleteAndEditIconsComponentProps,
-  DeleteAndEditIconsComponent
-} from "./display/DeleteAndEdit";
 import { TopMenu } from "../../topmenu/index";
+import { ColumnsComponent } from "./ColumnsComponent";
+import { DeleteAndEditIconsComponent, DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
+import { Rolloutable } from "./display/Rolloutable";
+import * as styles from "./styles/TableBlock";
 
 export interface TableBlockComponentProps
   extends DeleteAndEditIconsComponentProps {
   tableBlock: PartialObjects["TableBlock"];
   onChange: () => void;
+  // onMoveDown: () => void;
+  // onMoveUp: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
   components?: PartialObjects["TemplateComponent"][];
 }
@@ -65,13 +64,13 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
     .map(w => w.S);
   return (
     <Rolloutable
-      withoutDeleteIcons={true}
+      withoutDeleteIcons={false}
       title={`${t("TableTitle")}${
         tableBlock.style ? `-${tableBlock.style}` : ``
       }`}
       {...props}
     >
-      <div className={styles.TableBlockMenuHolder}>
+      <div className={styles.TableBlockMenuHolder}> 
         <DeleteAndEditIconsComponent
           style={{
             flex: 1
@@ -95,6 +94,8 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
                 onChange={onChange}
                 onEdit={onEdit}
                 widths={widths}
+                // onMoveDown={onMoveDown}
+                // onMoveUp={onMoveUp}
                 onDelete={() => {
                   tableBlock.rows = tableBlock.rows!.filter(
                     (row, rowIndex) => rowIndex !== index

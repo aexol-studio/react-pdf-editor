@@ -7,13 +7,17 @@ export interface ColumnComponentProps {
   column: PartialObjects["Column"];
   onChange: () => void;
   onDelete: () => void;
+  // onMoveDown: () => void;
+  // onMoveUp: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
 }
 export const ColumnComponent = ({
   onChange,
   onEdit,
   column,
-  onDelete
+  onDelete,
+  // onMoveDown,
+  // onMoveUp
 }: ColumnComponentProps) => {
   return (
     <div className={styles.Main}>
@@ -23,22 +27,24 @@ export const ColumnComponent = ({
           onChange={onChange}
           onEdit={onEdit}
           onDelete={onDelete}
+          // onMoveDown={onMoveDown}
+          // onMoveUp={onMoveUp}
         />
       ) : (
-        <Controls
-          features={
-            {
-              push: (a: PartialObjects["Feature"]) => {
-                column.content = a;
-              }
-            } as any
-          }
-          mutateWholeObject={onChange}
-          clean={() => {
-            column.content = {};
-            onChange();
-          }}
-        />
+          <Controls
+            features={
+              {
+                push: (a: PartialObjects["Feature"]) => {
+                  column.content = a;
+                }
+              } as any
+            }
+            mutateWholeObject={onChange}
+            clean={() => {
+              column.content = {};
+              onChange();
+            }}
+          />
       )}
     </div>
   );

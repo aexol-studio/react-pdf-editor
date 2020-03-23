@@ -62,8 +62,6 @@ export const TextBlockComponent = (props: TextBlockComponentProps) => {
         <p className={styles.TextBlockTitle}>{t("TextBlockTitle")}</p>
       </div>
       <div className={styles.TextBlockMenuHolder}>
-
-      >
         <DeleteAndEditIconsComponent
           // style={{
           //   flex: 1,

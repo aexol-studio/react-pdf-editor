@@ -12,6 +12,8 @@ export interface ColumnsComponentProps {
   columns: PartialObjects["Columns"];
   onChange: () => void;
   onDelete: () => void;
+  // onMoveDown: () => void;
+  // onMoveUp: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
   onResize: (index: number, newWidth: number) => void;
   widths: string[];
@@ -24,6 +26,8 @@ export const ColumnsComponent = ({
   onEdit,
   onDelete,
   onResize,
+  // onMoveDown,
+  // onMoveUp,
   columns,
   widths
 }: ColumnsComponentProps) => {
@@ -81,6 +85,8 @@ export const ColumnsComponent = ({
                     column={c}
                     onEdit={onEdit}
                     onChange={onChange}
+                    // onMoveDown={onMoveDown}
+                    // onMoveUp={onMoveUp}
                     onDelete={() => {
                       columns.columns!.splice(i, 1);
                       onChange();
