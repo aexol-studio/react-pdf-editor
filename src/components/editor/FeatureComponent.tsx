@@ -24,15 +24,15 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   feature: PartialObjects["Feature"];
   onDelete: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
-  onMoveDown?: () => void;
-  onMoveUp?: () => void;
+  // onMoveDown?: () => void;
+  // onMoveUp?: () => void;
   [k: string]: unknown;
 }
 
 /// tutaj jest komponen wyświetlany itp itp itp
 
 const FeatureComp = (props: FeatureComponentProps) => {
-  const { feature, onChange, onEdit, onDelete, onMoveDown, onMoveUp } = props;
+  const { feature, onChange, onEdit, onDelete} = props;
   if (isTimeStamp(feature)) {
     return (
       <div className={styles.FeatureTitleDiv}>
@@ -82,8 +82,8 @@ const FeatureComp = (props: FeatureComponentProps) => {
         onChange={onChange}
         onEdit={onEdit}
         onDelete={onDelete}
-        onMoveDown={onMoveDown}
-        onMoveUp={onMoveUp}
+        // onMoveDown={onMoveDown}
+        // onMoveUp={onMoveUp}
         // tutaj dodać komponent taki header po kliknięciu onEdit
 
         {...props}
@@ -97,8 +97,8 @@ const FeatureComp = (props: FeatureComponentProps) => {
         onChange={onChange}
         onDelete={onDelete}
         onEdit={onEdit}
-        onMoveDown={onMoveDown}
-        onMoveUp={onMoveUp}
+        // onMoveDown={onMoveDown}
+        // onMoveUp={onMoveUp}
         // {...props}
       />
     );

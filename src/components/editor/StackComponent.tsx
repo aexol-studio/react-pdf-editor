@@ -56,6 +56,7 @@ export const StackComponent = (props: StackComponentProps) => {
         })}
 
       {stack.items && (
+      
         <Controls
           //
 

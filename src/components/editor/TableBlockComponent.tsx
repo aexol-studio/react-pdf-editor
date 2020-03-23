@@ -6,7 +6,7 @@ import { PartialObjects } from "../../graphql-zeus";
 import { translated } from "../../models";
 import { TopMenu } from "../../topmenu/index";
 import { ColumnsComponent } from "./ColumnsComponent";
-import { DeleteAndEditIconsComponentProps, DeleteAndEditIconsComponent } from "./display/DeleteAndEdit";
+import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
 import { Rolloutable } from "./display/Rolloutable";
 import * as styles from "./styles/TableBlock";
 
@@ -64,19 +64,13 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
     .map(w => w.S);
   return (
     <Rolloutable
-      withoutDeleteIcons={false}
+      withoutDeleteIcons={true}
       title={`${t("TableTitle")}${
         tableBlock.style ? `-${tableBlock.style}` : ``
       }`}
       {...props}
     >
       <div className={styles.TableBlockMenuHolder}> 
-        <DeleteAndEditIconsComponent
-          style={{
-            flex: 1
-          }}
-          {...props}
-        />
         <TopMenu
           style={{ flex: "max-content" }}
           editedFeature={tableBlock}

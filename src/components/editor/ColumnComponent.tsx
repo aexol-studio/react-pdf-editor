@@ -16,11 +16,12 @@ export const ColumnComponent = ({
   onEdit,
   column,
   onDelete
-}: // onMoveDown,
+// onMoveDown,
 // onMoveUp
+}: 
 ColumnComponentProps) => {
   return (
-    <div className={styles.Main}>
+    <div className={styles.ColumnComponentMain}>
       {column.content && Object.keys(column.content).length > 0 ? (
         <>
           <FeatureComponent
@@ -34,6 +35,7 @@ ColumnComponentProps) => {
         </>
       ) : (
         <Controls
+          show={true}
           features={
             {
               push: (a: PartialObjects["Feature"]) => {

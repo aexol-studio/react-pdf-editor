@@ -1,5 +1,5 @@
 import { style } from "typestyle";
 
-export const Main = style({
-  $debugName: "ColumnComponent"
+export const ColumnComponentMain = style({
+  $debugName: "ColumnComponentMain"
 });
