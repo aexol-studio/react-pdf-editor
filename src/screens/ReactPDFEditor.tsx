@@ -8,7 +8,6 @@ import { FrontendTypes } from "../frontend-types";
 import { translated } from "../models";
 import * as Icons from "react-feather";
 export interface PDFProps {
-  // onChange?: (PDF: PDFState) => void;
   onChange?: (PDF: FrontendTypes["MachineTemplate"]) => void;
   initialPDF?: FrontendTypes["MachineTemplate"];
 }
@@ -59,11 +58,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
   
   
   });
-
-// const cykPyk = () => {
-//   console.log("pyk")
-// }
-
 
   const updatePDF = (
     fn: (
@@ -180,7 +174,6 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
             />
           ))}
           <Icons.PlusSquare size={15} onClick={() => addPage()} />
-
           <h4 className={styles.SectionTitle}>{t("SectionTitleFooter")}</h4>
           <FeatureComponent
             feature={footer!}

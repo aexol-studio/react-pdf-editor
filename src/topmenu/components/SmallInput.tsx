@@ -23,6 +23,7 @@ export const SmallInput = ({
           setV(e.target.value);
         }}
         onBlur={() => {
+          // console.log(v)
           onChange(v);
         }}
       />

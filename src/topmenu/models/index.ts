@@ -43,12 +43,15 @@ export interface SmallInputMenuItem {
   itemType: MenuItemType.SmallInput;
   name: keyof ReactPDF.Style;
   change: (e: string) => ReactPDF.Style;
+  //copyStyle
+
 }
 
 export interface SelectInputItem {
   itemType: MenuItemType.SelectInput
   name: keyof ReactPDF.Style
   change: (e:string) =>ReactPDF.Style
+  //copyStyle
 }
 
 export interface ExtendableInputMenuItem {

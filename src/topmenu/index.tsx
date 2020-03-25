@@ -5,6 +5,7 @@ import "rc-color-picker/assets/index.css";
 import ReactPDF from "@react-pdf/renderer";
 import { PartialObjects } from "../graphql-zeus";
 import { DefaultValues } from "../constants";
+import { ReactPDFStyleValidator } from "../screens/ReactPDFStyleValidator";
 import {
   SmallInput,
   TopIcon,
@@ -52,8 +53,7 @@ import {
   MenuItemType,
   ColorPickerMenuItem,
   ConditionalGroupMenuItem
-} from "./models";
-
+} from "./models"
 const ColorPicker = require("rc-color-picker");
 
 const defaultColorPicker: ColorPickerMenuItem = {
@@ -321,13 +321,15 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
   const editedFeatureStyle: ReactPDF.Style = editedFeature.styleJson
     ? JSON.parse(editedFeature.styleJson)
     : {};
-  const applyStyle = (css: ReactPDF.Style) => {
-    editedFeature.styleJson = JSON.stringify({
-      ...editedFeatureStyle,
-      ...css
-    });
-    onChange();
-  };
+    const applyStyle = (css: ReactPDF.Style) => {
+      editedFeature.styleJson = JSON.stringify({
+        ...editedFeatureStyle,
+        ...ReactPDFStyleValidator(css),
+      });
+      onChange();
+    };
+
+    
 
   const typename = editedFeature.__typename;
   const featureConfig =
