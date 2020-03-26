@@ -11,15 +11,11 @@ export enum MenuItemType {
   TopIconItalic = 'TopIconItalic'
 }
 
-
 //typ interface IconMenu ktory wskazuje z czego powinno sie sklładać IconMenuItem
 // itemType - pobiera typ ikon określonych w menuitemType -
 // icon - iformuje iz musi sciagnać z (tego musze sie nauczyć keyof typeof) z ikon /react-father
 // tooltip informajca o prosty string kory jest w propsach
 // active - fukcja ktora przypisuje styl elementu przez active
-
-
-
 
 export interface IconMenuItemItalic {
   itemType: MenuItemType.TopIconItalic;
@@ -38,20 +34,16 @@ export interface IconMenuItem {
 }
 
 //typ topIcon
-
 export interface SmallInputMenuItem {
   itemType: MenuItemType.SmallInput;
   name: keyof ReactPDF.Style;
   change: (e: string) => ReactPDF.Style;
-  //copyStyle
-
 }
 
 export interface SelectInputItem {
   itemType: MenuItemType.SelectInput
   name: keyof ReactPDF.Style
   change: (e:string) =>ReactPDF.Style
-  //copyStyle
 }
 
 export interface ExtendableInputMenuItem {
