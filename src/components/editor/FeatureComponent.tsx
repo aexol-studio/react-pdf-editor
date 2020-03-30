@@ -24,8 +24,8 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   feature: PartialObjects["Feature"];
   onDelete: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
-  // onMoveDown?: () => void;
-  // onMoveUp?: () => void;
+   onMoveDown?: () => void;
+   onMoveUp?: () => void;
   [k: string]: unknown;
 }
 

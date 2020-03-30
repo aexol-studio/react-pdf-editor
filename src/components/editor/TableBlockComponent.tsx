@@ -3,10 +3,13 @@ import { PartialObjects } from "../../graphql-zeus";
 // import * as Icons from "react-feather";
 // import cx from "classnames";
 // import * as styles1 from "./styles/Feature";
+// import {DeleteAndEditIconsComponent} form "./display/DeleteAndEdit"
 import { translated } from "../../models";
 import { TopMenu } from "../../topmenu/index";
 import { ColumnsComponent } from "./ColumnsComponent";
-import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
+import { DeleteAndEditIconsComponentProps,
+   DeleteAndEditIconsComponent
+   }from "./display/DeleteAndEdit";
 import { Rolloutable } from "./display/Rolloutable";
 import * as styles from "./styles/TableBlock";
 
@@ -63,18 +66,27 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
     }))
     .map(w => w.S);
   return (
-    <Rolloutable
+     <Rolloutable
       withoutDeleteIcons={true}
       title={`${t("TableTitle")}${
         tableBlock.style ? `-${tableBlock.style}` : ``
       }`}
       {...props}
     >
+<DeleteAndEditIconsComponent
+{...props}
+
+
+
+/// to nie tu.
+/>
+
       <div className={styles.TableBlockMenuHolder}> 
         <TopMenu
           style={{ flex: "max-content" }}
           editedFeature={tableBlock}
           onChange={onChange}
+
         />
       </div>
 
@@ -82,6 +94,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
         <div>
           {tableBlock.rows &&
             tableBlock.rows.map((i, index) => (
+              // <p>kjekek</p>
               <ColumnsComponent
                 key={index}
                 columns={i as PartialObjects["Columns"]}
@@ -130,7 +143,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
                 style={{
                   flexBasis: widths[index]
                 }}
-              >
+              > 
                 {/* poprawić paddingi */}
 
                 {/* tutaj delete */}

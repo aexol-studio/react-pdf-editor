@@ -40,6 +40,7 @@ export const ColumnsComponent = ({
           className={cx(styles1.MiniIcon, styles1.Delete)}
           size={15}
         />
+        {/* <p>cokolwiek</p> */}
         <p className={styles.ColumnTitle}>{t("IconTrashDelete")}</p>
       </div>
       <div className={styles.Main}>
