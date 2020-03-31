@@ -7,11 +7,12 @@ import { PartialObjects } from "../../graphql-zeus";
 import { translated } from "../../models";
 import { TopMenu } from "../../topmenu/index";
 import { ColumnsComponent } from "./ColumnsComponent";
-import { DeleteAndEditIconsComponentProps,
-   DeleteAndEditIconsComponent
-   }from "./display/DeleteAndEdit";
+import {
+  DeleteAndEditIconsComponentProps,
+} from "./display/DeleteAndEdit";
 import { Rolloutable } from "./display/Rolloutable";
 import * as styles from "./styles/TableBlock";
+// import { swapInArray } from "../../utils";
 
 export interface TableBlockComponentProps
   extends DeleteAndEditIconsComponentProps {
@@ -66,27 +67,18 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
     }))
     .map(w => w.S);
   return (
-     <Rolloutable
+    <Rolloutable
       withoutDeleteIcons={true}
       title={`${t("TableTitle")}${
         tableBlock.style ? `-${tableBlock.style}` : ``
       }`}
       {...props}
     >
-<DeleteAndEditIconsComponent
-{...props}
-
-
-
-/// to nie tu.
-/>
-
-      <div className={styles.TableBlockMenuHolder}> 
+      <div className={styles.TableBlockMenuHolder}>
         <TopMenu
           style={{ flex: "max-content" }}
           editedFeature={tableBlock}
           onChange={onChange}
-
         />
       </div>
 
@@ -95,41 +87,68 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
           {tableBlock.rows &&
             tableBlock.rows.map((i, index) => (
               // <p>kjekek</p>
-              <ColumnsComponent
-                key={index}
-                columns={i as PartialObjects["Columns"]}
-                onChange={onChange}
-                onEdit={onEdit}
-                widths={widths}
-                // onMoveDown={onMoveDown}
-                // onMoveUp={onMoveUp}
-                onDelete={() => {
-                  tableBlock.rows = tableBlock.rows!.filter(
-                    (row, rowIndex) => rowIndex !== index
-                  );
-                  onChange();
-                }}
-                onResize={(columnIndex, percentage) => {
-                  const delta =
-                    width2Power(tableBlock.widths![columnIndex].S!) -
-                    percentage;
-                  tableBlock.widths![columnIndex] = { S: `${percentage}%` };
-                  if (columnIndex === widths.length - 1) {
-                    tableBlock.widths![columnIndex - 1] = {
-                      S: `${width2Power(
-                        tableBlock.widths![columnIndex - 1].S!
-                      ) + delta}%`
-                    };
-                  } else {
-                    tableBlock.widths![columnIndex + 1] = {
-                      S: `${width2Power(
-                        tableBlock.widths![columnIndex + 1].S!
-                      ) + delta}%`
-                    };
-                  }
-                  onChange();
-                }}
-              />
+              <>
+                <ColumnsComponent
+                  key={index}
+                  columns={i as PartialObjects["Columns"]}
+                  onChange={onChange}
+                  onEdit={onEdit}
+                  widths={widths}
+
+                  // tu
+
+                  // onMoveDown={
+                  //   index !== tableBlock.rows!.length - 1
+                  //     ? () => {
+                  //         swapInArray(tableBlock.rows!, index, index + 1);
+                  //         onChange();
+                  //       }
+                  //     : undefined
+                  // }
+                  // onMoveUp={
+                  //   index !== 0 && tableBlock.rows!.length > 1
+                  //     ? () => {
+                  //         swapInArray(tableBlock.rows!, index, index - 1);
+                  //         onChange();
+                  //       }
+                  //     : undefined
+                  // }
+                 
+                 
+                  // onMoveDown={onMoveDown}
+                  // onMoveUp={onMoveUp}
+
+
+
+
+                  onDelete={() => {
+                    tableBlock.rows = tableBlock.rows!.filter(
+                      (row, rowIndex) => rowIndex !== index
+                    );
+                    onChange();
+                  }}
+                  onResize={(columnIndex, percentage) => {
+                    const delta =
+                      width2Power(tableBlock.widths![columnIndex].S!) -
+                      percentage;
+                    tableBlock.widths![columnIndex] = { S: `${percentage}%` };
+                    if (columnIndex === widths.length - 1) {
+                      tableBlock.widths![columnIndex - 1] = {
+                        S: `${width2Power(
+                          tableBlock.widths![columnIndex - 1].S!
+                        ) + delta}%`
+                      };
+                    } else {
+                      tableBlock.widths![columnIndex + 1] = {
+                        S: `${width2Power(
+                          tableBlock.widths![columnIndex + 1].S!
+                        ) + delta}%`
+                      };
+                    }
+                    onChange();
+                  }}
+                />
+              </>
             ))}
         </div>
         <div className={styles.ControlColumns}>
@@ -143,7 +162,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
                 style={{
                   flexBasis: widths[index]
                 }}
-              > 
+              >
                 {/* poprawić paddingi */}
 
                 {/* tutaj delete */}

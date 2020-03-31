@@ -15,11 +15,10 @@ export const ColumnComponent = ({
   onChange,
   onEdit,
   column,
-  onDelete
-// onMoveDown,
-// onMoveUp
-}: 
-ColumnComponentProps) => {
+  onDelete,
+  // onMoveDown,
+  // onMoveUp
+}: ColumnComponentProps) => {
   return (
     <div className={styles.ColumnComponentMain}>
       {column.content && Object.keys(column.content).length > 0 ? (

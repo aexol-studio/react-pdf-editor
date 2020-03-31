@@ -8,6 +8,7 @@ import { translated } from "../../models";
 import * as Icons from "react-feather";
 import * as styles1 from "./styles/Feature";
 import cx from "classnames";
+// import { DeleteAndEditIconsComponent } from "./display/DeleteAndEdit";
 export interface ColumnsComponentProps {
   columns: PartialObjects["Columns"];
   onChange: () => void;
