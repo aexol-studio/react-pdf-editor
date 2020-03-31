@@ -24,18 +24,29 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   feature: PartialObjects["Feature"];
   onDelete: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
-   onMoveDown?: () => void;
-   onMoveUp?: () => void;
+  onMoveDown?: () => void;
+  onMoveUp?: () => void;
   [k: string]: unknown;
 }
 
 /// tutaj jest komponen wyświetlany itp itp itp
 
 const FeatureComp = (props: FeatureComponentProps) => {
-  const { feature, onChange, onEdit, onDelete} = props;
+  const { feature, onChange, onEdit, onDelete } = props;
   if (isTimeStamp(feature)) {
     return (
       <div className={styles.FeatureTitleDiv}>
+        
+        <div
+          style={{
+            flex: 10
+          }}
+        >
+          <DeleteAndEditIconsComponent {...props} />
+        </div>
+        
+        
+        
         <div
           style={{
             flex: 1
@@ -44,13 +55,7 @@ const FeatureComp = (props: FeatureComponentProps) => {
           <TimeStampComponent />
         </div>
 
-        <div
-          style={{
-            flex: 10,
-          }}
-        >
-          <DeleteAndEditIconsComponent {...props} />
-        </div>
+
       </div>
     );
   }
@@ -90,50 +95,50 @@ const FeatureComp = (props: FeatureComponentProps) => {
       />
     );
   }
+  // if (isTableBlock(feature)) {
+  //   return (
+  //     <TableBlockComponent
+  //       tableBlock={feature}
+  //       onChange={onChange}
+  //       onDelete={onDelete}
+  //       onEdit={onEdit}
+  //       // onMoveDown={onMoveDown}
+  //       // onMoveUp={onMoveUp}
+  //       // {...props}
+  //     />
+  //   );
+  // }
   if (isTableBlock(feature)) {
     return (
-      <TableBlockComponent
-        tableBlock={feature}
-        onChange={onChange}
-        onDelete={onDelete}
-        onEdit={onEdit}
-        // onMoveDown={onMoveDown}
-        // onMoveUp={onMoveUp}
-        // {...props}
-      />
+      <div className={styles.FeatureTitleDiv}>
+        <div
+          style={{
+            flex: 1
+          }}
+        >
+          <DeleteAndEditIconsComponent {...props}
+          />
+        </div>
+
+        <div
+          style={{
+            flex: 10
+          }}
+        >
+          <TableBlockComponent
+            tableBlock={feature}
+            onChange={onChange}
+            onDelete={onDelete}
+            onEdit={onEdit}
+            // onMoveDown={onMoveDown}
+            // onMoveUp={onMoveUp}
+            // {...props}
+          />
+        </div>
+      </div>
     );
-    // if (isTableBlock(feature)) {
-    //   return (
-    //     <div className={styles.FeatureTitleDiv}>
-    //       <div
-    //         style={{
-    //           flex: 1
-    //         }}
-    //       >
-    //         <DeleteAndEditIconsComponent {...props} />
-    //       </div>
-  
-    //       <div
-    //         style={{
-    //           flex: 10
-    //         }}
-    //       >
-    //         <TableBlockComponent
-    //           tableBlock={feature}
-    //           onChange={onChange}
-    //           onDelete={onDelete}
-    //           onEdit={onEdit}
-    //           // onMoveDown={onMoveDown}
-    //           // onMoveUp={onMoveUp}
-    //           // {...props}
-    //         />
-    //       </div>
-    //     </div>
-    //   );
-    // }
-
-
   }
+
   if (isListBlock(feature)) {
     return (
       <ListBlockComponent
