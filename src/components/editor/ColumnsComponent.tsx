@@ -35,13 +35,15 @@ export const ColumnsComponent = ({
   return (
     <>
       {/* <ControlsButton onClick={onDelete}>Delete row</ControlsButton> */}
+
+
+
       <div className={styles.ColumnTitleDiv}>
         <Icons.Trash
           onClick={onDelete}
           className={cx(styles1.MiniIcon, styles1.Delete)}
           size={15}
         />
-        {/* <p>cokolwiek</p> */}
         <p className={styles.ColumnTitle}>{t("IconTrashDelete")}</p>
       </div>
       <div className={styles.Main}>
@@ -49,6 +51,7 @@ export const ColumnsComponent = ({
           const flexBasis = widths[i]!;
           return (
             <>
+              {/* ikonki */}
               <Resizable
                 key={`${i}`}
                 enable={{

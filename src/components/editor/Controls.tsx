@@ -54,24 +54,17 @@ export const Controls = ({
             return;
           }
           setOpen(!open);
-          console.log("beng 1");
-
           //zmiana stanu na true i pokazują się kontrolki
         }}
       >
         {open ? (
           <div className={styles.ShowHide}>
-            <p
-            className={styles.ShowHideParagraph}>
-              
-              Hide</p>
+            <p className={styles.ShowHideParagraph}>Hide</p>
           </div>
         ) : (
           // <PlusCircle size={15} />
           <div className={styles.ShowHide}>
-            <p
-            className={styles.ShowHideParagraph}>
-              Add</p>
+            <p className={styles.ShowHideParagraph}>Add</p>
           </div>
         )}
 

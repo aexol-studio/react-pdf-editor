@@ -23,6 +23,6 @@ export const RolloutableMain = style({
   borderRadius: 10,
   transition: transition,
   marginBottom: 10,
-  border: `1px dashed ${Colors.Foggy}`
-  // border: `2px dashed red`
+  // border: `1px dashed ${Colors.Lead}`
+  border: `1px dashed ${Colors.Inspector}`
 });

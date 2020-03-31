@@ -102,6 +102,37 @@ const FeatureComp = (props: FeatureComponentProps) => {
         // {...props}
       />
     );
+    // if (isTableBlock(feature)) {
+    //   return (
+    //     <div className={styles.FeatureTitleDiv}>
+    //       <div
+    //         style={{
+    //           flex: 1
+    //         }}
+    //       >
+    //         <DeleteAndEditIconsComponent {...props} />
+    //       </div>
+  
+    //       <div
+    //         style={{
+    //           flex: 10
+    //         }}
+    //       >
+    //         <TableBlockComponent
+    //           tableBlock={feature}
+    //           onChange={onChange}
+    //           onDelete={onDelete}
+    //           onEdit={onEdit}
+    //           // onMoveDown={onMoveDown}
+    //           // onMoveUp={onMoveUp}
+    //           // {...props}
+    //         />
+    //       </div>
+    //     </div>
+    //   );
+    // }
+
+
   }
   if (isListBlock(feature)) {
     return (

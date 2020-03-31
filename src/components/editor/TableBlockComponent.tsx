@@ -8,7 +8,8 @@ import { translated } from "../../models";
 import { TopMenu } from "../../topmenu/index";
 import { ColumnsComponent } from "./ColumnsComponent";
 import {
-  DeleteAndEditIconsComponentProps,
+  DeleteAndEditIconsComponentProps, 
+  // DeleteAndEditIconsComponent,
 } from "./display/DeleteAndEdit";
 import { Rolloutable } from "./display/Rolloutable";
 import * as styles from "./styles/TableBlock";
@@ -68,13 +69,18 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
     .map(w => w.S);
   return (
     <Rolloutable
-      withoutDeleteIcons={true}
+      withoutDeleteIcons={false}
       title={`${t("TableTitle")}${
         tableBlock.style ? `-${tableBlock.style}` : ``
       }`}
       {...props}
+
     >
-      <div className={styles.TableBlockMenuHolder}>
+      <div className={styles.TableBlockMenuHolder}
+            style={{
+              background: "lavender"
+            }}
+      >
         <TopMenu
           style={{ flex: "max-content" }}
           editedFeature={tableBlock}
@@ -113,8 +119,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
                   //       }
                   //     : undefined
                   // }
-                 
-                 
+
                   // onMoveDown={onMoveDown}
                   // onMoveUp={onMoveUp}
 
