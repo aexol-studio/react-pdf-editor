@@ -14,7 +14,6 @@ export const FeatureOptions = style({
   flex: 1,
   flexDirection: "row-reverse",
   width: "100%",
-  
   height: '100%',
     // display: flex;
     alignSelf: 'center'

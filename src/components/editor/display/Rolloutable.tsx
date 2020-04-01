@@ -13,6 +13,7 @@ export interface RolloutableComponentProps
   title: string;
   feature?: PartialObjects["Feature"];
   onEdit?: (feature: PartialObjects["Feature"]) => void;
+  style?: React.CSSProperties;
 }
 interface RolloutableState {
   rolledOut: boolean;
