@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "dependencies": {
     "@react-pdf/renderer": "^1.6.7",
+    "@types/react-resizable": "^1.7.2",
     "classnames": "^2.2.6",
     "rc-color-picker": "^1.2.6",
+    "rc-table": "^7.9.7",
     "rc-tooltip": "^4.0.0-alpha.2",
     "re-resizable": "^6.1.0",
     "react-feather": "^2.0.3",
+    "react-resizable": "^2.0.0",
     "typestyle": "^2.0.4"
   },
   "peerDependencies": {

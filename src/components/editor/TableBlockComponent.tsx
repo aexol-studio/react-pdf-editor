@@ -9,6 +9,7 @@ import { translated } from "../../models";
 import * as styles from "./styles/TableBlock";
 import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
 import { TopMenu } from "../../topmenu/index";
+import Demo from "./TableShowComponent";
 
 export interface TableBlockComponentProps
   extends DeleteAndEditIconsComponentProps {
@@ -22,8 +23,8 @@ const emptyColumn = (): PartialObjects["Column"] => ({
   __typename: "Column",
   content: {
     __typename: "Stack",
-    items: []
-  }
+    items: [],
+  },
 });
 
 const t = translated("TableBlockComponentTxt");
@@ -34,32 +35,32 @@ const normalizeWidths = (
   twidths: PartialObjects["WidthType"][]
 ): PartialObjects["WidthType"][] => {
   const powers = calculatePowers(
-    twidths.map(tw => ({
+    twidths.map((tw) => ({
       ...tw,
-      S: tw.S || "*"
+      S: tw.S || "*",
     }))
   );
   return calculateWidthsFromPowers(powers);
 };
 const calculatePowers = (twidths: PartialObjects["WidthType"][]) =>
-  twidths.map(w => (w.S! === "*" ? 100 : parseFloat(w.S!.slice(0, -1))));
+  twidths.map((w) => (w.S! === "*" ? 100 : parseFloat(w.S!.slice(0, -1))));
 const calculateWidthsFromPowers = (
   powers: number[]
 ): PartialObjects["WidthType"][] => {
   const powerValue = powers.reduce((a, b) => a + b, 0);
-  return powers.map(p => ({
-    S: `${(100.0 * p) / powerValue}%`
+  return powers.map((p) => ({
+    S: `${(100.0 * p) / powerValue}%`,
   }));
 };
 
 export const TableBlockComponent = (props: TableBlockComponentProps) => {
   const { onChange, onEdit, tableBlock } = props;
   const widths = tableBlock
-    .widths!.map(tw => ({
+    .widths!.map((tw) => ({
       ...tw,
-      S: tw.S || "100%"
+      S: tw.S || "100%",
     }))
-    .map(w => w.S);
+    .map((w) => w.S);
   return (
     <Rolloutable
       withoutDeleteIcons={false}
@@ -92,15 +93,17 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
                   tableBlock.widths![columnIndex] = { S: `${percentage}%` };
                   if (columnIndex === widths.length - 1) {
                     tableBlock.widths![columnIndex - 1] = {
-                      S: `${width2Power(
-                        tableBlock.widths![columnIndex - 1].S!
-                      ) + delta}%`
+                      S: `${
+                        width2Power(tableBlock.widths![columnIndex - 1].S!) +
+                        delta
+                      }%`,
                     };
                   } else {
                     tableBlock.widths![columnIndex + 1] = {
-                      S: `${width2Power(
-                        tableBlock.widths![columnIndex + 1].S!
-                      ) + delta}%`
+                      S: `${
+                        width2Power(tableBlock.widths![columnIndex + 1].S!) +
+                        delta
+                      }%`,
                     };
                   }
                   onChange();
@@ -117,7 +120,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
                 key={`${index}`}
                 className={styles.ControlCell}
                 style={{
-                  flexBasis: widths[index]
+                  flexBasis: widths[index],
                 }}
               >
                 {/* poprawić paddingi */}
@@ -125,9 +128,9 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
                 <Icons.Trash
                   size={15}
                   onClick={() => {
-                    tableBlock.rows = tableBlock.rows!.map(row => ({
+                    tableBlock.rows = tableBlock.rows!.map((row) => ({
                       ...row,
-                      columns: row.columns!.filter((_, idx) => idx !== index)
+                      columns: row.columns!.filter((_, idx) => idx !== index),
                     }));
                     tableBlock.widths! = tableBlock.widths!.filter(
                       (tw, idx) => idx !== index
@@ -157,7 +160,8 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
             ))}
         </div>
       </div>
-      <div className={styles.Actions}>
+      <Demo />
+      {/* <div className={styles.Actions}>
         <div className={styles.TableBlockSvg}>
           <svg
             className={styles.ControlAddRow}
@@ -166,7 +170,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
             onClick={() => {
               if (tableBlock.widths!.length === 0) {
                 tableBlock.widths!.push({
-                  S: "*"
+                  S: "*",
                 });
                 tableBlock.widths! = normalizeWidths(tableBlock.widths!);
               }
@@ -177,7 +181,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
                     ? tableBlock.rows![
                         tableBlock.rows!.length - 1
                       ].columns!.map(() => emptyColumn())
-                    : [emptyColumn()]
+                    : [emptyColumn()],
               });
               onChange();
             }}
@@ -192,11 +196,11 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
               focusable={"false"}
               viewBox={"0 0 24 24"}
               onClick={() => {
-                tableBlock.rows!.forEach(row => {
+                tableBlock.rows!.forEach((row) => {
                   row.columns!.push(emptyColumn());
                 });
                 tableBlock.widths!.push({
-                  S: "100%"
+                  S: "100%",
                 });
                 tableBlock.widths! = normalizeWidths(tableBlock.widths!);
                 onChange();
@@ -206,7 +210,7 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
             </svg>
           </div>
         )}
-      </div>
+      </div> */}
     </Rolloutable>
   );
 };
