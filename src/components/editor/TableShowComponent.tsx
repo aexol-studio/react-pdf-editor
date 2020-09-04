@@ -3,6 +3,11 @@ import { Resizable } from "react-resizable";
 import Table from "rc-table";
 import { ColumnType } from "rc-table/lib/interface";
 import "react-resizable/css/styles.css";
+import { css } from "@emotion/core";
+
+const TableStyle = css`
+  border: 1px solid red !important;
+`;
 
 const ResizableTitle = (props: any) => {
   const { onResize, width, ...restProps } = props;
@@ -88,6 +93,8 @@ class Demo extends React.Component<{}, DemoState> {
     return (
       <div>
         <Table
+          // className={TableStyle}
+          // css=
           style={{
             border: "1px solid",
           }}
