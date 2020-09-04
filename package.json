@@ -8,6 +8,8 @@
     "@types/react-resizable": "^1.7.2",
     "classnames": "^2.2.6",
     "emotion": "^10.0.27",
+    "less": "^3.12.2",
+    "less-loader": "^7.0.1",
     "rc-color-picker": "^1.2.6",
     "rc-table": "^7.9.7",
     "rc-tooltip": "^4.0.0-alpha.2",

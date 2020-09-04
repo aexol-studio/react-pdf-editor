@@ -9,13 +9,13 @@ var WebpackCleanupPlugin = require("webpack-cleanup-plugin");
 module.exports = {
   context: sourcePath,
   entry: {
-    app: "./index.tsx"
+    app: "./index.tsx",
   },
   output: {
     path: outPath,
     filename: "bundle[hash].js",
     chunkFilename: "[chunkhash].js",
-    publicPath: "/"
+    publicPath: "/",
   },
   target: "web",
   mode: "development",
@@ -23,51 +23,65 @@ module.exports = {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
     mainFields: ["module", "browser", "main"],
     alias: {
-      app: path.resolve(__dirname, "../src")
-    }
+      app: path.resolve(__dirname, "../src"),
+    },
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.html$/,
-        use: "html-loader"
+        use: "html-loader",
       },
       {
         test: /\.tsx?$/,
-        loader: "ts-loader"
+        loader: "ts-loader",
       },
       { test: /\.(png|svg)$/, use: "url-loader?limit=10000" },
       { test: /\.(jpg|gif)$/, use: "file-loader" },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "url-loader?limit=10000&mimetype=application/font-woff"
+        loader: "url-loader?limit=10000&mimetype=application/font-woff",
       },
       {
         test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "file-loader?name=[name].[ext]"
-      }
-    ]
+        loader: "file-loader?name=[name].[ext]",
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: "style-loader", // creates style nodes from JS strings
+          },
+          {
+            loader: "css-loader", // translates CSS into CommonJS
+          },
+          {
+            loader: "less-loader", // compiles Less to CSS
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.EnvironmentPlugin({
-      NODE_ENV: "development"
+      NODE_ENV: "development",
     }),
     new WebpackCleanupPlugin(),
     new HtmlWebpackPlugin({
-      template: "./assets/index.html"
-    })
+      template: "./assets/index.html",
+    }),
   ],
   devServer: {
     contentBase: sourcePath,
     hot: true,
     inline: true,
     historyApiFallback: {
-      disableDotRule: true
+      disableDotRule: true,
     },
-    stats: "minimal"
-  }
+    stats: "minimal",
+  },
 };

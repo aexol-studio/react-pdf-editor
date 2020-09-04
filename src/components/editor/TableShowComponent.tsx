@@ -2,12 +2,13 @@ import React from "react";
 import { Resizable } from "react-resizable";
 import Table from "rc-table";
 import { ColumnType } from "rc-table/lib/interface";
-import "react-resizable/css/styles.css";
-import { css } from "@emotion/core";
-
-const TableStyle = css`
-  border: 1px solid red !important;
-`;
+// import "react-resizable/css/styles.css";
+// import { css } from "@emotion/core";
+// import "./styles/TableStyle.css";
+import "./styles/TableStyle.less";
+// const TableStyle = css`
+//   border: 1px solid red;
+// `;
 
 const ResizableTitle = (props: any) => {
   const { onResize, width, ...restProps } = props;
@@ -38,7 +39,12 @@ interface DemoState {
 class Demo extends React.Component<{}, DemoState> {
   state: DemoState = {
     columns: [
-      { title: "title1", dataIndex: "a", key: "a", width: 100 },
+      {
+        title: "title1",
+        dataIndex: "a",
+        key: "a",
+        width: 100,
+      },
       { title: "title2", dataIndex: "b", key: "b", width: 100 },
       { title: "title3", dataIndex: "c", key: "c", width: 200 },
       {
@@ -93,11 +99,6 @@ class Demo extends React.Component<{}, DemoState> {
     return (
       <div>
         <Table
-          // className={TableStyle}
-          // css=
-          style={{
-            border: "1px solid",
-          }}
           components={this.components}
           columns={columns}
           data={this.data}
