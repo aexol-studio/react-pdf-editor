@@ -2,13 +2,8 @@ import React from "react";
 import { Resizable } from "react-resizable";
 import Table from "rc-table";
 import { ColumnType } from "rc-table/lib/interface";
-// import "react-resizable/css/styles.css";
-// import { css } from "@emotion/core";
-// import "./styles/TableStyle.css";
+import "react-resizable/css/styles.css";
 import "./styles/TableStyle.less";
-// const TableStyle = css`
-//   border: 1px solid red;
-// `;
 
 const ResizableTitle = (props: any) => {
   const { onResize, width, ...restProps } = props;
