@@ -19,13 +19,13 @@ export interface TableBlockComponentProps
   components?: PartialObjects["TemplateComponent"][];
 }
 
-const emptyColumn = (): PartialObjects["Column"] => ({
-  __typename: "Column",
-  content: {
-    __typename: "Stack",
-    items: [],
-  },
-});
+// const emptyColumn = (): PartialObjects["Column"] => ({
+//   __typename: "Column",
+//   content: {
+//     __typename: "Stack",
+//     items: [],
+//   },
+// });
 
 const t = translated("TableBlockComponentTxt");
 

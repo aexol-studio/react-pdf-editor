@@ -2,6 +2,7 @@ import React from "react";
 import { Resizable } from "react-resizable";
 import Table from "rc-table";
 import { ColumnType } from "rc-table/lib/interface";
+import "react-resizable/css/styles.css";
 
 const ResizableTitle = (props: any) => {
   const { onResize, width, ...restProps } = props;
@@ -87,6 +88,9 @@ class Demo extends React.Component<{}, DemoState> {
     return (
       <div>
         <Table
+          style={{
+            border: "1px solid",
+          }}
           components={this.components}
           columns={columns}
           data={this.data}
