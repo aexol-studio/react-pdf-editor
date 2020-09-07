@@ -38,7 +38,7 @@ class Demo extends React.Component<{}, DemoState> {
       {
         dataIndex: "a",
         key: "a",
-        width: 100,
+        width: 150,
         render() {
           return <input width="100%" type="text"></input>;
         },
@@ -46,7 +46,7 @@ class Demo extends React.Component<{}, DemoState> {
       {
         dataIndex: "b",
         key: "b",
-        width: 100,
+        width: 150,
         render() {
           return <input style={{ width: "100%" }} type="text"></input>;
         },
@@ -54,7 +54,7 @@ class Demo extends React.Component<{}, DemoState> {
       {
         dataIndex: "c",
         key: "c",
-        width: 200,
+        width: 150,
         render() {
           return <input style={{ width: "100%" }} type="text"></input>;
         },
@@ -62,6 +62,23 @@ class Demo extends React.Component<{}, DemoState> {
       {
         dataIndex: "",
         key: "d",
+        width: 150,
+        render() {
+          return (
+            <input
+              style={{ width: "100%" }}
+              type="text"
+              placeholder="type here"
+            ></input>
+          );
+        },
+      },
+
+      // tutaj jest dodawanie kolumny (pusty obiekt do tablicy)
+      {
+        dataIndex: "",
+        key: "d",
+        width: 150,
         render() {
           return (
             <input
