@@ -35,19 +35,34 @@ class Demo extends React.Component<{}, DemoState> {
   state: DemoState = {
     columns: [
       {
-        title: "title1",
         dataIndex: "a",
         key: "a",
         width: 100,
+        render() {
+          return <input width="100%" type="text"></input>;
+        },
       },
-      { title: "title2", dataIndex: "b", key: "b", width: 100 },
-      { title: "title3", dataIndex: "c", key: "c", width: 200 },
       {
-        title: "Operations",
+        dataIndex: "b",
+        key: "b",
+        width: 100,
+        render() {
+          return <input style={{ width: "100%" }} type="text"></input>;
+        },
+      },
+      {
+        dataIndex: "c",
+        key: "c",
+        width: 200,
+        render() {
+          return <input style={{ width: "100%" }} type="text"></input>;
+        },
+      },
+      {
         dataIndex: "",
         key: "d",
         render() {
-          return <a href="#">Operations</a>;
+          return <input style={{ width: "100%" }} type="text"></input>;
         },
       },
     ],
