@@ -16,7 +16,7 @@ const t = translated("ControlsComponentTxt");
 
 export const ControlsButton = ({
   onClick,
-  children
+  children,
 }: {
   onClick: () => void;
   children: React.ReactNode;
@@ -32,7 +32,7 @@ export const Controls = ({
   mutateWholeObject,
   document,
   parent,
-  show
+  show,
 }: ControlsProps) => {
   // const [open, setOpen] = useState(false);
 
@@ -48,13 +48,12 @@ export const Controls = ({
           if (parent && parent.__typename === "ListBlock") {
             features.push({
               text: "",
-              __typename: "TextBlock"
+              __typename: "TextBlock",
             } as PartialObjects["TextBlock"]);
             mutateWholeObject();
             return;
           }
           setOpen(!open);
-          console.log("beng 1");
 
           //zmiana stanu na true i pokazują się kontrolki
         }}
@@ -73,17 +72,16 @@ export const Controls = ({
                     onClick={() => {
                       features.push({
                         __typename: "Stack",
-                        items: []
+                        items: [],
                       } as PartialObjects["Stack"]);
                       setOpen(false);
                       mutateWholeObject();
-                      console.log("beng 2");
                     }}
                   >
                     <p
                       style={{
                         fontSize: "12px",
-                        margin: 0
+                        margin: 0,
                       }}
                     >
                       {t("ButtonStack")}
@@ -96,7 +94,7 @@ export const Controls = ({
                       onClick={() => {
                         features.push({
                           text: "",
-                          __typename: "TextBlock"
+                          __typename: "TextBlock",
                         } as PartialObjects["TextBlock"]);
                         setOpen(false);
                         mutateWholeObject();
@@ -108,7 +106,7 @@ export const Controls = ({
                     <ControlsButton
                       onClick={() => {
                         features.push({
-                          __typename: "Image"
+                          __typename: "Image",
                         } as PartialObjects["Image"]);
                         setOpen(false);
                         mutateWholeObject();
@@ -120,7 +118,7 @@ export const Controls = ({
                       onClick={() => {
                         features.push({
                           __typename: "Stack",
-                          items: []
+                          items: [],
                         } as PartialObjects["Stack"]);
                         mutateWholeObject();
                         setOpen(false);
@@ -133,7 +131,7 @@ export const Controls = ({
                       onClick={() => {
                         features.push({
                           __typename: "ListBlock",
-                          items: []
+                          items: [],
                         } as PartialObjects["ListBlock"]);
                         setOpen(false);
                         mutateWholeObject();
@@ -148,7 +146,7 @@ export const Controls = ({
                           __typename: "TableBlock",
                           style: BuiltInStyles.NO_BORDERS_TABLE,
                           widths: [],
-                          rows: []
+                          rows: [],
                         } as PartialObjects["TableBlock"]);
                         setOpen(false);
                         mutateWholeObject();
@@ -168,7 +166,7 @@ export const Controls = ({
                           __typename: "TableBlock",
                           style: BuiltInStyles.LIGHT_BORDER_TABLE,
                           widths: [],
-                          rows: []
+                          rows: [],
                         } as PartialObjects["TableBlock"]);
                         setOpen(false);
                         mutateWholeObject();
@@ -180,7 +178,7 @@ export const Controls = ({
                     <ControlsButton
                       onClick={() => {
                         features.push({
-                          __typename: "TimeStamp"
+                          __typename: "TimeStamp",
                         } as PartialObjects["TimeStamp"]);
                         setOpen(false);
                         mutateWholeObject();
