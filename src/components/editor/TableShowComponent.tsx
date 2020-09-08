@@ -127,6 +127,65 @@ class Demo extends React.Component<{}, DemoState> {
   };
 
   render() {
+    // const [dateCol, setDateCol] = useState(
+    // columns: [
+    //   {
+    //     dataIndex: "a",
+    //     key: "a",
+    //     width: 150,
+    //     render() {
+    //       return <input width="100%" type="text"></input>;
+    //     },
+    //   },
+    //   {
+    //     dataIndex: "b",
+    //     key: "b",
+    //     width: 150,
+    //     render() {
+    //       return <input style={{ width: "100%" }} type="text"></input>;
+    //     },
+    //   },
+    //   {
+    //     dataIndex: "c",
+    //     key: "c",
+    //     width: 150,
+    //     render() {
+    //       return <input style={{ width: "100%" }} type="text"></input>;
+    //     },
+    //   },
+    //   {
+    //     dataIndex: "",
+    //     key: "d",
+    //     width: 150,
+    //     render() {
+    //       return (
+    //         <input
+    //           style={{ width: "100%" }}
+    //           type="text"
+    //           placeholder="type here"
+    //         ></input>
+    //       );
+    //     },
+    //   },
+
+    //   // tutaj jest dodawanie kolumny (pusty obiekt do tablicy)
+    //   {
+    //     dataIndex: "",
+    //     key: "d",
+    //     width: 150,
+    //     render() {
+    //       return (
+    //         <input
+    //           style={{ width: "100%" }}
+    //           type="text"
+    //           placeholder="type here"
+    //         ></input>
+    //       );
+    //     },
+    //   },
+    // ],
+    //   );
+
     const headerFunc = (col: any, index: number) => ({
       ...col,
       onHeaderCell: (column: ColumnType<RecordType>) =>
@@ -135,7 +194,7 @@ class Demo extends React.Component<{}, DemoState> {
           onResize: this.handleResize(index),
         } as any),
     });
-    const columns = this.state.columns.map((col, index) =>
+    const columnsData = this.state.columns.map((col, index) =>
       headerFunc(col, index)
     );
 
@@ -143,7 +202,7 @@ class Demo extends React.Component<{}, DemoState> {
       <div>
         <Table
           components={this.components}
-          columns={columns}
+          columns={columnsData}
           data={this.data}
         />
 
@@ -183,7 +242,7 @@ class Demo extends React.Component<{}, DemoState> {
               focusable={"false"}
               viewBox={"0 0 24 24"}
               onClick={() => {
-                columns.push(
+                columnsData.push(
                   headerFunc(
                     {
                       dataIndex: "a",
@@ -193,14 +252,12 @@ class Demo extends React.Component<{}, DemoState> {
                         return <input width="100%" type="text"></input>;
                       },
                     },
-                    columns.length
+                    columnsData.length
                   )
                 );
-
-                //w tym momencie columns ma w sobie jeszcze metodę onHeaderCell no i jak chce pusznąć nowy obiekt do tablicy columns to co musze zrobić?
-
-                console.log("cokolwiek");
-                console.log(columns);
+                this.setState({
+                  columns: columnsData,
+                });
               }}
             >
               <path d="M20,5H4C2.9,5,2,5.9,2,7v10c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V7C22,5.9,21.1,5,20,5z M8,17.5H4c-0.3,0-0.5-0.2-0.5-0.4  c0,0,0,0,0,0V17v-2H8V17.5z M8,13.5H3.5v-3H8V13.5z M8,9H3.5V7c0-0.3,0.2-0.5,0.4-0.5c0,0,0,0,0,0H8V9z M20.5,17  c0,0.3-0.2,0.5-0.4,0.5c0,0,0,0,0,0H16V15h4.5V17z M20.5,13.5H16v-3h4.5V13.5z M20.5,9H16V6.5h4c0.3,0,0.5,0.2,0.5,0.4c0,0,0,0,0,0  V9z"></path>
