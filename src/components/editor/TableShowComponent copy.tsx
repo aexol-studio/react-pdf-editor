@@ -8,16 +8,15 @@ import * as styles from "./styles/TableBlock";
 import { ColumnType } from "rc-table/lib/interface";
 
 const ResizableTitle = (props: any) => {
-  const { onResize, width, ...restProps } = props;
-  if (!width) {
-    return <td {...restProps} />;
-  }
+  const { onResize, width } = props;
 
   console.log(width);
   return (
-    <Resizable width={width} height={0} onResize={onResize}>
-      <td {...restProps} />
-    </Resizable>
+    <td
+      style={{
+        width: width + "%",
+      }}
+    />
   );
 };
 
@@ -44,7 +43,7 @@ class Demo extends React.Component<{}, DemoState> {
         },
       ],
     ],
-    columns: [100, 100],
+    columns: [20, 100],
   };
 
   handleResize = (index: any) => (e: any, ddd: { size: { width: number } }) => {
