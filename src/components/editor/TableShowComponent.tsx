@@ -1,119 +1,133 @@
 import React from "react";
-// import { Resizable } from "react-resizable";
+import { Resizable } from "react-resizable";
 import Table from "rc-table";
 // import { ColumnType } from "rc-table/lib/interface";
 import "react-resizable/css/styles.css";
 import "./styles/TableStyle.less";
 import * as styles from "./styles/TableBlock";
+import { ColumnType } from "rc-table/lib/interface";
 
-// const ResizableTitle = (props: any) => {
-//   const { onResize, width, ...restProps } = props;
+const ResizableTitle = (props: any) => {
+  const { onResize, width, ...restProps } = props;
+  if (!width) {
+    return <th {...restProps} />;
+  }
 
-//   if (!width) {
-//     return <th {...restProps} />;
-//   }
+  return (
+    <Resizable width={width} height={0} onResize={onResize}>
+      <th {...restProps} />
+    </Resizable>
+  );
+};
 
-//   return (
-//     <Resizable width={width} height={0} onResize={onResize}>
-//       <th {...restProps} />
-//     </Resizable>
-//   );
-// };
+interface Cell {
+  text: string;
+  width: number;
+}
 
 interface DemoState {
-  data: string[][];
+  data: Cell[][];
+  // width: string
+  // data jest to tablica tablic o typie string
 }
 
 class Demo extends React.Component<{}, DemoState> {
   state: DemoState = {
-    data: [["", ""]],
+    data: [
+      [
+        {
+          text: "",
+          width: 100,
+        },
+        {
+          text: "",
+          width: 100,
+        },
+      ],
+    ],
+    // width: "100"
   };
 
-  // render() {
-  // return (
-
-  //   <input placeholder="type here" width="100%" type="text"></input>
-  // );
-
-  // components = {
-  //   header: {
-  //     cell: ResizableTitle,
-  //   },
-  // };
-
-  // data = [
-  //   { a: "123", key: "1" },
-  //   { a: "cdd", b: "edd", key: "2" },
-  // ];
-
-  //
-  // { "size":{width: 1}}
-  //
-
-  // handleResize = (index: any) => (
-  //   e: any,
-  //   { size }: { size: { width: string | number } }
-  // ) => {
-  //   this.setState(({ data }) => {
-  //     const nextColumns = [...data];
-  //     // spread operator - tworzy kopię tablicy columns - kopia tablicy ma nazwę nextColumns
-  //     nextColumns[index] = {
-  //       // element tablicy nextColumns ???
-  //       ...nextColumns[index],
-  //       // ????
-  //       width: size.width,
-  //       // ???
-  //     };
-  //     return { data: nextColumns };
-
-  //     // tutaj jest przypisanie columns do
-  //   });
-  // };
+  handleResize = (index: any) => (
+    e: any,
+    { size }: { size: { width: number } }
+  ) =>
+    this.setState({
+      ...this.state,
+      data: this.state.data.map((v) =>
+        v.map((c, idx) =>
+          idx == index ? { ...c, width: size.width } : { ...c }
+        )
+      ),
+    });
 
   cellRender(cIdx: number) {
-    return (o: object, raw: object, index: number) => (
-      <input
-        style={{
-          width: "100%",
-        }}
-        placeholder={this.state.data[index][cIdx]}
-        type={"text"}
-      ></input>
-    );
+    // funkcja przujmuje parametr cIdx o typie number - oddany w przez funkcje for this.callRender(i)
+    return (o: object, raw: object, index: number) => {
+      console.log("aaaaa");
+      return (
+        // zwraca parametry
+        <input
+          style={{
+            width: "100%",
+          }}
+          placeholder={this.state.data[index][cIdx].text}
+          type={"text"}
+        ></input>
+      );
+    };
   }
 
   render() {
-    // const columnsData = [
-    //   { width: 100, render: this.cellRender(0) },
-    //   { width: 100, render: this.cellRender(1) },
-    //   { width: 100, render: this.cellRender(2) },
-    // ];
-    const columnsData: {
-      width: number;
-      render: (o: object, raw: object, index: number) => JSX.Element;
-    }[] = [];
+    const columnsData: ColumnType<Cell[]>[] = [];
+
+    // obiekt posiada dwa parametyry jeden to szerokość a drugi to funkcja render o paramterach (o, raw, index). obiekt ten jest tablica obiektow,
+    // rozpoczyna się od pustej tablicy
+
     for (let i = 0; i < this.state.data[0].length; i++) {
-      columnsData.push({ width: 100, render: this.cellRender(i) });
+      columnsData.push({
+        width: this.state.data[0][i].width,
+        render: this.cellRender(i),
+        onCell: (data: Cell[], index?: number) => {
+          return {
+            width: data[0].width,
+            onResize: this.handleResize(index),
+          } as any;
+        },
+      });
+
+      // fukncja for ktora sprawdza czy dlugość pierwszego elementu tablicy jest wiekszy niz jeden (jest zawsze bo stan jest ustawiony na pusty string)
+      // columnsData.push tworzy nową table w której element ma szerokość 100 oraz elementem jest retiurn z fukcji callRender
     }
 
     // const headerFunc = (col: any, index: number) => ({
     //   ...col,
-    //   onHeaderCell: (column: ColumnType<RecordType>) =>
+    //   onHeaderCell: (data: string[][]) =>
     //     ({
-    //       width: column.width,
+    //       width: data.width,
     //       onResize: this.handleResize(index),
     //     } as any),
     // });
-    // const columnsData = this.state.data.map((col, index) =>
+    // const columnsInnerData = this.state.data.map((col, index) =>
     //   headerFunc(col, index)
     // );
 
+    const components = {
+      body: {
+        // cell: this.handleResize,
+        //
+        cell: ResizableTitle,
+      },
+    };
     return (
       <div>
         <Table
-          // components={this.components}
+          components={components}
+          // components to tablica stringów
+
           columns={columnsData}
           data={this.state.data}
+          showHeader={false}
         />
 
         <div className={styles.Actions}>
@@ -154,14 +168,19 @@ class Demo extends React.Component<{}, DemoState> {
                 this.setState({
                   ...this.state,
                   // pobrany state
-                  data: this.state.data.map((v) => [...v, ""]),
+                  data: this.state.data.map((v) => [
+                    ...v,
+                    {
+                      text: "",
+                      width: 100,
+                    },
+                  ]),
                   // nadpisanie stanu
+                  // mapowanie jako przejechanie po kazdym elemencie czyli tutaj dwóch tablicach i dodanie do kazdej z nich  pustego stringa?
                   //
                 })
               }
               //{
-              // skopiowana tablica przez spreed operator i dodana tablica
-              // dodany pusty string
             >
               <path d="M20,5H4C2.9,5,2,5.9,2,7v10c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V7C22,5.9,21.1,5,20,5z M8,17.5H4c-0.3,0-0.5-0.2-0.5-0.4  c0,0,0,0,0,0V17v-2H8V17.5z M8,13.5H3.5v-3H8V13.5z M8,9H3.5V7c0-0.3,0.2-0.5,0.4-0.5c0,0,0,0,0,0H8V9z M20.5,17  c0,0.3-0.2,0.5-0.4,0.5c0,0,0,0,0,0H16V15h4.5V17z M20.5,13.5H16v-3h4.5V13.5z M20.5,9H16V6.5h4c0.3,0,0.5,0.2,0.5,0.4c0,0,0,0,0,0  V9z"></path>
             </svg>
