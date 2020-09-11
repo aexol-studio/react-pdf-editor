@@ -9,7 +9,9 @@ import { translated } from "../../models";
 import * as styles from "./styles/TableBlock";
 import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
 import { TopMenu } from "../../topmenu/index";
-import Demo from "./TableShowComponent";
+// import Demo from "./TableShowComponent";
+import Demo3 from "./TableShowComponent3";
+import Demo2 from "./TableShowComponent2";
 
 export interface TableBlockComponentProps
   extends DeleteAndEditIconsComponentProps {
@@ -160,7 +162,9 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
             ))}
         </div>
       </div>
-      <Demo />
+      {/* <Demo /> */}
+      {/* <Demo2 /> */}
+      <Demo3 />
       {/* <div className={styles.Actions}>
         <div className={styles.TableBlockSvg}>
           <svg

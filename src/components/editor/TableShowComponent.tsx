@@ -9,14 +9,28 @@ import { ColumnType } from "rc-table/lib/interface";
 
 const ResizableTitle = (props: any) => {
   const { onResize, width, ...restProps } = props;
-  if (!width) {
-    return <td {...restProps} />;
+
+  let width1 = width;
+  if (!width1) {
+    return (
+      <td
+        style={{
+          width: "100%",
+        }}
+        {...restProps}
+      />
+    );
   }
 
-  console.log(width);
+  // console.log(width);
   return (
-    <Resizable width={width} height={0} onResize={onResize}>
-      <td {...restProps} />
+    <Resizable width={width1} height={0} onResize={onResize}>
+      <td
+        style={{
+          width: "100%",
+        }}
+        {...restProps}
+      />
     </Resizable>
   );
 };
@@ -42,14 +56,20 @@ class Demo extends React.Component<{}, DemoState> {
         {
           text: "",
         },
+        {
+          text: "",
+        },
+        {
+          text: "",
+        },
       ],
     ],
-    columns: [100, 100],
+    columns: [100, 100, 100, 100],
   };
 
   handleResize = (index: any) => (e: any, ddd: { size: { width: number } }) => {
-    console.log(e);
-    console.log(ddd);
+    // console.log("E" + e);
+    // console.log(ddd);
     const columns = [...this.state.columns];
     columns[index] = ddd.size.width;
     this.setState({
@@ -58,7 +78,6 @@ class Demo extends React.Component<{}, DemoState> {
     });
   };
   cellRender = (cIdx: number) => (o: object, raw: object, index: number) => (
-    // zwraca parametry
     <input
       style={{
         width: "100%",
@@ -70,26 +89,19 @@ class Demo extends React.Component<{}, DemoState> {
 
   render() {
     const columnsData: ColumnType<Cell[]>[] = [];
-
-    // obiekt posiada dwa parametyry jeden to szerokość a drugi to funkcja render o paramterach (o, raw, index). obiekt ten jest tablica obiektow,
-    // rozpoczyna się od pustej tablicy
-
     for (let i = 0; i < this.state.columns.length; i++) {
       columnsData.push({
         width: this.state.columns[i],
         render: this.cellRender(i),
         onCell: (data: Cell[], index?: number) => {
-          console.log(data);
-          console.log(index);
+          // console.log(data);
+          // console.log(index);
           return {
             width: this.state.columns[i],
             onResize: this.handleResize(i),
           } as any;
         },
       });
-
-      // fukncja for ktora sprawdza czy dlugość pierwszego elementu tablicy jest wiekszy niz jeden (jest zawsze bo stan jest ustawiony na pusty string)
-      // columnsData.push tworzy nową table w której element ma szerokość 100 oraz elementem jest retiurn z fukcji callRender
     }
 
     // const headerFunc = (col: any, index: number) => ({
@@ -106,7 +118,7 @@ class Demo extends React.Component<{}, DemoState> {
 
     const components = {
       body: {
-        // cell: this.handleResize,
+        // cell: this.handleResize,1w
         //
         cell: ResizableTitle,
       },

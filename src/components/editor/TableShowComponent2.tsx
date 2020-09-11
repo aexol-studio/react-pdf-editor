@@ -31,7 +31,7 @@ interface DemoState {
   // data jest to tablica tablic o typie string
 }
 
-class Demo extends React.Component<{}, DemoState> {
+class Demo2 extends React.Component<{}, DemoState> {
   state: DemoState = {
     data: [
       [
@@ -182,4 +182,4 @@ class Demo extends React.Component<{}, DemoState> {
   }
 }
 
-export default Demo;
+export default Demo2;
