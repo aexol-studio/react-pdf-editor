@@ -3,19 +3,31 @@ import { Resizable } from "react-resizable";
 import Table from "rc-table";
 import { ColumnType } from "rc-table/lib/interface";
 import "react-resizable/css/styles.css";
-import "./styles/TableStyle.less";
+import "./styles/TableStyle3.less";
 import * as styles from "./styles/TableBlock";
 
 const ResizableTitle = (props: any) => {
   const { onResize, width, ...restProps } = props;
 
   if (!width) {
-    return <th {...restProps} />;
+    return (
+      <th
+        style={{
+          padding: "10px 8px",
+        }}
+        {...restProps}
+      />
+    );
   }
 
   return (
     <Resizable width={width} height={0} onResize={onResize}>
-      <th {...restProps} />
+      <th
+        style={{
+          padding: "10px 8px",
+        }}
+        {...restProps}
+      />
     </Resizable>
   );
 };
@@ -249,7 +261,13 @@ class Demo3 extends React.Component<{}, DemoState> {
                       key: "a",
                       width: 150,
                       render() {
-                        return <input width="100%" type="text"></input>;
+                        return (
+                          <input
+                            width="100%"
+                            placeholder="type here"
+                            type="text"
+                          ></input>
+                        );
                       },
                     },
                     columnsData.length
