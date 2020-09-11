@@ -1,5 +1,5 @@
 import React from "react";
-import { Resizable } from "react-resizable";
+// import { Resizable } from "react-resizable";
 import Table from "rc-table";
 // import { ColumnType } from "rc-table/lib/interface";
 import "react-resizable/css/styles.css";
@@ -8,7 +8,10 @@ import * as styles from "./styles/TableBlock";
 import { ColumnType } from "rc-table/lib/interface";
 
 const ResizableTitle = (props: any) => {
-  const { onResize, width } = props;
+  const {
+    //  onResize,
+    width,
+  } = props;
 
   console.log(width);
   return (

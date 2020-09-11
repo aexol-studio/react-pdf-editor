@@ -3,7 +3,8 @@ import { Resizable } from "react-resizable";
 import Table from "rc-table";
 // import { ColumnType } from "rc-table/lib/interface";
 import "react-resizable/css/styles.css";
-import "./styles/TableStyle.less";
+// import "./styles/TableStyle.less";
+import "./styles/TableStyle3.less";
 import * as styles from "./styles/TableBlock";
 import { ColumnType } from "rc-table/lib/interface";
 
@@ -13,7 +14,7 @@ const ResizableTitle = (props: any) => {
   let width1 = width;
   if (!width1) {
     return (
-      <td
+      <th
         style={{
           width: "100%",
         }}
@@ -25,7 +26,7 @@ const ResizableTitle = (props: any) => {
   // console.log(width);
   return (
     <Resizable width={width1} height={0} onResize={onResize}>
-      <td
+      <th
         style={{
           width: "100%",
         }}
@@ -115,7 +116,6 @@ class Demo extends React.Component<{}, DemoState> {
     // const columnsInnerData = this.state.data.map((col, index) =>
     //   headerFunc(col, index)
     // );
-
     const components = {
       body: {
         // cell: this.handleResize,1w
@@ -141,6 +141,7 @@ class Demo extends React.Component<{}, DemoState> {
               focusable={"false"}
               viewBox={"0 0 24 24"}
               onClick={() => {
+                // ...this.state,
                 // if (tableBlock.widths!.length === 0) {
                 //   tableBlock.widths!.push({
                 //     S: "*",
@@ -157,6 +158,22 @@ class Demo extends React.Component<{}, DemoState> {
                 //       : [emptyColumn()],
                 // });
                 // onChange();
+
+                // [
+                //   {
+                //     text: "",
+                //   },
+                //   {
+                //     text: "",
+                //   },
+                //   {
+                //     text: "",
+                //   },
+                //   {
+                //     text: "",
+                //   },
+                // ],
+
                 console.log("add row");
               }}
             >
