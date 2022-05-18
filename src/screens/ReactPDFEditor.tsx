@@ -121,7 +121,7 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
   };
   const { PDF } = state;
   if (!PDF) {
-    return <div>{t("Loading")}}</div>;
+    return <div>{t("Loading")}</div>;
   }
   const { template } = PDF;
   if (!template) {
@@ -156,7 +156,7 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
           <FeatureComponent
             feature={header!}
             onChange={() => mutateWholeObject()}
-            onDelete={() => {}}
+            onDelete={() => { }}
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
             hideControls={true}
           />
@@ -182,7 +182,7 @@ export const ReactPDFEditor: React.FunctionComponent<PDFProps> = ({
           <FeatureComponent
             feature={footer!}
             onChange={() => mutateWholeObject()}
-            onDelete={() => {}}
+            onDelete={() => { }}
             onEdit={editedFeature => setState(s => ({ ...s, editedFeature }))}
             hideControls={true}
           />
