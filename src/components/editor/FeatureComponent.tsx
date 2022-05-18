@@ -56,10 +56,10 @@ const FeatureComp = (props: FeatureComponentProps) => {
     return (
       <TextBlockComponent
         textBlock={feature}
-        onChange={onChange}
-        onEdit={onEdit}
-        onDelete={onDelete}
         {...props}
+        onChange={onChange}
+        // onEdit={onEdit}
+        onDelete={onDelete}
       />
     );
   }
@@ -67,24 +67,23 @@ const FeatureComp = (props: FeatureComponentProps) => {
     return (
       <ImageComponent
         image={feature}
+        {...props}
         onChange={onChange}
         onDelete={onDelete}
-        {...props}
       />
     );
   }
   if (isStack(feature)) {
     return (
       <StackComponent
+        {...props}
         stack={feature}
         onChange={onChange}
         // onEdit={onEdit}
         onDelete={onDelete}
         onMoveDown={onMoveDown}
         onMoveUp={onMoveUp}
-        // tutaj dodać komponent taki header po kliknięciu onEdit
-
-        {...props}
+      // tutaj dodać komponent taki header po kliknięciu onEdit
       />
     );
   }
@@ -92,10 +91,10 @@ const FeatureComp = (props: FeatureComponentProps) => {
     return (
       <TableBlockComponent
         tableBlock={feature}
+        {...props}
         onChange={onChange}
         onDelete={onDelete}
         onEdit={onEdit}
-        {...props}
       />
     );
   }
@@ -103,10 +102,10 @@ const FeatureComp = (props: FeatureComponentProps) => {
     return (
       <ListBlockComponent
         listBlock={feature}
+        {...props}
         onDelete={onDelete}
         onChange={onChange}
         onEdit={onEdit}
-        {...props}
       />
     );
   }
@@ -123,13 +122,13 @@ export const FeatureComponent = (props: FeatureComponentProps) => {
   return (
     <div className={styles.FeatureMain}>
       <FeatureComp
+        onMoveDown={onMoveDown}
+        onMoveUp={onMoveUp}
+        {...props}
         onChange={onChange}
         onEdit={onEdit}
         onDelete={onDelete}
         feature={feature}
-        onMoveDown={onMoveDown}
-        onMoveUp={onMoveUp}
-        {...props}
       />
     </div>
   );
