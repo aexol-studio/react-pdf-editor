@@ -13,9 +13,26 @@
     "incremental": true,
     "strict": true,
     "outDir": "./lib",
-    "lib": ["es6", "es7", "esnext", "dom"],
+    "lib": [
+      "es6",
+      "es7",
+      "esnext",
+      "dom"
+    ],
     "rootDir": "./src",
-    "baseUrl": "./src/"
+    "baseUrl": "./src/",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "sandbox/*": [
+        "./sandbox/*"
+      ]
+    },
   },
-  "exclude": ["lib", "node_modules", "sandbox"]
+  "exclude": [
+    "lib",
+    "node_modules",
+    "sandbox"
+  ]
 }
