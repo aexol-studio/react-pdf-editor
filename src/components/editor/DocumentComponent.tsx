@@ -2,7 +2,7 @@ import * as React from "react";
 import { PartialObjects } from "../../graphql-zeus";
 import { Editor } from "..";
 import { Rolloutable } from "./display/Rolloutable";
-import { Confirm } from "../Confirm";
+import { Confirm } from "../molecules/Confirm";
 import * as Icons from "react-feather";
 import * as styles from "./styles/Feature";
 import cx from "classnames";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ButtonSimple } from "./atoms";
-import { translated } from "../models";
+import { ButtonSimple } from "../atoms";
+import { translated } from "../../models";
 
 export interface IConfirmProps {
   children: React.ReactNode;

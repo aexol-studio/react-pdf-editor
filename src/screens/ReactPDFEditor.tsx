@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PartialObjects } from "../graphql-zeus";
 import { DocumentComponent, FeatureComponent } from "../components/editor";
-import { IconButton } from "../components";
+import { IconButton } from "../components/atoms";
 import * as styles from "./styles/ReactPDFEditor";
 import { LivePDF } from "../livepdf";
 import { FrontendTypes } from "../frontend-types";

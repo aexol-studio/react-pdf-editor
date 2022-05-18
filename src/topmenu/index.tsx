@@ -250,7 +250,6 @@ const ConditionalGroup: React.FunctionComponent<{
         }
         if (item.itemType === MenuItemType.SmallInput) {
           return (
-            // <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
             <SmallInput
               value={valueOrDefault(item.name)}
               onChange={e => applyStyle(item.change(e))}
