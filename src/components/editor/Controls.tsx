@@ -54,7 +54,6 @@ export const Controls = ({
             return;
           }
           setOpen(!open);
-          console.log("beng 1");
 
           //zmiana stanu na true i pokazują się kontrolki
         }}
@@ -77,7 +76,6 @@ export const Controls = ({
                       } as PartialObjects["Stack"]);
                       setOpen(false);
                       mutateWholeObject();
-                      console.log("beng 2");
                     }}
                   >
                     <p
@@ -124,7 +122,6 @@ export const Controls = ({
                         } as PartialObjects["Stack"]);
                         mutateWholeObject();
                         setOpen(false);
-                        console.log("beng 3");
                       }}
                     >
                       {t("ButtonStack")}
