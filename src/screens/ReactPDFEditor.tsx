@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { PartialObjects } from "../graphql-zeus";
-import { DocumentComponent, FeatureComponent } from "../components/editor";
-import { IconButton } from "../components/atoms";
+import { PartialObjects } from "@/graphql-zeus";
+import { DocumentComponent, FeatureComponent } from "@components/editor";
+import { IconButton } from "@components/atoms";
 import * as styles from "./styles/ReactPDFEditor";
-import { LivePDF } from "../livepdf";
-import { FrontendTypes } from "../frontend-types";
-import { translated } from "../models";
+import { LivePDF } from "@/livepdf";
+import { FrontendTypes } from "@/frontend-types";
+import { translated } from "@/models";
 import * as Icons from "react-feather";
 export interface PDFProps {
   onChange?: (onChange: FrontendTypes["MachineTemplate"]) => void;

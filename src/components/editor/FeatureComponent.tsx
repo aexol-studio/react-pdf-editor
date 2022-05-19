@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PartialObjects } from "../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import {
   isTextBlock,
   isImage,
@@ -7,7 +7,7 @@ import {
   isListBlock,
   isTableBlock,
   isTimeStamp
-} from "../../utils";
+} from "@/utils";
 import { TextBlockComponent } from "./TextBlockComponent";
 import { ImageComponent } from "./ImageComponent";
 import { StackComponent } from "./StackComponent";

@@ -4,7 +4,7 @@ import {
 } from "@react-pdf/renderer";
 import * as stylesMain from "./styles";
 import { PDFDocument } from "./PDFDocument";
-import { FrontendTypes } from "../frontend-types";
+import { FrontendTypes } from "@/frontend-types";
 export interface LivePDFProps {
   machine: FrontendTypes["MachineTemplate"]
 }

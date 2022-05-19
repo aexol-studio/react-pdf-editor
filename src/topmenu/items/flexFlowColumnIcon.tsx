@@ -1,5 +1,5 @@
 import ReactPDF from "@react-pdf/renderer";
-import { MenuItemType, IconMenuItem } from "../models";
+import { MenuItemType, IconMenuItem } from "@/topmenu/models";
 
 export const flexFlowColumnIcon: IconMenuItem = {
   itemType: MenuItemType.TopIcon,

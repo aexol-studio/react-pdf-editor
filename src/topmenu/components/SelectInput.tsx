@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as styles from "./styles/SelectInput";
 import * as sharedStyles from "./styles/Shared";
-import { fonts } from "../../livepdf/PDFDocument";
+import { fonts } from "@/livepdf/PDFDocument";
 
 export const SelectInput = ({
   value,

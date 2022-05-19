@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PartialObjects } from "../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import { Controls } from "./Controls";
 export interface EmptyFeatureComponentProps {
   feature: PartialObjects["Feature"];

@@ -1,4 +1,4 @@
-import { MenuItemType, IconMenuItem } from "../models";
+import { MenuItemType, IconMenuItem } from "@/topmenu/models";
 import ReactPDF from "@react-pdf/renderer";
 
 export const TopIconItalic: IconMenuItem = {

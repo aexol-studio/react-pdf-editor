@@ -1,14 +1,14 @@
 import * as React from "react";
-import { PartialObjects } from "../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import { FeatureComponent } from "./FeatureComponent";
 import { Controls } from "./Controls";
 import {
   Rolloutable,
 } from "./display/Rolloutable";
 import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
-import { swapInArray } from "../../utils";
-import { translated } from "../../models";
-import { TopMenu } from "../../topmenu/index";
+import { swapInArray } from "@/utils";
+import { translated } from "@/models";
+import { TopMenu } from "@/topmenu/index";
 // import { TextBlockComponentProps } from "livepdf/livecomponents/editor";
 export interface ListBlockComponentProps extends DeleteAndEditIconsComponentProps {
   listBlock: PartialObjects["ListBlock"];
@@ -20,7 +20,7 @@ export interface ListBlockComponentProps extends DeleteAndEditIconsComponentProp
 const t = translated("ListBlockComponentTxt");
 
 export const ListBlockComponent = (props: ListBlockComponentProps) => {
-  const { onChange,onEdit,listBlock } = props;
+  const { onChange, onEdit, listBlock } = props;
   return (
     <Rolloutable title={t("TitleList")} {...props}>
       <TopMenu editedFeature={listBlock} onChange={onChange} />
@@ -39,25 +39,25 @@ export const ListBlockComponent = (props: ListBlockComponentProps) => {
               onMoveDown={
                 index !== listBlock.items!.length - 1
                   ? () => {
-                      swapInArray(listBlock.items!, index, index + 1);
-                      onChange();
-                    }
+                    swapInArray(listBlock.items!, index, index + 1);
+                    onChange();
+                  }
                   : undefined
               }
               onMoveUp={
                 index !== 0 && listBlock.items!.length > 1
                   ? () => {
-                      swapInArray(listBlock.items!, index, index - 1);
-                      onChange();
-                    }
+                    swapInArray(listBlock.items!, index, index - 1);
+                    onChange();
+                  }
                   : undefined
               }
             />
           );
         })}
       {listBlock.items && (
-        <Controls 
-           parent={listBlock}
+        <Controls
+          parent={listBlock}
           features={listBlock.items}
           mutateWholeObject={onChange}
           clean={() => {

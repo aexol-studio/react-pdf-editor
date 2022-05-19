@@ -1,5 +1,5 @@
 import { style } from "typestyle";
-import { Colors } from "../../../Colors";
+import { Colors } from "@/Colors";
 
 export const FeatureMain = style({
   $debugName: "FeatureMain",
@@ -20,7 +20,7 @@ export const MiniIcon = style({
   alignSelf: "flex-start",
   marginRight: 5,
   color: Colors.Androgyn
-  
+
 });
 
 export const Delete = style({

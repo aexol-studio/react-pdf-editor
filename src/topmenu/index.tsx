@@ -1,10 +1,10 @@
 import React from "react";
-import * as styles from "../components/styles/TopMenu";
+import * as styles from "@components/styles/TopMenu";
 import "rc-tooltip/assets/bootstrap_white.css";
 import "rc-color-picker/assets/index.css";
 import ReactPDF from "@react-pdf/renderer";
-import { PartialObjects } from "../graphql-zeus";
-import { DefaultValues } from "../constants";
+import { PartialObjects } from "@/graphql-zeus";
+import { DefaultValues } from "@/constants";
 import {
   SmallInput,
   TopIcon,

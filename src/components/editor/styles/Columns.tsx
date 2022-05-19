@@ -1,5 +1,5 @@
 import { style } from "typestyle";
-import { Colors } from "../../../Colors";
+import { Colors } from "@/Colors";
 
 export const Main = style({
   $debugName: "ColumnsMain",
@@ -9,7 +9,7 @@ export const Main = style({
   width: "100%"
 });
 
-export const ColumnTitleDiv = style ({
+export const ColumnTitleDiv = style({
   $debugName: "ColumnTitleDiv",
   display: "flex",
   alignItems: "center",
@@ -17,7 +17,7 @@ export const ColumnTitleDiv = style ({
   marginBottom: 5
 })
 
-export const ColumnTitle = style ({
+export const ColumnTitle = style({
   $debugName: "ColumnTitle",
   fontSize: 12,
   margin: 0,

@@ -1,5 +1,5 @@
 import { style } from "typestyle";
-import { Colors } from "../../styles/Colors";
+import { Colors } from "@components/editor/styles/Colors";
 
 export const Main = style({
   $debugName: "StackMain",
@@ -10,7 +10,7 @@ export const Main = style({
   marginBottom: 25
 });
 export const Title = style({
-  $debugName:"StackTitle",
+  $debugName: "StackTitle",
   cursor: "pointer",
   fontWeight: "bold"
 });

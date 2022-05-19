@@ -20,16 +20,26 @@
       "dom"
     ],
     "rootDir": "./src",
-    "baseUrl": "./src/",
+    "baseUrl": "./",
     "paths": {
       "@/*": [
         "./src/*"
       ],
-      "sandbox/*": [
-        "./sandbox/*"
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@styles/*": [
+        "./src/components/styles/*"
       ]
     },
   },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "./src/**/*",
+    "types.d.ts"
+  ],
   "exclude": [
     "lib",
     "node_modules",

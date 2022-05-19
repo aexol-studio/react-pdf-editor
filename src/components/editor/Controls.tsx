@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import * as styles from "./styles/Controls";
-import { BuiltInStyles, PartialObjects } from "../../graphql-zeus";
+import { BuiltInStyles, PartialObjects } from "@/graphql-zeus";
 import { PlusCircle, MinusCircle } from "react-feather";
-import { translated } from "../../models";
+import { translated } from "@/models";
 export interface ControlsProps {
   features: PartialObjects["Feature"][];
   mutateWholeObject: () => void;

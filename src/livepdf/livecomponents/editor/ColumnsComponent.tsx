@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PartialObjects } from "../../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import { ColumnComponent } from "./ColumnComponent";
 import ReactPDF, { View } from "@react-pdf/renderer";
 export interface ColumnsComponentProps {

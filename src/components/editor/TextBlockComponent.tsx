@@ -1,13 +1,13 @@
 import React, { useRef, useEffect } from "react";
-import { PartialObjects } from "../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import * as styles from "./styles/TextBlock";
 import {
   DeleteAndEditIconsComponentProps,
   DeleteAndEditIconsComponent
 } from "./display/DeleteAndEdit";
-import { translated } from "../../models";
+import { translated } from "@/models";
 
-import { TopMenuProps, TopMenu } from "../../topmenu/index";
+import { TopMenuProps, TopMenu } from "@/topmenu/index";
 // import { Controls } from "./Controls";
 
 // czy tutaj trzeba zrobić export interface ... extends Delete || TopMenuProps
@@ -18,7 +18,7 @@ const t = translated("TextBlockComponentTxt");
 
 export interface TextBlockComponentProps
   extends DeleteAndEditIconsComponentProps,
-    TopMenuProps {
+  TopMenuProps {
   textBlock: PartialObjects["TextBlock"];
   onChange: () => void;
 }

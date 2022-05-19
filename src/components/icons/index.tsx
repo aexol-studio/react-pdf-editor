@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Colors } from "../../Colors";
+import { Colors } from "@/Colors";
 
 interface IIconFill {
   fill: keyof typeof Colors;

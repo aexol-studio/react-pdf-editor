@@ -1,5 +1,5 @@
 import React from "react";
-import { PartialObjects } from "../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import { FeatureComponent } from "./FeatureComponent";
 import * as styles from "./styles/Column";
 import { Controls } from "./Controls";
