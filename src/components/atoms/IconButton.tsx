@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as styles from "./styles/IconButton";
+import * as styles from "@styles/IconButton";
 export interface IconButtonProps {
   onClick: () => void;
   children: React.ReactNode;

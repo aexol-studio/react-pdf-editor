@@ -1,6 +1,6 @@
 import { style, fontFace } from "typestyle";
-import { Colors } from "../../Colors";
-import { TOPHEIGHT } from "../../constants";
+import { Colors } from "@/Colors";
+import { TOPHEIGHT } from "@/constants";
 
 fontFace({
   fontFamily: "Fira Sans",

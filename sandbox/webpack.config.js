@@ -4,6 +4,7 @@ var sourcePath = path.join(__dirname, "./");
 var outPath = path.join(__dirname, "../public");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var WebpackCleanupPlugin = require("webpack-cleanup-plugin");
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 // const config = require('./config.js')
 
 module.exports = {
@@ -20,6 +21,7 @@ module.exports = {
   target: "web",
   mode: "development",
   resolve: {
+    plugins: [new TsconfigPathsPlugin({/* options: see below */})],
     extensions: [".js", ".jsx", ".ts", ".tsx"],
     mainFields: ["module", "browser", "main"],
     alias: {

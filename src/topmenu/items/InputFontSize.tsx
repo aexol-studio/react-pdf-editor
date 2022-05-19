@@ -1,4 +1,4 @@
-import { MenuItemType, SmallInputMenuItem } from "../models";
+import { MenuItemType, SmallInputMenuItem } from "@/topmenu/models";
 
 export const InputFontSize: SmallInputMenuItem = {
   name: "fontSize",

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BuiltInStyles, PartialObjects } from "../../../graphql-zeus";
+import { BuiltInStyles, PartialObjects } from "@/graphql-zeus";
 import { ColumnsComponent } from "./ColumnsComponent";
 import ReactPDF, { View } from "@react-pdf/renderer";
 

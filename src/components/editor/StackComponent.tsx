@@ -1,12 +1,12 @@
 import * as React from "react";
-import { PartialObjects } from "../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import { FeatureComponent } from "./FeatureComponent";
 import { Controls } from "./Controls";
 import { Rolloutable } from "./display/Rolloutable";
 import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
-import { swapInArray } from "../../utils";
-import { translated } from "../../models";
-import { TopMenu } from "../../topmenu/index";
+import { swapInArray } from "@/utils";
+import { translated } from "@/models";
+import { TopMenu } from "@/topmenu/index";
 export interface StackComponentProps extends DeleteAndEditIconsComponentProps {
   stack: PartialObjects["Stack"];
   onChange: () => void;
@@ -38,17 +38,17 @@ export const StackComponent = (props: StackComponentProps) => {
               onMoveDown={
                 index !== stack.items!.length - 1
                   ? () => {
-                      swapInArray(stack.items!, index, index + 1);
-                      onChange();
-                    }
+                    swapInArray(stack.items!, index, index + 1);
+                    onChange();
+                  }
                   : undefined
               }
               onMoveUp={
                 index !== 0 && stack.items!.length > 1
                   ? () => {
-                      swapInArray(stack.items!, index, index - 1);
-                      onChange();
-                    }
+                    swapInArray(stack.items!, index, index - 1);
+                    onChange();
+                  }
                   : undefined
               }
             />

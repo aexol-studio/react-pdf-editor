@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { PartialObjects } from "../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import * as styles from "./styles/Image";
-import { translated } from "../../models";
-import { MAX_IMAGE_WIDTH } from "../../constants";
+import { translated } from "@/models";
+import { MAX_IMAGE_WIDTH } from "@/constants";
 import {
   DeleteAndEditIconsComponentProps,
   DeleteAndEditIconsComponent
 } from "./display/DeleteAndEdit";
 
-import { TopMenuProps, TopMenu } from "../../topmenu/index";
+import { TopMenuProps, TopMenu } from "@/topmenu/index";
 
 const t = translated("ImageComponentTxt");
 
@@ -25,7 +25,7 @@ function getBase64(file: Blob): Promise<string> {
 }
 export interface ImageComponentProps
   extends DeleteAndEditIconsComponentProps,
-    TopMenuProps {
+  TopMenuProps {
   image: PartialObjects["Image"];
   onChange: () => void;
 }
@@ -44,10 +44,10 @@ export const ImageComponent = ({
     <div>
       <div
         className={styles.ImageTitleDiv}
-        // style={{
-        //   display: "flex",
-        //   justifyContent: "center"
-        // }}
+      // style={{
+      //   display: "flex",
+      //   justifyContent: "center"
+      // }}
       >
         <p className={styles.ImageTitle}>{t("ImageTitle")}</p>
 

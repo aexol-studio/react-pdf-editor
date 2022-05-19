@@ -1,8 +1,8 @@
 import React from "react";
 import { Document, Page, View, StyleSheet, Font } from "@react-pdf/renderer";
 import { FeatureComponent } from "./livecomponents/editor";
-import { FrontendTypes } from "../frontend-types";
-import { DefaultValues } from "../constants";
+import { FrontendTypes } from "@/frontend-types";
+import { DefaultValues } from "@/constants";
 export interface PDFDocumentProps {
   machine: FrontendTypes["MachineTemplate"];
   onRender: () => void;
@@ -24,8 +24,8 @@ export const PDFDocument = (props: PDFDocumentProps) => {
                 feature={props.machine.template!.header}
                 hideControls={true}
 
-                //
-                //showTopMenu={true}
+              //
+              //showTopMenu={true}
               />
             )}
           </View>

@@ -1,6 +1,6 @@
 import { style, classes } from "typestyle";
-import { Colors } from "../../../Colors";
-import { TOPHEIGHT } from "../../../constants";
+import { Colors } from "@/Colors";
+import { TOPHEIGHT } from "@/constants";
 export const Main = style({
   $debugName: "TopMenuMain",
   fontFamily: "Fira Sans",

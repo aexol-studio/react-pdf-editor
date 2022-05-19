@@ -1,10 +1,10 @@
 import React from "react";
-import * as styles from "../components/styles/TopMenu";
+import * as styles from "@components/styles/TopMenu";
 import "rc-tooltip/assets/bootstrap_white.css";
 import "rc-color-picker/assets/index.css";
 import ReactPDF from "@react-pdf/renderer";
-import { PartialObjects } from "../graphql-zeus";
-import { DefaultValues } from "../constants";
+import { PartialObjects } from "@/graphql-zeus";
+import { DefaultValues } from "@/constants";
 import {
   SmallInput,
   TopIcon,
@@ -64,21 +64,18 @@ const flexDirectionRowJustifyConditionalGroup: ConditionalGroupMenuItem = {
   itemType: MenuItemType.ConditionalGroup,
   active: (style: ReactPDF.Style): boolean => style.flexDirection === "row",
   children: [
-    //justtifyContent
     justifyContentFlexStartIcon,
     justifyContentFlexEndIcon,
     justifyContentCenterIcon,
     justifyContentSpaceBetween,
     justifyContentSpaceAround,
 
-    //alginSelf
     alignSelfToFlexStartIcon,
     alignSelfToFlexEndIcon,
     alignSelfToFlexCenterIcon,
     alignSelfToFlexBaselineIcon,
     alignSelfToFlexStretchIcon,
 
-    //alginIntems
     alignItemsToStartIcon,
     alignItemsToEndIcon,
     alignItemsToCenterIcon,
@@ -91,21 +88,18 @@ const flexDirectionColumnJustifyConditionalGroup: ConditionalGroupMenuItem = {
   itemType: MenuItemType.ConditionalGroup,
   active: (style: ReactPDF.Style): boolean => style.flexDirection === "column",
   children: [
-    //justtifyContent
     justifyContentFlexStartIcon,
     justifyContentFlexEndIcon,
     justifyContentCenterIcon,
     justifyContentSpaceBetween,
     justifyContentSpaceAround,
 
-    //alginSelf
     alignSelfToFlexStartIcon,
     alignSelfToFlexEndIcon,
     alignSelfToFlexCenterIcon,
     alignSelfToFlexBaselineIcon,
     alignSelfToFlexStretchIcon,
 
-    //alginIntems
     alignItemsToStartIcon,
     alignItemsToEndIcon,
     alignItemsToCenterIcon,
@@ -115,27 +109,12 @@ const flexDirectionColumnJustifyConditionalGroup: ConditionalGroupMenuItem = {
 };
 
 const common: MenuItem[] = [
-  // fitToParentIcon,
-  // ExpandableInputMaximize2,
-  // ExpandableInputMinimize2,
-  // ColorPicker,
-  // TopIconBold,
-  // TopIconFontSize,
-  // InputFontSize,
-  // TopIconAlignLeft,
-  // TopIconAlignCenter,
-  // TopIconAlignRight,
-  // TopIconAlignJustify,
-  // ColorPicker,
-  // ExpandableInputSquare,
-  // ColorPicker
-  //border width
+
   fitToParentIcon,
   TopIconRedo,
   TopIconUndo,
   ExpandableInputMaximize2,
   ExpandableInputMinimize2,
-  // defaultColorPicker,
   ColorPicker,
   TopIconBold,
   TopIconItalic,
@@ -147,7 +126,6 @@ const common: MenuItem[] = [
   TopIconAlignCenter,
   TopIconAlignRight,
   TopIconAlignJustify,
-  // defaultColorPicker,
   ColorPicker,
   ExpandableInputSquare,
   SelectFontType
@@ -155,14 +133,14 @@ const common: MenuItem[] = [
 
 const configurations: {
   [k in
-    | "Start"
-    | "TextBlock"
-    | "Image"
-    | "TableBlock"
-    | "Columns"
-    | "Stack"
-    | "ListBlock"
-    | "TimeStamp"]: ConditionalGroupMenuItem;
+  | "Start"
+  | "TextBlock"
+  | "Image"
+  | "TableBlock"
+  | "Columns"
+  | "Stack"
+  | "ListBlock"
+  | "TimeStamp"]: ConditionalGroupMenuItem;
 } = {
   Start: {
     itemType: MenuItemType.ConditionalGroup,
@@ -171,7 +149,6 @@ const configurations: {
       fitToParentIcon,
       ExpandableInputMaximize2,
       ExpandableInputMinimize2,
-      // defaultColorPicker,
       ColorPicker,
       TopIconBold,
       TopIconFontSize,
@@ -180,7 +157,6 @@ const configurations: {
       TopIconAlignCenter,
       TopIconAlignRight,
       TopIconAlignJustify,
-      // defaultColorPicker,
       ColorPicker,
       ExpandableInputSquare,
       SelectFontType
@@ -191,25 +167,6 @@ const configurations: {
     itemType: MenuItemType.ConditionalGroup,
     active: (style: ReactPDF.Style) => true,
     children: common
-    //  [
-    //   fitToParentIcon,
-    //   ExpandableInputMaximize2,
-    //   ExpandableInputMinimize2,
-    //   ColorPicker,
-    //   TopIconBold,
-    //   TopIconItalic,
-    //   TopIconTextDecoration,
-    //   TopIconFontSize,
-    //   InputFontSize,
-    //   InputLineHeight,
-    //   TopIconAlignLeft,
-    //   TopIconAlignCenter,
-    //   TopIconAlignRight,
-    //   TopIconAlignJustify,
-    //   ColorPicker,
-    //   ExpandableInputSquare,
-    //   ColorPicker
-    // ]
   },
   Image: {
     itemType: MenuItemType.ConditionalGroup,
@@ -293,7 +250,6 @@ const ConditionalGroup: React.FunctionComponent<{
         }
         if (item.itemType === MenuItemType.SmallInput) {
           return (
-            // <TopIcon tooltip={v.tooltip} icon={v.icon} onClick={() => {}} />
             <SmallInput
               value={valueOrDefault(item.name)}
               onChange={e => applyStyle(item.change(e))}
@@ -365,8 +321,6 @@ export const TopMenu = ({ editedFeature = {}, onChange }: TopMenuProps) => {
     });
     onChange();
   };
-
-  // czy to tu???
 
   const typename = editedFeature.__typename;
   const featureConfig =

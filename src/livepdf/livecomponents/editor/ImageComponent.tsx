@@ -1,5 +1,5 @@
 import React from "react";
-import { PartialObjects } from "../../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import ReactPDF, { Image as ReactImage } from "@react-pdf/renderer";
 
 export interface ImageComponentProps {

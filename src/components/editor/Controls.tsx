@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import * as styles from "./styles/Controls";
-import { BuiltInStyles, PartialObjects } from "../../graphql-zeus";
+import { BuiltInStyles, PartialObjects } from "@/graphql-zeus";
 import { PlusCircle, MinusCircle } from "react-feather";
-import { translated } from "../../models";
+import { translated } from "@/models";
 export interface ControlsProps {
   features: PartialObjects["Feature"][];
   mutateWholeObject: () => void;
@@ -54,7 +54,6 @@ export const Controls = ({
             return;
           }
           setOpen(!open);
-          console.log("beng 1");
 
           //zmiana stanu na true i pokazują się kontrolki
         }}
@@ -77,7 +76,6 @@ export const Controls = ({
                       } as PartialObjects["Stack"]);
                       setOpen(false);
                       mutateWholeObject();
-                      console.log("beng 2");
                     }}
                   >
                     <p
@@ -124,7 +122,6 @@ export const Controls = ({
                         } as PartialObjects["Stack"]);
                         mutateWholeObject();
                         setOpen(false);
-                        console.log("beng 3");
                       }}
                     >
                       {t("ButtonStack")}

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { style } from "typestyle";
 import { ReactPDFEditor } from "../src";
 
+
 export const AppContainer = style({
   $debugName: "AppContainer",
   fontFamily: "Fira Sans",

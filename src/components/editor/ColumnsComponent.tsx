@@ -1,10 +1,10 @@
 import React from "react";
-import { PartialObjects } from "../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import * as styles from "./styles/Columns";
 import { ColumnComponent } from "./ColumnComponent";
-import { Colors } from "../../Colors";
+import { Colors } from "@/Colors";
 import { Resizable } from "re-resizable";
-import { translated } from "../../models";
+import { translated } from "@/models";
 import * as Icons from "react-feather";
 import * as styles1 from "./styles/Feature";
 import cx from "classnames";

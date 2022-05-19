@@ -13,9 +13,36 @@
     "incremental": true,
     "strict": true,
     "outDir": "./lib",
-    "lib": ["es6", "es7", "esnext", "dom"],
+    "lib": [
+      "es6",
+      "es7",
+      "esnext",
+      "dom"
+    ],
     "rootDir": "./src",
-    "baseUrl": "./src/"
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@styles/*": [
+        "./src/components/styles/*"
+      ]
+    },
   },
-  "exclude": ["lib", "node_modules", "sandbox"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "./src/**/*",
+    "types.d.ts"
+  ],
+  "exclude": [
+    "lib",
+    "node_modules",
+    "sandbox"
+  ]
 }

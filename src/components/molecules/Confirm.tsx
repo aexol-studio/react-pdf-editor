@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ButtonSimple } from "./ButtonSimple";
-import { translated } from "../models";
+import { ButtonSimple } from "@components/atoms";
+import { translated } from "@/models";
 
 export interface IConfirmProps {
   children: React.ReactNode;
@@ -23,7 +23,6 @@ export const Confirm = ({ children, onConfirm }: IConfirmProps) => {
         >
           {children}
         </div>
-        // <ButtonSimple onClick={() => setDel(true)}>{children}</ButtonSimple>
       )}
       {del && (
         <>

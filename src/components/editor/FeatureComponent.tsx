@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PartialObjects } from "../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import {
   isTextBlock,
   isImage,
@@ -7,8 +7,7 @@ import {
   isListBlock,
   isTableBlock,
   isTimeStamp
-} from "../../utils";
-// import * as Icons from "react-feather";
+} from "@/utils";
 import { TextBlockComponent } from "./TextBlockComponent";
 import { ImageComponent } from "./ImageComponent";
 import { StackComponent } from "./StackComponent";
@@ -17,9 +16,7 @@ import { ListBlockComponent } from "./ListBlockComponent";
 import * as styles from "./styles/Feature";
 import { EmptyFeatureComponent } from "./EmptyFeatureComponent";
 import { TimeStampComponent } from "./TimeStampComponent";
-// import cx from "classnames";
 import { DeleteAndEditIconsComponent } from "./display/DeleteAndEdit";
-// import { TopMenu } from "../../topmenu";
 export interface BaseFeatureComponentProps {
   onChange: () => void;
 }
@@ -27,17 +24,12 @@ export interface FeatureComponentProps extends BaseFeatureComponentProps {
   feature: PartialObjects["Feature"];
   onDelete: () => void;
   onEdit: (feature: PartialObjects["Feature"]) => void;
-  // editedFeature?: PartialObjects["Feature"];
-  // textBlock: PartialObjects["TextBlock"];
-  //  tu usunięte
-
   onMoveDown?: () => void;
   onMoveUp?: () => void;
   [k: string]: unknown;
 }
 
 {
-  /* <TopMenu editedFeature={textBlock} onChange={onChange}  /> */
 }
 
 /// tutaj jest komponen wyświetlany itp itp itp
@@ -56,10 +48,9 @@ const FeatureComp = (props: FeatureComponentProps) => {
     return (
       <TextBlockComponent
         textBlock={feature}
-        onChange={onChange}
-        onEdit={onEdit}
-        onDelete={onDelete}
         {...props}
+        onChange={onChange}
+        onDelete={onDelete}
       />
     );
   }
@@ -67,24 +58,22 @@ const FeatureComp = (props: FeatureComponentProps) => {
     return (
       <ImageComponent
         image={feature}
+        {...props}
         onChange={onChange}
         onDelete={onDelete}
-        {...props}
       />
     );
   }
   if (isStack(feature)) {
     return (
       <StackComponent
+        {...props}
         stack={feature}
         onChange={onChange}
-        // onEdit={onEdit}
         onDelete={onDelete}
         onMoveDown={onMoveDown}
         onMoveUp={onMoveUp}
-        // tutaj dodać komponent taki header po kliknięciu onEdit
-
-        {...props}
+      // tutaj dodać komponent taki header po kliknięciu onEdit
       />
     );
   }
@@ -92,10 +81,10 @@ const FeatureComp = (props: FeatureComponentProps) => {
     return (
       <TableBlockComponent
         tableBlock={feature}
+        {...props}
         onChange={onChange}
         onDelete={onDelete}
         onEdit={onEdit}
-        {...props}
       />
     );
   }
@@ -103,10 +92,10 @@ const FeatureComp = (props: FeatureComponentProps) => {
     return (
       <ListBlockComponent
         listBlock={feature}
+        {...props}
         onDelete={onDelete}
         onChange={onChange}
         onEdit={onEdit}
-        {...props}
       />
     );
   }
@@ -123,13 +112,13 @@ export const FeatureComponent = (props: FeatureComponentProps) => {
   return (
     <div className={styles.FeatureMain}>
       <FeatureComp
+        onMoveDown={onMoveDown}
+        onMoveUp={onMoveUp}
+        {...props}
         onChange={onChange}
         onEdit={onEdit}
         onDelete={onDelete}
         feature={feature}
-        onMoveDown={onMoveDown}
-        onMoveUp={onMoveUp}
-        {...props}
       />
     </div>
   );

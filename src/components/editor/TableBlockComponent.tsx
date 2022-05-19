@@ -1,14 +1,14 @@
 import * as React from "react";
-import { PartialObjects } from "../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import { ColumnsComponent } from "./ColumnsComponent";
 import { Rolloutable } from "./display/Rolloutable";
 import * as Icons from "react-feather";
 import cx from "classnames";
 import * as styles1 from "./styles/Feature";
-import { translated } from "../../models";
+import { translated } from "@/models";
 import * as styles from "./styles/TableBlock";
 import { DeleteAndEditIconsComponentProps } from "./display/DeleteAndEdit";
-import { TopMenu } from "../../topmenu/index";
+import { TopMenu } from "@/topmenu/index";
 
 export interface TableBlockComponentProps
   extends DeleteAndEditIconsComponentProps {
@@ -63,9 +63,8 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
   return (
     <Rolloutable
       withoutDeleteIcons={false}
-      title={`${t("TableTitle")}${
-        tableBlock.style ? `-${tableBlock.style}` : ``
-      }`}
+      title={`${t("TableTitle")}${tableBlock.style ? `-${tableBlock.style}` : ``
+        }`}
       {...props}
     >
       <TopMenu editedFeature={tableBlock} onChange={onChange} />
@@ -175,8 +174,8 @@ export const TableBlockComponent = (props: TableBlockComponentProps) => {
                 columns:
                   tableBlock.rows!.length > 0
                     ? tableBlock.rows![
-                        tableBlock.rows!.length - 1
-                      ].columns!.map(() => emptyColumn())
+                      tableBlock.rows!.length - 1
+                    ].columns!.map(() => emptyColumn())
                     : [emptyColumn()]
               });
               onChange();

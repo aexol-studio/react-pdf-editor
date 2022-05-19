@@ -1,4 +1,4 @@
-import { MenuItemType, SelectInputItem } from "../models";
+import { MenuItemType, SelectInputItem } from "@/topmenu/models";
 
 
 export const SelectFontType: SelectInputItem = {

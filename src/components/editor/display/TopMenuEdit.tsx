@@ -1,8 +1,8 @@
 import * as React from "react";
-import { PartialObjects } from "../../../graphql-zeus";
+import { PartialObjects } from "@/graphql-zeus";
 import * as Icons from "react-feather";
 import cx from "classnames";
-import * as styles1 from "..//styles/Feature";
+import * as styles1 from "@components/editor/styles/Feature";
 
 export interface DeleteAndEditIconsComponentProps {
   feature?: PartialObjects["Feature"];
