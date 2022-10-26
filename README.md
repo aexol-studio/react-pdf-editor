@@ -41,7 +41,7 @@ React PDF Editor can be used for:
 
 ---
 
-# Installation
+# Requirements
 
 React PDF-ediotr requires: 
 - [Node.js](https://nodejs.org/) v11.6.0+ 
@@ -49,7 +49,7 @@ React PDF-ediotr requires:
 
 ---
 
-### React PDF-ediotr is very easy to install.
+### React PDF-editor is very easy to install.
 
 # Install
 
@@ -59,7 +59,7 @@ $ npm start
 ```
 Install the dependencies and devDependencies and start the server.
 
-# Develop Instalation
+# Develop install
 
 ```sh
 $ git clone https://github.com/aexol-studio/react-pdf-editor.git
